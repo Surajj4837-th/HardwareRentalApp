@@ -39,6 +39,7 @@
             // 
             // pnl_navigation
             // 
+            pnl_navigation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             pnl_navigation.BackColor = SystemColors.GradientActiveCaption;
             pnl_navigation.Controls.Add(button5);
             pnl_navigation.Controls.Add(button4);
@@ -53,6 +54,7 @@
             // 
             // button5
             // 
+            button5.BackColor = Color.IndianRed;
             button5.Dock = DockStyle.Bottom;
             button5.Font = new Font("Nirmala UI", 12F, FontStyle.Bold);
             button5.Location = new Point(0, 724);
@@ -60,7 +62,7 @@
             button5.Size = new Size(200, 44);
             button5.TabIndex = 5;
             button5.Text = "Logout";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
