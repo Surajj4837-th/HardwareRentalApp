@@ -34,18 +34,19 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            pnl_OverlayUC = new Panel();
             pnl_navigation.SuspendLayout();
             SuspendLayout();
             // 
             // pnl_navigation
             // 
-            pnl_navigation.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             pnl_navigation.BackColor = SystemColors.GradientActiveCaption;
             pnl_navigation.Controls.Add(button5);
             pnl_navigation.Controls.Add(button4);
             pnl_navigation.Controls.Add(button3);
             pnl_navigation.Controls.Add(button2);
             pnl_navigation.Controls.Add(button1);
+            pnl_navigation.Dock = DockStyle.Left;
             pnl_navigation.Location = new Point(0, 0);
             pnl_navigation.Margin = new Padding(1);
             pnl_navigation.Name = "pnl_navigation";
@@ -108,15 +109,26 @@
             button1.Text = "Sale";
             button1.UseVisualStyleBackColor = true;
             // 
+            // pnl_OverlayUC
+            // 
+            pnl_OverlayUC.BackColor = SystemColors.AppWorkspace;
+            pnl_OverlayUC.Dock = DockStyle.Fill;
+            pnl_OverlayUC.Location = new Point(200, 0);
+            pnl_OverlayUC.Name = "pnl_OverlayUC";
+            pnl_OverlayUC.Size = new Size(1009, 768);
+            pnl_OverlayUC.TabIndex = 1;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1209, 768);
+            Controls.Add(pnl_OverlayUC);
             Controls.Add(pnl_navigation);
             Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "MainForm";
             Text = "Hardware Rental App";
+            Load += MainForm_Load;
             pnl_navigation.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -129,5 +141,6 @@
         private Button button3;
         private Button button2;
         private Button button1;
+        private Panel pnl_OverlayUC;
     }
 }
