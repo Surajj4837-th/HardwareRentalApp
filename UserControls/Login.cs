@@ -94,7 +94,7 @@ namespace HardwareRentalApp.UserControls
 
                         if (dtUser.Rows.Count >= 1)
                         {
-                            AdminID = Convert.ToInt32(dtUser.Rows[0]["UserId"].ToString());
+                            AdminID = Convert.ToInt32(dtUser.Rows[0]["AdminId"].ToString());
 
                             m_st_Role = dtUser.Rows[0]["UserRole"].ToString();
 
