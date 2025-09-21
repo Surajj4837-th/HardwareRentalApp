@@ -356,13 +356,10 @@ namespace HardwareRentalApp.UserControls
                     dgv_MultipurposeTable.ClearSelection(); // Clear any previous selection
                     dgv_MultipurposeTable.Rows[row_index].Selected = true; // Select the clicked row
 
-                    customer.CustomerID = dgv_MultipurposeTable.Rows[row_index].Cells["ID"].Value.ToString();
-                    customer.FirstName = dgv_MultipurposeTable.Rows[row_index].Cells["FirstName"].Value.ToString();
-                    customer.Surname = dgv_MultipurposeTable.Rows[row_index].Cells["Surname"].Value.ToString();
-                    customer.MobileNum = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNo"].Value.ToString();
-                    customer.Village = dgv_MultipurposeTable.Rows[row_index].Cells["Village"].Value.ToString();
-                    customer.District = dgv_MultipurposeTable.Rows[row_index].Cells["District"].Value.ToString();
-                    customer.Pincode = dgv_MultipurposeTable.Rows[row_index].Cells["Pincode"].Value.ToString();
+                    customer.CustomerID = dgv_MultipurposeTable.Rows[row_index].Cells["CustomerID"].Value.ToString();
+                    customer.LesseeName = dgv_MultipurposeTable.Rows[row_index].Cells["LesseeName"].Value.ToString();
+                    customer.LesseeAddress = dgv_MultipurposeTable.Rows[row_index].Cells["LesseeAddress"].Value.ToString();
+                    customer.MobileNum = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNumber"].Value.ToString();
 
                     EnableButtons();
                 }

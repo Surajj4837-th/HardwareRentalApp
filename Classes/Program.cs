@@ -5,12 +5,9 @@ namespace HardwareRentalApp.Classes
         public struct CustomerInfo
         {
             public string CustomerID;
-            public string FirstName;
-            public string Surname;
+            public string LesseeName;
+            public string LesseeAddress;
             public string MobileNum;
-            public string Village;
-            public string District;
-            public string Pincode;
         };
 
         public enum Profile

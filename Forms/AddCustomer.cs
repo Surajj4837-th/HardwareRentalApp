@@ -26,12 +26,6 @@ namespace HardwareRentalApp.Forms
             ApplyLanguage();
         }
 
-        /*
-    Lessee NVARCHAR(100) NOT NULL,
-    LesseeAddress NVARCHAR(500),
-    MobileNumber NVARCHAR(10) NOT NULL
-        */
-
         public void ApplyLanguage()
         {
             this.btn_Add.Text = LangManager.GetString("Save");
