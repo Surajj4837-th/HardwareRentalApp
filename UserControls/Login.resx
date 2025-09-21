@@ -117,21 +117,205 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cb_Language.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cb_Language.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Noto Sans, 9.75pt</value>
+  </data>
+  <data name="cb_Language.Items" xml:space="preserve">
+    <value>मराठी</value>
+  </data>
+  <data name="cb_Language.Items1" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="cb_Language.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 3</value>
+  </data>
+  <data name="cb_Language.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cb_Language.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cb_Language.Name" xml:space="preserve">
+    <value>cb_Language</value>
+  </data>
+  <data name="&gt;&gt;cb_Language.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_Language.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;cb_Language.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbl_Language.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lbl_Language.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Noto Sans, 9.75pt</value>
+  </data>
+  <data name="lbl_Language.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lbl_Language.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 37</value>
+  </data>
+  <data name="lbl_Language.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_Language.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lbl_Language.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lbl_Language.Name" xml:space="preserve">
+    <value>lbl_Language</value>
+  </data>
+  <data name="&gt;&gt;lbl_Language.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Language.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;lbl_Language.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>915, 798</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 37</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lbl_Language" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cb_Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,35.06493,Percent,64.93507" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="lbl_admin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lbl_admin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_admin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Noto Sans, 16.2pt, style=Bold</value>
+  </data>
+  <data name="lbl_admin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_admin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>677, 44</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_admin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lbl_admin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 34</value>
+  </data>
+  <data name="lbl_admin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_admin.Text" xml:space="preserve">
+    <value>Admin Login</value>
+  </data>
+  <data name="lbl_admin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lbl_admin.Name" xml:space="preserve">
+    <value>lbl_admin</value>
+  </data>
+  <data name="&gt;&gt;lbl_admin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_admin.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lbl_admin.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ll_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ll_register.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ll_register.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Noto Sans, 13.8pt, style=Italic</value>
+  </data>
+  <data name="ll_register.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ll_register.Location" type="System.Drawing.Point, System.Drawing">
+    <value>678, 445</value>
+  </data>
+  <data name="ll_register.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 29</value>
+  </data>
+  <data name="ll_register.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ll_register.Text" xml:space="preserve">
+    <value>Register here.</value>
+  </data>
+  <data name="&gt;&gt;ll_register.Name" xml:space="preserve">
+    <value>ll_register</value>
+  </data>
+  <data name="&gt;&gt;ll_register.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ll_register.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;ll_register.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnl_login.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="btn_login.Font" type="System.Drawing.Font, System.Drawing">
     <value>Noto Sans, 15pt</value>
+  </data>
+  <data name="btn_login.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btn_login.Location" type="System.Drawing.Point, System.Drawing">
     <value>240, 183</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_login.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
   <data name="btn_login.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 45</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_login.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -210,6 +394,9 @@
   <data name="lbl_Password.Font" type="System.Drawing.Font, System.Drawing">
     <value>Noto Sans, 15pt</value>
   </data>
+  <data name="lbl_Password.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_Password.Location" type="System.Drawing.Point, System.Drawing">
     <value>60, 119</value>
   </data>
@@ -243,6 +430,9 @@
   <data name="lbl_MobileNo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Noto Sans, 15pt</value>
   </data>
+  <data name="lbl_MobileNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lbl_MobileNo.Location" type="System.Drawing.Point, System.Drawing">
     <value>60, 48</value>
   </data>
@@ -274,13 +464,13 @@
     <value>Noto Sans, 15pt</value>
   </data>
   <data name="pnl_login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 258</value>
+    <value>382, 113</value>
   </data>
   <data name="pnl_login.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
   <data name="pnl_login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>654, 273</value>
+    <value>712, 275</value>
   </data>
   <data name="pnl_login.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -292,176 +482,37 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnl_login.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;pnl_login.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ll_register.AutoSize" type="System.Boolean, mscorlib">
+  <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="ll_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 13.8pt, style=Italic</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 147</value>
   </data>
-  <data name="ll_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>606, 593</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1474, 532</value>
   </data>
-  <data name="ll_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 29</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="ll_register.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="ll_register.Text" xml:space="preserve">
-    <value>Register here.</value>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ll_register.Name" xml:space="preserve">
-    <value>ll_register</value>
-  </data>
-  <data name="&gt;&gt;ll_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ll_register.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ll_register.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbl_admin.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_admin.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 16.2pt, style=Bold</value>
-  </data>
-  <data name="lbl_admin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>605, 192</value>
-  </data>
-  <data name="lbl_admin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="lbl_admin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 34</value>
-  </data>
-  <data name="lbl_admin.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lbl_admin.Text" xml:space="preserve">
-    <value>Admin Login</value>
-  </data>
-  <data name="lbl_admin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lbl_admin.Name" xml:space="preserve">
-    <value>lbl_admin</value>
-  </data>
-  <data name="&gt;&gt;lbl_admin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_admin.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbl_admin.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cb_Language.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="cb_Language.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9.75pt</value>
-  </data>
-  <data name="cb_Language.Items" xml:space="preserve">
-    <value>मराठी</value>
-  </data>
-  <data name="cb_Language.Items1" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="cb_Language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 3</value>
-  </data>
-  <data name="cb_Language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 28</value>
-  </data>
-  <data name="cb_Language.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cb_Language.Name" xml:space="preserve">
-    <value>cb_Language</value>
-  </data>
-  <data name="&gt;&gt;cb_Language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cb_Language.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;cb_Language.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbl_Language.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lbl_Language.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9.75pt</value>
-  </data>
-  <data name="lbl_Language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="lbl_Language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 37</value>
-  </data>
-  <data name="lbl_Language.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lbl_Language.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="lbl_Language.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lbl_Language.Name" xml:space="preserve">
-    <value>lbl_Language</value>
-  </data>
-  <data name="&gt;&gt;lbl_Language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Language.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;lbl_Language.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1190, 796</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 37</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lbl_Language" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="cb_Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,35.06493,Percent,64.93507" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

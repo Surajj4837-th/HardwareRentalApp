@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static HardwareRentalApp.Classes.Program;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HardwareRentalApp.UserControls
@@ -24,6 +25,7 @@ namespace HardwareRentalApp.UserControls
         public static string m_st_Role;
         //private ActivateProduct Obj_ProductActivation = new ActivateProduct();
         string culture = Properties.Settings.Default.Language;
+        public event EventHandler LoginSuccessful;
 
         public Login()
         {
@@ -57,6 +59,7 @@ namespace HardwareRentalApp.UserControls
             else
                 cb_Language.SelectedIndex = 1;      //Default English language
         }
+
 
         private void btn_login_Click(object sender, EventArgs e)
         {
@@ -94,11 +97,11 @@ namespace HardwareRentalApp.UserControls
 
                             if (m_st_Role == "Owner")
                             {
-                                //GlobalState.e_LoginProfile = Profile.Master_Admin;
+                                GlobalState.e_LoginProfile = Profile.Owner;
                             }
                             else if (m_st_Role == "Employee")
                             {
-                                //GlobalState.e_LoginProfile = Profile.Admin;
+                                GlobalState.e_LoginProfile = Profile.Employee;
                             }
 
                             //if (Obj_ProductActivation.LessActivationDaysRemaining())  //Temporarily deactivated
@@ -109,15 +112,9 @@ namespace HardwareRentalApp.UserControls
                             // Save selected language
                             Properties.Settings.Default.Language = culture;
                             Properties.Settings.Default.Save();
-
-                            //Open Home page.
-                            //Homepage homepage = this.ParentForm as Homepage;
-                            //if (homepage != null)
-                            //{
-                            //    homepage.ApplyLanguage();
-                            //    homepage.OpenChildControl(new HardwareRentalApp.UserControls.Home());
-                            //}
                             MessageBox.Show("Login Successful");
+                            this.Parent.Controls.Remove(this);
+                            LoginSuccessful?.Invoke(this, EventArgs.Empty);
                         }
                         else
                         {
