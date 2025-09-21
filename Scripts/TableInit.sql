@@ -2,7 +2,7 @@ use [HardwareRentalApp(Development)]
 
 CREATE TABLE Customers (
     CustomerId INT IDENTITY PRIMARY KEY,
-    Lessee NVARCHAR(100) NOT NULL,
+    LesseeName NVARCHAR(100) NOT NULL,
     LesseeAddress NVARCHAR(500),
     MobileNumber NVARCHAR(10) NOT NULL
 );
