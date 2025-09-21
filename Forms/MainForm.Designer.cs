@@ -60,14 +60,19 @@
             // 
             // btn_Settings
             // 
+            btn_Settings.BackColor = Color.FromArgb(51, 51, 76);
             btn_Settings.Dock = DockStyle.Top;
             btn_Settings.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold);
+            btn_Settings.ForeColor = Color.Gainsboro;
             btn_Settings.Location = new Point(0, 176);
             btn_Settings.Name = "btn_Settings";
             btn_Settings.Size = new Size(200, 44);
             btn_Settings.TabIndex = 6;
             btn_Settings.Text = "Settings";
-            btn_Settings.UseVisualStyleBackColor = true;
+            btn_Settings.UseVisualStyleBackColor = false;
+            btn_Settings.Click += btn_Settings_Click;
+            btn_Settings.MouseEnter += btn_Settings_MouseEnter;
+            btn_Settings.MouseLeave += btn_Settings_MouseLeave;
             // 
             // btn_Logout
             // 
@@ -83,47 +88,67 @@
             // 
             // btn_Inventory
             // 
+            btn_Inventory.BackColor = Color.FromArgb(51, 51, 76);
             btn_Inventory.Dock = DockStyle.Top;
             btn_Inventory.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold);
+            btn_Inventory.ForeColor = Color.Gainsboro;
             btn_Inventory.Location = new Point(0, 132);
             btn_Inventory.Name = "btn_Inventory";
             btn_Inventory.Size = new Size(200, 44);
             btn_Inventory.TabIndex = 4;
             btn_Inventory.Text = "Inventory";
-            btn_Inventory.UseVisualStyleBackColor = true;
+            btn_Inventory.UseVisualStyleBackColor = false;
+            btn_Inventory.Click += btn_Inventory_Click;
+            btn_Inventory.MouseEnter += btn_Inventory_MouseEnter;
+            btn_Inventory.MouseLeave += btn_Inventory_MouseLeave;
             // 
             // btn_Customer
             // 
+            btn_Customer.BackColor = Color.FromArgb(51, 51, 76);
             btn_Customer.Dock = DockStyle.Top;
             btn_Customer.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold);
+            btn_Customer.ForeColor = Color.Gainsboro;
             btn_Customer.Location = new Point(0, 88);
             btn_Customer.Name = "btn_Customer";
             btn_Customer.Size = new Size(200, 44);
             btn_Customer.TabIndex = 3;
             btn_Customer.Text = "Customer";
-            btn_Customer.UseVisualStyleBackColor = true;
+            btn_Customer.UseVisualStyleBackColor = false;
+            btn_Customer.Click += btn_Customer_Click;
+            btn_Customer.MouseEnter += btn_Customer_MouseEnter;
+            btn_Customer.MouseLeave += btn_Customer_MouseLeave;
             // 
             // btn_Sale
             // 
+            btn_Sale.BackColor = Color.FromArgb(51, 51, 76);
             btn_Sale.Dock = DockStyle.Top;
             btn_Sale.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold);
+            btn_Sale.ForeColor = Color.Gainsboro;
             btn_Sale.Location = new Point(0, 44);
             btn_Sale.Name = "btn_Sale";
             btn_Sale.Size = new Size(200, 44);
             btn_Sale.TabIndex = 2;
             btn_Sale.Text = "Sale";
-            btn_Sale.UseVisualStyleBackColor = true;
+            btn_Sale.UseVisualStyleBackColor = false;
+            btn_Sale.Click += btn_Sale_Click;
+            btn_Sale.MouseEnter += btn_Sale_MouseEnter;
+            btn_Sale.MouseLeave += btn_Sale_MouseLeave;
             // 
             // btn_Home
             // 
+            btn_Home.BackColor = Color.FromArgb(51, 51, 76);
             btn_Home.Dock = DockStyle.Top;
             btn_Home.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold);
+            btn_Home.ForeColor = Color.Gainsboro;
             btn_Home.Location = new Point(0, 0);
             btn_Home.Name = "btn_Home";
             btn_Home.Size = new Size(200, 44);
             btn_Home.TabIndex = 1;
             btn_Home.Text = "Home";
-            btn_Home.UseVisualStyleBackColor = true;
+            btn_Home.UseVisualStyleBackColor = false;
+            btn_Home.Click += btn_Home_Click;
+            btn_Home.MouseEnter += btn_Home_MouseEnter;
+            btn_Home.MouseLeave += btn_Home_MouseLeave;
             // 
             // pnl_OverlayUC
             // 
