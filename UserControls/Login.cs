@@ -35,8 +35,11 @@ namespace HardwareRentalApp.UserControls
 
             ApplyLanguage();
 
-            //For development purpose only
-            tb_MobileNo.Text = "9822236529";
+            //***********************For development purpose only***********************
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                tb_MobileNo.Text = "9822236529";
+            }
         }
         public void ApplyLanguage()
         {

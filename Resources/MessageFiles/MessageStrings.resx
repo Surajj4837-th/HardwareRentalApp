@@ -522,9 +522,6 @@
   <data name="ModifyProduct3" xml:space="preserve">
     <value>Modify Product</value>
   </data>
-  <data name="RecordAdvancePayment" xml:space="preserve">
-    <value>Record Advance Payment</value>
-  </data>
   <data name="AddAmount" xml:space="preserve">
     <value>Add Amount</value>
   </data>

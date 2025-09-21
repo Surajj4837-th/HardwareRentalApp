@@ -522,9 +522,6 @@
   <data name="ModifyProduct3" xml:space="preserve">
     <value>बदल करा</value>
   </data>
-  <data name="RecordAdvancePayment" xml:space="preserve">
-    <value>आगाऊ रक्कम नोंद करा</value>
-  </data>
   <data name="AddAmount" xml:space="preserve">
     <value>रक्कम जोडा</value>
   </data>
