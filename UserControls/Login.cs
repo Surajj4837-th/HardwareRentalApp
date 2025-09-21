@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HardwareRentalApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,11 @@ namespace HardwareRentalApp.UserControls
 {
     public partial class Login : UserControl
     {
-        //private DatabaseInterface DBInterface = new DatabaseInterface();
+        private DBInterface DBInterface = new DBInterface();
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Login).Assembly);
-        //private DataTable dtUser = new DataTable();
-        //public static Int32 AdminID;
-        //public static string m_st_Category;
+        private DataTable dtUser = new DataTable();
+        public static Int32 AdminID;
+        public static string m_st_Role;
         //private ActivateProduct Obj_ProductActivation = new ActivateProduct();
         string culture = Properties.Settings.Default.Language;
 
@@ -31,6 +32,9 @@ namespace HardwareRentalApp.UserControls
             SetLanguage();
 
             ApplyLanguage();
+
+            //For development purpose only
+            tb_MobileNo.Text = "9822236529";
         }
         public void ApplyLanguage()
         {
@@ -56,93 +60,85 @@ namespace HardwareRentalApp.UserControls
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            //    string message = "";
+            string message = "";
 
-            //    if (true)//(Obj_ProductActivation.VerifyProduct(out message))  //Temporarily deactivated
-            //    {
-            //        string mobile_num = tb_MobileNo.Text;
-            //        string password = tb_Password.Text;
+            if (true)//(Obj_ProductActivation.VerifyProduct(out message))  //Temporarily deactivated
+            {
+                string mobile_num = tb_MobileNo.Text;
+                string password = PasswordHelper.HashPassword(tb_Password.Text);
 
-            //        if (mobile_num.Equals(""))
-            //        {
-            //            MessageBox.Show(LangManager.GetString("EnterUsername"));
-            //        }
-            //        else if (password.Equals(""))
+                if (mobile_num.Equals(""))
+                {
+                    MessageBox.Show(LangManager.GetString("EnterUsername"));
+                }
+                else if (password.Equals(""))
 
-            //        {
-            //            MessageBox.Show(LangManager.GetString("EnterPassword"));
-            //        }
-            //        else
-            //        {
-            //            try
-            //            {
-            //                byte[] encryptedPassword_byte = EncryptionDecryption.EncryptData(password);
-            //                string encryptedPassword_str = Convert.ToBase64String(encryptedPassword_byte);
+                {
+                    MessageBox.Show(LangManager.GetString("EnterPassword"));
+                }
+                else
+                {
+                    try
+                    {
+                        string query = "Select * from Credentials Where MobileNumber = @mobile_num AND PasswordHash = @password";
 
-            //                //byte[] byteArray = Convert.FromBase64String(encryptedPassword_str);
+                        var parameters = new Dictionary<string, object> { { "@mobile_num", mobile_num }, { "@password", password } };
 
-            //                string query = "Select * from Admin Where mobile_number = @mobile_num AND password = @encryptedPassword_str";
+                        DBInterface.ReadDataThroughAdapter(query, dtUser, parameters);
 
-            //                var parameters = new Dictionary<string, object> { { "@mobile_num", mobile_num }, { "@encryptedPassword_str", encryptedPassword_str } };
+                        if (dtUser.Rows.Count >= 1)
+                        {
+                            AdminID = Convert.ToInt32(dtUser.Rows[0]["UserId"].ToString());
 
-            //                DBInterface.ReadDataThroughAdapter(query, dtUser, parameters);
+                            m_st_Role = dtUser.Rows[0]["UserRole"].ToString();
 
-            //                if (dtUser.Rows.Count >= 1)
-            //                {
-            //                    AdminID = Convert.ToInt32(dtUser.Rows[0]["ID"].ToString());
+                            if (m_st_Role == "Owner")
+                            {
+                                //GlobalState.e_LoginProfile = Profile.Master_Admin;
+                            }
+                            else if (m_st_Role == "Employee")
+                            {
+                                //GlobalState.e_LoginProfile = Profile.Admin;
+                            }
 
-            //                    m_st_Category = dtUser.Rows[0]["category"].ToString();
+                            //if (Obj_ProductActivation.LessActivationDaysRemaining())  //Temporarily deactivated
+                            //{
+                            //    MessageBox.Show(LangManager.GetString("ActivationNeeded"));
+                            //}
 
-            //                    if (m_st_Category == "Master Admin")
-            //                    {
-            //                        GlobalState.e_LoginProfile = Profile.Master_Admin;
-            //                    }
-            //                    else if (m_st_Category == "Admin")
-            //                    {
-            //                        GlobalState.e_LoginProfile = Profile.Admin;
-            //                    }
-            //                    else if (m_st_Category == "Support")
-            //                    {
-            //                        GlobalState.e_LoginProfile = Profile.Support;
-            //                    }
+                            // Save selected language
+                            Properties.Settings.Default.Language = culture;
+                            Properties.Settings.Default.Save();
 
-            //                    //if (Obj_ProductActivation.LessActivationDaysRemaining())  //Temporarily deactivated
-            //                    //{
-            //                    //    MessageBox.Show(LangManager.GetString("ActivationNeeded"));
-            //                    //}
-
-            //                    // Save selected language
-            //                    Properties.Settings.Default.Language = culture;
-            //                    Properties.Settings.Default.Save();
-
-            //                    //Open Home page.
-            //                    Homepage homepage = this.ParentForm as Homepage;
-            //                    if (homepage != null)
-            //                    {
-            //                        homepage.ApplyLanguage();
-            //                        homepage.OpenChildControl(new HardwareRentalApp.UserControls.Home());
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    MessageBox.Show(LangManager.GetString("InvalidCredentials"));
-            //                }
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                // Show exception details in a MessageBox
-            //                MessageBox.Show(
-            //                    ex.Message,           // The exception message
-            //                    "Error",              // Title of the message box
-            //                    MessageBoxButtons.OK, // MessageBox buttons (OK)
-            //                    MessageBoxIcon.Error);// MessageBox icon (Error)
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        ShowProductActivation(message);
-            //    }
+                            //Open Home page.
+                            //Homepage homepage = this.ParentForm as Homepage;
+                            //if (homepage != null)
+                            //{
+                            //    homepage.ApplyLanguage();
+                            //    homepage.OpenChildControl(new HardwareRentalApp.UserControls.Home());
+                            //}
+                            MessageBox.Show("Login Successful");
+                        }
+                        else
+                        {
+                            MessageBox.Show(LangManager.GetString("InvalidCredentials"));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Show exception details in a MessageBox
+                        MessageBox.Show(
+                            ex.Message,           // The exception message
+                            "Error",              // Title of the message box
+                            MessageBoxButtons.OK, // MessageBox buttons (OK)
+                            MessageBoxIcon.Error);// MessageBox icon (Error)
+                    }
+                }
+            }
+            else
+            {
+                //ShowProductActivation(message);
+            }
         }
         //private void ShowProductActivation(string message)
         //{
