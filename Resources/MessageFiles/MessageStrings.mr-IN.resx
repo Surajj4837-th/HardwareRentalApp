@@ -420,7 +420,8 @@
   <data name="AccountApprovalRequests" xml:space="preserve">
     <value>खाते मंजूरी विनंत्या</value>
   </data>
-  <data name="Customer" xml:space="preserve">
+  <data name="
+		" xml:space="preserve">
     <value>ग्राहक</value>
   </data>
   <data name="Settings" xml:space="preserve">
@@ -563,5 +564,11 @@
   </data>
   <data name="ShowBills" xml:space="preserve">
     <value>बिले दाखवा</value>
+  </data>
+  <data name="LesseeName" xml:space="preserve">
+    <value>भाडेकरूचे नाव</value>
+  </data>
+  <data name="LesseeAddress" xml:space="preserve">
+    <value>भाडेकरू पत्ता</value>
   </data>
 </root>
