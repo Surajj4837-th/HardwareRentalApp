@@ -1,10 +1,9 @@
+use [HardwareRentalApp(Development)]
+
 CREATE TABLE Customers (
     CustomerId INT IDENTITY PRIMARY KEY,
-    ProjectOwner NVARCHAR(100) NOT NULL,
-    Reference NVARCHAR(100) NOT NULL,
     Lessee NVARCHAR(100) NOT NULL,
     LesseeAddress NVARCHAR(500),
-    WorkLocation NVARCHAR(200),
     MobileNumber NVARCHAR(10) NOT NULL
 );
 
@@ -15,6 +14,9 @@ CREATE TABLE Bills (
     BillDate DATETIME DEFAULT GETDATE(), -- When bill is created
     RentalStartDate DATE NOT NULL,    -- Rental period start
     RentalEndDate DATE NULL,      -- Rental period end
+    ProjectOwner NVARCHAR(100) NOT NULL,
+    Reference NVARCHAR(100) NOT NULL,
+    WorkLocation NVARCHAR(200),
     PaymentDate DATE NULL,            -- When payment was made
     TotalAmount DECIMAL(10,2) NOT NULL,
     AdvanceAmount DECIMAL(10,2) DEFAULT 0,
@@ -61,7 +63,7 @@ VALUES
 
 
 CREATE TABLE Credentials (
-    UserId INT IDENTITY PRIMARY KEY,
+    AdminId INT IDENTITY PRIMARY KEY,
     FullName NVARCHAR(100) NOT NULL,
     MobileNumber NVARCHAR(10) NOT NULL UNIQUE,
     PasswordHash NVARCHAR(255) NOT NULL,
