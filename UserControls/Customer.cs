@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Resources;
 using HardwareRentalApp.Classes;
+using HardwareRentalApp.Forms;
 using static HardwareRentalApp.Classes.Program;
 
 namespace HardwareRentalApp.UserControls
@@ -66,14 +67,10 @@ namespace HardwareRentalApp.UserControls
             if (currentTable == tableName.Customer)
             {
                 // Rename the column headers after attaching the data table only
-                dgv_MultipurposeTable.Columns["ID"].HeaderText = LangManager.GetString("CustomerID");
-                dgv_MultipurposeTable.Columns["FirstName"].HeaderText = LangManager.GetString("FirstName");
-                dgv_MultipurposeTable.Columns["Surname"].HeaderText = LangManager.GetString("Surname");
-                dgv_MultipurposeTable.Columns["MobileNo"].HeaderText = LangManager.GetString("MobileNumber");
-                dgv_MultipurposeTable.Columns["Village"].HeaderText = LangManager.GetString("Village");
-                dgv_MultipurposeTable.Columns["District"].HeaderText = LangManager.GetString("District");
-                dgv_MultipurposeTable.Columns["Pincode"].HeaderText = LangManager.GetString("PINCode");
-
+                dgv_MultipurposeTable.Columns["CustomerID"].HeaderText = LangManager.GetString("CustomerID");
+                dgv_MultipurposeTable.Columns["LesseeName"].HeaderText = LangManager.GetString("LesseeName");
+                dgv_MultipurposeTable.Columns["LesseeAddress"].HeaderText = LangManager.GetString("LesseeAddress");
+                dgv_MultipurposeTable.Columns["MobileNumber"].HeaderText = LangManager.GetString("MobileNumber");
                 lbl_mainPanel.Text = LangManager.GetString("CustomerInformation");
             }
             else if (currentTable == tableName.Bill)
@@ -124,7 +121,7 @@ namespace HardwareRentalApp.UserControls
         {
             if (currentTable == tableName.Customer)
             {
-                string SelectQuery = "Select * from Customer";
+                string SelectQuery = "Select * from Customers";
 
                 dt_Customers.Rows.Clear();
 
@@ -138,146 +135,146 @@ namespace HardwareRentalApp.UserControls
             }
             else if (currentTable == tableName.Bill)
             {
-                List<int> UnbilledBills = new List<int>();
+                //List<int> UnbilledBills = new List<int>();
 
-                //Get invoice IDs from database
-                string SelectQuery = "Select DISTINCT InvoiceNo FROM [" + customer.CustomerID + "];";
+                ////Get invoice IDs from database
+                //string SelectQuery = "Select DISTINCT InvoiceNo FROM [" + customer.CustomerID + "];";
 
-                dt_InvoiceIDs.Columns.Add("InvoiceNo");
+                //dt_InvoiceIDs.Columns.Add("InvoiceNo");
 
-                dt_InvoiceIDs.Rows.Clear();
+                //dt_InvoiceIDs.Rows.Clear();
 
-                obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_InvoiceIDs, null);
+                //obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_InvoiceIDs, null);
 
-                // Get more details of each invoice
-                // Fill the table with the details
-                int SrNo = 1;
+                //// Get more details of each invoice
+                //// Fill the table with the details
+                //int SrNo = 1;
 
-                foreach (DataRow row in dt_InvoiceIDs.Rows)
-                {
-                    string invoiceID = row.ItemArray[0].ToString();
+                //foreach (DataRow row in dt_InvoiceIDs.Rows)
+                //{
+                //    string invoiceID = row.ItemArray[0].ToString();
 
-                    DataRow dr_newRow = dt_Bills.NewRow();
+                //    DataRow dr_newRow = dt_Bills.NewRow();
 
-                    SelectQuery = "Select * from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID;";
+                //    SelectQuery = "Select * from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID;";
 
-                    DataTable dt_Purchases = new DataTable();
+                //    DataTable dt_Purchases = new DataTable();
 
-                    var parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
+                //    var parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
 
-                    obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_Purchases, parameters);
+                //    obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_Purchases, parameters);
 
-                    string Date = dt_Purchases.Rows[0]["Date"].ToString();
-                    string time = dt_Purchases.Rows[0]["Time"].ToString();
-                    string AdminID = dt_Purchases.Rows[0]["AdminID"].ToString();
+                //    string Date = dt_Purchases.Rows[0]["Date"].ToString();
+                //    string time = dt_Purchases.Rows[0]["Time"].ToString();
+                //    string AdminID = dt_Purchases.Rows[0]["AdminID"].ToString();
 
-                    // If invoice is for advance payment
-                    if (dt_Purchases.Rows.Count == 1)
-                    {
-                        // Get advance amount
-                        DataTable dt_advance = new DataTable();
+                //    // If invoice is for advance payment
+                //    if (dt_Purchases.Rows.Count == 1)
+                //    {
+                //        // Get advance amount
+                //        DataTable dt_advance = new DataTable();
 
-                        SelectQuery = "Select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'advance';";
+                //        SelectQuery = "Select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'advance';";
 
-                        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
+                //        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
 
-                        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_advance, parameters);
+                //        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_advance, parameters);
 
-                        decimal advance_amount = Convert.ToDecimal(dt_advance.Rows[0][0]);
+                //        decimal advance_amount = Convert.ToDecimal(dt_advance.Rows[0][0]);
 
-                        // Fill row
-                        dr_newRow[0] = SrNo.ToString();
-                        dr_newRow[1] = invoiceID.ToString();
-                        dr_newRow[2] = Date.ToString();
-                        dr_newRow[3] = time.ToString();
-                        dr_newRow[4] = AdminID.ToString();
-                        dr_newRow[5] = "";
-                        dr_newRow[6] = advance_amount.ToString();
-                    }
-                    else
-                    {
-                        //Get bill amount
-                        DataTable dt_amount = new DataTable();
+                //        // Fill row
+                //        dr_newRow[0] = SrNo.ToString();
+                //        dr_newRow[1] = invoiceID.ToString();
+                //        dr_newRow[2] = Date.ToString();
+                //        dr_newRow[3] = time.ToString();
+                //        dr_newRow[4] = AdminID.ToString();
+                //        dr_newRow[5] = "";
+                //        dr_newRow[6] = advance_amount.ToString();
+                //    }
+                //    else
+                //    {
+                //        //Get bill amount
+                //        DataTable dt_amount = new DataTable();
 
-                        SelectQuery = "Select SUM(Amount) FROM [" + customer.CustomerID + "] WHERE InvoiceNo = @invoiceID and BillCategory = 'Sale';";
+                //        SelectQuery = "Select SUM(Amount) FROM [" + customer.CustomerID + "] WHERE InvoiceNo = @invoiceID and BillCategory = 'Sale';";
 
-                        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
+                //        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
 
-                        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_amount, parameters);
+                //        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_amount, parameters);
 
-                        decimal bill_amount = Convert.ToDecimal(dt_amount.Rows[0][0]);
+                //        decimal bill_amount = Convert.ToDecimal(dt_amount.Rows[0][0]);
 
-                        //Get shipping
-                        DataTable dt_shipping = new DataTable();
+                //        //Get shipping
+                //        DataTable dt_shipping = new DataTable();
 
-                        SelectQuery = "Select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'shipping';";
+                //        SelectQuery = "Select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'shipping';";
 
-                        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
+                //        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
 
-                        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_shipping, parameters);
+                //        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_shipping, parameters);
 
-                        decimal shipping_amount = 0.0M;
+                //        decimal shipping_amount = 0.0M;
 
-                        foreach (DataRow shippingRow in dt_shipping.Rows)
-                            shipping_amount += Convert.ToDecimal(shippingRow[0]);
+                //        foreach (DataRow shippingRow in dt_shipping.Rows)
+                //            shipping_amount += Convert.ToDecimal(shippingRow[0]);
 
-                        // Get discount
-                        DataTable dt_discount = new DataTable();
-                        SelectQuery = "select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'discount';";
+                //        // Get discount
+                //        DataTable dt_discount = new DataTable();
+                //        SelectQuery = "select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'discount';";
 
-                        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
+                //        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
 
-                        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_discount, parameters);
+                //        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_discount, parameters);
 
-                        decimal discount_amount = 0.0M;
+                //        decimal discount_amount = 0.0M;
 
-                        foreach (DataRow discountRow in dt_discount.Rows)
-                            discount_amount += Convert.ToDecimal(discountRow[0]);
+                //        foreach (DataRow discountRow in dt_discount.Rows)
+                //            discount_amount += Convert.ToDecimal(discountRow[0]);
 
-                        // Get paid amount
-                        DataTable dt_payment = new DataTable();
-                        SelectQuery = "Select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'payment';";
+                //        // Get paid amount
+                //        DataTable dt_payment = new DataTable();
+                //        SelectQuery = "Select amount from [" + customer.CustomerID + "] where InvoiceNo = @invoiceID and BillCategory = 'payment';";
 
-                        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
+                //        parameters = new Dictionary<string, object> { { "@invoiceID", invoiceID } };
 
-                        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_payment, parameters);
+                //        obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_payment, parameters);
 
-                        decimal paid_amount = 0.0M;
+                //        decimal paid_amount = 0.0M;
 
-                        foreach (DataRow paymentRow in dt_payment.Rows)
-                            paid_amount += Convert.ToDecimal(paymentRow[0]);
+                //        foreach (DataRow paymentRow in dt_payment.Rows)
+                //            paid_amount += Convert.ToDecimal(paymentRow[0]);
 
-                        decimal totalBill = (bill_amount + shipping_amount - discount_amount);
+                //        decimal totalBill = (bill_amount + shipping_amount - discount_amount);
 
-                        // Fill row
-                        dr_newRow[0] = SrNo.ToString();
-                        dr_newRow[1] = invoiceID.ToString();
-                        dr_newRow[2] = Date.ToString();
-                        dr_newRow[3] = time.ToString();
-                        dr_newRow[4] = AdminID.ToString();
-                        dr_newRow[5] = totalBill.ToString();
-                        dr_newRow[6] = paid_amount.ToString();
+                //        // Fill row
+                //        dr_newRow[0] = SrNo.ToString();
+                //        dr_newRow[1] = invoiceID.ToString();
+                //        dr_newRow[2] = Date.ToString();
+                //        dr_newRow[3] = time.ToString();
+                //        dr_newRow[4] = AdminID.ToString();
+                //        dr_newRow[5] = totalBill.ToString();
+                //        dr_newRow[6] = paid_amount.ToString();
 
-                        //Highlight unsettled bill
-                        if (totalBill > Convert.ToDecimal(paid_amount))
-                        {
-                            UnbilledBills.Add(SrNo - 1);
-                        }
-                    }
+                //        //Highlight unsettled bill
+                //        if (totalBill > Convert.ToDecimal(paid_amount))
+                //        {
+                //            UnbilledBills.Add(SrNo - 1);
+                //        }
+                //    }
 
-                    // Add new row to table
-                    dt_Bills.Rows.Add(dr_newRow);
+                //    // Add new row to table
+                //    dt_Bills.Rows.Add(dr_newRow);
 
-                    SrNo++;
-                }
+                //    SrNo++;
+                //}
 
-                for (int i = 0; i < UnbilledBills.Count; i++)
-                {
-                    dgv_MultipurposeTable.Rows[UnbilledBills[i]].DefaultCellStyle.BackColor = Color.OrangeRed;
-                }
+                //for (int i = 0; i < UnbilledBills.Count; i++)
+                //{
+                //    dgv_MultipurposeTable.Rows[UnbilledBills[i]].DefaultCellStyle.BackColor = Color.OrangeRed;
+                //}
 
-                dgv_MultipurposeTable.Update();
-                dgv_MultipurposeTable.Refresh();
+                //dgv_MultipurposeTable.Update();
+                //dgv_MultipurposeTable.Refresh();
             }
         }
 
@@ -301,28 +298,28 @@ namespace HardwareRentalApp.UserControls
             }
             else if (GlobalState.e_LoginProfile == Profile.Owner && currentTable == tableName.Customer)
             {
-                //Add buttons
-                if (!dgv_MultipurposeTable.Columns.Contains("Modify_Customer"))
-                {
-                    DataGridViewButtonColumn ModifyBtnColumn = new DataGridViewButtonColumn();
-                    ModifyBtnColumn.Name = "Modify_Customer";                   // Logical name
-                    ModifyBtnColumn.HeaderText = LangManager.GetString("ModifyCustomer");             // Column header
-                    ModifyBtnColumn.UseColumnTextForButtonValue = true;
-                    ModifyBtnColumn.HeaderCell.Style.BackColor = Color.Yellow;
+                ////Add buttons
+                //if (!dgv_MultipurposeTable.Columns.Contains("Modify_Customer"))
+                //{
+                //    DataGridViewButtonColumn ModifyBtnColumn = new DataGridViewButtonColumn();
+                //    ModifyBtnColumn.Name = "Modify_Customer";                   // Logical name
+                //    ModifyBtnColumn.HeaderText = LangManager.GetString("ModifyCustomer");             // Column header
+                //    ModifyBtnColumn.UseColumnTextForButtonValue = true;
+                //    ModifyBtnColumn.HeaderCell.Style.BackColor = Color.Yellow;
 
-                    dgv_MultipurposeTable.Columns.Add(ModifyBtnColumn);
-                }
+                //    dgv_MultipurposeTable.Columns.Add(ModifyBtnColumn);
+                //}
 
-                if (!dgv_MultipurposeTable.Columns.Contains("Delete_Customer"))
-                {
-                    DataGridViewButtonColumn DeleteBtnColumn = new DataGridViewButtonColumn();
-                    DeleteBtnColumn.Name = "Delete_Customer";                   // Logical name
-                    DeleteBtnColumn.HeaderText = LangManager.GetString("DeleteCustomer2");             // Column header
-                    DeleteBtnColumn.UseColumnTextForButtonValue = true;
-                    DeleteBtnColumn.HeaderCell.Style.BackColor = Color.OrangeRed;
+                //if (!dgv_MultipurposeTable.Columns.Contains("Delete_Customer"))
+                //{
+                //    DataGridViewButtonColumn DeleteBtnColumn = new DataGridViewButtonColumn();
+                //    DeleteBtnColumn.Name = "Delete_Customer";                   // Logical name
+                //    DeleteBtnColumn.HeaderText = LangManager.GetString("DeleteCustomer2");             // Column header
+                //    DeleteBtnColumn.UseColumnTextForButtonValue = true;
+                //    DeleteBtnColumn.HeaderCell.Style.BackColor = Color.OrangeRed;
 
-                    dgv_MultipurposeTable.Columns.Add(DeleteBtnColumn);
-                }
+                //    dgv_MultipurposeTable.Columns.Add(DeleteBtnColumn);
+                //}
             }
             else if (GlobalState.e_LoginProfile == Profile.Employee)       //Already default hidden
             {
@@ -334,16 +331,16 @@ namespace HardwareRentalApp.UserControls
 
         private void btn_AddCustomer_Click(object sender, EventArgs e)
         {
-            ////Remove the dgv row selection
-            //dgv_MultipurposeTable.ClearSelection(); // Remove all selections
+            //Remove the dgv row selection
+            dgv_MultipurposeTable.ClearSelection(); // Remove all selections
 
-            //using (var AC_form = new AddCustomer())
-            //{
-            //    if (AC_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //    {
-            //        loadData();
-            //    }
-            //}
+            using (var AC_form = new AddCustomer())
+            {
+                if (AC_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    loadData();
+                }
+            }
         }
 
         private void dgv_MultipurposeTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -377,43 +374,43 @@ namespace HardwareRentalApp.UserControls
                 }
             }
 
-            if (columnName == "Modify_Customer" && currentTable == tableName.Customer)
-            {
-                //Get values from modify form
+            //if (columnName == "Modify_Customer" && currentTable == tableName.Customer)
+            //{
+            //    //Get values from modify form
 
-                customer.CustomerID = dgv_MultipurposeTable.Rows[row_index].Cells["ID"].Value.ToString();
-                customer.FirstName = dgv_MultipurposeTable.Rows[row_index].Cells["FirstName"].Value.ToString();
-                customer.Surname = dgv_MultipurposeTable.Rows[row_index].Cells["Surname"].Value.ToString();
-                customer.MobileNum = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNo"].Value.ToString();
-                customer.Village = dgv_MultipurposeTable.Rows[row_index].Cells["Village"].Value.ToString();
-                customer.District = dgv_MultipurposeTable.Rows[row_index].Cells["District"].Value.ToString();
-                customer.Pincode = dgv_MultipurposeTable.Rows[row_index].Cells["Pincode"].Value.ToString();
+            //    customer.CustomerID = dgv_MultipurposeTable.Rows[row_index].Cells["ID"].Value.ToString();
+            //    customer.FirstName = dgv_MultipurposeTable.Rows[row_index].Cells["FirstName"].Value.ToString();
+            //    customer.Surname = dgv_MultipurposeTable.Rows[row_index].Cells["Surname"].Value.ToString();
+            //    customer.MobileNum = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNo"].Value.ToString();
+            //    customer.Village = dgv_MultipurposeTable.Rows[row_index].Cells["Village"].Value.ToString();
+            //    customer.District = dgv_MultipurposeTable.Rows[row_index].Cells["District"].Value.ToString();
+            //    customer.Pincode = dgv_MultipurposeTable.Rows[row_index].Cells["Pincode"].Value.ToString();
 
-                //using (var MP_form = new ModifyCustomer(customer))
-                //{
-                //    if (MP_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                //    {
-                //        this.loadData();
-                //    }
-                //}
-            }
-            else if (columnName == "Delete_Customer" && currentTable == tableName.Customer)
-            {
-                DialogResult DeleteConfirmation = MessageBox.Show(LangManager.GetString("DeleteCustomer"), LangManager.GetString("ConfirmDelete"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //    using (var MP_form = new ModifyCustomer(customer))
+            //    {
+            //        if (MP_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //        {
+            //            this.loadData();
+            //        }
+            //    }
+            //}
+            //else if (columnName == "Delete_Customer" && currentTable == tableName.Customer)
+            //{
+            //    DialogResult DeleteConfirmation = MessageBox.Show(LangManager.GetString("DeleteCustomer"), LangManager.GetString("ConfirmDelete"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (DeleteConfirmation == DialogResult.Yes)
-                {
-                    string MobileNo = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNo"].Value.ToString();
+            //    if (DeleteConfirmation == DialogResult.Yes)
+            //    {
+            //        string MobileNo = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNo"].Value.ToString();
 
-                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM customer WHERE MobileNo = @MobileNo");
-                    deleteCommand.Parameters.AddWithValue("@MobileNo", MobileNo);
+            //        SqlCommand deleteCommand = new SqlCommand("DELETE FROM customer WHERE MobileNo = @MobileNo");
+            //        deleteCommand.Parameters.AddWithValue("@MobileNo", MobileNo);
 
-                    int row = obj_DBAccess.ExecuteQuery(deleteCommand);
+            //        int row = obj_DBAccess.ExecuteQuery(deleteCommand);
 
-                    loadData();
-                }
-            }
-            else if (columnName == "Select_bill_column" && currentTable == tableName.Bill)
+            //        loadData();
+            //    }
+            //}
+            /*else*/ if (columnName == "Select_bill_column" && currentTable == tableName.Bill)
             {
                 //if (dgv_MultipurposeTable.Columns["Select_bill_column"] != null && e.ColumnIndex == dgv_MultipurposeTable.Columns["Select_bill_column"].Index)
                 //{
@@ -427,7 +424,7 @@ namespace HardwareRentalApp.UserControls
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             if (currentTable == tableName.Customer)
-                bindingSourceCustomers.Filter = "FirstName like '%" + tb_search.Text + "%'";
+                bindingSourceCustomers.Filter = "Lessee like '%" + tb_search.Text + "%'";
         }
 
         private void Customer_Load(object sender, EventArgs e)
@@ -486,41 +483,41 @@ namespace HardwareRentalApp.UserControls
 
         private void btn_ShowBills_Click(object sender, EventArgs e)
         {
-            //Remove the dgv row selection
-            dgv_MultipurposeTable.ClearSelection(); // Remove all selections
+            ////Remove the dgv row selection
+            //dgv_MultipurposeTable.ClearSelection(); // Remove all selections
 
-            //Check if the table exists in database
-            DataTable dt_table = new DataTable();
-            string SelectQuery = "Select 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = '" + customer.CustomerID + "'";
+            ////Check if the table exists in database
+            //DataTable dt_table = new DataTable();
+            //string SelectQuery = "Select 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = '" + customer.CustomerID + "'";
 
-            dt_table.Rows.Clear();
+            //dt_table.Rows.Clear();
 
-            obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_table, null);
+            //obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_table, null);
 
-            if (dt_table.Rows.Count == 1)
-            {
-                // Clear controls on form
-                EnableDisableBillControls();
+            //if (dt_table.Rows.Count == 1)
+            //{
+            //    // Clear controls on form
+            //    EnableDisableBillControls();
 
-                lbl_mainPanel.Text = LangManager.GetString("BillInformation");
+            //    lbl_mainPanel.Text = LangManager.GetString("BillInformation");
 
-                currentTable = tableName.Bill;
+            //    currentTable = tableName.Bill;
 
-                dgv_MultipurposeTable.DataSource = dt_Bills;
+            //    dgv_MultipurposeTable.DataSource = dt_Bills;
 
-                // Create bill table
-                createTable();
+            //    // Create bill table
+            //    createTable();
 
-                // Load bill related data on DGV
-                loadData();
+            //    // Load bill related data on DGV
+            //    loadData();
 
-                // Add bill related buttons
-                ArrangeDGVButtons();
-            }
-            else
-            {
-                MessageBox.Show(LangManager.GetString("NoSalesByCustomer"));
-            }
+            //    // Add bill related buttons
+            //    ArrangeDGVButtons();
+            //}
+            //else
+            //{
+            //    MessageBox.Show(LangManager.GetString("NoSalesByCustomer"));
+            //}
         }
         private void EnableDisableBillControls()
         {
