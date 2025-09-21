@@ -56,7 +56,8 @@ VALUES
 ('Channel', 0.00),
 ('20 feet Pipe', 0.00),
 ('10 feet Pipe', 0.00),
-('Bar', 0.00);
+('Bar', 0.00),
+('Shipping', 0.00);
 
 
 CREATE TABLE Credentials (
