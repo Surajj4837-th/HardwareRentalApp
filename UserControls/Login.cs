@@ -39,6 +39,7 @@ namespace HardwareRentalApp.UserControls
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 tb_MobileNo.Text = "9822236529";
+                tb_Password.Text = "1234";
             }
         }
         public void ApplyLanguage()
@@ -115,7 +116,7 @@ namespace HardwareRentalApp.UserControls
                             // Save selected language
                             Properties.Settings.Default.Language = culture;
                             Properties.Settings.Default.Save();
-                            MessageBox.Show("Login Successful");
+                            //MessageBox.Show("Login Successful");
                             this.Parent.Controls.Remove(this);
                             LoginSuccessful?.Invoke(this, EventArgs.Empty);
                         }
