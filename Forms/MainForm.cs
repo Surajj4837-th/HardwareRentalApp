@@ -61,18 +61,18 @@ namespace HardwareRentalApp
 
         public void ApplyLanguage()
         {
-            this.btn_Customer.Text = LangManager.GetString("Customer");
-            this.btn_Inventory.Text = LangManager.GetString("Settings");
-            this.btn_Settings.Text = LangManager.GetString("Home");
-            this.btn_Home.Text = LangManager.GetString("Sale");
+            this.btn_Customers.Text = LangManager.GetString("Customers");
+            this.btn_Inventory.Text = LangManager.GetString("Inventory");
+            this.btn_Settings.Text = LangManager.GetString("Settings");
+            this.btn_Home.Text = LangManager.GetString("Home");
             this.btn_Logout.Text = LangManager.GetString("Logout");
-            this.btn_Sale.Text = LangManager.GetString("Inventory");
+            this.btn_Sale.Text = LangManager.GetString("Sale");
         }
 
         public void HideButtons()
         {
             this.btn_Settings.Visible = false;
-            this.btn_Customer.Visible = false;
+            this.btn_Customers.Visible = false;
             this.btn_Home.Visible = false;
             this.btn_Sale.Visible = false;
             this.btn_Logout.Visible = false;
@@ -82,7 +82,7 @@ namespace HardwareRentalApp
         public void ShowButtons()
         {
             this.btn_Settings.Visible = true;
-            this.btn_Customer.Visible = true;
+            this.btn_Customers.Visible = true;
             this.btn_Home.Visible = true;
             this.btn_Sale.Visible = true;
             this.btn_Logout.Visible = true;
@@ -107,7 +107,7 @@ namespace HardwareRentalApp
             //OpenChildControl(new Sale(this));
         }
 
-        private void btn_Customer_Click(object sender, EventArgs e)
+        private void btn_Customers_Click(object sender, EventArgs e)
         {
             this.pnl_Title.BackColor = Color.FromArgb(252, 255, 233);
             OpenChildControl(new Customer());
@@ -139,32 +139,32 @@ namespace HardwareRentalApp
             this.btn_Home.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
         }
 
-        private void btn_Customer_MouseEnter(object sender, EventArgs e)
+        private void btn_Customers_MouseEnter(object sender, EventArgs e)
         {
-            this.btn_Customer.BackColor = Color.FromArgb(252, 255, 233);
-            this.btn_Customer.ForeColor = Color.Black;
-            this.btn_Customer.Font = new System.Drawing.Font("Nirmala UI", 16, System.Drawing.FontStyle.Bold);
+            this.btn_Customers.BackColor = Color.FromArgb(252, 255, 233);
+            this.btn_Customers.ForeColor = Color.Black;
+            this.btn_Customers.Font = new System.Drawing.Font("Nirmala UI", 16, System.Drawing.FontStyle.Bold);
         }
 
-        private void btn_Customer_MouseLeave(object sender, EventArgs e)
+        private void btn_Customers_MouseLeave(object sender, EventArgs e)
         {
-            this.btn_Customer.BackColor = Color.FromArgb(51, 51, 76);
-            this.btn_Customer.ForeColor = Color.Gainsboro;
-            this.btn_Customer.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
+            this.btn_Customers.BackColor = Color.FromArgb(51, 51, 76);
+            this.btn_Customers.ForeColor = Color.Gainsboro;
+            this.btn_Customers.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
         }
 
         private void btn_Sale_MouseEnter(object sender, EventArgs e)
         {
-            this.btn_Sale.BackColor = Color.FromArgb(253, 124, 217);
-            this.btn_Sale.ForeColor = Color.Black;
-            this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 16, System.Drawing.FontStyle.Bold);
+            //this.btn_Sale.BackColor = Color.FromArgb(253, 124, 217);
+            //this.btn_Sale.ForeColor = Color.Black;
+            //this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 16, System.Drawing.FontStyle.Bold);
         }
 
         private void btn_Sale_MouseLeave(object sender, EventArgs e)
         {
-            this.btn_Sale.BackColor = Color.FromArgb(51, 51, 76);
-            this.btn_Sale.ForeColor = Color.Gainsboro;
-            this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
+            //this.btn_Sale.BackColor = Color.FromArgb(51, 51, 76);
+            //this.btn_Sale.ForeColor = Color.Gainsboro;
+            //this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
         }
 
         private void btn_Inventory_MouseEnter(object sender, EventArgs e)
