@@ -155,16 +155,16 @@ namespace HardwareRentalApp
 
         private void btn_Sale_MouseEnter(object sender, EventArgs e)
         {
-            //this.btn_Sale.BackColor = Color.FromArgb(253, 124, 217);
-            //this.btn_Sale.ForeColor = Color.Black;
-            //this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 16, System.Drawing.FontStyle.Bold);
+            this.btn_Sale.BackColor = Color.FromArgb(253, 124, 217);
+            this.btn_Sale.ForeColor = Color.Black;
+            this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 16, System.Drawing.FontStyle.Bold);
         }
 
         private void btn_Sale_MouseLeave(object sender, EventArgs e)
         {
-            //this.btn_Sale.BackColor = Color.FromArgb(51, 51, 76);
-            //this.btn_Sale.ForeColor = Color.Gainsboro;
-            //this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
+            this.btn_Sale.BackColor = Color.FromArgb(51, 51, 76);
+            this.btn_Sale.ForeColor = Color.Gainsboro;
+            this.btn_Sale.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
         }
 
         private void btn_Inventory_MouseEnter(object sender, EventArgs e)
