@@ -141,15 +141,16 @@ namespace HardwareRentalApp.UserControls
                 //ShowProductActivation(message);
             }
         }
-        //private void ShowProductActivation(string message)
-        //{
-        //    using (var PA_form = new ActivateProduct(message))
-        //    {
-        //        if (PA_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-        //        {
-        //        }
-        //    }
-        //}
+
+        private void ShowProductActivation(string message)
+        {
+            //using (var PA_form = new ActivateProduct(message))
+            //{
+            //    if (PA_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //    }
+            //}
+        }
 
         private void ll_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
