@@ -7,9 +7,9 @@ using static HardwareRentalApp.Classes.Program;
 
 namespace HardwareRentalApp.UserControls
 {
-    public partial class Customer : UserControl
+    public partial class Customers : UserControl
     {
-        private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Customer).Assembly);
+        private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Customers).Assembly);
         private DataTable dt_Bills = new DataTable();
         private DataTable dt_InvoiceIDs = new DataTable();
         private DataTable dt_Customers = new DataTable();
@@ -37,7 +37,7 @@ namespace HardwareRentalApp.UserControls
 
         private tableName currentTable;
 
-        public Customer()
+        public Customers()
         {
             InitializeComponent();
 

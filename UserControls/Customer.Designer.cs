@@ -1,6 +1,6 @@
 ﻿namespace HardwareRentalApp.UserControls
 {
-    partial class Customer
+    partial class Customers
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btn_ShowBills = new Button();
             btn_AddCustomer = new Button();
             tb_search = new TextBox();
@@ -104,28 +104,28 @@
             dgv_MultipurposeTable.AllowUserToDeleteRows = false;
             dgv_MultipurposeTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_MultipurposeTable.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Noto Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_MultipurposeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Noto Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgv_MultipurposeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgv_MultipurposeTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_MultipurposeTable.Dock = DockStyle.Bottom;
             dgv_MultipurposeTable.Location = new Point(0, 137);
             dgv_MultipurposeTable.MultiSelect = false;
             dgv_MultipurposeTable.Name = "dgv_MultipurposeTable";
             dgv_MultipurposeTable.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Noto Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgv_MultipurposeTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Noto Sans", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgv_MultipurposeTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgv_MultipurposeTable.RowHeadersVisible = false;
             dgv_MultipurposeTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_MultipurposeTable.Size = new Size(1272, 407);
@@ -146,7 +146,7 @@
             pnl_customerTable.TabIndex = 0;
             pnl_customerTable.Click += pnl_customerTable_Click;
             // 
-            // Customer
+            // Customers
             // 
             AutoScaleDimensions = new SizeF(10F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -155,7 +155,7 @@
             Controls.Add(pnl_customerTable);
             Font = new Font("Noto Sans", 13.8F);
             Margin = new Padding(4, 5, 4, 5);
-            Name = "Customer";
+            Name = "Customers";
             Size = new Size(1600, 900);
             Load += Customer_Load;
             Click += Customer_Click;

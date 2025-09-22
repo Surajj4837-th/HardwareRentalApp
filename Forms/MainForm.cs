@@ -110,7 +110,7 @@ namespace HardwareRentalApp
         private void btn_Customers_Click(object sender, EventArgs e)
         {
             this.pnl_Title.BackColor = Color.FromArgb(252, 255, 233);
-            OpenChildControl(new Customer());
+            OpenChildControl(new Customers());
         }
 
         private void btn_Inventory_Click(object sender, EventArgs e)

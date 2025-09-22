@@ -193,7 +193,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>915, 798</value>
+    <value>1322, 860</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -308,7 +308,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 183</value>
+    <value>221, 183</value>
   </data>
   <data name="btn_login.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
@@ -338,7 +338,7 @@
     <value>Noto Sans, 15pt</value>
   </data>
   <data name="tb_Password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 115</value>
+    <value>234, 115</value>
   </data>
   <data name="tb_Password.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
@@ -365,7 +365,7 @@
     <value>Noto Sans, 15pt</value>
   </data>
   <data name="tb_MobileNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 48</value>
+    <value>234, 48</value>
   </data>
   <data name="tb_MobileNo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
@@ -398,7 +398,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_Password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 119</value>
+    <value>41, 119</value>
   </data>
   <data name="lbl_Password.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -434,7 +434,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_MobileNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 48</value>
+    <value>41, 48</value>
   </data>
   <data name="lbl_MobileNo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -464,13 +464,13 @@
     <value>Noto Sans, 15pt</value>
   </data>
   <data name="pnl_login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 113</value>
+    <value>411, 113</value>
   </data>
   <data name="pnl_login.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 2, 4, 2</value>
   </data>
   <data name="pnl_login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 275</value>
+    <value>610, 275</value>
   </data>
   <data name="pnl_login.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -494,10 +494,10 @@
     <value>True</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 147</value>
+    <value>0, 166</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1474, 532</value>
+    <value>1600, 532</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -524,7 +524,7 @@
     <value>Nirmala UI, 9pt</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1472, 839</value>
+    <value>1600, 900</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Login</value>

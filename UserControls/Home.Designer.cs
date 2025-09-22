@@ -35,7 +35,7 @@
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button1.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(131, 592);
+            button1.Location = new Point(131, 765);
             button1.Name = "button1";
             button1.Size = new Size(309, 42);
             button1.TabIndex = 0;
@@ -49,7 +49,7 @@
             Controls.Add(button1);
             Font = new Font("Nirmala UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "Home";
-            Size = new Size(1262, 727);
+            Size = new Size(1600, 900);
             ResumeLayout(false);
         }
 
