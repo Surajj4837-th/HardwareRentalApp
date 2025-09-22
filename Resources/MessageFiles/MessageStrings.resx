@@ -420,8 +420,8 @@
   <data name="AccountApprovalRequests" xml:space="preserve">
     <value>Account Approval Requests</value>
   </data>
-  <data name="Customer" xml:space="preserve">
-    <value>Customer</value>
+  <data name="Customers" xml:space="preserve">
+    <value>Customers</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
