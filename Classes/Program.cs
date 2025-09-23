@@ -10,9 +10,9 @@ namespace HardwareRentalApp.Classes
     public struct Items
     {
         public int ItemId { get; set; }
-        public string ItemKey { get; set; }
+        public string ItemName { get; set; }
         public string LocalizedName { get; set; }
-        public decimal Price { get; set; }
+        public decimal Rent { get; set; }
     }
 
     public enum Profile
