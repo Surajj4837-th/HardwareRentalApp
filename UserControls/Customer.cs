@@ -407,7 +407,8 @@ namespace HardwareRentalApp.UserControls
             //        loadData();
             //    }
             //}
-            /*else*/ if (columnName == "Select_bill_column" && currentTable == tableName.Bill)
+            /*else*/
+            if (columnName == "Select_bill_column" && currentTable == tableName.Bill)
             {
                 //if (dgv_MultipurposeTable.Columns["Select_bill_column"] != null && e.ColumnIndex == dgv_MultipurposeTable.Columns["Select_bill_column"].Index)
                 //{
@@ -527,6 +528,17 @@ namespace HardwareRentalApp.UserControls
 
             lbl_search.Hide();
             tb_search.Hide();
+        }
+
+        private void btn_Sale_Click(object sender, EventArgs e)
+        {
+            using (var AC_form = new Sale())
+            {
+                if (AC_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
         }
     }
 }
