@@ -161,18 +161,19 @@
             dgv_Sale.Location = new Point(57, 202);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
-            dgv_Sale.Size = new Size(855, 527);
+            dgv_Sale.Size = new Size(855, 530);
             dgv_Sale.TabIndex = 6;
             // 
             // btn_Save
             // 
+            btn_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_Save.BackColor = Color.PaleGreen;
             btn_Save.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Save.Location = new Point(619, 759);
             btn_Save.Name = "btn_Save";
-            btn_Save.Size = new Size(141, 36);
+            btn_Save.Size = new Size(180, 36);
             btn_Save.TabIndex = 7;
-            btn_Save.Text = "Save";
+            btn_Save.Text = "Finish Purchase";
             btn_Save.UseVisualStyleBackColor = false;
             // 
             // lbl_RentDate
