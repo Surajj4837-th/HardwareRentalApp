@@ -199,6 +199,7 @@
             Controls.Add(pnl_navigation);
             Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Hardware Rental App";
             Load += MainForm_Load;
             pnl_navigation.ResumeLayout(false);

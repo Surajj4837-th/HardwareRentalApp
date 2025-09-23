@@ -180,6 +180,7 @@
             Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Sale";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sale";
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).EndInit();
             ResumeLayout(false);

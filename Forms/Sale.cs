@@ -53,7 +53,7 @@ namespace HardwareRentalApp.Forms
                 DataPropertyName = "Rent",
                 HeaderText = LangManager.GetString("Rent", Thread.CurrentThread.CurrentUICulture),
                 ReadOnly = true,
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
