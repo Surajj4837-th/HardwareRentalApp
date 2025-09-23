@@ -33,6 +33,7 @@ namespace HardwareRentalApp.Forms
             // Add columns
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "ItemId",
                 DataPropertyName = "ItemId",
                 HeaderText = LangManager.GetString("ItemID", Thread.CurrentThread.CurrentUICulture),
                 ReadOnly = true
@@ -40,6 +41,7 @@ namespace HardwareRentalApp.Forms
 
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "LocalizedName",
                 DataPropertyName = "LocalizedName",
                 HeaderText = LangManager.GetString("ItemName", Thread.CurrentThread.CurrentUICulture),
                 ReadOnly = true,
@@ -47,6 +49,7 @@ namespace HardwareRentalApp.Forms
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "Rent",
                 DataPropertyName = "Rent",
                 HeaderText = LangManager.GetString("Rent", Thread.CurrentThread.CurrentUICulture),
                 ReadOnly = true,
@@ -54,9 +57,11 @@ namespace HardwareRentalApp.Forms
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "Quantity",
                 DataPropertyName = "Quantity",
                 HeaderText = LangManager.GetString("Quantity", Thread.CurrentThread.CurrentUICulture),
-                Width = 80
+                Width = 80,
+                ReadOnly = false
             });
 
             // Create DataTable for binding
