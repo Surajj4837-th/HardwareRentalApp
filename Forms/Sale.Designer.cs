@@ -42,6 +42,8 @@
             lbl_WorkLocation = new Label();
             dgv_Sale = new DataGridView();
             btn_Save = new Button();
+            lbl_RentDate = new Label();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
             SuspendLayout();
             // 
@@ -156,10 +158,10 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgv_Sale.DefaultCellStyle = dataGridViewCellStyle2;
-            dgv_Sale.Location = new Point(57, 173);
+            dgv_Sale.Location = new Point(57, 202);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
-            dgv_Sale.Size = new Size(855, 556);
+            dgv_Sale.Size = new Size(855, 527);
             dgv_Sale.TabIndex = 6;
             // 
             // btn_Save
@@ -173,15 +175,36 @@
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
             // 
+            // lbl_RentDate
+            // 
+            lbl_RentDate.AutoSize = true;
+            lbl_RentDate.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_RentDate.Location = new Point(57, 156);
+            lbl_RentDate.Name = "lbl_RentDate";
+            lbl_RentDate.Size = new Size(93, 25);
+            lbl_RentDate.TabIndex = 5;
+            lbl_RentDate.Text = "Rent Date";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(190, 148);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(236, 33);
+            dateTimePicker1.TabIndex = 8;
+            // 
             // Sale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 818);
             ControlBox = false;
+            Controls.Add(dateTimePicker1);
             Controls.Add(btn_Save);
             Controls.Add(dgv_Sale);
             Controls.Add(lbl_WorkLocation);
+            Controls.Add(lbl_RentDate);
             Controls.Add(lbl_Reference);
             Controls.Add(lbl_OwnerName);
             Controls.Add(textBox4);
@@ -213,5 +236,7 @@
         private Label lbl_WorkLocation;
         private DataGridView dgv_Sale;
         private Button btn_Save;
+        private Label lbl_RentDate;
+        private DateTimePicker dateTimePicker1;
     }
 }
