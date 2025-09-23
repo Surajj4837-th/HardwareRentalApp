@@ -70,6 +70,26 @@ namespace HardwareRentalApp.Classes
             }
         }
 
+        public List<T> ExecuteQuery<T>(string query, Func<SqlDataReader, T> mapFunc)
+        {
+            var results = new List<T>();
+
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        results.Add(mapFunc(reader));
+                    }
+                }
+            }
+
+            return results;
+        }
+
         /// <summary>
         /// Executes a scalar query and returns a single value.
         /// </summary>
