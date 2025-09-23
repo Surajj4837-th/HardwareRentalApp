@@ -37,6 +37,7 @@
             lbl_mainPanel = new Label();
             dgv_MultipurposeTable = new DataGridView();
             pnl_customerTable = new Panel();
+            btn_Sale = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_MultipurposeTable).BeginInit();
             pnl_customerTable.SuspendLayout();
             SuspendLayout();
@@ -146,11 +147,23 @@
             pnl_customerTable.TabIndex = 0;
             pnl_customerTable.Click += pnl_customerTable_Click;
             // 
+            // btn_Sale
+            // 
+            btn_Sale.ImeMode = ImeMode.NoControl;
+            btn_Sale.Location = new Point(556, 681);
+            btn_Sale.Name = "btn_Sale";
+            btn_Sale.Size = new Size(309, 42);
+            btn_Sale.TabIndex = 1;
+            btn_Sale.Text = "Sale";
+            btn_Sale.UseVisualStyleBackColor = true;
+            btn_Sale.Click += btn_Sale_Click;
+            // 
             // Customers
             // 
             AutoScaleDimensions = new SizeF(10F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btn_ShowBills);
+            Controls.Add(btn_Sale);
             Controls.Add(btn_AddCustomer);
             Controls.Add(pnl_customerTable);
             Font = new Font("Noto Sans", 13.8F);
@@ -174,5 +187,6 @@
         private System.Windows.Forms.Label lbl_mainPanel;
         private System.Windows.Forms.DataGridView dgv_MultipurposeTable;
         private System.Windows.Forms.Panel pnl_customerTable;
+        private Button btn_Sale;
     }
 }
