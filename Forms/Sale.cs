@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
@@ -20,6 +21,76 @@ namespace HardwareRentalApp.Forms
         public Sale()
         {
             InitializeComponent();
+            List<Items> items = GetLocalizedItems();
+            LoadData(items);
+        }
+
+        private void LoadData(List<Items> items)
+        {
+            dgv_Sale.Columns.Clear();
+            dgv_Sale.AutoGenerateColumns = false;
+
+            // Add columns
+            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "ItemId",
+                HeaderText = LangManager.GetString("ItemID", Thread.CurrentThread.CurrentUICulture),
+                ReadOnly = true
+            });
+
+            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "LocalizedName",
+                HeaderText = LangManager.GetString("ItemName", Thread.CurrentThread.CurrentUICulture),
+                ReadOnly = true,
+                Width = 200
+            });
+            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Rent",
+                HeaderText = LangManager.GetString("Rent", Thread.CurrentThread.CurrentUICulture),
+                ReadOnly = true,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }
+            });
+            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Quantity",
+                HeaderText = LangManager.GetString("Quantity", Thread.CurrentThread.CurrentUICulture),
+                Width = 80
+            });
+
+            // Create DataTable for binding
+            DataTable dt_items = new DataTable();
+            dt_items.Columns.Add("ItemId", typeof(int));
+            dt_items.Columns.Add("LocalizedName", typeof(string));
+            dt_items.Columns.Add("Rent", typeof(decimal));
+            dt_items.Columns.Add("Quantity", typeof(int));
+
+            foreach (var item in items)
+            {
+                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0); // start with 0 qty
+            }
+
+            // Bind to DataGridView
+            dgv_Sale.DataSource = dt_items;
+
+            AdjustGridHeight();
+        }
+
+        private void AdjustGridHeight()
+        {
+            if (dgv_Sale.Rows.Count == 0) 
+                return;
+
+            int totalHeight = dgv_Sale.ColumnHeadersHeight;
+
+            foreach (DataGridViewRow row in dgv_Sale.Rows)
+            {
+                if (row.IsNewRow) continue; // skip the blank new row if enabled
+                totalHeight += row.Height;
+            }
+
+            dgv_Sale.Height = totalHeight + 8;  //padding a small buffer
         }
 
         public List<Items> GetLocalizedItems()
