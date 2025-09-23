@@ -238,5 +238,22 @@ namespace HardwareRentalApp.Forms
                 }
             }
         }
+
+        private void dgv_Sale_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dgv_Sale.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                string input = Convert.ToString(e.FormattedValue);
+
+                if (string.IsNullOrWhiteSpace(input))
+                    return; // CellEndEdit will handle empties
+
+                if (!decimal.TryParse(input, out decimal value) || value < 0)
+                {
+                    MessageBox.Show("Please enter a positive number.");
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }
