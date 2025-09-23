@@ -570,4 +570,52 @@
   <data name="LesseeAddress" xml:space="preserve">
     <value>Lessee Address</value>
   </data>
+  <data name="Rent" xml:space="preserve">
+    <value>Rent</value>
+  </data>
+  <data name="Plate2x3" xml:space="preserve">
+    <value>Plate 2x3</value>
+  </data>
+  <data name="Plate18x36" xml:space="preserve">
+    <value>Plate 18x36</value>
+  </data>
+  <data name="Plate15x36" xml:space="preserve">
+    <value>Plate 15x36</value>
+  </data>
+  <data name="Plate12x36" xml:space="preserve">
+    <value>Plate 12x36</value>
+  </data>
+  <data name="Plate9x36" xml:space="preserve">
+    <value>Plate 9x36</value>
+  </data>
+  <data name="Mixer" xml:space="preserve">
+    <value>Mixer</value>
+  </data>
+  <data name="ColumnPattern" xml:space="preserve">
+    <value>Column Pattern</value>
+  </data>
+  <data name="Jock" xml:space="preserve">
+    <value>Jock</value>
+  </data>
+  <data name="Kaichya" xml:space="preserve">
+    <value>Kaichya</value>
+  </data>
+  <data name="Jali" xml:space="preserve">
+    <value>Jali</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="20FeetPipe" xml:space="preserve">
+    <value>10 Feet Pipe</value>
+  </data>
+  <data name="10FeetPipe" xml:space="preserve">
+    <value>20 Feet Pipe</value>
+  </data>
+  <data name="Bar" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
 </root>

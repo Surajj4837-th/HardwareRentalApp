@@ -570,7 +570,52 @@
   <data name="LesseeAddress" xml:space="preserve">
     <value>भाडेकरू पत्ता</value>
   </data>
-  <data name="&#xD;&#xA;		" xml:space="preserve">
-    <value>ग्राहक</value>
+  <data name="Rent" xml:space="preserve">
+    <value>भाडे</value>
+  </data>
+  <data name="Plate2x3" xml:space="preserve">
+    <value>प्लेट २x३</value>
+  </data>
+  <data name="Plate18x36" xml:space="preserve">
+    <value>प्लेट १८x३६</value>
+  </data>
+  <data name="Plate15x36" xml:space="preserve">
+    <value>प्लेट १५x३६</value>
+  </data>
+  <data name="Plate12x36" xml:space="preserve">
+    <value>प्लेट १२x३६</value>
+  </data>
+  <data name="Plate9x36" xml:space="preserve">
+    <value>प्लेट ९x३६</value>
+  </data>
+  <data name="Mixer" xml:space="preserve">
+    <value>मिक्सर</value>
+  </data>
+  <data name="ColumnPattern" xml:space="preserve">
+    <value>कॉलम पॅटर्न</value>
+  </data>
+  <data name="Jock" xml:space="preserve">
+    <value>जॉक</value>
+  </data>
+  <data name="Kaichya" xml:space="preserve">
+    <value>कैच्या</value>
+  </data>
+  <data name="Jali" xml:space="preserve">
+    <value>जाळी</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>चॅनेल</value>
+  </data>
+  <data name="20FeetPipe" xml:space="preserve">
+    <value>१० फूट पाईप</value>
+  </data>
+  <data name="10FeetPipe" xml:space="preserve">
+    <value>२० फूट पाईप</value>
+  </data>
+  <data name="Bar" xml:space="preserve">
+    <value>बार</value>
+  </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>वाहतूक</value>
   </data>
 </root>
