@@ -163,6 +163,9 @@
             dgv_Sale.RowHeadersVisible = false;
             dgv_Sale.Size = new Size(855, 530);
             dgv_Sale.TabIndex = 6;
+            dgv_Sale.CellEndEdit += dgv_Sale_CellEndEdit;
+            dgv_Sale.CellValidating += dgv_Sale_CellValidating;
+            dgv_Sale.EditingControlShowing += dgv_Sale_EditingControlShowing;
             // 
             // btn_Save
             // 

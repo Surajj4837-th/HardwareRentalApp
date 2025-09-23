@@ -194,5 +194,49 @@ namespace HardwareRentalApp.Forms
         {
             this.Close();
         }
+
+        private void dgv_Sale_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgv_Sale.CurrentCell.OwningColumn.Name == "Quantity" && e.Control is TextBox tb)
+            {
+                tb.KeyPress -= QuantityColumn_KeyPress; // prevent double subscription
+                tb.KeyPress += QuantityColumn_KeyPress;
+            }
+        }
+
+        private void QuantityColumn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            // Allow control keys (Backspace)
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Allow only digits and decimal point
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // block
+                return;
+            }
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && tb.Text.Contains("."))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void dgv_Sale_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Sale.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                var cell = dgv_Sale.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value == null || string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                {
+                    cell.Value = 0; // replace empty with 0
+                }
+            }
+        }
     }
 }
