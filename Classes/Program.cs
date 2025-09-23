@@ -1,26 +1,33 @@
 namespace HardwareRentalApp.Classes
 {
+    public struct CustomerInfo
+    {
+        public string CustomerID;
+        public string LesseeName;
+        public string LesseeAddress;
+        public string MobileNum;
+    };
+    public struct Items
+    {
+        public int ItemId { get; set; }
+        public string ItemKey { get; set; }
+        public string LocalizedName { get; set; }
+        public decimal Price { get; set; }
+    }
+
+    public enum Profile
+    {
+        Owner,
+        Employee
+    }
+
+    public static class GlobalState
+    {
+        public static Profile e_LoginProfile;
+    }
+
     internal static class Program
     {
-        public struct CustomerInfo
-        {
-            public string CustomerID;
-            public string LesseeName;
-            public string LesseeAddress;
-            public string MobileNum;
-        };
-
-        public enum Profile
-        {
-            Owner,
-            Employee
-        }
-
-        public static class GlobalState
-        {
-            public static Profile e_LoginProfile;
-        }
-
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
