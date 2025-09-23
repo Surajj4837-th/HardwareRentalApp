@@ -28,8 +28,27 @@ CREATE TABLE Bills (
 CREATE TABLE Items (
     ItemId INT IDENTITY PRIMARY KEY,
     ItemName NVARCHAR(100) NOT NULL,
-    RentPrice DECIMAL(10,2) NOT NULL
+    Rent DECIMAL(10,2) NOT NULL
 );
+
+
+INSERT INTO Items (ItemName, Rent)
+VALUES
+('Plate 2x3', 0.00),
+('Plate 18x36', 0.00),
+('Plate 15x36', 0.00),
+('Plate 12x36', 0.00),
+('Plate 9x36', 0.00),
+('Mixer', 0.00),
+('Column Pattern', 0.00),
+('Jock', 0.00),
+('Kaichya', 0.00),
+('Jali', 0.00),
+('Channel', 0.00),
+('20 feet Pipe', 0.00),
+('10 feet Pipe', 0.00),
+('Bar', 0.00),
+('Shipping', 0.00);
 
 CREATE TABLE BillItems (
     BillItemId INT IDENTITY PRIMARY KEY,
@@ -41,26 +60,6 @@ CREATE TABLE BillItems (
     FOREIGN KEY (BillId) REFERENCES Bills(BillId),
     FOREIGN KEY (ItemId) REFERENCES Items(ItemId)
 );
-
-
-INSERT INTO Items (ItemName, RentPrice)
-VALUES
-('Plate 2x3', 0.00),
-('Plate 18x36', 0.00),
-('Plate 15x36', 0.00),
-('Plate 12x36', 0.00),
-('Plate 9x36', 0.00),
-('Mixer', 0.00),
-('Column Pattern', 0.00),
-('Jock', 0.00),
-('Kiachya', 0.00),
-('Jali', 0.00),
-('Channel', 0.00),
-('20 feet Pipe', 0.00),
-('10 feet Pipe', 0.00),
-('Bar', 0.00),
-('Shipping', 0.00);
-
 
 CREATE TABLE Credentials (
     AdminId INT IDENTITY PRIMARY KEY,
