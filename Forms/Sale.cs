@@ -146,13 +146,13 @@ namespace HardwareRentalApp.Forms
             // 1. Insert Bill and get BillId
             var billCmd = new SqlCommand(@"
         INSERT INTO Bills (
-            CustomerId, AdminId, RentalStartDate, RentalEndDate,
+                                CustomerId, AdminId, BillDate, RentalStartDate, RentalEndDate,
             ProjectOwner, Reference, WorkLocation,
             PaymentDate, TotalAmount, AdvanceAmount, IsPaid
         )
         OUTPUT INSERTED.BillId
         VALUES (
-            @CustomerId, @AdminId, @RentalStartDate, @RentalEndDate,
+                                @CustomerId, @AdminId, GETDATE(), @RentalStartDate, @RentalEndDate,
             @ProjectOwner, @Reference, @WorkLocation,
             @PaymentDate, @TotalAmount, @AdvanceAmount,
             CASE WHEN @PaymentDate IS NULL THEN 0 ELSE 1 END
@@ -188,6 +188,7 @@ namespace HardwareRentalApp.Forms
 
             return billId;
         }
+
 
 
         private void btn_Close_Click(object sender, EventArgs e)
