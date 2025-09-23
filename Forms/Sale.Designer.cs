@@ -41,6 +41,7 @@
             textBox4 = new TextBox();
             lbl_WorkLocation = new Label();
             dgv_Sale = new DataGridView();
+            btn_Save = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
             SuspendLayout();
             // 
@@ -161,12 +162,24 @@
             dgv_Sale.Size = new Size(855, 556);
             dgv_Sale.TabIndex = 6;
             // 
+            // btn_Save
+            // 
+            btn_Save.BackColor = Color.PaleGreen;
+            btn_Save.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Save.Location = new Point(619, 759);
+            btn_Save.Name = "btn_Save";
+            btn_Save.Size = new Size(141, 36);
+            btn_Save.TabIndex = 7;
+            btn_Save.Text = "Save";
+            btn_Save.UseVisualStyleBackColor = false;
+            // 
             // Sale
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 818);
             ControlBox = false;
+            Controls.Add(btn_Save);
             Controls.Add(dgv_Sale);
             Controls.Add(lbl_WorkLocation);
             Controls.Add(lbl_Reference);
@@ -199,5 +212,6 @@
         private TextBox textBox4;
         private Label lbl_WorkLocation;
         private DataGridView dgv_Sale;
+        private Button btn_Save;
     }
 }
