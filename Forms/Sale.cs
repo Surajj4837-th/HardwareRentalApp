@@ -95,7 +95,7 @@ namespace HardwareRentalApp.Forms
                 totalHeight += row.Height;
             }
 
-            dgv_Sale.Height = totalHeight + 8;  //padding a small buffer
+            dgv_Sale.Height = (totalHeight + 8) > dgv_Sale.Height ? dgv_Sale.Height : (totalHeight + 8);  //padding a small buffer
         }
 
         public List<Items> GetLocalizedItems()
