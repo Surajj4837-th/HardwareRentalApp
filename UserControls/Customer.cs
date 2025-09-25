@@ -45,6 +45,7 @@ namespace HardwareRentalApp.UserControls
 
             DisableButtons();
 
+            ResetDGV();
             loadData();
 
             ArrangeDGVButtons();
@@ -60,6 +61,13 @@ namespace HardwareRentalApp.UserControls
             this.lbl_search.Text = LangManager.GetString("Search");
             this.btn_AddCustomer.Text = LangManager.GetString("AddNewCustomer");
             this.btn_ShowBills.Text = LangManager.GetString("ShowBills");
+        }
+
+        private void ResetDGV()
+        {
+            dgv_MultipurposeTable.DataSource = null;
+            dgv_MultipurposeTable.Rows.Clear();
+            dgv_MultipurposeTable.Columns.Clear();
         }
 
         private void createTable()
