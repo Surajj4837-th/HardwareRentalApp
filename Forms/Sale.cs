@@ -90,7 +90,7 @@ namespace HardwareRentalApp.Forms
 
         private void AdjustGridHeight()
         {
-            if (dgv_Sale.Rows.Count == 0) 
+            if (dgv_Sale.Rows.Count == 0)
                 return;
 
             int totalHeight = dgv_Sale.ColumnHeadersHeight;
@@ -135,33 +135,61 @@ namespace HardwareRentalApp.Forms
             }
         }
 
-        public int CreateBill(
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            int CustomerId = 1; // TODO: get from selected customer
+            int AdminId = 1; // TODO: get from logged in user
+            DateTime RentalStart = dtp_StartRentDate.Value;
+            DateTime? RentalEnd = null;
+            string projectOwner = tb_OwnerName.Text.Trim();
+            string reference = tb_Reference.Text.Trim();
+            string workLocation = tb_WorkLocation.Text.Trim();
+            DateTime? paymentDate = null;
+            decimal totalAmount = 0;
+            decimal advanceAmount = 0;
+
+            CreateBill(
+                CustomerId,
+                AdminId,
+                RentalStart,
+                RentalEnd,
+                projectOwner,
+                reference,
+                workLocation,
+                paymentDate,
+                totalAmount,
+                advanceAmount
+            );
+
+            this.Close();
+        }
+
         public void CreateBill(
-    int customerId,
-    int adminId,
-    DateTime rentalStart,
-    DateTime? rentalEnd,
-    string projectOwner,
-    string reference,
-    string workLocation,
-    DateTime? paymentDate,
-    decimal totalAmount,
+            int customerId,
+            int adminId,
+            DateTime rentalStart,
+            DateTime? rentalEnd,
+            string projectOwner,
+            string reference,
+            string workLocation,
+            DateTime? paymentDate,
+            decimal totalAmount,
             decimal advanceAmount)
         {
             // 1. Insert Bill and get BillId
             var billCmd = new SqlCommand(@"
-        INSERT INTO Bills (
+                            INSERT INTO Bills (
                                 CustomerId, AdminId, BillDate, RentalStartDate, RentalEndDate,
-            ProjectOwner, Reference, WorkLocation,
-            PaymentDate, TotalAmount, AdvanceAmount, IsPaid
-        )
-        OUTPUT INSERTED.BillId
-        VALUES (
+                                ProjectOwner, Reference, WorkLocation,
+                                PaymentDate, TotalAmount, AdvanceAmount, IsPaid
+                            )
+                            OUTPUT INSERTED.BillId
+                            VALUES (
                                 @CustomerId, @AdminId, GETDATE(), @RentalStartDate, @RentalEndDate,
-            @ProjectOwner, @Reference, @WorkLocation,
-            @PaymentDate, @TotalAmount, @AdvanceAmount,
-            CASE WHEN @PaymentDate IS NULL THEN 0 ELSE 1 END
-        )");
+                                @ProjectOwner, @Reference, @WorkLocation,
+                                @PaymentDate, @TotalAmount, @AdvanceAmount,
+                                CASE WHEN @PaymentDate IS NULL THEN 0 ELSE 1 END
+                            )");
 
             billCmd.Parameters.AddWithValue("@CustomerId", customerId);
             billCmd.Parameters.AddWithValue("@AdminId", adminId);
@@ -180,8 +208,8 @@ namespace HardwareRentalApp.Forms
             foreach (DataRow row in dt_items.Rows)
             {
                 var itemCmd = new SqlCommand(@"
-            INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
-            VALUES (@BillId, @ItemId, @Quantity, @Price)");
+                INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
+                VALUES (@BillId, @ItemId, @Quantity, @Price)");
 
                 itemCmd.Parameters.AddWithValue("@BillId", billId);
                 itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
