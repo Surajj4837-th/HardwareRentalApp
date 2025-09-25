@@ -21,10 +21,16 @@ namespace HardwareRentalApp.UserControls
         private DBInterface DBInterface = new DBInterface();
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Login).Assembly);
         private DataTable dtUser = new DataTable();
-        public static Int32 AdminID;
+        public static UInt64 AdminID;
         public static string m_st_Role;
         //private ActivateProduct Obj_ProductActivation = new ActivateProduct();
         string culture = Properties.Settings.Default.Language;
+        public static UInt64 AdminId 
+        { 
+            get; 
+            internal set; 
+        }
+
         public event EventHandler LoginSuccessful;
 
         public Login()
@@ -95,7 +101,7 @@ namespace HardwareRentalApp.UserControls
 
                         if (dtUser.Rows.Count >= 1)
                         {
-                            AdminID = Convert.ToInt32(dtUser.Rows[0]["AdminId"].ToString());
+                            AdminID = Convert.ToUInt64(dtUser.Rows[0]["AdminId"].ToString());
 
                             m_st_Role = dtUser.Rows[0]["UserRole"].ToString();
 
