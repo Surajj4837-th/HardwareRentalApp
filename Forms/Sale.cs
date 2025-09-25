@@ -255,7 +255,8 @@ namespace HardwareRentalApp.Forms
                 if (string.IsNullOrWhiteSpace(input))
                     return; // CellEndEdit will handle empties
 
-                if (!decimal.TryParse(input, out decimal value) || value < 0)
+                // Only check for negative or non-integer values (keypress already blocks non-digits)
+                if (!int.TryParse(input, out int value) || value < 0)
                 {
                     MessageBox.Show("Please enter a positive number.");
                     e.Cancel = true;
