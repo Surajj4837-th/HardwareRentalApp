@@ -211,7 +211,7 @@ namespace HardwareRentalApp.UserControls
                     dgv_MultipurposeTable.ClearSelection(); // Clear any previous selection
                     dgv_MultipurposeTable.Rows[row_index].Selected = true; // Select the clicked row
 
-                    customer.CustomerID = dgv_MultipurposeTable.Rows[row_index].Cells["CustomerID"].Value.ToString();
+                    customer.CustomerID = Convert.ToUInt64(dgv_MultipurposeTable.Rows[row_index].Cells["CustomerID"]);
                     customer.LesseeName = dgv_MultipurposeTable.Rows[row_index].Cells["LesseeName"].Value.ToString();
                     customer.LesseeAddress = dgv_MultipurposeTable.Rows[row_index].Cells["LesseeAddress"].Value.ToString();
                     customer.MobileNum = dgv_MultipurposeTable.Rows[row_index].Cells["MobileNumber"].Value.ToString();
