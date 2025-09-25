@@ -126,6 +126,31 @@ namespace HardwareRentalApp.UserControls
             }
             else if (currentTable == tableName.Bill)
             {
+                string query = @"
+                SELECT 
+                    BillId,
+                    BillDate,
+                    RentalStartDate,
+                    WorkLocation,
+                    IsPaid
+                FROM Bills
+                WHERE CustomerId = @CustomerId
+                ORDER BY BillDate DESC";
+
+                DataTable dt = new DataTable();
+
+                // Prepare parameters
+                var parameters = new Dictionary<string, object>
+                    {
+                        { "@CustomerId", customer.CustomerID }
+                    };
+
+                // Call your DB method
+                obj_DBAccess.ReadDataThroughAdapter(query, dt, parameters);
+
+                // Bind to DataGridView
+                dgv_MultipurposeTable.DataSource = dt;
+
                 //List<int> UnbilledBills = new List<int>();
 
                 ////Get invoice IDs from database
