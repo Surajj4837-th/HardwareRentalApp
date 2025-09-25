@@ -46,6 +46,7 @@ namespace HardwareRentalApp.UserControls
             DisableButtons();
 
             ResetDGV();
+
             loadData();
 
             ArrangeDGVButtons();
@@ -83,33 +84,15 @@ namespace HardwareRentalApp.UserControls
             }
             else if (currentTable == tableName.Bill)
             {
-                dt_Bills.Columns.Add("Sr_No");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Sr_No].HeaderText = LangManager.GetString("SrNo");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Sr_No].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_MultipurposeTable.Columns["BillId"].HeaderText = LangManager.GetString("InvoiceID");
 
-                dt_Bills.Columns.Add("InvoiceNo");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.InvoiceID].HeaderText = LangManager.GetString("InvoiceID");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.InvoiceID].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_MultipurposeTable.Columns["BillDate"].HeaderText = LangManager.GetString("BillDate");
 
-                dt_Bills.Columns.Add("Date");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Date].HeaderText = LangManager.GetString("Date");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Date].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_MultipurposeTable.Columns["RentalStartDate"].HeaderText = LangManager.GetString("RentalStartDate");
 
-                dt_Bills.Columns.Add("Time");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Time].HeaderText = LangManager.GetString("Time");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Time].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_MultipurposeTable.Columns["WorkLocation"].HeaderText = LangManager.GetString("WorkLocation");
 
-                dt_Bills.Columns.Add("AdminID");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.AdminID].HeaderText = LangManager.GetString("AdminID");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.AdminID].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                dt_Bills.Columns.Add("Bill_Amount");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.BillAmount].HeaderText = LangManager.GetString("BillAmount");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.BillAmount].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                dt_Bills.Columns.Add("Paid");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Paid_Amount].HeaderText = LangManager.GetString("PaidAmount");
-                dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.Paid_Amount].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_MultipurposeTable.Columns["IsPaid"].HeaderText = LangManager.GetString("Paid"); ;
 
                 lbl_mainPanel.Text = LangManager.GetString("BillInformation");
             }
