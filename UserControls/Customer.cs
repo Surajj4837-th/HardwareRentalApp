@@ -429,7 +429,7 @@ namespace HardwareRentalApp.UserControls
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
             if (currentTable == tableName.Customer)
-                bindingSourceCustomers.Filter = "Lessee like '%" + tb_search.Text + "%'";
+                bindingSourceCustomers.Filter = "LesseeName like '%" + tb_search.Text + "%'";
         }
 
         private void Customer_Load(object sender, EventArgs e)
