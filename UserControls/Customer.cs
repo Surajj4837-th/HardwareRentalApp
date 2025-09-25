@@ -486,6 +486,12 @@ namespace HardwareRentalApp.UserControls
 
         private void btn_ShowBills_Click(object sender, EventArgs e)
         {
+            currentTable = tableName.Bill;
+            ResetDGV();
+            loadData();
+            ArrangeDGVButtons();
+            dgv_MultipurposeTable.ClearSelection();
+            createTable();
             ////Remove the dgv row selection
             //dgv_MultipurposeTable.ClearSelection(); // Remove all selections
 
