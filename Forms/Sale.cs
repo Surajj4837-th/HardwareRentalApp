@@ -18,7 +18,7 @@ namespace HardwareRentalApp.Forms
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Sale).Assembly);
         private DBInterface obj_DBAccess = new DBInterface();
         private List<Items> l_items;          // List to hold items fetched from DB
-        public Sale()
+        DataTable dt_items = new DataTable();       //List of items to be written to bill db from DGV input
         private CustomerInfo customer;
         public Sale(CustomerInfo cust)
         {
@@ -71,7 +71,6 @@ namespace HardwareRentalApp.Forms
             });
 
             // Create DataTable for binding
-            DataTable dt_items = new DataTable();
             dt_items.Columns.Add("ItemId", typeof(int));
             dt_items.Columns.Add("LocalizedName", typeof(string));
             dt_items.Columns.Add("Rent", typeof(decimal));
@@ -137,6 +136,7 @@ namespace HardwareRentalApp.Forms
         }
 
         public int CreateBill(
+        public void CreateBill(
     int customerId,
     int adminId,
     DateTime rentalStart,
@@ -146,8 +146,7 @@ namespace HardwareRentalApp.Forms
     string workLocation,
     DateTime? paymentDate,
     decimal totalAmount,
-    decimal advanceAmount,
-    List<(int ItemId, int Quantity, decimal Price)> items)
+            decimal advanceAmount)
         {
             // 1. Insert Bill and get BillId
             var billCmd = new SqlCommand(@"
@@ -178,24 +177,20 @@ namespace HardwareRentalApp.Forms
             int billId = Convert.ToInt32(obj_DBAccess.ExecuteScalarQuery(billCmd));
 
             // 2. Insert Bill Items
-            foreach (var item in items)
+            foreach (DataRow row in dt_items.Rows)
             {
                 var itemCmd = new SqlCommand(@"
             INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
             VALUES (@BillId, @ItemId, @Quantity, @Price)");
 
                 itemCmd.Parameters.AddWithValue("@BillId", billId);
-                itemCmd.Parameters.AddWithValue("@ItemId", item.ItemId);
-                itemCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
-                itemCmd.Parameters.AddWithValue("@Price", item.Price);
+                itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
+                itemCmd.Parameters.AddWithValue("@Quantity", row["Quantity"]);
+                itemCmd.Parameters.AddWithValue("@Price", row["Rent"]);
 
                 obj_DBAccess.ExecuteQuery(itemCmd);
             }
-
-            return billId;
         }
-
-
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
