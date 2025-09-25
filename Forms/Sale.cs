@@ -110,7 +110,7 @@ namespace HardwareRentalApp.Forms
 
             l_items = obj_DBAccess.ExecuteQuery(query, reader => new Items
             {
-                ItemId = reader.GetInt32(0),
+                ItemId = Convert.ToUInt64(reader.GetInt32(0)),
                 ItemName = reader.GetString(1),
                 Rent = reader.GetDecimal(2)
             });
@@ -137,8 +137,8 @@ namespace HardwareRentalApp.Forms
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            int CustomerId = 1; // TODO: get from selected customer
-            int AdminId = 1; // TODO: get from logged in user
+            UInt64 CustomerId = Convert.ToUInt64(customer.CustomerID);
+            UInt64 AdminId = HardwareRentalApp.UserControls.Login.AdminId;
             DateTime RentalStart = dtp_StartRentDate.Value;
             DateTime? RentalEnd = null;
             string projectOwner = tb_OwnerName.Text.Trim();
@@ -165,8 +165,8 @@ namespace HardwareRentalApp.Forms
         }
 
         public void CreateBill(
-            int customerId,
-            int adminId,
+            UInt64 customerId,
+            UInt64 adminId,
             DateTime rentalStart,
             DateTime? rentalEnd,
             string projectOwner,
