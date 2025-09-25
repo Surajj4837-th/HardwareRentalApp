@@ -282,34 +282,23 @@ namespace HardwareRentalApp.UserControls
 
                 if (dgv_MultipurposeTable.Columns["Select_bill_column"] == null)
                 {
-                    dgv_MultipurposeTable.Columns.Insert((int)Bill_Table_Columns.View_Bill, Select_bill_col);
-                    dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.View_Bill].HeaderText = LangManager.GetString("ShowBill");
-                    dgv_MultipurposeTable.Columns[(int)Bill_Table_Columns.View_Bill].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgv_MultipurposeTable.Columns.Insert(5, Select_bill_col);
+                    dgv_MultipurposeTable.Columns[5].HeaderText = LangManager.GetString("ShowBill");
+                    //dgv_MultipurposeTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             }
             else if (GlobalState.e_LoginProfile == Profile.Owner && currentTable == tableName.Customer)
             {
-                ////Add buttons
-                //if (!dgv_MultipurposeTable.Columns.Contains("Modify_Customer"))
+                //Add buttons
+                //if (!dgv_MultipurposeTable.Columns.Contains("ShowBill"))
                 //{
                 //    DataGridViewButtonColumn ModifyBtnColumn = new DataGridViewButtonColumn();
-                //    ModifyBtnColumn.Name = "Modify_Customer";                   // Logical name
-                //    ModifyBtnColumn.HeaderText = LangManager.GetString("ModifyCustomer");             // Column header
+                //    ModifyBtnColumn.Name = "ShowBill";                                                 // Logical name
+                //    ModifyBtnColumn.HeaderText = LangManager.GetString("ShowBill");             // Column header
                 //    ModifyBtnColumn.UseColumnTextForButtonValue = true;
                 //    ModifyBtnColumn.HeaderCell.Style.BackColor = Color.Yellow;
 
                 //    dgv_MultipurposeTable.Columns.Add(ModifyBtnColumn);
-                //}
-
-                //if (!dgv_MultipurposeTable.Columns.Contains("Delete_Customer"))
-                //{
-                //    DataGridViewButtonColumn DeleteBtnColumn = new DataGridViewButtonColumn();
-                //    DeleteBtnColumn.Name = "Delete_Customer";                   // Logical name
-                //    DeleteBtnColumn.HeaderText = LangManager.GetString("DeleteCustomer2");             // Column header
-                //    DeleteBtnColumn.UseColumnTextForButtonValue = true;
-                //    DeleteBtnColumn.HeaderCell.Style.BackColor = Color.OrangeRed;
-
-                //    dgv_MultipurposeTable.Columns.Add(DeleteBtnColumn);
                 //}
             }
             else if (GlobalState.e_LoginProfile == Profile.Employee)       //Already default hidden
