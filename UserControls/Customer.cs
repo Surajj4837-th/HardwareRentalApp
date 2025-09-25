@@ -101,11 +101,15 @@ namespace HardwareRentalApp.UserControls
         private void DisableButtons()
         {
             btn_ShowBills.Enabled = false;
+            btn_AddCustomer.Enabled = false;
+            btn_Sale.Enabled = false;
         }
 
         private void EnableButtons()
         {
             btn_ShowBills.Enabled = true;
+            btn_AddCustomer.Enabled = true;
+            btn_Sale.Enabled = true;
         }
 
         private void loadData()
@@ -492,6 +496,9 @@ namespace HardwareRentalApp.UserControls
             ArrangeDGVButtons();
             dgv_MultipurposeTable.ClearSelection();
             createTable();
+
+            EnableDisableBillControls();
+
             ////Remove the dgv row selection
             //dgv_MultipurposeTable.ClearSelection(); // Remove all selections
 
@@ -530,12 +537,7 @@ namespace HardwareRentalApp.UserControls
         }
         private void EnableDisableBillControls()
         {
-            dgv_MultipurposeTable.DataSource = null;
-            dgv_MultipurposeTable.Rows.Clear();
-            dgv_MultipurposeTable.Columns.Clear();
-
             DisableButtons();
-            btn_AddCustomer.Enabled = false;
 
             lbl_search.Hide();
             tb_search.Hide();
