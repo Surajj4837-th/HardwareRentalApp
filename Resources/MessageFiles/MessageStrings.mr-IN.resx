@@ -618,4 +618,13 @@
   <data name="Shipping" xml:space="preserve">
     <value>वाहतूक</value>
   </data>
+  <data name="BillDate" xml:space="preserve">
+    <value>बिलाची तारीख</value>
+  </data>
+  <data name="RentalStartDate" xml:space="preserve">
+    <value>भाड्याची तारीख</value>
+  </data>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>कामाचे ठिकाण</value>
+  </data>
 </root>

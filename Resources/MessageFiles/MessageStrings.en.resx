@@ -618,4 +618,13 @@
   <data name="Shipping" xml:space="preserve">
     <value>Shipping</value>
   </data>
+  <data name="BillDate" xml:space="preserve">
+    <value>Bill Date</value>
+  </data>
+  <data name="RentalStartDate" xml:space="preserve">
+    <value>Rental Date</value>
+  </data>
+  <data name="WorkLocation" xml:space="preserve">
+    <value>Work Location</value>
+  </data>
 </root>
