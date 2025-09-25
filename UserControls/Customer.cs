@@ -101,14 +101,12 @@ namespace HardwareRentalApp.UserControls
         private void DisableButtons()
         {
             btn_ShowBills.Enabled = false;
-            btn_AddCustomer.Enabled = false;
             btn_Sale.Enabled = false;
         }
 
         private void EnableButtons()
         {
             btn_ShowBills.Enabled = true;
-            btn_AddCustomer.Enabled = true;
             btn_Sale.Enabled = true;
         }
 
@@ -442,8 +440,6 @@ namespace HardwareRentalApp.UserControls
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-
-            DisableButtons();
         }
 
         private void Customer_Click(object sender, EventArgs e)
