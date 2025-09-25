@@ -219,17 +219,10 @@ namespace HardwareRentalApp.Forms
             if (char.IsControl(e.KeyChar))
                 return;
 
-            // Allow only digits and decimal point
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            // Allow only digits (no decimal point)
+            if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // block
-                return;
-            }
-
-            // Allow only one decimal point
-            if (e.KeyChar == '.' && tb.Text.Contains("."))
-            {
-                e.Handled = true;
                 return;
             }
         }
