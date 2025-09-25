@@ -17,18 +17,21 @@ namespace HardwareRentalApp.Forms
     {
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Sale).Assembly);
         private DBInterface obj_DBAccess = new DBInterface();
-
+        private List<Items> l_items;          // List to hold items fetched from DB
         public Sale()
         private CustomerInfo customer;
         public Sale(CustomerInfo cust)
         {
             InitializeComponent();
-            List<Items> items = GetLocalizedItems();
+
             customer = cust;
             tb_LesseeName.Text = customer.LesseeName;
+
+            GetLocalizedItems();
+            LoadData();
         }
 
-        private void LoadData(List<Items> items)
+        private void LoadData()
         {
             dgv_Sale.Columns.Clear();
             dgv_Sale.AutoGenerateColumns = false;
@@ -74,8 +77,9 @@ namespace HardwareRentalApp.Forms
             dt_items.Columns.Add("Rent", typeof(decimal));
             dt_items.Columns.Add("Quantity", typeof(int));
 
-            foreach (var item in items)
+            for (int i = 0; i < l_items.Count; i++)
             {
+                var item = l_items[i];
                 dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0); // start with 0 qty
             }
 
@@ -101,35 +105,34 @@ namespace HardwareRentalApp.Forms
             dgv_Sale.Height = (totalHeight + 8) > dgv_Sale.Height ? dgv_Sale.Height : (totalHeight + 8);  //padding a small buffer
         }
 
-        public List<Items> GetLocalizedItems()
+        public void GetLocalizedItems()
         {
             string query = "SELECT ItemId, ItemName, Rent FROM Items";
 
-            var items = obj_DBAccess.ExecuteQuery(query, reader => new Items
+            l_items = obj_DBAccess.ExecuteQuery(query, reader => new Items
             {
                 ItemId = reader.GetInt32(0),
                 ItemName = reader.GetString(1),
                 Rent = reader.GetDecimal(2)
             });
 
-            LocalizeItems(items);
-            return items;
+            LocalizeItems();
         }
 
-        private void LocalizeItems(List<Items> items)
+        private void LocalizeItems()
         {
-            for (int i = 0; i < items.Count; i++)
+            for (int i = 0; i < l_items.Count; i++)
             {
                 string localizedName = LangManager.GetString(
-                    items[i].ItemName,
+                    l_items[i].ItemName,
                     Thread.CurrentThread.CurrentUICulture
                 );
 
-                var item = items[i];
+                var item = l_items[i];
                 item.LocalizedName = string.IsNullOrEmpty(localizedName)
                                         ? item.ItemName
                                         : localizedName;
-                items[i] = item;
+                l_items[i] = item;
             }
         }
 
