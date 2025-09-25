@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btn_Close = new Button();
-            textBox1 = new TextBox();
+            tb_LesseeName = new TextBox();
             lbl_Customre = new Label();
-            textBox2 = new TextBox();
+            tb_OwnerName = new TextBox();
             lbl_OwnerName = new Label();
-            textBox3 = new TextBox();
+            tb_Reference = new TextBox();
             lbl_Reference = new Label();
-            textBox4 = new TextBox();
+            tb_WorkLocation = new TextBox();
             lbl_WorkLocation = new Label();
             dgv_Sale = new DataGridView();
             btn_Save = new Button();
             lbl_RentDate = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtp_StartRentDate = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
             SuspendLayout();
             // 
@@ -63,14 +63,14 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
-            // textBox1
+            // tb_LesseeName
             // 
-            textBox1.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(190, 49);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(236, 33);
-            textBox1.TabIndex = 4;
+            tb_LesseeName.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_LesseeName.Location = new Point(190, 49);
+            tb_LesseeName.Name = "tb_LesseeName";
+            tb_LesseeName.ReadOnly = true;
+            tb_LesseeName.Size = new Size(236, 33);
+            tb_LesseeName.TabIndex = 4;
             // 
             // lbl_Customre
             // 
@@ -82,13 +82,13 @@
             lbl_Customre.TabIndex = 5;
             lbl_Customre.Text = "Name";
             // 
-            // textBox2
+            // tb_OwnerName
             // 
-            textBox2.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(676, 49);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(236, 33);
-            textBox2.TabIndex = 4;
+            tb_OwnerName.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_OwnerName.Location = new Point(676, 49);
+            tb_OwnerName.Name = "tb_OwnerName";
+            tb_OwnerName.Size = new Size(236, 33);
+            tb_OwnerName.TabIndex = 4;
             // 
             // lbl_OwnerName
             // 
@@ -100,13 +100,13 @@
             lbl_OwnerName.TabIndex = 5;
             lbl_OwnerName.Text = "Owner Name";
             // 
-            // textBox3
+            // tb_Reference
             // 
-            textBox3.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(190, 99);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(236, 33);
-            textBox3.TabIndex = 4;
+            tb_Reference.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_Reference.Location = new Point(190, 99);
+            tb_Reference.Name = "tb_Reference";
+            tb_Reference.Size = new Size(236, 33);
+            tb_Reference.TabIndex = 4;
             // 
             // lbl_Reference
             // 
@@ -118,13 +118,13 @@
             lbl_Reference.TabIndex = 5;
             lbl_Reference.Text = "Reference";
             // 
-            // textBox4
+            // tb_WorkLocation
             // 
-            textBox4.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(676, 104);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(236, 33);
-            textBox4.TabIndex = 4;
+            tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_WorkLocation.Location = new Point(676, 104);
+            tb_WorkLocation.Name = "tb_WorkLocation";
+            tb_WorkLocation.Size = new Size(236, 33);
+            tb_WorkLocation.TabIndex = 4;
             // 
             // lbl_WorkLocation
             // 
@@ -141,23 +141,23 @@
             dgv_Sale.AllowUserToAddRows = false;
             dgv_Sale.AllowUserToResizeRows = false;
             dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle4;
             dgv_Sale.Location = new Point(57, 202);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
@@ -178,6 +178,7 @@
             btn_Save.TabIndex = 7;
             btn_Save.Text = "Finish Purchase";
             btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
             // 
             // lbl_RentDate
             // 
@@ -189,14 +190,14 @@
             lbl_RentDate.TabIndex = 5;
             lbl_RentDate.Text = "Rent Date";
             // 
-            // dateTimePicker1
+            // dtp_StartRentDate
             // 
-            dateTimePicker1.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(190, 148);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(236, 33);
-            dateTimePicker1.TabIndex = 8;
+            dtp_StartRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtp_StartRentDate.Location = new Point(190, 148);
+            dtp_StartRentDate.Name = "dtp_StartRentDate";
+            dtp_StartRentDate.Size = new Size(236, 33);
+            dtp_StartRentDate.TabIndex = 8;
             // 
             // Sale
             // 
@@ -204,18 +205,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 818);
             ControlBox = false;
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtp_StartRentDate);
             Controls.Add(btn_Save);
             Controls.Add(dgv_Sale);
             Controls.Add(lbl_WorkLocation);
             Controls.Add(lbl_RentDate);
             Controls.Add(lbl_Reference);
             Controls.Add(lbl_OwnerName);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(tb_WorkLocation);
+            Controls.Add(tb_Reference);
             Controls.Add(lbl_Customre);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tb_OwnerName);
+            Controls.Add(tb_LesseeName);
             Controls.Add(btn_Close);
             Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -230,17 +231,17 @@
         #endregion
 
         private Button btn_Close;
-        private TextBox textBox1;
+        private TextBox tb_LesseeName;
         private Label lbl_Customre;
-        private TextBox textBox2;
+        private TextBox tb_OwnerName;
         private Label lbl_OwnerName;
-        private TextBox textBox3;
+        private TextBox tb_Reference;
         private Label lbl_Reference;
-        private TextBox textBox4;
+        private TextBox tb_WorkLocation;
         private Label lbl_WorkLocation;
         private DataGridView dgv_Sale;
         private Button btn_Save;
         private Label lbl_RentDate;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtp_StartRentDate;
     }
 }
