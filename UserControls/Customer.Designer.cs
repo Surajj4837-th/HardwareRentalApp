@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btn_ShowBills = new Button();
             btn_AddCustomer = new Button();
             tb_search = new TextBox();
@@ -44,25 +44,29 @@
             // 
             // btn_ShowBills
             // 
+            btn_ShowBills.BackColor = SystemColors.ControlLightLight;
             btn_ShowBills.Enabled = false;
+            btn_ShowBills.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold);
             btn_ShowBills.ImeMode = ImeMode.NoControl;
             btn_ShowBills.Location = new Point(165, 766);
             btn_ShowBills.Name = "btn_ShowBills";
             btn_ShowBills.Size = new Size(231, 42);
             btn_ShowBills.TabIndex = 3;
             btn_ShowBills.Text = "Show Bills";
-            btn_ShowBills.UseVisualStyleBackColor = true;
+            btn_ShowBills.UseVisualStyleBackColor = false;
             btn_ShowBills.Click += btn_ShowBills_Click;
             // 
             // btn_AddCustomer
             // 
+            btn_AddCustomer.BackColor = SystemColors.ControlLightLight;
+            btn_AddCustomer.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold);
             btn_AddCustomer.ImeMode = ImeMode.NoControl;
             btn_AddCustomer.Location = new Point(163, 681);
             btn_AddCustomer.Name = "btn_AddCustomer";
             btn_AddCustomer.Size = new Size(231, 42);
             btn_AddCustomer.TabIndex = 1;
             btn_AddCustomer.Text = "Add New Customer";
-            btn_AddCustomer.UseVisualStyleBackColor = true;
+            btn_AddCustomer.UseVisualStyleBackColor = false;
             btn_AddCustomer.Click += btn_AddCustomer_Click;
             // 
             // tb_search
@@ -77,11 +81,11 @@
             // lbl_search
             // 
             lbl_search.AutoSize = true;
-            lbl_search.Font = new Font("Noto Sans", 14.25F);
+            lbl_search.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_search.ImeMode = ImeMode.NoControl;
             lbl_search.Location = new Point(30, 70);
             lbl_search.Name = "lbl_search";
-            lbl_search.Size = new Size(79, 29);
+            lbl_search.Size = new Size(81, 29);
             lbl_search.TabIndex = 0;
             lbl_search.Text = "Search:";
             lbl_search.Click += lbl_search_Click;
@@ -105,28 +109,28 @@
             dgv_MultipurposeTable.AllowUserToDeleteRows = false;
             dgv_MultipurposeTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_MultipurposeTable.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.Font = new Font("Noto Sans", 13.8F);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgv_MultipurposeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Noto Sans", 13.8F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgv_MultipurposeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_MultipurposeTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_MultipurposeTable.Dock = DockStyle.Bottom;
             dgv_MultipurposeTable.Location = new Point(0, 137);
             dgv_MultipurposeTable.MultiSelect = false;
             dgv_MultipurposeTable.Name = "dgv_MultipurposeTable";
             dgv_MultipurposeTable.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = SystemColors.Control;
-            dataGridViewCellStyle10.Font = new Font("Noto Sans", 13.8F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dgv_MultipurposeTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Noto Sans", 13.8F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgv_MultipurposeTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgv_MultipurposeTable.RowHeadersVisible = false;
             dgv_MultipurposeTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_MultipurposeTable.Size = new Size(1272, 407);
@@ -149,13 +153,15 @@
             // 
             // btn_Sale
             // 
+            btn_Sale.BackColor = SystemColors.ControlLightLight;
+            btn_Sale.Font = new Font("Noto Sans", 14.2499981F, FontStyle.Bold);
             btn_Sale.ImeMode = ImeMode.NoControl;
             btn_Sale.Location = new Point(466, 681);
             btn_Sale.Name = "btn_Sale";
             btn_Sale.Size = new Size(233, 42);
             btn_Sale.TabIndex = 1;
             btn_Sale.Text = "Sale";
-            btn_Sale.UseVisualStyleBackColor = true;
+            btn_Sale.UseVisualStyleBackColor = false;
             btn_Sale.Click += btn_Sale_Click;
             // 
             // Customers
