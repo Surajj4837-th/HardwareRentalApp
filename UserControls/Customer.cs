@@ -532,7 +532,7 @@ namespace HardwareRentalApp.UserControls
 
         private void btn_Sale_Click(object sender, EventArgs e)
         {
-            using (var AC_form = new Sale())
+            using (Sale AC_form = new Sale(customer))
             {
                 if (AC_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {

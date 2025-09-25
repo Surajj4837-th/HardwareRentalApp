@@ -19,10 +19,13 @@ namespace HardwareRentalApp.Forms
         private DBInterface obj_DBAccess = new DBInterface();
 
         public Sale()
+        private CustomerInfo customer;
+        public Sale(CustomerInfo cust)
         {
             InitializeComponent();
             List<Items> items = GetLocalizedItems();
-            LoadData(items);
+            customer = cust;
+            tb_LesseeName.Text = customer.LesseeName;
         }
 
         private void LoadData(List<Items> items)
