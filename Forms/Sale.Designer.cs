@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btn_Close = new Button();
             tb_LesseeName = new TextBox();
             lbl_Customre = new Label();
@@ -65,7 +65,7 @@
             // 
             // tb_LesseeName
             // 
-            tb_LesseeName.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
             tb_LesseeName.Location = new Point(190, 49);
             tb_LesseeName.Name = "tb_LesseeName";
             tb_LesseeName.ReadOnly = true;
@@ -75,7 +75,7 @@
             // lbl_Customre
             // 
             lbl_Customre.AutoSize = true;
-            lbl_Customre.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_Customre.Font = new Font("Nirmala UI", 14.25F);
             lbl_Customre.Location = new Point(57, 52);
             lbl_Customre.Name = "lbl_Customre";
             lbl_Customre.Size = new Size(62, 25);
@@ -84,7 +84,7 @@
             // 
             // tb_OwnerName
             // 
-            tb_OwnerName.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
             tb_OwnerName.Location = new Point(676, 49);
             tb_OwnerName.Name = "tb_OwnerName";
             tb_OwnerName.Size = new Size(236, 33);
@@ -93,7 +93,7 @@
             // lbl_OwnerName
             // 
             lbl_OwnerName.AutoSize = true;
-            lbl_OwnerName.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_OwnerName.Font = new Font("Nirmala UI", 14.25F);
             lbl_OwnerName.Location = new Point(515, 52);
             lbl_OwnerName.Name = "lbl_OwnerName";
             lbl_OwnerName.Size = new Size(123, 25);
@@ -102,7 +102,7 @@
             // 
             // tb_Reference
             // 
-            tb_Reference.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_Reference.Font = new Font("Nirmala UI", 14.25F);
             tb_Reference.Location = new Point(190, 99);
             tb_Reference.Name = "tb_Reference";
             tb_Reference.Size = new Size(236, 33);
@@ -111,7 +111,7 @@
             // lbl_Reference
             // 
             lbl_Reference.AutoSize = true;
-            lbl_Reference.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_Reference.Font = new Font("Nirmala UI", 14.25F);
             lbl_Reference.Location = new Point(57, 102);
             lbl_Reference.Name = "lbl_Reference";
             lbl_Reference.Size = new Size(95, 25);
@@ -120,7 +120,7 @@
             // 
             // tb_WorkLocation
             // 
-            tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
             tb_WorkLocation.Location = new Point(676, 104);
             tb_WorkLocation.Name = "tb_WorkLocation";
             tb_WorkLocation.Size = new Size(236, 33);
@@ -129,7 +129,7 @@
             // lbl_WorkLocation
             // 
             lbl_WorkLocation.AutoSize = true;
-            lbl_WorkLocation.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
             lbl_WorkLocation.Location = new Point(515, 107);
             lbl_WorkLocation.Name = "lbl_WorkLocation";
             lbl_WorkLocation.Size = new Size(134, 25);
@@ -141,23 +141,23 @@
             dgv_Sale.AllowUserToAddRows = false;
             dgv_Sale.AllowUserToResizeRows = false;
             dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle2;
             dgv_Sale.Location = new Point(57, 202);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
@@ -183,7 +183,7 @@
             // lbl_RentDate
             // 
             lbl_RentDate.AutoSize = true;
-            lbl_RentDate.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_RentDate.Font = new Font("Nirmala UI", 14.25F);
             lbl_RentDate.Location = new Point(57, 156);
             lbl_RentDate.Name = "lbl_RentDate";
             lbl_RentDate.Size = new Size(93, 25);
@@ -193,7 +193,7 @@
             // dtp_StartRentDate
             // 
             dtp_StartRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
             dtp_StartRentDate.Location = new Point(190, 148);
             dtp_StartRentDate.Name = "dtp_StartRentDate";
             dtp_StartRentDate.Size = new Size(236, 33);
