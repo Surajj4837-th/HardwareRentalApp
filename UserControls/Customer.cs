@@ -265,12 +265,12 @@ namespace HardwareRentalApp.UserControls
             /*else*/
             if (columnName == "Select_bill_column" && currentTable == tableName.Bill)
             {
-                //if (dgv_MultipurposeTable.Columns["Select_bill_column"] != null && e.ColumnIndex == dgv_MultipurposeTable.Columns["Select_bill_column"].Index)
-                //{
-                //    string invoiceID = dt_Bills.Rows[row_index]["InvoiceNo"].ToString();
-                //    Form f_Bill = new Bill(customer.CustomerID, invoiceID);
-                //    f_Bill.ShowDialog();
-                //}
+                if (dgv_MultipurposeTable.Columns["Select_bill_column"] != null && e.ColumnIndex == dgv_MultipurposeTable.Columns["Select_bill_column"].Index)
+                {
+                    int invoiceID = Convert.ToInt16(dgv_MultipurposeTable.Rows[row_index].Cells["BillId"]);
+                    Form f_Bill = new Bill(invoiceID);
+                    f_Bill.ShowDialog();
+                }
             }
         }
 
