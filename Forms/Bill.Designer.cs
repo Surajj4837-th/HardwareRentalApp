@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
-            dtp_StartRentDate = new DateTimePicker();
-            btn_Save = new Button();
             dgv_Sale = new DataGridView();
             lbl_WorkLocation = new Label();
             lbl_RentDate = new Label();
@@ -44,52 +40,21 @@
             tb_OwnerName = new TextBox();
             tb_LesseeName = new TextBox();
             btn_Close = new Button();
+            lbl_EndRentDate = new Label();
+            dtp_EndRentDate = new DateTimePicker();
+            tb_StartRentDate = new TextBox();
+            tb_BillAmount = new TextBox();
+            lbl_BillAmount = new Label();
+            btn_Save = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
             SuspendLayout();
-            // 
-            // dtp_StartRentDate
-            // 
-            dtp_StartRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_StartRentDate.Location = new Point(193, 147);
-            dtp_StartRentDate.Name = "dtp_StartRentDate";
-            dtp_StartRentDate.Size = new Size(236, 33);
-            dtp_StartRentDate.TabIndex = 21;
-            // 
-            // btn_Save
-            // 
-            btn_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_Save.BackColor = Color.PaleGreen;
-            btn_Save.Font = new Font("Nirmala UI", 14.25F);
-            btn_Save.Location = new Point(622, 758);
-            btn_Save.Name = "btn_Save";
-            btn_Save.Size = new Size(180, 36);
-            btn_Save.TabIndex = 20;
-            btn_Save.Text = "Finish Purchase";
-            btn_Save.UseVisualStyleBackColor = false;
             // 
             // dgv_Sale
             // 
             dgv_Sale.AllowUserToAddRows = false;
             dgv_Sale.AllowUserToResizeRows = false;
             dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle2;
             dgv_Sale.Location = new Point(60, 201);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
@@ -141,6 +106,7 @@
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
             tb_WorkLocation.Location = new Point(679, 103);
             tb_WorkLocation.Name = "tb_WorkLocation";
+            tb_WorkLocation.ReadOnly = true;
             tb_WorkLocation.Size = new Size(236, 33);
             tb_WorkLocation.TabIndex = 10;
             // 
@@ -149,6 +115,7 @@
             tb_Reference.Font = new Font("Nirmala UI", 14.25F);
             tb_Reference.Location = new Point(193, 98);
             tb_Reference.Name = "tb_Reference";
+            tb_Reference.ReadOnly = true;
             tb_Reference.Size = new Size(236, 33);
             tb_Reference.TabIndex = 11;
             // 
@@ -167,6 +134,7 @@
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
             tb_OwnerName.Location = new Point(679, 48);
             tb_OwnerName.Name = "tb_OwnerName";
+            tb_OwnerName.ReadOnly = true;
             tb_OwnerName.Size = new Size(236, 33);
             tb_OwnerName.TabIndex = 12;
             // 
@@ -194,20 +162,85 @@
             btn_Close.TabIndex = 9;
             btn_Close.UseVisualStyleBackColor = true;
             // 
+            // lbl_EndRentDate
+            // 
+            lbl_EndRentDate.AutoSize = true;
+            lbl_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
+            lbl_EndRentDate.Location = new Point(518, 155);
+            lbl_EndRentDate.Name = "lbl_EndRentDate";
+            lbl_EndRentDate.Size = new Size(111, 25);
+            lbl_EndRentDate.TabIndex = 15;
+            lbl_EndRentDate.Text = "Return Date";
+            // 
+            // dtp_EndRentDate
+            // 
+            dtp_EndRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtp_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
+            dtp_EndRentDate.Location = new Point(679, 149);
+            dtp_EndRentDate.Name = "dtp_EndRentDate";
+            dtp_EndRentDate.Size = new Size(236, 33);
+            dtp_EndRentDate.TabIndex = 21;
+            // 
+            // tb_StartRentDate
+            // 
+            tb_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
+            tb_StartRentDate.Location = new Point(193, 149);
+            tb_StartRentDate.Name = "tb_StartRentDate";
+            tb_StartRentDate.ReadOnly = true;
+            tb_StartRentDate.Size = new Size(236, 33);
+            tb_StartRentDate.TabIndex = 11;
+            // 
+            // tb_BillAmount
+            // 
+            tb_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            tb_BillAmount.Font = new Font("Nirmala UI", 14.25F);
+            tb_BillAmount.Location = new Point(679, 756);
+            tb_BillAmount.Name = "tb_BillAmount";
+            tb_BillAmount.ReadOnly = true;
+            tb_BillAmount.Size = new Size(236, 33);
+            tb_BillAmount.TabIndex = 10;
+            // 
+            // lbl_BillAmount
+            // 
+            lbl_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lbl_BillAmount.AutoSize = true;
+            lbl_BillAmount.Font = new Font("Nirmala UI", 14.25F);
+            lbl_BillAmount.Location = new Point(549, 759);
+            lbl_BillAmount.Name = "lbl_BillAmount";
+            lbl_BillAmount.Size = new Size(110, 25);
+            lbl_BillAmount.TabIndex = 14;
+            lbl_BillAmount.Text = "Bill Amount";
+            // 
+            // btn_Save
+            // 
+            btn_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_Save.BackColor = Color.PaleGreen;
+            btn_Save.Font = new Font("Nirmala UI", 14.25F);
+            btn_Save.Location = new Point(735, 811);
+            btn_Save.Name = "btn_Save";
+            btn_Save.Size = new Size(180, 36);
+            btn_Save.TabIndex = 20;
+            btn_Save.Text = "Finish Purchase";
+            btn_Save.UseVisualStyleBackColor = false;
+            // 
             // Bill
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 818);
+            ClientSize = new Size(1024, 869);
             ControlBox = false;
-            Controls.Add(dtp_StartRentDate);
+            Controls.Add(dtp_EndRentDate);
             Controls.Add(btn_Save);
             Controls.Add(dgv_Sale);
+            Controls.Add(lbl_EndRentDate);
+            Controls.Add(lbl_BillAmount);
             Controls.Add(lbl_WorkLocation);
             Controls.Add(lbl_RentDate);
             Controls.Add(lbl_Reference);
             Controls.Add(lbl_OwnerName);
+            Controls.Add(tb_BillAmount);
             Controls.Add(tb_WorkLocation);
+            Controls.Add(tb_StartRentDate);
             Controls.Add(tb_Reference);
             Controls.Add(lbl_Customre);
             Controls.Add(tb_OwnerName);
@@ -223,9 +256,6 @@
         }
 
         #endregion
-
-        private DateTimePicker dtp_StartRentDate;
-        private Button btn_Save;
         private DataGridView dgv_Sale;
         private Label lbl_WorkLocation;
         private Label lbl_RentDate;
@@ -237,5 +267,11 @@
         private TextBox tb_OwnerName;
         private TextBox tb_LesseeName;
         private Button btn_Close;
+        private Label lbl_EndRentDate;
+        private DateTimePicker dtp_EndRentDate;
+        private TextBox tb_StartRentDate;
+        private TextBox tb_BillAmount;
+        private Label lbl_BillAmount;
+        private Button btn_Save;
     }
 }
