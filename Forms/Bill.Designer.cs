@@ -55,7 +55,7 @@
             dgv_Sale.AllowUserToResizeRows = false;
             dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_Sale.Location = new Point(60, 201);
+            dgv_Sale.Location = new Point(60, 199);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
             dgv_Sale.Size = new Size(855, 530);
@@ -65,7 +65,7 @@
             // 
             lbl_WorkLocation.AutoSize = true;
             lbl_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            lbl_WorkLocation.Location = new Point(518, 106);
+            lbl_WorkLocation.Location = new Point(518, 104);
             lbl_WorkLocation.Name = "lbl_WorkLocation";
             lbl_WorkLocation.Size = new Size(134, 25);
             lbl_WorkLocation.TabIndex = 14;
@@ -75,7 +75,7 @@
             // 
             lbl_RentDate.AutoSize = true;
             lbl_RentDate.Font = new Font("Nirmala UI", 14.25F);
-            lbl_RentDate.Location = new Point(60, 155);
+            lbl_RentDate.Location = new Point(60, 153);
             lbl_RentDate.Name = "lbl_RentDate";
             lbl_RentDate.Size = new Size(93, 25);
             lbl_RentDate.TabIndex = 15;
@@ -85,7 +85,7 @@
             // 
             lbl_Reference.AutoSize = true;
             lbl_Reference.Font = new Font("Nirmala UI", 14.25F);
-            lbl_Reference.Location = new Point(60, 101);
+            lbl_Reference.Location = new Point(60, 99);
             lbl_Reference.Name = "lbl_Reference";
             lbl_Reference.Size = new Size(95, 25);
             lbl_Reference.TabIndex = 16;
@@ -95,7 +95,7 @@
             // 
             lbl_OwnerName.AutoSize = true;
             lbl_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            lbl_OwnerName.Location = new Point(518, 51);
+            lbl_OwnerName.Location = new Point(518, 49);
             lbl_OwnerName.Name = "lbl_OwnerName";
             lbl_OwnerName.Size = new Size(123, 25);
             lbl_OwnerName.TabIndex = 17;
@@ -104,7 +104,7 @@
             // tb_WorkLocation
             // 
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            tb_WorkLocation.Location = new Point(679, 103);
+            tb_WorkLocation.Location = new Point(679, 101);
             tb_WorkLocation.Name = "tb_WorkLocation";
             tb_WorkLocation.ReadOnly = true;
             tb_WorkLocation.Size = new Size(236, 33);
@@ -113,7 +113,7 @@
             // tb_Reference
             // 
             tb_Reference.Font = new Font("Nirmala UI", 14.25F);
-            tb_Reference.Location = new Point(193, 98);
+            tb_Reference.Location = new Point(193, 96);
             tb_Reference.Name = "tb_Reference";
             tb_Reference.ReadOnly = true;
             tb_Reference.Size = new Size(236, 33);
@@ -123,7 +123,7 @@
             // 
             lbl_Customre.AutoSize = true;
             lbl_Customre.Font = new Font("Nirmala UI", 14.25F);
-            lbl_Customre.Location = new Point(60, 51);
+            lbl_Customre.Location = new Point(60, 49);
             lbl_Customre.Name = "lbl_Customre";
             lbl_Customre.Size = new Size(62, 25);
             lbl_Customre.TabIndex = 18;
@@ -132,7 +132,7 @@
             // tb_OwnerName
             // 
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            tb_OwnerName.Location = new Point(679, 48);
+            tb_OwnerName.Location = new Point(679, 46);
             tb_OwnerName.Name = "tb_OwnerName";
             tb_OwnerName.ReadOnly = true;
             tb_OwnerName.Size = new Size(236, 33);
@@ -141,7 +141,7 @@
             // tb_LesseeName
             // 
             tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeName.Location = new Point(193, 48);
+            tb_LesseeName.Location = new Point(193, 46);
             tb_LesseeName.Name = "tb_LesseeName";
             tb_LesseeName.ReadOnly = true;
             tb_LesseeName.Size = new Size(236, 33);
@@ -166,7 +166,7 @@
             // 
             lbl_EndRentDate.AutoSize = true;
             lbl_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
-            lbl_EndRentDate.Location = new Point(518, 155);
+            lbl_EndRentDate.Location = new Point(518, 153);
             lbl_EndRentDate.Name = "lbl_EndRentDate";
             lbl_EndRentDate.Size = new Size(111, 25);
             lbl_EndRentDate.TabIndex = 15;
@@ -176,7 +176,7 @@
             // 
             dtp_EndRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtp_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_EndRentDate.Location = new Point(679, 149);
+            dtp_EndRentDate.Location = new Point(679, 147);
             dtp_EndRentDate.Name = "dtp_EndRentDate";
             dtp_EndRentDate.Size = new Size(236, 33);
             dtp_EndRentDate.TabIndex = 21;
@@ -184,7 +184,7 @@
             // tb_StartRentDate
             // 
             tb_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
-            tb_StartRentDate.Location = new Point(193, 149);
+            tb_StartRentDate.Location = new Point(193, 147);
             tb_StartRentDate.Name = "tb_StartRentDate";
             tb_StartRentDate.ReadOnly = true;
             tb_StartRentDate.Size = new Size(236, 33);
@@ -194,7 +194,7 @@
             // 
             tb_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tb_BillAmount.Font = new Font("Nirmala UI", 14.25F);
-            tb_BillAmount.Location = new Point(679, 756);
+            tb_BillAmount.Location = new Point(679, 754);
             tb_BillAmount.Name = "tb_BillAmount";
             tb_BillAmount.ReadOnly = true;
             tb_BillAmount.Size = new Size(236, 33);
@@ -205,7 +205,7 @@
             lbl_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lbl_BillAmount.AutoSize = true;
             lbl_BillAmount.Font = new Font("Nirmala UI", 14.25F);
-            lbl_BillAmount.Location = new Point(549, 759);
+            lbl_BillAmount.Location = new Point(549, 757);
             lbl_BillAmount.Name = "lbl_BillAmount";
             lbl_BillAmount.Size = new Size(110, 25);
             lbl_BillAmount.TabIndex = 14;
@@ -216,7 +216,7 @@
             btn_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_Save.BackColor = Color.PaleGreen;
             btn_Save.Font = new Font("Nirmala UI", 14.25F);
-            btn_Save.Location = new Point(735, 811);
+            btn_Save.Location = new Point(735, 809);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(180, 36);
             btn_Save.TabIndex = 20;
