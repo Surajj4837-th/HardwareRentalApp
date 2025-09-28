@@ -1,4 +1,4 @@
-use [HardwareRentalApp(Development)]
+use [HardwareRentalApp(Dev)]
 
 CREATE TABLE Customers (
     CustomerId INT IDENTITY PRIMARY KEY,
@@ -19,9 +19,6 @@ CREATE TABLE Bills (
     WorkLocation NVARCHAR(200),
     PaymentDate DATE NULL,            -- When payment was made
     TotalAmount DECIMAL(10,2) NOT NULL,
-    AdvanceAmount DECIMAL(10,2) DEFAULT 0,
-    RemainingAmount AS (TotalAmount - AdvanceAmount) PERSISTED,
-    IsPaid BIT DEFAULT 0,
     FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId)
 );
 
