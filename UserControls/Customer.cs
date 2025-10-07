@@ -167,8 +167,11 @@ namespace HardwareRentalApp.UserControls
 
                 if (dgv_MultipurposeTable.Columns["Select_bill_column"] == null)
                 {
-                    dgv_MultipurposeTable.Columns.Insert(5, Select_bill_col);
-                    dgv_MultipurposeTable.Columns[5].HeaderText = LangManager.GetString("ShowBill");
+                    Select_bill_col.UseColumnTextForButtonValue = true;
+                    int insertIndex = Math.Min(5, dgv_MultipurposeTable.Columns.Count);
+                    dgv_MultipurposeTable.Columns.Insert(insertIndex, Select_bill_col);
+
+                    dgv_MultipurposeTable.Columns[insertIndex].HeaderText = LangManager.GetString("ShowBill");
                 }
             }
             else if (GlobalState.e_LoginProfile == Profile.Owner && currentTable == tableName.Customer)
