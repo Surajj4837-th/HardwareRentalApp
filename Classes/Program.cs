@@ -2,14 +2,20 @@ namespace HardwareRentalApp.Classes
 {
     public struct CustomerInfo
     {
-        public UInt64 CustomerID;
+        public long CustomerID;
         public string LesseeName;
         public string LesseeAddress;
         public string MobileNum;
     };
     public struct Items
     {
-        public UInt64 ItemId { get; set; }
+        public int ItemId { get; set; }
+
+        public Items(int itemId) : this()
+        {
+            ItemId = itemId;
+        }
+
         public string ItemName { get; set; }
         public string LocalizedName { get; set; }
         public decimal Rent { get; set; }
