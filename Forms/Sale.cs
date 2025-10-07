@@ -110,7 +110,7 @@ namespace HardwareRentalApp.Forms
 
             l_items = obj_DBAccess.ExecuteQuery(query, reader => new Items
             {
-                ItemId = Convert.ToUInt64(reader.GetInt32(0)),
+                ItemId = reader.GetInt32(0),
                 ItemName = reader.GetString(1),
                 Rent = reader.GetDecimal(2)
             });
@@ -165,8 +165,8 @@ namespace HardwareRentalApp.Forms
         }
 
         public void CreateBill(
-            UInt64 customerId,
-            UInt64 adminId,
+            Int64 customerId,
+            int adminId,
             DateTime rentalStart,
             DateTime? rentalEnd,
             string projectOwner,
