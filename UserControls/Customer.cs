@@ -92,8 +92,6 @@ namespace HardwareRentalApp.UserControls
 
                 dgv_MultipurposeTable.Columns["WorkLocation"].HeaderText = LangManager.GetString("WorkLocation");
 
-                //dgv_MultipurposeTable.Columns["IsPaid"].HeaderText = LangManager.GetString("Paid"); ;
-
                 lbl_mainPanel.Text = LangManager.GetString("BillInformation");
             }
         }
