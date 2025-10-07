@@ -17,7 +17,7 @@ namespace HardwareRentalApp.Forms
     public partial class Bill : Form
     {
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Sale).Assembly);
-        private DBInterface obj_DBAccess = new DBInterface(); 
+        private DBInterface obj_DBAccess = new DBInterface();
         private List<Items> l_items;          // List to hold items fetched from DB
         List<BillSummary> BillInformation;
         DataTable dt_items = new DataTable();       //List of items to be written to bill db from DGV input
@@ -31,6 +31,16 @@ namespace HardwareRentalApp.Forms
 
             GetLocalizedItems();
             LoadData();
+            FillFormDetails();
+        }
+
+        private void FillFormDetails()
+        {
+            tb_LesseeName.Text = BillInformation[0].CustomerName;
+            tb_OwnerName.Text = BillInformation[0].OwnerName;
+            tb_Reference.Text = BillInformation[0].Reference;
+            tb_WorkLocation.Text = BillInformation[0].WorkLocation;
+            tb_StartRentDate.Text = BillInformation[0].BillDate.ToString();
         }
 
         private void LoadData()
@@ -163,6 +173,11 @@ namespace HardwareRentalApp.Forms
                                         : localizedName;
                 l_items[i] = item;
             }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
