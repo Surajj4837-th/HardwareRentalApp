@@ -70,14 +70,18 @@ namespace HardwareRentalApp.Classes
             }
         }
 
-        public List<T> ExecuteQuery<T>(string query, Func<SqlDataReader, T> mapFunc)
+        public List<T> ExecuteQuery<T>(string query, Func<SqlDataReader, T> mapFunc,  params SqlParameter[] parameters)
         {
             var results = new List<T>();
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
+                if (parameters != null && parameters.Length > 0)
+                    cmd.Parameters.AddRange(parameters);
+
                 conn.Open();
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
