@@ -45,10 +45,37 @@ namespace HardwareRentalApp.Forms
 
         private void LoadData()
         {
+            //Get bill information
+            var billIdParam = new SqlParameter("@BillId", SqlDbType.BigInt) { Value = BillID };
+
+            BillInformation = obj_DBAccess.ExecuteQuery(
+                    @"SELECT 
+                    B.CustomerId,
+                    C.LesseeName,
+                    B.BillDate,
+                    B.ProjectOwner,
+                    B.Reference,
+                    B.WorkLocation
+                  FROM Bills B
+                  JOIN Customers C ON B.CustomerId = C.CustomerId
+                  WHERE B.BillId = @BillId",
+                r => new BillSummary
+                {
+                    CustomerId = r.IsDBNull(r.GetOrdinal("CustomerId")) ? 0 : r.GetInt32(r.GetOrdinal("CustomerId")),
+                    CustomerName = r.IsDBNull(r.GetOrdinal("LesseeName")) ? string.Empty : r.GetString(r.GetOrdinal("LesseeName")),
+                    BillDate = r.IsDBNull(r.GetOrdinal("BillDate")) ? DateTime.MinValue : r.GetDateTime(r.GetOrdinal("BillDate")),
+                    OwnerName = r.IsDBNull(r.GetOrdinal("ProjectOwner")) ? string.Empty : r.GetString(r.GetOrdinal("ProjectOwner")),
+                    Reference = r.IsDBNull(r.GetOrdinal("Reference")) ? string.Empty : r.GetString(r.GetOrdinal("Reference")),
+                    WorkLocation = r.IsDBNull(r.GetOrdinal("WorkLocation")) ? string.Empty : r.GetString(r.GetOrdinal("WorkLocation"))
+                },
+                billIdParam
+            );
+
+            //Clear existing columns and set up DataGridView
             dgv_Sale.Columns.Clear();
             dgv_Sale.AutoGenerateColumns = false;
 
-            // Add columns
+            // Add columns as per the list of items in the database
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "ItemId",
@@ -99,31 +126,42 @@ namespace HardwareRentalApp.Forms
 
             AdjustGridHeight();
 
-            //Get bill information
-            var billIdParam = new SqlParameter("@BillId", SqlDbType.BigInt) { Value = BillID };
+            //Query the bill items from DB
+            billIdParam = new SqlParameter("@BillId", SqlDbType.BigInt) { Value = BillID };
 
-            BillInformation = obj_DBAccess.ExecuteQuery(
-                    @"SELECT 
-                    B.CustomerId,
-                    C.LesseeName,
-                    B.BillDate,
-                    B.ProjectOwner,
-                    B.Reference,
-                    B.WorkLocation
-                  FROM Bills B
-                  JOIN Customers C ON B.CustomerId = C.CustomerId
-                  WHERE B.BillId = @BillId",
-                r => new BillSummary
+            List<BillItemSummary> billItems = obj_DBAccess.ExecuteQuery(
+                @"SELECT ItemId, Quantity, Price FROM BillItems WHERE BillId = @BillId",
+                r => new BillItemSummary
                 {
-                    CustomerId = r.IsDBNull(r.GetOrdinal("CustomerId")) ? 0 : r.GetInt32(r.GetOrdinal("CustomerId")),
-                    CustomerName = r.IsDBNull(r.GetOrdinal("LesseeName")) ? string.Empty : r.GetString(r.GetOrdinal("LesseeName")),
-                    BillDate = r.IsDBNull(r.GetOrdinal("BillDate")) ? DateTime.MinValue : r.GetDateTime(r.GetOrdinal("BillDate")),
-                    OwnerName = r.IsDBNull(r.GetOrdinal("ProjectOwner")) ? string.Empty : r.GetString(r.GetOrdinal("ProjectOwner")),
-                    Reference = r.IsDBNull(r.GetOrdinal("Reference")) ? string.Empty : r.GetString(r.GetOrdinal("Reference")),
-                    WorkLocation = r.IsDBNull(r.GetOrdinal("WorkLocation")) ? string.Empty : r.GetString(r.GetOrdinal("WorkLocation"))
+                    ItemId = r.GetInt32(r.GetOrdinal("ItemId")),
+                    Quantity = r.GetInt32(r.GetOrdinal("Quantity")),
+                    Price = r.GetDecimal(r.GetOrdinal("Price")),
+                    Total = r.GetInt32(r.GetOrdinal("Quantity")) * r.GetDecimal(r.GetOrdinal("Price")),
+                    ItemName = string.Empty // will fill below
                 },
                 billIdParam
             );
+
+            foreach (DataRow itemRow in dt_items.Rows.Cast<DataRow>())
+            {
+                int itemId = Convert.ToInt32(itemRow["ItemId"]);
+
+                // Find this item in billItems list
+                var match = billItems.FirstOrDefault(bi => bi.ItemId == itemId);
+
+                if (match != null)
+                {
+                    // If found, update quantity and amount
+                    itemRow["Quantity"] = match.Quantity;
+                    //itemRow["Amount"] = match.Total;  // or match.Price * match.Quantity
+                }
+                else
+                {
+                    // If item not part of this bill, reset to zero
+                    itemRow["Quantity"] = 0;
+                    //itemRow["Amount"] = 0m;
+                }
+            }
 
         }
 
