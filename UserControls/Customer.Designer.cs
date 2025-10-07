@@ -75,7 +75,7 @@
             tb_search.Font = new Font("Nirmala UI", 13.8F);
             tb_search.Location = new Point(118, 73);
             tb_search.Name = "tb_search";
-            tb_search.Size = new Size(272, 38);
+            tb_search.Size = new Size(272, 32);
             tb_search.TabIndex = 1;
             tb_search.MouseClick += tb_search_MouseClick;
             tb_search.TextChanged += tb_search_TextChanged;
@@ -87,7 +87,7 @@
             lbl_search.ImeMode = ImeMode.NoControl;
             lbl_search.Location = new Point(28, 75);
             lbl_search.Name = "lbl_search";
-            lbl_search.Size = new Size(87, 31);
+            lbl_search.Size = new Size(73, 25);
             lbl_search.TabIndex = 0;
             lbl_search.Text = "Search:";
             lbl_search.Click += lbl_search_Click;
@@ -151,7 +151,6 @@
             // 
             // pnl_customerTable
             // 
-            pnl_customerTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnl_customerTable.BorderStyle = BorderStyle.FixedSingle;
             pnl_customerTable.Controls.Add(dgv_MultipurposeTable);
             pnl_customerTable.Controls.Add(tb_search);
@@ -179,7 +178,7 @@
             // 
             // Customers
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             Controls.Add(btn_ShowBills);
