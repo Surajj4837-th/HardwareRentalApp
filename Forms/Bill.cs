@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
@@ -18,6 +19,7 @@ namespace HardwareRentalApp.Forms
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Sale).Assembly);
         private DBInterface obj_DBAccess = new DBInterface(); 
         private List<Items> l_items;          // List to hold items fetched from DB
+        List<BillSummary> BillInformation;
         DataTable dt_items = new DataTable();       //List of items to be written to bill db from DGV input
         private int BillID;
 
@@ -86,6 +88,33 @@ namespace HardwareRentalApp.Forms
             dgv_Sale.DataSource = dt_items;
 
             AdjustGridHeight();
+
+            //Get bill information
+            var billIdParam = new SqlParameter("@BillId", SqlDbType.BigInt) { Value = BillID };
+
+            BillInformation = obj_DBAccess.ExecuteQuery(
+                    @"SELECT 
+                    B.CustomerId,
+                    C.LesseeName,
+                    B.BillDate,
+                    B.ProjectOwner,
+                    B.Reference,
+                    B.WorkLocation
+                  FROM Bills B
+                  JOIN Customers C ON B.CustomerId = C.CustomerId
+                  WHERE B.BillId = @BillId",
+                r => new BillSummary
+                {
+                    CustomerId = r.IsDBNull(r.GetOrdinal("CustomerId")) ? 0 : r.GetInt32(r.GetOrdinal("CustomerId")),
+                    CustomerName = r.IsDBNull(r.GetOrdinal("LesseeName")) ? string.Empty : r.GetString(r.GetOrdinal("LesseeName")),
+                    BillDate = r.IsDBNull(r.GetOrdinal("BillDate")) ? DateTime.MinValue : r.GetDateTime(r.GetOrdinal("BillDate")),
+                    OwnerName = r.IsDBNull(r.GetOrdinal("ProjectOwner")) ? string.Empty : r.GetString(r.GetOrdinal("ProjectOwner")),
+                    Reference = r.IsDBNull(r.GetOrdinal("Reference")) ? string.Empty : r.GetString(r.GetOrdinal("Reference")),
+                    WorkLocation = r.IsDBNull(r.GetOrdinal("WorkLocation")) ? string.Empty : r.GetString(r.GetOrdinal("WorkLocation"))
+                },
+                billIdParam
+            );
+
         }
 
         private void AdjustGridHeight()
@@ -113,7 +142,8 @@ namespace HardwareRentalApp.Forms
                 ItemId = reader.GetInt32(0),
                 ItemName = reader.GetString(1),
                 Rent = reader.GetDecimal(2)
-            });
+            },
+            null);
 
             LocalizeItems();
         }
