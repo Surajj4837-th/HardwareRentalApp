@@ -8,7 +8,7 @@ CREATE TABLE Customers (
 );
 
 CREATE TABLE Bills (
-    BillId INT IDENTITY PRIMARY KEY,
+    BillId BIGINT IDENTITY PRIMARY KEY,
     CustomerId INT NOT NULL,          -- Reference to Customers
 	AdminId INT NOT NULL,               -- Reference to Credentials
     BillDate DATETIME DEFAULT GETDATE(), -- When bill is created
@@ -49,7 +49,7 @@ VALUES
 
 CREATE TABLE BillItems (
     BillItemId INT IDENTITY PRIMARY KEY,
-    BillId INT NOT NULL,
+    BillId BIGINT NOT NULL,
     ItemId INT NOT NULL,
     Quantity INT NOT NULL,
     Price DECIMAL(10,2) NOT NULL,
