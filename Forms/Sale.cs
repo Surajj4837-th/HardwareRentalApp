@@ -181,14 +181,13 @@ namespace HardwareRentalApp.Forms
                             INSERT INTO Bills (
                                 CustomerId, AdminId, BillDate, RentalStartDate, RentalEndDate,
                                 ProjectOwner, Reference, WorkLocation,
-                                PaymentDate, TotalAmount, AdvanceAmount, IsPaid
+                                PaymentDate, TotalAmount
                             )
                             OUTPUT INSERTED.BillId
                             VALUES (
                                 @CustomerId, @AdminId, GETDATE(), @RentalStartDate, @RentalEndDate,
                                 @ProjectOwner, @Reference, @WorkLocation,
-                                @PaymentDate, @TotalAmount, @AdvanceAmount,
-                                CASE WHEN @PaymentDate IS NULL THEN 0 ELSE 1 END
+                                @PaymentDate, @TotalAmount
                             )");
 
             billCmd.Parameters.AddWithValue("@CustomerId", customerId);
