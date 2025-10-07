@@ -21,6 +21,16 @@ namespace HardwareRentalApp.Classes
         public decimal Rent { get; set; }
     }
 
+    public struct BillSummary
+    {
+        public int CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public DateTime BillDate { get; set; }
+        public string OwnerName { get; set; }
+        public string Reference { get; set; }
+        public string WorkLocation { get; set; }
+    }
+
     public enum Profile
     {
         Owner,
