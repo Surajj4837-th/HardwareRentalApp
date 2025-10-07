@@ -267,7 +267,7 @@ namespace HardwareRentalApp.UserControls
             {
                 if (dgv_MultipurposeTable.Columns["Select_bill_column"] != null && e.ColumnIndex == dgv_MultipurposeTable.Columns["Select_bill_column"].Index)
                 {
-                    int invoiceID = Convert.ToInt16(dgv_MultipurposeTable.Rows[row_index].Cells["BillId"]);
+                    int invoiceID = Convert.ToInt16(dgv_MultipurposeTable.Rows[row_index].Cells["BillId"].Value);
                     Form f_Bill = new Bill(invoiceID);
                     f_Bill.ShowDialog();
                 }
