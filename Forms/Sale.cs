@@ -137,8 +137,28 @@ namespace HardwareRentalApp.Forms
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            UInt64 CustomerId = Convert.ToUInt64(customer.CustomerID);
-            UInt64 AdminId = HardwareRentalApp.UserControls.Login.AdminId;
+            decimal sum = 0m;
+            foreach (DataRow row in dt_items.Rows)
+            {
+                if (row.RowState == DataRowState.Deleted) continue;
+
+                object val = row["Quantity"];
+                if (val == DBNull.Value || val == null) continue;
+
+                // safe parsing (handles ints, decimals, strings)
+                decimal q;
+                if (decimal.TryParse(val.ToString(), out q))
+                    sum += q;
+            }
+
+            if(sum == 0)
+            {
+                MessageBox.Show(LangManager.GetString("NoPurchaseDone", Thread.CurrentThread.CurrentUICulture));
+                return;
+            }
+
+            long CustomerId = customer.CustomerID;
+            int AdminId = HardwareRentalApp.UserControls.Login.AdminId;
             DateTime RentalStart = dtp_StartRentDate.Value;
             DateTime? RentalEnd = null;
             string projectOwner = tb_OwnerName.Text.Trim();
