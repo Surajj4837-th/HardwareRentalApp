@@ -20,6 +20,15 @@ namespace HardwareRentalApp.Classes
         public string LocalizedName { get; set; }
         public decimal Rent { get; set; }
     }
+    public class BillItemSummary
+    {
+        public int ItemId { get; set; }
+        public string ItemName { get; set; }
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
+        public decimal Total { get; set; }
+    }
+
 
     public struct BillSummary
     {
