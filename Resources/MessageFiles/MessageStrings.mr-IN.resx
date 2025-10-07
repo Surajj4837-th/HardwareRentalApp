@@ -627,4 +627,7 @@
   <data name="WorkLocation" xml:space="preserve">
     <value>कामाचे ठिकाण</value>
   </data>
+  <data name="NoPurchaseDone" xml:space="preserve">
+    <value>खरेदी झालेली नाही</value>
+  </data>
 </root>

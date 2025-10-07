@@ -627,4 +627,7 @@
   <data name="WorkLocation" xml:space="preserve">
     <value>Work Location</value>
   </data>
+  <data name="NoPurchaseDone" xml:space="preserve">
+    <value>No Purchase Done</value>
+  </data>
 </root>
