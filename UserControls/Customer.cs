@@ -92,7 +92,7 @@ namespace HardwareRentalApp.UserControls
 
                 dgv_MultipurposeTable.Columns["WorkLocation"].HeaderText = LangManager.GetString("WorkLocation");
 
-                dgv_MultipurposeTable.Columns["IsPaid"].HeaderText = LangManager.GetString("Paid"); ;
+                //dgv_MultipurposeTable.Columns["IsPaid"].HeaderText = LangManager.GetString("Paid"); ;
 
                 lbl_mainPanel.Text = LangManager.GetString("BillInformation");
             }
@@ -133,8 +133,7 @@ namespace HardwareRentalApp.UserControls
                     BillId,
                     BillDate,
                     RentalStartDate,
-                    WorkLocation,
-                    IsPaid
+                    WorkLocation
                 FROM Bills
                 WHERE CustomerId = @CustomerId
                 ORDER BY BillDate DESC";
