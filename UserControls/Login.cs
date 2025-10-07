@@ -25,7 +25,7 @@ namespace HardwareRentalApp.UserControls
         public static string m_st_Role;
         //private ActivateProduct Obj_ProductActivation = new ActivateProduct();
         string culture = Properties.Settings.Default.Language;
-        public static UInt64 AdminId 
+        public static int AdminId 
         { 
             get; 
             internal set; 
