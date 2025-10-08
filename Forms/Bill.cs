@@ -102,9 +102,17 @@ namespace HardwareRentalApp.Forms
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
-                Name = "Quantity",
-                DataPropertyName = "Quantity",
-                HeaderText = LangManager.GetString("Quantity", Thread.CurrentThread.CurrentUICulture),
+                Name = "QuantityRented",
+                DataPropertyName = "QuantityRented",
+                HeaderText = LangManager.GetString("QuantityRented", Thread.CurrentThread.CurrentUICulture),
+                Width = 80,
+                ReadOnly = false
+            });
+            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "QuantityReturned",
+                DataPropertyName = "QuantityReturned",
+                HeaderText = LangManager.GetString("QuantityReturned", Thread.CurrentThread.CurrentUICulture),
                 Width = 80,
                 ReadOnly = false
             });
