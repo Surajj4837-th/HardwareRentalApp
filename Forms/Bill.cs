@@ -121,16 +121,13 @@ namespace HardwareRentalApp.Forms
             dt_items.Columns.Add("ItemId", typeof(int));
             dt_items.Columns.Add("LocalizedName", typeof(string));
             dt_items.Columns.Add("Rent", typeof(decimal));
-            dt_items.Columns.Add("Quantity", typeof(int));
+            dt_items.Columns.Add("QuantityRented", typeof(int));
 
             for (int i = 0; i < l_items.Count; i++)
             {
                 var item = l_items[i];
                 dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0); // start with 0 qty
             }
-
-            // Bind to DataGridView
-            dgv_Sale.DataSource = dt_items;
 
             AdjustGridHeight();
 
@@ -144,7 +141,7 @@ namespace HardwareRentalApp.Forms
                     ItemId = r.GetInt32(r.GetOrdinal("ItemId")),
                     Quantity = r.GetInt32(r.GetOrdinal("Quantity")),
                     Price = r.GetDecimal(r.GetOrdinal("Price")),
-                    Total = r.GetInt32(r.GetOrdinal("Quantity")) * r.GetDecimal(r.GetOrdinal("Price")),
+                    //Total = r.GetInt32(r.GetOrdinal("Quantity")) * r.GetDecimal(r.GetOrdinal("Price")),
                     ItemName = string.Empty // will fill below
                 },
                 billIdParam
@@ -160,16 +157,17 @@ namespace HardwareRentalApp.Forms
                 if (match != null)
                 {
                     // If found, update quantity and amount
-                    itemRow["Quantity"] = match.Quantity;
-                    //itemRow["Amount"] = match.Total;  // or match.Price * match.Quantity
+                    itemRow["QuantityRented"] = match.Quantity;
                 }
                 else
                 {
                     // If item not part of this bill, reset to zero
-                    itemRow["Quantity"] = 0;
-                    //itemRow["Amount"] = 0m;
+                    itemRow["QuantityRented"] = 0;
                 }
             }
+
+            // Bind to DataGridView
+            dgv_Sale.DataSource = dt_items;
 
         }
 
