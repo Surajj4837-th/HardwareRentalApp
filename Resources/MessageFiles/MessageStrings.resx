@@ -630,4 +630,10 @@
   <data name="NoPurchaseDone" xml:space="preserve">
     <value>No Purchase Done</value>
   </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>Quantity Returned</value>
+  </data>
+  <data name="QuantityRented" xml:space="preserve">
+    <value>Quantity Rented</value>
+  </data>
 </root>

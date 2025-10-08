@@ -630,4 +630,10 @@
   <data name="NoPurchaseDone" xml:space="preserve">
     <value>खरेदी झालेली नाही</value>
   </data>
+  <data name="QuantityReturned" xml:space="preserve">
+    <value>परत केलेले प्रमाण</value>
+  </data>
+  <data name="QuantityRented" xml:space="preserve">
+    <value>भाड्याने घेतलेले प्रमाण</value>
+  </data>
 </root>
