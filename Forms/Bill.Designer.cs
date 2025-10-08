@@ -161,6 +161,7 @@
             btn_Close.Size = new Size(33, 33);
             btn_Close.TabIndex = 9;
             btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
             // 
             // lbl_EndRentDate
             // 
