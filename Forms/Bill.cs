@@ -275,5 +275,37 @@ namespace HardwareRentalApp.Forms
             if (!char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void dgv_Sale_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dgv_Sale.Columns[e.ColumnIndex].Name == "QuantityReturned")
+            {
+                string input = e.FormattedValue?.ToString().Trim() ?? "";
+
+                // Check if it's a valid integer
+                if (!int.TryParse(input, out int value) || value < 0)
+                {
+                    e.Cancel = true;
+                    dgv_Sale.Rows[e.RowIndex].ErrorText = "Please enter a positive integer.";
+                    return;
+                }
+
+                // Get QuantityRented value for this row
+                var rentedValue = dgv_Sale.Rows[e.RowIndex].Cells["QuantityRented"].Value;
+                int quantityRented = 0;
+                int.TryParse(rentedValue?.ToString() ?? "0", out quantityRented);
+
+                // Enforce QuantityReturned ≤ QuantityRented
+                if (value > quantityRented)
+                {
+                    e.Cancel = true;
+                    dgv_Sale.Rows[e.RowIndex].ErrorText = "Returned quantity cannot exceed rented quantity.";
+                }
+                else
+                {
+                    dgv_Sale.Rows[e.RowIndex].ErrorText = string.Empty; // clear error
+                }
+            }
+        }
     }
 }

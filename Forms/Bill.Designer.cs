@@ -57,10 +57,10 @@
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_Sale.Location = new Point(60, 199);
             dgv_Sale.Name = "dgv_Sale";
-            dgv_Sale.RowHeadersVisible = false;
             dgv_Sale.Size = new Size(855, 530);
             dgv_Sale.TabIndex = 19;
             dgv_Sale.CellBeginEdit += dgv_Sale_CellBeginEdit;
+            dgv_Sale.CellValidating += dgv_Sale_CellValidating;
             dgv_Sale.EditingControlShowing += dgv_Sale_EditingControlShowing;
             // 
             // lbl_WorkLocation
