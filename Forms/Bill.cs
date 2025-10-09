@@ -122,11 +122,12 @@ namespace HardwareRentalApp.Forms
             dt_items.Columns.Add("LocalizedName", typeof(string));
             dt_items.Columns.Add("Rent", typeof(decimal));
             dt_items.Columns.Add("QuantityRented", typeof(int));
+            dt_items.Columns.Add("QuantityReturned", typeof(int));  // <<== important
 
             for (int i = 0; i < l_items.Count; i++)
             {
                 var item = l_items[i];
-                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0); // start with 0 qty
+                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0, 0); // start with 0 qty
             }
 
             AdjustGridHeight();
@@ -141,7 +142,6 @@ namespace HardwareRentalApp.Forms
                     ItemId = r.GetInt32(r.GetOrdinal("ItemId")),
                     Quantity = r.GetInt32(r.GetOrdinal("Quantity")),
                     Price = r.GetDecimal(r.GetOrdinal("Price")),
-                    //Total = r.GetInt32(r.GetOrdinal("Quantity")) * r.GetDecimal(r.GetOrdinal("Price")),
                     ItemName = string.Empty // will fill below
                 },
                 billIdParam
@@ -175,23 +175,8 @@ namespace HardwareRentalApp.Forms
                 col.ReadOnly = col.Name != "QuantityReturned";  // all except this
             }
 
-            foreach (DataGridViewRow dgvRow in dgv_Sale.Rows)
-            {
-                var quantityRentedValue = dgvRow.Cells["QuantityRented"].Value;
-
-                if (quantityRentedValue != null && 
-                    int.TryParse(quantityRentedValue.ToString(), out int quantityRented) && 
-                    quantityRented > 0)
-                {
-
+            dgv_Sale.Refresh();
                 }
-                else
-                {
-                    dgvRow.Cells["QuantityReturned"].ReadOnly = true;
-                }
-            }
-
-        }
 
         private void AdjustGridHeight()
         {
