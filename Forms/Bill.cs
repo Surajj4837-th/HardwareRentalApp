@@ -169,6 +169,28 @@ namespace HardwareRentalApp.Forms
             // Bind to DataGridView
             dgv_Sale.DataSource = dt_items;
 
+            //make all cols except QuantityReturned read-only
+            foreach (DataGridViewColumn col in dgv_Sale.Columns)
+            {
+                col.ReadOnly = col.Name != "QuantityReturned";  // all except this
+            }
+
+            foreach (DataGridViewRow dgvRow in dgv_Sale.Rows)
+            {
+                var quantityRentedValue = dgvRow.Cells["QuantityRented"].Value;
+
+                if (quantityRentedValue != null && 
+                    int.TryParse(quantityRentedValue.ToString(), out int quantityRented) && 
+                    quantityRented > 0)
+                {
+
+                }
+                else
+                {
+                    dgvRow.Cells["QuantityReturned"].ReadOnly = true;
+                }
+            }
+
         }
 
         private void AdjustGridHeight()
