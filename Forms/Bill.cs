@@ -254,5 +254,26 @@ namespace HardwareRentalApp.Forms
                 }
             }
         }
+
+        private void dgv_Sale_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            // Only apply numeric restriction to QuantityReturned column
+            if (dgv_Sale.CurrentCell.OwningColumn.Name == "QuantityReturned" && e.Control is TextBox tb)
+            {
+                tb.KeyPress -= QuantityReturned_KeyPress; // prevent double subscription
+                tb.KeyPress += QuantityReturned_KeyPress;
+            }
+        }
+
+        private void QuantityReturned_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys (like Backspace, Delete, etc.)
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Allow only digits (no negative or decimal input)
+            if (!char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

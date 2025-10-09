@@ -61,6 +61,7 @@
             dgv_Sale.Size = new Size(855, 530);
             dgv_Sale.TabIndex = 19;
             dgv_Sale.CellBeginEdit += dgv_Sale_CellBeginEdit;
+            dgv_Sale.EditingControlShowing += dgv_Sale_EditingControlShowing;
             // 
             // lbl_WorkLocation
             // 
