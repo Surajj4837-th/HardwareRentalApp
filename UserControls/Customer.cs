@@ -200,6 +200,10 @@ namespace HardwareRentalApp.UserControls
 
         private void dgv_MultipurposeTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Ignore clicks on the column header or outside valid rows
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
             int row_index = e.RowIndex;
 
             string columnName = dgv_MultipurposeTable.Columns[e.ColumnIndex].Name;
