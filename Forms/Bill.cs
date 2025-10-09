@@ -176,7 +176,7 @@ namespace HardwareRentalApp.Forms
             }
 
             dgv_Sale.Refresh();
-                }
+        }
 
         private void AdjustGridHeight()
         {
@@ -234,6 +234,25 @@ namespace HardwareRentalApp.Forms
         private void btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgv_Sale_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            // Check if we are in the "QuantityReturned" column
+            if (dgv_Sale.Columns[e.ColumnIndex].Name == "QuantityReturned")
+            {
+                // Get the value from the "QuantityRented" cell in the same row
+                var quantityRentedValue = dgv_Sale.Rows[e.RowIndex].Cells["QuantityRented"].Value;
+
+                // Apply the same logic: check for null, parse to int, and check if > 0
+                if (quantityRentedValue == null ||
+                    !int.TryParse(quantityRentedValue.ToString(), out int quantityRented) ||
+                    quantityRented <= 0)
+                {
+                    // If the condition is NOT met (i.e., the cell SHOULD be read-only), cancel the edit
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
