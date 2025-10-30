@@ -116,7 +116,7 @@ namespace HardwareRentalApp
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             this.pnl_Title.BackColor = Color.FromArgb(102, 239, 209);
-            //OpenChildControl(new Inventory());
+            OpenChildControl(new Inventory());
         }
 
         private void btn_Settings_Click(object sender, EventArgs e)
