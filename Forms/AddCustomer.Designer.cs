@@ -188,6 +188,7 @@
             Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddCustomer";
+            StartPosition = FormStartPosition.CenterScreen;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
