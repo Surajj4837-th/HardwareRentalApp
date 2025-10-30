@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cb_Language.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9.75pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="cb_Language.Items" xml:space="preserve">
     <value>मराठी</value>
@@ -135,7 +135,7 @@
     <value>99, 3</value>
   </data>
   <data name="cb_Language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 28</value>
+    <value>173, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cb_Language.TabIndex" type="System.Int32, mscorlib">
@@ -163,7 +163,7 @@
     <value>Fill</value>
   </data>
   <data name="lbl_Language.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 9.75pt</value>
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="lbl_Language.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
@@ -226,7 +226,7 @@
     <value>True</value>
   </data>
   <data name="lbl_admin.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 16.2pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16.2pt, style=Bold</value>
   </data>
   <data name="lbl_admin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -239,7 +239,7 @@
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_admin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 34</value>
+    <value>145, 26</value>
   </data>
   <data name="lbl_admin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -269,7 +269,7 @@
     <value>True</value>
   </data>
   <data name="ll_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 13.8pt, style=Italic</value>
+    <value>Microsoft Sans Serif, 13.8pt, style=Italic</value>
   </data>
   <data name="ll_register.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -278,7 +278,7 @@
     <value>678, 445</value>
   </data>
   <data name="ll_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 29</value>
+    <value>128, 24</value>
   </data>
   <data name="ll_register.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -302,7 +302,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="btn_login.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 15pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="btn_login.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -335,7 +335,7 @@
     <value>0</value>
   </data>
   <data name="tb_Password.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 15pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="tb_Password.Location" type="System.Drawing.Point, System.Drawing">
     <value>234, 115</value>
@@ -344,7 +344,7 @@
     <value>4, 2, 4, 2</value>
   </data>
   <data name="tb_Password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 35</value>
+    <value>346, 30</value>
   </data>
   <data name="tb_Password.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -362,7 +362,7 @@
     <value>1</value>
   </data>
   <data name="tb_MobileNo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 15pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="tb_MobileNo.Location" type="System.Drawing.Point, System.Drawing">
     <value>234, 48</value>
@@ -371,7 +371,7 @@
     <value>4, 2, 4, 2</value>
   </data>
   <data name="tb_MobileNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 35</value>
+    <value>346, 30</value>
   </data>
   <data name="tb_MobileNo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -392,7 +392,7 @@
     <value>True</value>
   </data>
   <data name="lbl_Password.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 15pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="lbl_Password.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -404,7 +404,7 @@
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_Password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
+    <value>104, 25</value>
   </data>
   <data name="lbl_Password.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -428,7 +428,7 @@
     <value>True</value>
   </data>
   <data name="lbl_MobileNo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 15pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="lbl_MobileNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -440,7 +440,7 @@
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_MobileNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 30</value>
+    <value>150, 25</value>
   </data>
   <data name="lbl_MobileNo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -461,7 +461,7 @@
     <value>4</value>
   </data>
   <data name="pnl_login.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Noto Sans, 15pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="pnl_login.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 113</value>
