@@ -276,6 +276,23 @@ namespace HardwareRentalApp.Forms
                 e.Handled = true;
         }
 
+        private void ComputeBill()
+        {
+            decimal totalAmount = 0m;
+            foreach (DataGridViewRow row in dgv_Sale.Rows)
+            {
+                if (row.IsNewRow) continue; // skip new row
+                var rentValue = row.Cells["Rent"].Value;
+                var quantityReturnedValue = row.Cells["QuantityReturned"].Value;
+                decimal rent = 0m;
+                int quantityReturned = 0;
+                decimal.TryParse(rentValue?.ToString() ?? "0", out rent);
+                int.TryParse(quantityReturnedValue?.ToString() ?? "0", out quantityReturned);
+                totalAmount += rent * quantityReturned;
+            }
+            tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
+        }
+
         private void dgv_Sale_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             if (dgv_Sale.Columns[e.ColumnIndex].Name == "QuantityReturned")
@@ -307,6 +324,7 @@ namespace HardwareRentalApp.Forms
                 {
                     //dgv_Sale.Rows[e.RowIndex].ErrorText = string.Empty; // clear error
                     dgv_Sale.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                    ComputeBill();
                     btn_FinishPurchase.Enabled = true;
                 }
             }
