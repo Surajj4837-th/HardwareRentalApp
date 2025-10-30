@@ -299,11 +299,15 @@ namespace HardwareRentalApp.Forms
                 if (value > quantityRented)
                 {
                     e.Cancel = true;
-                    dgv_Sale.Rows[e.RowIndex].ErrorText = "Returned quantity cannot exceed rented quantity.";
+                    //dgv_Sale.Rows[e.RowIndex].ErrorText = "Returned quantity cannot exceed rented quantity.";
+                    dgv_Sale.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    btn_FinishPurchase.Enabled = false;
                 }
                 else
                 {
-                    dgv_Sale.Rows[e.RowIndex].ErrorText = string.Empty; // clear error
+                    //dgv_Sale.Rows[e.RowIndex].ErrorText = string.Empty; // clear error
+                    dgv_Sale.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                    btn_FinishPurchase.Enabled = true;
                 }
             }
         }
