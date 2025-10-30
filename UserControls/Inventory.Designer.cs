@@ -28,19 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            pnl_customerTable = new Panel();
+            dgv_InventoryTable = new DataGridView();
+            tb_search = new TextBox();
+            lbl_search = new Label();
+            lbl_mainPanel = new Label();
+            pnl_customerTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_InventoryTable).BeginInit();
             SuspendLayout();
+            // 
+            // pnl_customerTable
+            // 
+            pnl_customerTable.BorderStyle = BorderStyle.FixedSingle;
+            pnl_customerTable.Controls.Add(dgv_InventoryTable);
+            pnl_customerTable.Controls.Add(tb_search);
+            pnl_customerTable.Controls.Add(lbl_search);
+            pnl_customerTable.Controls.Add(lbl_mainPanel);
+            pnl_customerTable.Font = new Font("Nirmala UI", 7.8F);
+            pnl_customerTable.Location = new Point(138, 89);
+            pnl_customerTable.Name = "pnl_customerTable";
+            pnl_customerTable.Size = new Size(1183, 584);
+            pnl_customerTable.TabIndex = 1;
+            // 
+            // dgv_InventoryTable
+            // 
+            dgv_InventoryTable.AllowUserToAddRows = false;
+            dgv_InventoryTable.AllowUserToDeleteRows = false;
+            dgv_InventoryTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_InventoryTable.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Nirmala UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgv_InventoryTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dgv_InventoryTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgv_InventoryTable.DefaultCellStyle = dataGridViewCellStyle8;
+            dgv_InventoryTable.Dock = DockStyle.Bottom;
+            dgv_InventoryTable.Location = new Point(0, 147);
+            dgv_InventoryTable.MultiSelect = false;
+            dgv_InventoryTable.Name = "dgv_InventoryTable";
+            dgv_InventoryTable.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Nirmala UI", 7.8F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgv_InventoryTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dgv_InventoryTable.RowHeadersVisible = false;
+            dgv_InventoryTable.RowHeadersWidth = 51;
+            dgv_InventoryTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_InventoryTable.Size = new Size(1181, 435);
+            dgv_InventoryTable.TabIndex = 2;
+            // 
+            // tb_search
+            // 
+            tb_search.Font = new Font("Nirmala UI", 13.8F);
+            tb_search.Location = new Point(118, 73);
+            tb_search.Name = "tb_search";
+            tb_search.Size = new Size(272, 32);
+            tb_search.TabIndex = 1;
+            // 
+            // lbl_search
+            // 
+            lbl_search.AutoSize = true;
+            lbl_search.Font = new Font("Nirmala UI", 13.8F);
+            lbl_search.ImeMode = ImeMode.NoControl;
+            lbl_search.Location = new Point(28, 75);
+            lbl_search.Name = "lbl_search";
+            lbl_search.Size = new Size(73, 25);
+            lbl_search.TabIndex = 0;
+            lbl_search.Text = "Search:";
+            // 
+            // lbl_mainPanel
+            // 
+            lbl_mainPanel.Dock = DockStyle.Top;
+            lbl_mainPanel.Font = new Font("Nirmala UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_mainPanel.ImeMode = ImeMode.NoControl;
+            lbl_mainPanel.Location = new Point(0, 0);
+            lbl_mainPanel.Name = "lbl_mainPanel";
+            lbl_mainPanel.Size = new Size(1181, 34);
+            lbl_mainPanel.TabIndex = 0;
+            lbl_mainPanel.Text = "Inventory Information";
+            lbl_mainPanel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pnl_customerTable);
             Font = new Font("Nirmala UI", 13.8F);
             Margin = new Padding(4, 5, 4, 5);
             Name = "Inventory";
             Size = new Size(1486, 962);
+            Load += Inventory_Load;
+            pnl_customerTable.ResumeLayout(false);
+            pnl_customerTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_InventoryTable).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel pnl_customerTable;
+        private DataGridView dgv_InventoryTable;
+        private TextBox tb_search;
+        private Label lbl_search;
+        private Label lbl_mainPanel;
     }
 }
