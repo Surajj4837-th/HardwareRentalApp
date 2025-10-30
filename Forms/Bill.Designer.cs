@@ -45,7 +45,7 @@
             tb_StartRentDate = new TextBox();
             tb_BillAmount = new TextBox();
             lbl_BillAmount = new Label();
-            btn_Save = new Button();
+            btn_FinishPurchase = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
             SuspendLayout();
             // 
@@ -214,17 +214,18 @@
             lbl_BillAmount.TabIndex = 14;
             lbl_BillAmount.Text = "Bill Amount";
             // 
-            // btn_Save
+            // btn_FinishPurchase
             // 
-            btn_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_Save.BackColor = Color.PaleGreen;
-            btn_Save.Font = new Font("Nirmala UI", 14.25F);
-            btn_Save.Location = new Point(735, 809);
-            btn_Save.Name = "btn_Save";
-            btn_Save.Size = new Size(180, 36);
-            btn_Save.TabIndex = 20;
-            btn_Save.Text = "Finish Purchase";
-            btn_Save.UseVisualStyleBackColor = false;
+            btn_FinishPurchase.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_FinishPurchase.BackColor = Color.PaleGreen;
+            btn_FinishPurchase.Enabled = false;
+            btn_FinishPurchase.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_FinishPurchase.Location = new Point(735, 809);
+            btn_FinishPurchase.Name = "btn_FinishPurchase";
+            btn_FinishPurchase.Size = new Size(180, 36);
+            btn_FinishPurchase.TabIndex = 20;
+            btn_FinishPurchase.Text = "Finish Purchase";
+            btn_FinishPurchase.UseVisualStyleBackColor = false;
             // 
             // Bill
             // 
@@ -233,7 +234,7 @@
             ClientSize = new Size(1024, 869);
             ControlBox = false;
             Controls.Add(dtp_EndRentDate);
-            Controls.Add(btn_Save);
+            Controls.Add(btn_FinishPurchase);
             Controls.Add(dgv_Sale);
             Controls.Add(lbl_EndRentDate);
             Controls.Add(lbl_BillAmount);
@@ -252,6 +253,7 @@
             Font = new Font("Nirmala UI", 9F);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Bill";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Bill";
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).EndInit();
             ResumeLayout(false);
@@ -275,6 +277,6 @@
         private TextBox tb_StartRentDate;
         private TextBox tb_BillAmount;
         private Label lbl_BillAmount;
-        private Button btn_Save;
+        private Button btn_FinishPurchase;
     }
 }
