@@ -18,6 +18,7 @@ namespace HardwareRentalApp.UserControls
         private DBInterface obj_DBAccess = new DBInterface();
         private BindingSource bindingSourceCustomers = new BindingSource();
         private DataTable dt_Items = new DataTable();
+        private int ItemID = -1;
         public Inventory()
         {
             InitializeComponent();
@@ -62,6 +63,17 @@ namespace HardwareRentalApp.UserControls
 
             // Bind BindingSource to DataGridView
             dgv_InventoryTable.DataSource = bindingSourceCustomers;
+        }
+
+        private void dgv_InventoryTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks on the column header or outside valid rows
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            int row_index = e.RowIndex;
+
+            ItemID = Convert.ToInt32(dgv_InventoryTable.Rows[row_index].Cells["ItemID"].Value);
         }
     }
 }
