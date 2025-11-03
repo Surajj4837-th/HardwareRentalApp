@@ -1,4 +1,5 @@
 ﻿using HardwareRentalApp.Classes;
+using HardwareRentalApp.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,6 +75,14 @@ namespace HardwareRentalApp.UserControls
             int row_index = e.RowIndex;
 
             ItemID = Convert.ToInt32(dgv_InventoryTable.Rows[row_index].Cells["ItemID"].Value);
+
+            using (var UR_form = new UpdateRent(ItemID))
+            {
+                if (UR_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    loadData();
+                }
+            }
         }
     }
 }
