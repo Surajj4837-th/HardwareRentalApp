@@ -20,6 +20,9 @@ namespace HardwareRentalApp.UserControls
         private BindingSource bindingSourceCustomers = new BindingSource();
         private DataTable dt_Items = new DataTable();
         private int ItemID = -1;
+        private string ItemName = "";
+        private decimal RentPerDay = 0.0M;
+
         public Inventory()
         {
             InitializeComponent();
@@ -64,6 +67,17 @@ namespace HardwareRentalApp.UserControls
 
             // Bind BindingSource to DataGridView
             dgv_InventoryTable.DataSource = bindingSourceCustomers;
+        }
+
+        private void UpdateRent(int itemID, decimal newRent)
+        {
+            string UpdateQuery = "UPDATE Items SET Rent = @Rent WHERE ItemID = @ItemID";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Rent", newRent },
+                { "@ItemID", itemID }
+            };
+            object value = obj_DBAccess.ExecuteNonQuery(UpdateQuery, parameters);
         }
 
         private void dgv_InventoryTable_CellClick(object sender, DataGridViewCellEventArgs e)

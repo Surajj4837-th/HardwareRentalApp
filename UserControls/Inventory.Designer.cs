@@ -131,6 +131,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             Controls.Add(pnl_customerTable);
             Font = new Font("Nirmala UI", 13.8F);
             Margin = new Padding(4, 5, 4, 5);
