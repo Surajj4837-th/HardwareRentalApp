@@ -72,11 +72,11 @@ namespace HardwareRentalApp.Forms
             );
 
             //Clear existing columns and set up DataGridView
-            dgv_Sale.Columns.Clear();
-            dgv_Sale.AutoGenerateColumns = false;
+            dgv_Bill.Columns.Clear();
+            dgv_Bill.AutoGenerateColumns = false;
 
             // Add columns as per the list of items in the database
-            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "ItemId",
                 DataPropertyName = "ItemId",
@@ -84,7 +84,7 @@ namespace HardwareRentalApp.Forms
                 ReadOnly = true
             });
 
-            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "LocalizedName",
                 DataPropertyName = "LocalizedName",
@@ -92,7 +92,7 @@ namespace HardwareRentalApp.Forms
                 ReadOnly = true,
                 Width = 200
             });
-            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Rent",
                 DataPropertyName = "Rent",
@@ -100,7 +100,7 @@ namespace HardwareRentalApp.Forms
                 ReadOnly = true,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
-            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "QuantityRented",
                 DataPropertyName = "QuantityRented",
@@ -108,7 +108,7 @@ namespace HardwareRentalApp.Forms
                 Width = 80,
                 ReadOnly = false
             });
-            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "QuantityReturned",
                 DataPropertyName = "QuantityReturned",
@@ -167,31 +167,31 @@ namespace HardwareRentalApp.Forms
             }
 
             // Bind to DataGridView
-            dgv_Sale.DataSource = dt_items;
+            dgv_Bill.DataSource = dt_items;
 
             //make all cols except QuantityReturned read-only
-            foreach (DataGridViewColumn col in dgv_Sale.Columns)
+            foreach (DataGridViewColumn col in dgv_Bill.Columns)
             {
                 col.ReadOnly = col.Name != "QuantityReturned";  // all except this
             }
 
-            dgv_Sale.Refresh();
+            dgv_Bill.Refresh();
         }
 
         private void AdjustGridHeight()
         {
-            if (dgv_Sale.Rows.Count == 0)
+            if (dgv_Bill.Rows.Count == 0)
                 return;
 
-            int totalHeight = dgv_Sale.ColumnHeadersHeight;
+            int totalHeight = dgv_Bill.ColumnHeadersHeight;
 
-            foreach (DataGridViewRow row in dgv_Sale.Rows)
+            foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
                 if (row.IsNewRow) continue; // skip the blank new row if enabled
                 totalHeight += row.Height;
             }
 
-            dgv_Sale.Height = (totalHeight + 8) > dgv_Sale.Height ? dgv_Sale.Height : (totalHeight + 8);  //padding a small buffer
+            dgv_Bill.Height = (totalHeight + 8) > dgv_Bill.Height ? dgv_Bill.Height : (totalHeight + 8);  //padding a small buffer
         }
 
         public void GetLocalizedItems()
@@ -236,13 +236,13 @@ namespace HardwareRentalApp.Forms
             this.Close();
         }
 
-        private void dgv_Sale_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        private void dgv_Bill_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             // Check if we are in the "QuantityReturned" column
-            if (dgv_Sale.Columns[e.ColumnIndex].Name == "QuantityReturned")
+            if (dgv_Bill.Columns[e.ColumnIndex].Name == "QuantityReturned")
             {
                 // Get the value from the "QuantityRented" cell in the same row
-                var quantityRentedValue = dgv_Sale.Rows[e.RowIndex].Cells["QuantityRented"].Value;
+                var quantityRentedValue = dgv_Bill.Rows[e.RowIndex].Cells["QuantityRented"].Value;
 
                 // Apply the same logic: check for null, parse to int, and check if > 0
                 if (quantityRentedValue == null ||
@@ -255,10 +255,10 @@ namespace HardwareRentalApp.Forms
             }
         }
 
-        private void dgv_Sale_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        private void dgv_Bill_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             // Only apply numeric restriction to QuantityReturned column
-            if (dgv_Sale.CurrentCell.OwningColumn.Name == "QuantityReturned" && e.Control is TextBox tb)
+            if (dgv_Bill.CurrentCell.OwningColumn.Name == "QuantityReturned" && e.Control is TextBox tb)
             {
                 tb.KeyPress -= QuantityReturned_KeyPress; // prevent double subscription
                 tb.KeyPress += QuantityReturned_KeyPress;
@@ -279,7 +279,7 @@ namespace HardwareRentalApp.Forms
         private void ComputeBill()
         {
             decimal totalAmount = 0m;
-            foreach (DataGridViewRow row in dgv_Sale.Rows)
+            foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
                 if (row.IsNewRow) continue; // skip new row
                 var rentValue = row.Cells["Rent"].Value;
@@ -293,9 +293,9 @@ namespace HardwareRentalApp.Forms
             tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
         }
 
-        private void dgv_Sale_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        private void dgv_Bill_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (dgv_Sale.Columns[e.ColumnIndex].Name == "QuantityReturned")
+            if (dgv_Bill.Columns[e.ColumnIndex].Name == "QuantityReturned")
             {
                 string input = e.FormattedValue?.ToString().Trim() ?? "";
 
@@ -303,12 +303,12 @@ namespace HardwareRentalApp.Forms
                 if (!int.TryParse(input, out int value) || value < 0)
                 {
                     e.Cancel = true;
-                    dgv_Sale.Rows[e.RowIndex].ErrorText = "Please enter a positive integer.";
+                    dgv_Bill.Rows[e.RowIndex].ErrorText = "Please enter a positive integer.";
                     return;
                 }
 
                 // Get QuantityRented value for this row
-                var rentedValue = dgv_Sale.Rows[e.RowIndex].Cells["QuantityRented"].Value;
+                var rentedValue = dgv_Bill.Rows[e.RowIndex].Cells["QuantityRented"].Value;
                 int quantityRented = 0;
                 int.TryParse(rentedValue?.ToString() ?? "0", out quantityRented);
 
@@ -317,17 +317,26 @@ namespace HardwareRentalApp.Forms
                 {
                     e.Cancel = true;
                     //dgv_Sale.Rows[e.RowIndex].ErrorText = "Returned quantity cannot exceed rented quantity.";
-                    dgv_Sale.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    dgv_Bill.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
                     btn_FinishPurchase.Enabled = false;
                 }
                 else
                 {
                     //dgv_Sale.Rows[e.RowIndex].ErrorText = string.Empty; // clear error
-                    dgv_Sale.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
-                    ComputeBill();
+                    dgv_Bill.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
                     btn_FinishPurchase.Enabled = true;
                 }
             }
+        }
+
+        private void dgv_Bill_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            ComputeBill();
+        }
+
+        private void dgv_Bill_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            dgv_Bill.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
     }
 }

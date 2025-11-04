@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill));
-            dgv_Sale = new DataGridView();
+            dgv_Bill = new DataGridView();
             lbl_WorkLocation = new Label();
             lbl_RentDate = new Label();
             lbl_Reference = new Label();
@@ -46,22 +46,24 @@
             tb_BillAmount = new TextBox();
             lbl_BillAmount = new Label();
             btn_FinishPurchase = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_Bill).BeginInit();
             SuspendLayout();
             // 
-            // dgv_Sale
+            // dgv_Bill
             // 
-            dgv_Sale.AllowUserToAddRows = false;
-            dgv_Sale.AllowUserToResizeRows = false;
-            dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_Sale.Location = new Point(60, 199);
-            dgv_Sale.Name = "dgv_Sale";
-            dgv_Sale.Size = new Size(855, 530);
-            dgv_Sale.TabIndex = 19;
-            dgv_Sale.CellBeginEdit += dgv_Sale_CellBeginEdit;
-            dgv_Sale.CellValidating += dgv_Sale_CellValidating;
-            dgv_Sale.EditingControlShowing += dgv_Sale_EditingControlShowing;
+            dgv_Bill.AllowUserToAddRows = false;
+            dgv_Bill.AllowUserToResizeRows = false;
+            dgv_Bill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_Bill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_Bill.Location = new Point(60, 199);
+            dgv_Bill.Name = "dgv_Bill";
+            dgv_Bill.Size = new Size(855, 530);
+            dgv_Bill.TabIndex = 19;
+            dgv_Bill.CellBeginEdit += dgv_Bill_CellBeginEdit;
+            dgv_Bill.CellValidating += dgv_Bill_CellValidating;
+            dgv_Bill.CellValueChanged += dgv_Bill_CellValueChanged;
+            dgv_Bill.CurrentCellDirtyStateChanged += dgv_Bill_CurrentCellDirtyStateChanged;
+            dgv_Bill.EditingControlShowing += dgv_Bill_EditingControlShowing;
             // 
             // lbl_WorkLocation
             // 
@@ -235,7 +237,7 @@
             ControlBox = false;
             Controls.Add(dtp_EndRentDate);
             Controls.Add(btn_FinishPurchase);
-            Controls.Add(dgv_Sale);
+            Controls.Add(dgv_Bill);
             Controls.Add(lbl_EndRentDate);
             Controls.Add(lbl_BillAmount);
             Controls.Add(lbl_WorkLocation);
@@ -255,13 +257,13 @@
             Name = "Bill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bill";
-            ((System.ComponentModel.ISupportInitialize)dgv_Sale).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_Bill).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private DataGridView dgv_Sale;
+        private DataGridView dgv_Bill;
         private Label lbl_WorkLocation;
         private Label lbl_RentDate;
         private Label lbl_Reference;
