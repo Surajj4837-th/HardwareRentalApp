@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateRent));
             tableLayoutPanel1 = new TableLayoutPanel();
-            tb_LesseeName = new TextBox();
-            tb_LesseeAddress = new TextBox();
+            tb_ItemID = new TextBox();
+            tb_RentPerDay = new TextBox();
             lbl_ItemID = new Label();
-            tb_MobileNum = new TextBox();
+            tb_ItemName = new TextBox();
             lbl_ItemName = new Label();
             lbl_Rent = new Label();
             btn_Close = new Button();
@@ -47,10 +47,10 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-            tableLayoutPanel1.Controls.Add(tb_LesseeName, 1, 0);
-            tableLayoutPanel1.Controls.Add(tb_LesseeAddress, 1, 2);
+            tableLayoutPanel1.Controls.Add(tb_ItemID, 1, 0);
+            tableLayoutPanel1.Controls.Add(tb_RentPerDay, 1, 2);
             tableLayoutPanel1.Controls.Add(lbl_ItemID, 0, 0);
-            tableLayoutPanel1.Controls.Add(tb_MobileNum, 1, 1);
+            tableLayoutPanel1.Controls.Add(tb_ItemName, 1, 1);
             tableLayoutPanel1.Controls.Add(lbl_ItemName, 0, 1);
             tableLayoutPanel1.Controls.Add(lbl_Rent, 0, 2);
             tableLayoutPanel1.Font = new Font("Nirmala UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -63,25 +63,26 @@
             tableLayoutPanel1.Size = new Size(434, 175);
             tableLayoutPanel1.TabIndex = 3;
             // 
-            // tb_LesseeName
+            // tb_ItemID
             // 
-            tb_LesseeName.Anchor = AnchorStyles.None;
-            tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeName.Location = new Point(176, 12);
-            tb_LesseeName.Name = "tb_LesseeName";
-            tb_LesseeName.ReadOnly = true;
-            tb_LesseeName.Size = new Size(255, 33);
-            tb_LesseeName.TabIndex = 2;
+            tb_ItemID.Anchor = AnchorStyles.None;
+            tb_ItemID.Font = new Font("Nirmala UI", 14.25F);
+            tb_ItemID.Location = new Point(176, 12);
+            tb_ItemID.Name = "tb_ItemID";
+            tb_ItemID.ReadOnly = true;
+            tb_ItemID.Size = new Size(255, 33);
+            tb_ItemID.TabIndex = 2;
             // 
-            // tb_LesseeAddress
+            // tb_RentPerDay
             // 
-            tb_LesseeAddress.Anchor = AnchorStyles.None;
-            tb_LesseeAddress.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeAddress.Location = new Point(177, 129);
-            tb_LesseeAddress.Margin = new Padding(4, 3, 4, 3);
-            tb_LesseeAddress.Name = "tb_LesseeAddress";
-            tb_LesseeAddress.Size = new Size(253, 33);
-            tb_LesseeAddress.TabIndex = 4;
+            tb_RentPerDay.Anchor = AnchorStyles.None;
+            tb_RentPerDay.Font = new Font("Nirmala UI", 14.25F);
+            tb_RentPerDay.Location = new Point(177, 129);
+            tb_RentPerDay.Margin = new Padding(4, 3, 4, 3);
+            tb_RentPerDay.Name = "tb_RentPerDay";
+            tb_RentPerDay.Size = new Size(253, 33);
+            tb_RentPerDay.TabIndex = 4;
+            tb_RentPerDay.KeyPress += tb_RentPerDay_KeyPress;
             // 
             // lbl_ItemID
             // 
@@ -97,16 +98,16 @@
             lbl_ItemID.Text = "Item ID";
             lbl_ItemID.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tb_MobileNum
+            // tb_ItemName
             // 
-            tb_MobileNum.Anchor = AnchorStyles.None;
-            tb_MobileNum.Font = new Font("Nirmala UI", 14.25F);
-            tb_MobileNum.Location = new Point(177, 70);
-            tb_MobileNum.Margin = new Padding(4, 3, 4, 3);
-            tb_MobileNum.Name = "tb_MobileNum";
-            tb_MobileNum.ReadOnly = true;
-            tb_MobileNum.Size = new Size(253, 33);
-            tb_MobileNum.TabIndex = 3;
+            tb_ItemName.Anchor = AnchorStyles.None;
+            tb_ItemName.Font = new Font("Nirmala UI", 14.25F);
+            tb_ItemName.Location = new Point(177, 70);
+            tb_ItemName.Margin = new Padding(4, 3, 4, 3);
+            tb_ItemName.Name = "tb_ItemName";
+            tb_ItemName.ReadOnly = true;
+            tb_ItemName.Size = new Size(253, 33);
+            tb_ItemName.TabIndex = 3;
             // 
             // lbl_ItemName
             // 
@@ -163,6 +164,7 @@
             btn_Update.TabIndex = 5;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.Click += btn_Update_Click;
             // 
             // lbl_main
             // 
@@ -190,6 +192,7 @@
             Name = "UpdateRent";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UpdateRent";
+            Load += UpdateRent_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -198,10 +201,10 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox tb_LesseeName;
-        private TextBox tb_LesseeAddress;
+        private TextBox tb_ItemID;
+        private TextBox tb_RentPerDay;
         private Label lbl_ItemID;
-        private TextBox tb_MobileNum;
+        private TextBox tb_ItemName;
         private Label lbl_ItemName;
         private Label lbl_Rent;
         private Button btn_Close;
