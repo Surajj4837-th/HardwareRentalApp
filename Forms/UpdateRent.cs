@@ -69,9 +69,19 @@ namespace HardwareRentalApp.Forms
             }
             else
             {
-                this.RentPerDay = Convert.ToDecimal(tb_RentPerDay.Text);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult result = MessageBox.Show(
+                    "Do you want to save the data?",
+                    "Confirm Save",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    this.RentPerDay = Convert.ToDecimal(tb_RentPerDay.Text);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
         }
     }
