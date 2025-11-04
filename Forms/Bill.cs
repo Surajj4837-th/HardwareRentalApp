@@ -385,7 +385,6 @@ namespace HardwareRentalApp.Forms
                 string workLocation = tb_WorkLocation.Text.Trim();
                 DateTime? paymentDate = null;
                 decimal totalAmount = 0;
-                decimal advanceAmount = 0;
 
                 CreateBill(
                     CustomerId,
@@ -396,8 +395,7 @@ namespace HardwareRentalApp.Forms
                     reference,
                     workLocation,
                     paymentDate,
-                    totalAmount,
-                    advanceAmount
+                    totalAmount
                 );
             }
         }
@@ -411,8 +409,7 @@ namespace HardwareRentalApp.Forms
             string reference,
             string workLocation,
             DateTime? paymentDate,
-            decimal totalAmount,
-            decimal advanceAmount)
+            decimal totalAmount)
         {
             // 1. Insert Bill and get BillId
             var billCmd = new SqlCommand(@"
@@ -437,7 +434,6 @@ namespace HardwareRentalApp.Forms
             billCmd.Parameters.AddWithValue("@WorkLocation", string.IsNullOrWhiteSpace(workLocation) ? DBNull.Value : (object)workLocation);
             billCmd.Parameters.AddWithValue("@PaymentDate", (object?)paymentDate ?? DBNull.Value);
             billCmd.Parameters.AddWithValue("@TotalAmount", totalAmount);
-            billCmd.Parameters.AddWithValue("@AdvanceAmount", advanceAmount);
 
             int billId = Convert.ToInt32(obj_DBAccess.ExecuteScalarQuery(billCmd));
 
