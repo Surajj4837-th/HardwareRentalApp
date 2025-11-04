@@ -1,14 +1,14 @@
 use [HardwareRentalApp(Dev)]
 
 CREATE TABLE Customers (
-    CustomerId INT IDENTITY PRIMARY KEY,
+    CustomerId INT IDENTITY(1,1) PRIMARY KEY,
     LesseeName NVARCHAR(100) NOT NULL,
     LesseeAddress NVARCHAR(500),
     MobileNumber NVARCHAR(10) NOT NULL
 );
 
 CREATE TABLE Bills (
-    BillId BIGINT IDENTITY PRIMARY KEY,
+    BillId BIGINT IDENTITY(1,1) PRIMARY KEY,
     CustomerId INT NOT NULL,          -- Reference to Customers
 	AdminId INT NOT NULL,               -- Reference to Credentials
     BillDate DATETIME DEFAULT GETDATE(), -- When bill is created
@@ -23,7 +23,7 @@ CREATE TABLE Bills (
 );
 
 CREATE TABLE Items (
-    ItemId INT IDENTITY PRIMARY KEY,
+    ItemId INT IDENTITY(1,1) PRIMARY KEY,
     ItemName NVARCHAR(100) NOT NULL,
     Rent DECIMAL(10,2) NOT NULL
 );
@@ -48,7 +48,7 @@ VALUES
 ('Shipping', 0.00);
 
 CREATE TABLE BillItems (
-    BillItemId INT IDENTITY PRIMARY KEY,
+    BillItemId INT IDENTITY(1,1) PRIMARY KEY,
     BillId BIGINT NOT NULL,
     ItemId INT NOT NULL,
     Quantity INT NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE BillItems (
 );
 
 CREATE TABLE Credentials (
-    AdminId INT IDENTITY PRIMARY KEY,
+    AdminId INT IDENTITY(1,1) PRIMARY KEY,
     FullName NVARCHAR(100) NOT NULL,
     MobileNumber NVARCHAR(10) NOT NULL UNIQUE,
     PasswordHash NVARCHAR(255) NOT NULL,
