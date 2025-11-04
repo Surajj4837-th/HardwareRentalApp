@@ -228,6 +228,7 @@
             btn_FinishPurchase.TabIndex = 20;
             btn_FinishPurchase.Text = "Finish Purchase";
             btn_FinishPurchase.UseVisualStyleBackColor = false;
+            btn_FinishPurchase.Click += btn_FinishPurchase_Click;
             // 
             // Bill
             // 

@@ -20,7 +20,8 @@ namespace HardwareRentalApp.Forms
         private DBInterface obj_DBAccess = new DBInterface();
         private List<Items> l_items;          // List to hold items fetched from DB
         List<BillSummary> BillInformation;
-        DataTable dt_items = new DataTable();       //List of items to be written to bill db from DGV input
+        DataTable dt_items = new DataTable();       //List of items to be fetched from bill db to DGV input
+        DataTable dt_NewBillItems = new DataTable();       //List of items to be written to bill db from DGV input after bill finalization
         private int BillID;
 
         public Bill(int invoiceID)
@@ -337,6 +338,123 @@ namespace HardwareRentalApp.Forms
         private void dgv_Bill_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             dgv_Bill.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+
+        private void btn_FinishPurchase_Click(object sender, EventArgs e)
+        {
+            dt_NewBillItems.Columns.Add("ItemId", dt_items.Columns["ItemId"].DataType);
+            dt_NewBillItems.Columns.Add("Price", dt_items.Columns["Rent"].DataType);
+            dt_NewBillItems.Columns.Add("Quantity", dt_items.Columns["Quantity"].DataType);
+
+            foreach (DataGridViewRow row in dgv_Bill.Rows)
+            {
+                // Get cell values safely
+                int RentedQty = Convert.ToInt16(row.Cells["QuantityRented"].Value);
+
+                if (RentedQty > 0)
+                {
+                    int ReturnedQty = Convert.ToInt16(row.Cells["QuantityReturned"].Value);
+
+                    if (RentedQty == ReturnedQty)
+                    {
+                        MessageBox.Show("All items returned.", "Bill Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        DataRow newRow = dt_NewBillItems.NewRow();
+                        newRow["ItemId"] = row.Cells["ItemId"].Value;
+                        newRow["Price"] = row.Cells["Rent"].Value;
+                        newRow["Quantity"] = RentedQty - ReturnedQty;
+
+                        // Add the new row to the DataTable
+                        dt_NewBillItems.Rows.Add(newRow);
+
+                        MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+
+            if(dt_NewBillItems.Rows.Count > 0)
+            {
+                long CustomerId = BillInformation[0].CustomerId;
+                int AdminId = HardwareRentalApp.UserControls.Login.AdminId;
+                DateTime RentalStart = dtp_EndRentDate.Value;
+                DateTime? RentalEnd = null;
+                string projectOwner = tb_OwnerName.Text.Trim();
+                string reference = tb_Reference.Text.Trim();
+                string workLocation = tb_WorkLocation.Text.Trim();
+                DateTime? paymentDate = null;
+                decimal totalAmount = 0;
+                decimal advanceAmount = 0;
+
+                CreateBill(
+                    CustomerId,
+                    AdminId,
+                    RentalStart,
+                    RentalEnd,
+                    projectOwner,
+                    reference,
+                    workLocation,
+                    paymentDate,
+                    totalAmount,
+                    advanceAmount
+                );
+            }
+        }
+
+        public void CreateBill(
+            Int64 customerId,
+            int adminId,
+            DateTime rentalStart,
+            DateTime? rentalEnd,
+            string projectOwner,
+            string reference,
+            string workLocation,
+            DateTime? paymentDate,
+            decimal totalAmount,
+            decimal advanceAmount)
+        {
+            // 1. Insert Bill and get BillId
+            var billCmd = new SqlCommand(@"
+                            INSERT INTO Bills (
+                                CustomerId, AdminId, BillDate, RentalStartDate, RentalEndDate,
+                                ProjectOwner, Reference, WorkLocation,
+                                PaymentDate, TotalAmount
+                            )
+                            OUTPUT INSERTED.BillId
+                            VALUES (
+                                @CustomerId, @AdminId, GETDATE(), @RentalStartDate, @RentalEndDate,
+                                @ProjectOwner, @Reference, @WorkLocation,
+                                @PaymentDate, @TotalAmount
+                            )");
+
+            billCmd.Parameters.AddWithValue("@CustomerId", customerId);
+            billCmd.Parameters.AddWithValue("@AdminId", adminId);
+            billCmd.Parameters.AddWithValue("@RentalStartDate", rentalStart);
+            billCmd.Parameters.AddWithValue("@RentalEndDate", (object?)rentalEnd ?? DBNull.Value);
+            billCmd.Parameters.AddWithValue("@ProjectOwner", projectOwner);
+            billCmd.Parameters.AddWithValue("@Reference", reference);
+            billCmd.Parameters.AddWithValue("@WorkLocation", string.IsNullOrWhiteSpace(workLocation) ? DBNull.Value : (object)workLocation);
+            billCmd.Parameters.AddWithValue("@PaymentDate", (object?)paymentDate ?? DBNull.Value);
+            billCmd.Parameters.AddWithValue("@TotalAmount", totalAmount);
+            billCmd.Parameters.AddWithValue("@AdvanceAmount", advanceAmount);
+
+            int billId = Convert.ToInt32(obj_DBAccess.ExecuteScalarQuery(billCmd));
+
+            // 2. Insert Bill Items
+            foreach (DataRow row in dt_items.Rows)
+            {
+                var itemCmd = new SqlCommand(@"
+                INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
+                VALUES (@BillId, @ItemId, @Quantity, @Price)");
+
+                itemCmd.Parameters.AddWithValue("@BillId", billId);
+                itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
+                itemCmd.Parameters.AddWithValue("@Quantity", row["Quantity"]);
+                itemCmd.Parameters.AddWithValue("@Price", row["Rent"]);
+
+                obj_DBAccess.ExecuteQuery(itemCmd);
+            }
         }
     }
 }
