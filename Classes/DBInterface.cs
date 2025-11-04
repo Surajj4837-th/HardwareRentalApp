@@ -70,6 +70,14 @@ namespace HardwareRentalApp.Classes
             }
         }
 
+        /// <summary>
+        ///     Used for select queries that return multiple rows.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="query"></param>
+        /// <param name="mapFunc"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public List<T> ExecuteQuery<T>(string query, Func<SqlDataReader, T> mapFunc,  params SqlParameter[] parameters)
         {
             var results = new List<T>();
@@ -93,6 +101,29 @@ namespace HardwareRentalApp.Classes
 
             return results;
         }
+
+        /// <summary>
+        ///     Used for insert, update, delete queries
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public int ExecuteNonQuery(string query, Dictionary<string, object> parameters)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                        cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                }
+
+                conn.Open();
+                return cmd.ExecuteNonQuery(); // returns # of rows affected
+            }
+        }
+
 
         /// <summary>
         /// Executes a scalar query and returns a single value.
