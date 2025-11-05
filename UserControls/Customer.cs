@@ -274,6 +274,7 @@ namespace HardwareRentalApp.UserControls
                     int invoiceID = Convert.ToInt16(dgv_MultipurposeTable.Rows[row_index].Cells["BillId"].Value);
                     Form f_Bill = new Bill(invoiceID);
                     f_Bill.ShowDialog();
+                    loadData();
                 }
             }
         }
