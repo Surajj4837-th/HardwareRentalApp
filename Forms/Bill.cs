@@ -342,9 +342,9 @@ namespace HardwareRentalApp.Forms
 
         private void btn_FinishPurchase_Click(object sender, EventArgs e)
         {
-            dt_NewBillItems.Columns.Add("ItemId", dt_items.Columns["ItemId"].DataType);
-            dt_NewBillItems.Columns.Add("Price", dt_items.Columns["Rent"].DataType);
-            dt_NewBillItems.Columns.Add("Quantity", dt_items.Columns["Quantity"].DataType);
+            dt_NewBillItems.Columns.Add("ItemId", typeof(int));
+            dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
+            dt_NewBillItems.Columns.Add("Quantity", typeof(int));
 
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
@@ -357,47 +357,54 @@ namespace HardwareRentalApp.Forms
 
                     if (RentedQty == ReturnedQty)
                     {
-                        MessageBox.Show("All items returned.", "Bill Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                     else
                     {
                         DataRow newRow = dt_NewBillItems.NewRow();
                         newRow["ItemId"] = row.Cells["ItemId"].Value;
-                        newRow["Price"] = row.Cells["Rent"].Value;
+                        newRow["Rent"] = row.Cells["Rent"].Value;
                         newRow["Quantity"] = RentedQty - ReturnedQty;
 
                         // Add the new row to the DataTable
                         dt_NewBillItems.Rows.Add(newRow);
 
-                        MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
 
-            if(dt_NewBillItems.Rows.Count > 0)
-            {
-                long CustomerId = BillInformation[0].CustomerId;
-                int AdminId = HardwareRentalApp.UserControls.Login.AdminId;
-                DateTime RentalStart = dtp_EndRentDate.Value;
-                DateTime? RentalEnd = null;
-                string projectOwner = tb_OwnerName.Text.Trim();
-                string reference = tb_Reference.Text.Trim();
-                string workLocation = tb_WorkLocation.Text.Trim();
-                DateTime? paymentDate = null;
-                decimal totalAmount = 0;
+            long CustomerId = BillInformation[0].CustomerId;
+            int AdminId = HardwareRentalApp.UserControls.Login.AdminId;
+            DateTime RentalStart = dtp_EndRentDate.Value;
+            DateTime? RentalEnd = null;
+            string projectOwner = tb_OwnerName.Text.Trim();
+            string reference = tb_Reference.Text.Trim();
+            string workLocation = tb_WorkLocation.Text.Trim();
+            DateTime? paymentDate = null;
+            decimal totalAmount = 0;
 
-                CreateBill(
-                    CustomerId,
-                    AdminId,
-                    RentalStart,
-                    RentalEnd,
-                    projectOwner,
-                    reference,
-                    workLocation,
-                    paymentDate,
-                    totalAmount
-                );
+            CreateBill(
+                CustomerId,
+                AdminId,
+                RentalStart,
+                RentalEnd,
+                projectOwner,
+                reference,
+                workLocation,
+                paymentDate,
+                totalAmount
+            );
+
+            if (dt_NewBillItems.Rows.Count > 0)
+            {
+                MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                MessageBox.Show("All items returned.", "Bill Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            this.Close();
         }
 
         public void CreateBill(
@@ -438,7 +445,7 @@ namespace HardwareRentalApp.Forms
             int billId = Convert.ToInt32(obj_DBAccess.ExecuteScalarQuery(billCmd));
 
             // 2. Insert Bill Items
-            foreach (DataRow row in dt_items.Rows)
+            foreach (DataRow row in dt_NewBillItems.Rows)
             {
                 var itemCmd = new SqlCommand(@"
                 INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
