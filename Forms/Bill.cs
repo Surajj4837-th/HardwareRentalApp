@@ -342,6 +342,24 @@ namespace HardwareRentalApp.Forms
 
         private void btn_FinishPurchase_Click(object sender, EventArgs e)
         {
+            int total = 0;
+
+            foreach (DataGridViewRow row in dgv_Bill.Rows)
+            {
+                // Skip the new row placeholder
+                if (row.IsNewRow) continue;
+
+                // Assuming the column you want to sum is named "Amount"
+                total += Convert.ToInt32(row.Cells["QuantityReturned"].Value);
+            }
+
+            if (total == 0)
+            {
+                MessageBox.Show("No items returned.", "No Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
             dt_NewBillItems.Columns.Add("ItemId", typeof(int));
             dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
             dt_NewBillItems.Columns.Add("Quantity", typeof(int));
