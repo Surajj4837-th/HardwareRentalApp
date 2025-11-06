@@ -1,6 +1,7 @@
 ﻿using HardwareRentalApp.Classes;
 using HardwareRentalApp.UserControls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -363,10 +364,15 @@ namespace HardwareRentalApp.Forms
                 this.Close();
                 return;
             }
-
+            else
+            {
+                //Some or all items returned
             dt_NewBillItems.Columns.Add("ItemId", typeof(int));
             dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
             dt_NewBillItems.Columns.Add("Quantity", typeof(int));
+
+                //Get total amount for returned items
+                decimal totalAmount = ComputeBill();
 
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
@@ -395,27 +401,7 @@ namespace HardwareRentalApp.Forms
                 }
             }
 
-            long CustomerId = BillInformation[0].CustomerId;
-            int AdminId = HardwareRentalApp.UserControls.Login.AdminId;
-            DateTime RentalStart = dtp_EndRentDate.Value;
-            DateTime? RentalEnd = null;
-            string projectOwner = tb_OwnerName.Text.Trim();
-            string reference = tb_Reference.Text.Trim();
-            string workLocation = tb_WorkLocation.Text.Trim();
-            DateTime? paymentDate = null;
-            decimal totalAmount = 0;
-
-            CreateBill(
-                CustomerId,
-                AdminId,
-                RentalStart,
-                RentalEnd,
-                projectOwner,
-                reference,
-                workLocation,
-                paymentDate,
-                totalAmount
-            );
+                CreateNewBill();
 
             if (dt_NewBillItems.Rows.Count > 0)
             {
@@ -428,6 +414,7 @@ namespace HardwareRentalApp.Forms
 
             this.Close();
         }
+        }
 
         public void CreateBill(
             Int64 customerId,
@@ -439,7 +426,18 @@ namespace HardwareRentalApp.Forms
             string workLocation,
             DateTime? paymentDate,
             decimal totalAmount)
+        private void CreateNewBill()
         {
+            long CustomerId = BillInformation[0].CustomerId;
+            int AdminId = HardwareRentalApp.UserControls.Login.AdminId;
+            DateTime RentalStart = dtp_EndRentDate.Value;
+            DateTime? RentalEnd = null;
+            string projectOwner = tb_OwnerName.Text.Trim();
+            string reference = tb_Reference.Text.Trim();
+            string workLocation = tb_WorkLocation.Text.Trim();
+            DateTime? paymentDate = null;
+            decimal totalAmount = 0;
+
             // 1. Insert Bill and get BillId
             var billCmd = new SqlCommand(@"
                             INSERT INTO Bills (
@@ -454,10 +452,10 @@ namespace HardwareRentalApp.Forms
                                 @PaymentDate, @TotalAmount
                             )");
 
-            billCmd.Parameters.AddWithValue("@CustomerId", customerId);
-            billCmd.Parameters.AddWithValue("@AdminId", adminId);
-            billCmd.Parameters.AddWithValue("@RentalStartDate", rentalStart);
-            billCmd.Parameters.AddWithValue("@RentalEndDate", (object?)rentalEnd ?? DBNull.Value);
+            billCmd.Parameters.AddWithValue("@CustomerId", CustomerId);
+            billCmd.Parameters.AddWithValue("@AdminId", AdminId);
+            billCmd.Parameters.AddWithValue("@RentalStartDate", RentalStart);
+            billCmd.Parameters.AddWithValue("@RentalEndDate", (object?)RentalEnd ?? DBNull.Value);
             billCmd.Parameters.AddWithValue("@ProjectOwner", projectOwner);
             billCmd.Parameters.AddWithValue("@Reference", reference);
             billCmd.Parameters.AddWithValue("@WorkLocation", string.IsNullOrWhiteSpace(workLocation) ? DBNull.Value : (object)workLocation);
