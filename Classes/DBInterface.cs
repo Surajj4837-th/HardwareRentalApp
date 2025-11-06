@@ -103,7 +103,7 @@ namespace HardwareRentalApp.Classes
         }
 
         /// <summary>
-        ///     Used for insert, update, delete queries
+        ///     Used for insert, update or delete queries
         /// </summary>
         /// <param name="query"></param>
         /// <param name="parameters"></param>

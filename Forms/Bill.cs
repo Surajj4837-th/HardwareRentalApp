@@ -349,6 +349,7 @@ namespace HardwareRentalApp.Forms
         {
             int total = 0;
 
+            //Logic to find if there are any returned items, if no then close the bill form
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
                 // Skip the new row placeholder
@@ -367,65 +368,95 @@ namespace HardwareRentalApp.Forms
             else
             {
                 //Some or all items returned
-            dt_NewBillItems.Columns.Add("ItemId", typeof(int));
-            dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
-            dt_NewBillItems.Columns.Add("Quantity", typeof(int));
+                dt_NewBillItems.Columns.Add("ItemId", typeof(int));
+                dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
+                dt_NewBillItems.Columns.Add("Quantity", typeof(int));
 
                 //Get total amount for returned items
                 decimal totalAmount = ComputeBill();
 
-            foreach (DataGridViewRow row in dgv_Bill.Rows)
-            {
-                // Get cell values safely
-                int RentedQty = Convert.ToInt16(row.Cells["QuantityRented"].Value);
-
-                if (RentedQty > 0)
+                foreach (DataGridViewRow row in dgv_Bill.Rows)
                 {
-                    int ReturnedQty = Convert.ToInt16(row.Cells["QuantityReturned"].Value);
+                    // Get cell values safely
+                    int RentedQty = Convert.ToInt16(row.Cells["QuantityRented"].Value);
 
-                    if (RentedQty == ReturnedQty)
+                    if (RentedQty > 0)
                     {
+                        int ReturnedQty = Convert.ToInt16(row.Cells["QuantityReturned"].Value);
 
+                        if (RentedQty == ReturnedQty)
+                        {
+                            //All items returned
+                            UpdateBill(totalAmount);
+                        }
+                        else
+                        {
+                            DataRow newRow = dt_NewBillItems.NewRow();
+                            newRow["ItemId"] = row.Cells["ItemId"].Value;
+                            newRow["Rent"] = row.Cells["Rent"].Value;
+                            newRow["Quantity"] = RentedQty - ReturnedQty;
+
+                            // Add the new row to the DataTable
+                            dt_NewBillItems.Rows.Add(newRow);
+
+                            UpdateBill(totalAmount);
+                        }
                     }
-                    else
-                    {
-                        DataRow newRow = dt_NewBillItems.NewRow();
-                        newRow["ItemId"] = row.Cells["ItemId"].Value;
-                        newRow["Rent"] = row.Cells["Rent"].Value;
-                        newRow["Quantity"] = RentedQty - ReturnedQty;
-
-                        // Add the new row to the DataTable
-                        dt_NewBillItems.Rows.Add(newRow);
-
-                    }
-                }
-            }
+                }                               
 
                 CreateNewBill();
 
-            if (dt_NewBillItems.Rows.Count > 0)
-            {
-                MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("All items returned.", "Bill Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                if (dt_NewBillItems.Rows.Count > 0)
+                {
+                    MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("All items returned.", "Bill Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-            this.Close();
-        }
+                this.Close();
+            }                
         }
 
-        public void CreateBill(
-            Int64 customerId,
-            int adminId,
-            DateTime rentalStart,
-            DateTime? rentalEnd,
-            string projectOwner,
-            string reference,
-            string workLocation,
-            DateTime? paymentDate,
-            decimal totalAmount)
+        private void UpdateBill(decimal totalAmount)
+        {
+            DateTime RentalEndDate = dtp_EndRentDate.Value.Date;
+            DateTime PaymentDate = DateTime.Now.Date;
+
+            //Update Bills table
+            string UpdateBillsQuery = @" 
+                 UPDATE Bills
+            SET 
+                RentalEndDate = @RentalEndDate,
+                PaymentDate = @PaymentDate,
+                TotalAmount = @TotalAmount
+            WHERE BillId = @BillId";
+
+            var parameters = new Dictionary<string, object>
+            {
+                ["@RentalEndDate"] = RentalEndDate,
+                ["@PaymentDate"] = PaymentDate,
+                ["@TotalAmount"] = totalAmount,
+                ["@BillId"] = BillID
+            };
+
+            int rowsAffected = obj_DBAccess.ExecuteNonQuery(UpdateBillsQuery, parameters);
+
+            // Update BillItems table
+            string UpdateBillItemsQuery = @"
+                UPDATE BillItems
+                SET Quantity = @Quantity
+                WHERE BillItemId  = @BillItemId ";
+
+            //Reusing parameters dictionary
+            parameters.Clear();
+            parameters["@Quantity"] = 5;
+            parameters["@BillItemId"] = 42;
+
+            int itemRowsAffected = obj_DBAccess.ExecuteNonQuery(UpdateBillItemsQuery, parameters);
+        }
+
         private void CreateNewBill()
         {
             long CustomerId = BillInformation[0].CustomerId;
