@@ -277,9 +277,11 @@ namespace HardwareRentalApp.Forms
                 e.Handled = true;
         }
 
-        private void ComputeBill()
+        private decimal ComputeBill()
         {
             decimal totalAmount = 0m;
+            int NoOfDays = (dtp_EndRentDate.Value.Date - Convert.ToDateTime(tb_StartRentDate.Text).Date).Days;
+
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
                 if (row.IsNewRow) continue; // skip new row
@@ -289,9 +291,11 @@ namespace HardwareRentalApp.Forms
                 int quantityReturned = 0;
                 decimal.TryParse(rentValue?.ToString() ?? "0", out rent);
                 int.TryParse(quantityReturnedValue?.ToString() ?? "0", out quantityReturned);
-                totalAmount += rent * quantityReturned;
+                totalAmount += rent * quantityReturned * NoOfDays;
             }
             tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
+
+            return totalAmount;
         }
 
         private void dgv_Bill_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
