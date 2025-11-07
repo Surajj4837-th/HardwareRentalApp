@@ -229,11 +229,6 @@ namespace HardwareRentalApp.Forms
             }
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -334,11 +329,6 @@ namespace HardwareRentalApp.Forms
                     btn_FinishPurchase.Enabled = true;
                 }
             }
-        }
-
-        private void dgv_Bill_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            ComputeBill();
         }
 
         private void dgv_Bill_CurrentCellDirtyStateChanged(object sender, EventArgs e)
