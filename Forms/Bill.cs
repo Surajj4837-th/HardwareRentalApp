@@ -33,7 +33,9 @@ namespace HardwareRentalApp.Forms
             BillID = invoiceID;
 
             GetLocalizedItems();
+            
             LoadData();
+
             FillFormDetails();
         }
 
@@ -44,6 +46,38 @@ namespace HardwareRentalApp.Forms
             tb_Reference.Text = BillInformation[0].Reference;
             tb_WorkLocation.Text = BillInformation[0].WorkLocation;
             tb_StartRentDate.Text = BillInformation[0].BillDate.ToString();
+
+            //Change form details if bill is already paid or not
+            if (BillInformation[0].PaymentDate == DateTime.MinValue)
+            {
+                //Bill unpaid
+                dtp_EndRentDate.Text = DateTime.Now.ToString();
+                dtp_EndRentDate.Enabled = true;
+
+                tb_BillAmount.Text = "0.0";
+
+                btn_FinishPurchase.Visible = true;
+
+                dgv_Bill.Columns["QuantityReturned"].Visible = true;
+                
+                ComputeBill();
+
+                lbl_main.Text = "Pending Bill";
+            }
+            else
+            {
+                //Bill paid
+                dtp_EndRentDate.Text = BillInformation[0].PaymentDate.ToString();
+                dtp_EndRentDate.Enabled = false;
+
+                tb_BillAmount.Text = BillInformation[0].TotalAmount.ToString("C2");
+
+                btn_FinishPurchase.Visible = false;
+
+                dgv_Bill.Columns["QuantityReturned"].Visible = false;
+
+                lbl_main.Text = "Paid Bill";
+            }
         }
 
         private void LoadData()
@@ -402,7 +436,7 @@ namespace HardwareRentalApp.Forms
                             UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty - ReturnedQty);
                         }
                     }
-                }                               
+                }
 
                 if (dt_NewBillItems.Rows.Count > 0)
                 {
