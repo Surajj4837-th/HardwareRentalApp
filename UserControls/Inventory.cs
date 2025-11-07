@@ -105,5 +105,10 @@ namespace HardwareRentalApp.UserControls
                 }
             }
         }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            bindingSourceCustomers.Filter = "ItemName like '%" + tb_search.Text + "%'";
+        }
     }
 }

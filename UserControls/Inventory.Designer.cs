@@ -103,6 +103,7 @@
             tb_search.Name = "tb_search";
             tb_search.Size = new Size(272, 32);
             tb_search.TabIndex = 1;
+            tb_search.TextChanged += tb_search_TextChanged;
             // 
             // lbl_search
             // 
