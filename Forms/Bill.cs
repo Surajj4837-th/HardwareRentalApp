@@ -58,7 +58,9 @@ namespace HardwareRentalApp.Forms
                     B.BillDate,
                     B.ProjectOwner,
                     B.Reference,
-                    B.WorkLocation
+                    B.WorkLocation,
+                    B.PaymentDate,
+                    B.TotalAmount
                   FROM Bills B
                   JOIN Customers C ON B.CustomerId = C.CustomerId
                   WHERE B.BillId = @BillId",
@@ -69,7 +71,9 @@ namespace HardwareRentalApp.Forms
                     BillDate = r.IsDBNull(r.GetOrdinal("BillDate")) ? DateTime.MinValue : r.GetDateTime(r.GetOrdinal("BillDate")),
                     OwnerName = r.IsDBNull(r.GetOrdinal("ProjectOwner")) ? string.Empty : r.GetString(r.GetOrdinal("ProjectOwner")),
                     Reference = r.IsDBNull(r.GetOrdinal("Reference")) ? string.Empty : r.GetString(r.GetOrdinal("Reference")),
-                    WorkLocation = r.IsDBNull(r.GetOrdinal("WorkLocation")) ? string.Empty : r.GetString(r.GetOrdinal("WorkLocation"))
+                    WorkLocation = r.IsDBNull(r.GetOrdinal("WorkLocation")) ? string.Empty : r.GetString(r.GetOrdinal("WorkLocation")),
+                    PaymentDate = r.IsDBNull(r.GetOrdinal("PaymentDate")) ? DateTime.MinValue : r.GetDateTime(r.GetOrdinal("PaymentDate")),
+                    TotalAmount = r.IsDBNull(r.GetOrdinal("TotalAmount")) ? 0.0m : r.GetDecimal(r.GetOrdinal("TotalAmount"))
                 },
                 billIdParam
             );
