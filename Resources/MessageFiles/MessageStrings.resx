@@ -636,4 +636,7 @@
   <data name="QuantityRented" xml:space="preserve">
     <value>Quantity Rented</value>
   </data>
+  <data name="UpdateRent" xml:space="preserve">
+    <value>Update Rent</value>
+  </data>
 </root>

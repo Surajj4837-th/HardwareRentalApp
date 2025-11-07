@@ -636,4 +636,7 @@
   <data name="QuantityRented" xml:space="preserve">
     <value>भाड्याने घेतलेले प्रमाण</value>
   </data>
+  <data name="UpdateRent" xml:space="preserve">
+    <value>भाडे अद्ययावत करा</value>
+  </data>
 </root>
