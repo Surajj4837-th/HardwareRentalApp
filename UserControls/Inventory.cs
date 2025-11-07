@@ -88,22 +88,25 @@ namespace HardwareRentalApp.UserControls
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
 
-            int row_index = e.RowIndex;
-
-            ItemID = Convert.ToInt32(dgv_InventoryTable.Rows[row_index].Cells["ItemID"].Value);
-            ItemName = dgv_InventoryTable.Rows[row_index].Cells["ItemName"].Value.ToString();
-            RentPerDay = Convert.ToDecimal(dgv_InventoryTable.Rows[row_index].Cells["Rent"].Value);
-
-            using (var UR_form = new UpdateRent(ItemID, ItemName, RentPerDay))
+            if (dgv_InventoryTable.Columns[e.ColumnIndex].HeaderText == dgv_InventoryTable.Columns["Select_item_column"].HeaderText)
             {
-                if (UR_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                int row_index = e.RowIndex;
+
+                ItemID = Convert.ToInt32(dgv_InventoryTable.Rows[row_index].Cells["ItemID"].Value);
+                ItemName = dgv_InventoryTable.Rows[row_index].Cells["ItemName"].Value.ToString();
+                RentPerDay = Convert.ToDecimal(dgv_InventoryTable.Rows[row_index].Cells["Rent"].Value);
+
+                using (var UR_form = new UpdateRent(ItemID, ItemName, RentPerDay))
                 {
-                    // ✅ Get the new rent value
-                    decimal updatedRent = UR_form.RentPerDay;
+                    if (UR_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        // ✅ Get the new rent value
+                        decimal updatedRent = UR_form.RentPerDay;
 
-                    UpdateRent(ItemID, updatedRent);
+                        UpdateRent(ItemID, updatedRent);
 
-                    loadData();
+                        loadData();
+                    }
                 }
             }
         }
