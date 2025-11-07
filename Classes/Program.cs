@@ -38,6 +38,8 @@ namespace HardwareRentalApp.Classes
         public string OwnerName { get; set; }
         public string Reference { get; set; }
         public string WorkLocation { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 
     public enum Profile
