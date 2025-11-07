@@ -44,8 +44,9 @@ VALUES
 ('Channel', 11.00),
 ('20 feet Pipe', 12.00),
 ('10 feet Pipe', 13.00),
-('Bar', 14.00),
-('Shipping', 15.00);
+('Bar', 14.00)--,
+--('Shipping', 15.00)
+;
 
 CREATE TABLE BillItems (
     BillItemId INT IDENTITY(1,1) PRIMARY KEY,
