@@ -395,11 +395,10 @@ namespace HardwareRentalApp.Forms
                     }
                 }                               
 
-                CreateNewBill();
-
                 if (dt_NewBillItems.Rows.Count > 0)
                 {
                     MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    CreateNewBill();
                 }
                 else
                 {
