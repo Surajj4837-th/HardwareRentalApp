@@ -52,6 +52,8 @@ namespace HardwareRentalApp.UserControls
                 dgv_InventoryTable.Columns[insertIndex].HeaderText = LangManager.GetString("UpdateRent");
             }
 
+            dgv_InventoryTable.Columns["ItemID"].HeaderText = LangManager.GetString("ItemID");
+            dgv_InventoryTable.Columns["ItemName"].HeaderText = LangManager.GetString("ItemName");
         }
 
         private void loadData()
