@@ -21,6 +21,7 @@ namespace HardwareRentalApp.Forms
         private DBInterface obj_DBAccess = new DBInterface();
         private List<Items> l_items;          // List to hold items fetched from DB
         List<BillSummary> BillInformation;
+        List<BillItemSummary> billItems;
         DataTable dt_items = new DataTable();       //List of items to be fetched from bill db to DGV input
         DataTable dt_NewBillItems = new DataTable();       //List of items to be written to bill db from DGV input after bill finalization
         private int BillID;
@@ -143,8 +144,8 @@ namespace HardwareRentalApp.Forms
                 {
                     ItemId = r.GetInt32(r.GetOrdinal("ItemId")),
                     Quantity = r.GetInt32(r.GetOrdinal("Quantity")),
-                    Price = r.GetDecimal(r.GetOrdinal("Price")),
-                    ItemName = string.Empty // will fill below
+                    Price = r.GetDecimal(r.GetOrdinal("Price"))
+                    //ItemName = string.Empty // will fill below
                 },
                 billIdParam
             );
@@ -386,8 +387,8 @@ namespace HardwareRentalApp.Forms
 
                         if (RentedQty == ReturnedQty)
                         {
-                            //All items returned
-                            UpdateBill(totalAmount);
+                            //All quantity returned
+                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), ReturnedQty);
                         }
                         else
                         {
@@ -399,7 +400,7 @@ namespace HardwareRentalApp.Forms
                             // Add the new row to the DataTable
                             dt_NewBillItems.Rows.Add(newRow);
 
-                            UpdateBill(totalAmount);
+                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty - ReturnedQty);
                         }
                     }
                 }                               
@@ -419,7 +420,7 @@ namespace HardwareRentalApp.Forms
             }                
         }
 
-        private void UpdateBill(decimal totalAmount)
+        private void UpdateBill(decimal totalAmount, int ItemID, int Quantity)
         {
             DateTime RentalEndDate = dtp_EndRentDate.Value.Date;
             DateTime PaymentDate = DateTime.Now.Date;
@@ -446,13 +447,17 @@ namespace HardwareRentalApp.Forms
             // Update BillItems table
             string UpdateBillItemsQuery = @"
                 UPDATE BillItems
-                SET Quantity = @Quantity
-                WHERE BillItemId  = @BillItemId ";
+                SET 
+                    Quantity = @Quantity
+                WHERE 
+                    ItemID  = @ItemID AND 
+                    BillId = @BillId";
 
             //Reusing parameters dictionary
             parameters.Clear();
-            parameters["@Quantity"] = 5;
-            parameters["@BillItemId"] = 42;
+            parameters["@Quantity"] = Quantity;
+            parameters["@ItemID"] = ItemID;
+            parameters["@BillId"] = BillID;
 
             int itemRowsAffected = obj_DBAccess.ExecuteNonQuery(UpdateBillItemsQuery, parameters);
         }
