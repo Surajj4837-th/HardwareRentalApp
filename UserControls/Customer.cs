@@ -131,7 +131,8 @@ namespace HardwareRentalApp.UserControls
                     BillId,
                     BillDate,
                     RentalStartDate,
-                    WorkLocation
+                    WorkLocation,
+                    PaymentDate
                 FROM Bills
                 WHERE CustomerId = @CustomerId
                 ORDER BY BillDate DESC";
