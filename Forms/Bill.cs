@@ -277,7 +277,7 @@ namespace HardwareRentalApp.Forms
         private decimal ComputeBill()
         {
             decimal totalAmount = 0m;
-            int NoOfDays = (dtp_EndRentDate.Value.Date - Convert.ToDateTime(tb_StartRentDate.Text).Date).Days;
+            int NoOfDays = (dtp_EndRentDate.Value.Date - Convert.ToDateTime(tb_StartRentDate.Text).Date).Days + 1; //Added +1 to count same day rent
 
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
