@@ -282,13 +282,18 @@ namespace HardwareRentalApp.Forms
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
                 if (row.IsNewRow) continue; // skip new row
+
                 var rentValue = row.Cells["Rent"].Value;
-                var quantityReturnedValue = row.Cells["QuantityReturned"].Value;
+                var QuantityRentedValue = row.Cells["QuantityRented"].Value;
+
                 decimal rent = 0m;
-                int quantityReturned = 0;
+                int QuantityRented = 0;
+
+                //Assign values safely
                 decimal.TryParse(rentValue?.ToString() ?? "0", out rent);
-                int.TryParse(quantityReturnedValue?.ToString() ?? "0", out quantityReturned);
-                totalAmount += rent * quantityReturned * NoOfDays;
+                int.TryParse(QuantityRentedValue?.ToString() ?? "0", out QuantityRented);
+
+                totalAmount += rent * QuantityRented * NoOfDays;
             }
             tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
 
