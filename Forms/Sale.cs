@@ -41,7 +41,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "ItemId",
                 DataPropertyName = "ItemId",
-                HeaderText = LangManager.GetString("ItemID", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("ItemID"),
                 ReadOnly = true
             });
 
@@ -49,7 +49,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "LocalizedName",
                 DataPropertyName = "LocalizedName",
-                HeaderText = LangManager.GetString("ItemName", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("ItemName"),
                 ReadOnly = true,
                 Width = 200
             });
@@ -57,7 +57,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "Rent",
                 DataPropertyName = "Rent",
-                HeaderText = LangManager.GetString("Rent", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("Rent"),
                 ReadOnly = true,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
@@ -65,7 +65,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "Quantity",
                 DataPropertyName = "Quantity",
-                HeaderText = LangManager.GetString("Quantity", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("Quantity"),
                 Width = 80,
                 ReadOnly = false
             });
@@ -153,7 +153,7 @@ namespace HardwareRentalApp.Forms
 
             if(sum == 0)
             {
-                MessageBox.Show(LangManager.GetString("NoPurchaseDone", Thread.CurrentThread.CurrentUICulture));
+                MessageBox.Show(LangManager.GetString("NoPurchaseDone"));
                 return;
             }
 

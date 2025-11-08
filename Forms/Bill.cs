@@ -127,7 +127,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "ItemId",
                 DataPropertyName = "ItemId",
-                HeaderText = LangManager.GetString("ItemID", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("ItemID"),
                 ReadOnly = true
             });
 
@@ -135,7 +135,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "LocalizedName",
                 DataPropertyName = "LocalizedName",
-                HeaderText = LangManager.GetString("ItemName", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("ItemName"),
                 ReadOnly = true,
                 Width = 200
             });
@@ -143,7 +143,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "Rent",
                 DataPropertyName = "Rent",
-                HeaderText = LangManager.GetString("Rent", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("Rent"),
                 ReadOnly = true,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
@@ -151,7 +151,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "QuantityRented",
                 DataPropertyName = "QuantityRented",
-                HeaderText = LangManager.GetString("QuantityRented", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("QuantityRented"),
                 Width = 80,
                 ReadOnly = false
             });
@@ -159,7 +159,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "RentalDays",
                 DataPropertyName = "RentalDays",
-                HeaderText = LangManager.GetString("RentalDays", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("RentalDays"),
                 Width = 80,
                 ReadOnly = false
             });
@@ -167,7 +167,7 @@ namespace HardwareRentalApp.Forms
             {
                 Name = "QuantityReturned",
                 DataPropertyName = "QuantityReturned",
-                HeaderText = LangManager.GetString("QuantityReturned", Thread.CurrentThread.CurrentUICulture),
+                HeaderText = LangManager.GetString("QuantityReturned"),
                 Width = 80,
                 ReadOnly = false
             });
