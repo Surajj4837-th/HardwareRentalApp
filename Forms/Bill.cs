@@ -17,7 +17,7 @@ namespace HardwareRentalApp.Forms
 {
     public partial class Bill : Form
     {
-        private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Sale).Assembly);
+        private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(Bill).Assembly);
         private DBInterface obj_DBAccess = new DBInterface();
         private List<Items> l_items;          // List to hold items fetched from DB
         List<BillSummary> BillInformation;
@@ -61,6 +61,8 @@ namespace HardwareRentalApp.Forms
                 tb_BillAmount.Text = "0.0";
 
                 btn_FinishPurchase.Visible = true;
+
+                btn_FinishPurchase.Text = LangManager.GetString("FinishPurchase");
 
                 dgv_Bill.Columns["QuantityReturned"].Visible = true;
 
