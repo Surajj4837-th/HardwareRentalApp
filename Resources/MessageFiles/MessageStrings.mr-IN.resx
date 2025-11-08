@@ -117,44 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ActivationDate" xml:space="preserve">
-    <value>या तारखेपर्यंत सॉफ्टवेअर सक्रिय केले आहे:</value>
-  </data>
-  <data name="ActivationKeyAlreadyUsed" xml:space="preserve">
-    <value>ही सक्रियकरण किल्ली आधीच वापरली गेली आहे.</value>
-  </data>
-  <data name="ActivationKeyDoesNotBelongToComputer" xml:space="preserve">
-    <value>सक्रियकरण किल्ली या संगणकाशी संबंधित नाही.</value>
-  </data>
-  <data name="ActivationKeyDoesNotBelongToUser" xml:space="preserve">
-    <value>सक्रियकरण किल्ली या वापरकर्त्याच्या मालकीची नाही.</value>
-  </data>
-  <data name="ActivationKeyNeeded" xml:space="preserve">
-    <value>सक्रियकरण किल्ली प्रदान केलेली नाही.</value>
-  </data>
   <data name="ActivationNeeded" xml:space="preserve">
     <value>आपल्या सॉफ्टवेअर अ‍ॅक्टिव्हेशनचे शेवटचे काही दिवस उरले आहेत.</value>
   </data>
-  <data name="ActivationPeriodOver" xml:space="preserve">
-    <value>उत्पादन सक्रिय करण्याचा कालावधी संपला आहे.</value>
-  </data>
-  <data name="CategoryAdded" xml:space="preserve">
-    <value>श्रेणी यादीमध्ये यशस्वीरित्या जोडली गेली आहे.</value>
-  </data>
-  <data name="EnterCategoryName" xml:space="preserve">
-    <value>कृपया नवीन श्रेणीचे नाव प्रविष्ट करा.</value>
-  </data>
   <data name="EnterPassword" xml:space="preserve">
     <value>कृपया आपला गुप्त शब्द प्रविष्ट करा.</value>
-  </data>
-  <data name="EnterProductName" xml:space="preserve">
-    <value>कृपया उत्पादनाचे नाव प्रविष्ट करा.</value>
-  </data>
-  <data name="EnterProductPrice" xml:space="preserve">
-    <value>कृपया उत्पादनाची किंमत प्रविष्ट करा.</value>
-  </data>
-  <data name="EnterProductSize" xml:space="preserve">
-    <value>कृपया उत्पादनाचा आकार प्रविष्ट करा.</value>
   </data>
   <data name="EnterUsername" xml:space="preserve">
     <value>कृपया आपले वापरकर्तानाव प्रविष्ट करा.</value>
@@ -165,61 +132,7 @@
   <data name="InvalidCredentials" xml:space="preserve">
     <value>अवैध माहिती, कृपया बरोबर माहिती द्या.</value>
   </data>
-  <data name="InvalidKey" xml:space="preserve">
-    <value>ही किल्ली अवैध आहे.</value>
-  </data>
-  <data name="MasterAdminApproval" xml:space="preserve">
-    <value>मास्टर ॲडमिनच्या मंजुरीनंतर तुमचे खाते तयार केले जाईल.</value>
-  </data>
-  <data name="EnterMobileNumber" xml:space="preserve">
-    <value>कृपया तुमचा भ्रमणध्वनी क्रमांक टाका.</value>
-  </data>
-  <data name="NumberExists" xml:space="preserve">
-    <value>हा भ्रमणध्वनी क्रमांक नंबर आधीच डेटाबेसमध्ये अस्तित्वात आहे.</value>
-  </data>
-  <data name="ReenterPassword" xml:space="preserve">
-    <value>कृपया पुष्टीकरणासाठी तुमचा गुप्त शब्द पुन्हा प्रविष्ट करा.</value>
-  </data>
-  <data name="PasswordNotMatching" xml:space="preserve">
-    <value>प्रविष्ट केलेले गुप्त शब्द जुळत नाहीत.</value>
-  </data>
-  <data name="ProductAdded" xml:space="preserve">
-    <value>उत्पादन यादीमध्ये यशस्वीरित्या जोडले गेले आहे.</value>
-  </data>
-  <data name="ProductModified" xml:space="preserve">
-    <value>उत्पादन यादीमध्ये सुधारित करण्यात आले आहे</value>
-  </data>
-  <data name="ProductNotActivated" xml:space="preserve">
-    <value>हे उत्पादन अद्याप सक्रिय केले गेले नाही.</value>
-  </data>
-  <data name="ProductNotLinkedToComputer" xml:space="preserve">
-    <value>हे उत्पादन आपल्या संगणकासोबत जोडलेले नाही.</value>
-  </data>
-  <data name="EnterSurname" xml:space="preserve">
-    <value>कृपया तुमचे आडनाव प्रविष्ट करा.</value>
-  </data>
-  <data name="UserIDNotProvided" xml:space="preserve">
-    <value>वापरकर्ता आयडी प्रदान करण्यात आलेला नाही.</value>
-  </data>
-  <data name="ApprovalPending" xml:space="preserve">
-    <value>तुमची खाते मंजूरी मुख्य प्रशासकाकडे प्रलंबित आहे.</value>
-  </data>
-  <data name="SelectAdminCategory" xml:space="preserve">
-    <value>कृपया प्रशासक श्रेणी निवडा.</value>
-  </data>
-  <data name="EnterEmployeeID" xml:space="preserve">
-    <value>कृपया तुमचा कर्मचारी आयडी प्रविष्ट करा.</value>
-  </data>
-  <data name="EnterFirstName" xml:space="preserve">
-    <value>कृपया तुमचे नाव प्रविष्ट करा.</value>
-  </data>
-  <data name="CategoryExisting" xml:space="preserve">
-    <value>ही श्रेणी आधीच अस्तित्वात आहे.</value>
-  </data>
-  <data name="EnterFirstNameSurname" xml:space="preserve">
-    <value>कृपया पहिले नाव किंवा आडनाव प्रविष्ट करा.</value>
-  </data>
-  <data name="EnterMobileNumber1" xml:space="preserve">
+  <data name="EnterCustomerMobileNumber" xml:space="preserve">
     <value>कृपया ग्राहकाचा भ्रमणध्वनी क्रमांक प्रविष्ट करा.</value>
   </data>
   <data name="NewCustomerAdded" xml:space="preserve">
@@ -231,59 +144,14 @@
   <data name="EnterValidMobileNumber" xml:space="preserve">
     <value>कृपया वैध १० अंकी भ्रमणध्वनी क्रमांक प्रविष्ट करा.</value>
   </data>
-  <data name="EnterValidPincode" xml:space="preserve">
-    <value>कृपया वैध ६ अंकी पिन कोड प्रविष्ट करा.</value>
-  </data>
-  <data name="DeleteProduct" xml:space="preserve">
-    <value>आपण हे उत्पादन हटवू इच्छिता, याची आपल्याला खात्री आहे का?</value>
-  </data>
-  <data name="ModifyProduct" xml:space="preserve">
-    <value>आपण हे उत्पादन सुधारित करू इच्छिता, याची आपल्याला खात्री आहे का?</value>
-  </data>
   <data name="ConfirmDelete" xml:space="preserve">
     <value>हटवणे निश्चित करा</value>
-  </data>
-  <data name="ConfirmModify" xml:space="preserve">
-    <value>सुधारणेची खात्री करा</value>
-  </data>
-  <data name="LastActivationDays" xml:space="preserve">
-    <value>सॉफ्टवेअर सक्रिय होण्याचे शेवटचे काही दिवस शिल्लक आहेत.</value>
   </data>
   <data name="DeleteCustomer" xml:space="preserve">
     <value>आपण हा ग्राहक हटवू इच्छिता, याची आपल्याला खात्री आहे का?</value>
   </data>
-  <data name="EnterVillage" xml:space="preserve">
-    <value>गावाचे नाव प्रविष्ट करा.</value>
-  </data>
-  <data name="EnterDistrict" xml:space="preserve">
-    <value>जिल्ह्याचे नाव प्रविष्ट करा.</value>
-  </data>
-  <data name="CustomerModified" xml:space="preserve">
-    <value>ग्राहकाची माहिती सुधारित करण्यात आली आहे.</value>
-  </data>
-  <data name="NoItemsPurchased" xml:space="preserve">
-    <value>कोणतीही वस्तू खरेदी केलेली नाही.</value>
-  </data>
-  <data name="NoOutstandingBalance" xml:space="preserve">
-    <value>कोणतीही थकबाकी नाही.</value>
-  </data>
-  <data name="PendingBalance" xml:space="preserve">
-    <value>सध्याच्या बिलासाठी प्रलंबित रक्कम आहे ₹</value>
-  </data>
   <data name="NoSalesByCustomer" xml:space="preserve">
     <value>या ग्राहकासाठी अद्याप कोणतीही विक्री झालेली नाही.</value>
-  </data>
-  <data name="EnterAdvanceAmount" xml:space="preserve">
-    <value>कृपया अग्रिम रक्कम प्रविष्ट करा.</value>
-  </data>
-  <data name="BalancePayment1" xml:space="preserve">
-    <value>₹</value>
-  </data>
-  <data name="BalancePayment2" xml:space="preserve">
-    <value>/- ची शिल्लक प्राप्त झाली.</value>
-  </data>
-  <data name="SrNo" xml:space="preserve">
-    <value>अनुक्रमांक</value>
   </data>
   <data name="ItemID" xml:space="preserve">
     <value>वस्तू क्रमांक</value>
@@ -291,104 +159,17 @@
   <data name="ItemName" xml:space="preserve">
     <value>सामानाचे नाव</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>रक्कम (₹)</value>
-  </data>
-  <data name="Brand" xml:space="preserve">
-    <value>व्यापारी नाव</value>
-  </data>
-  <data name="Measurement" xml:space="preserve">
-    <value>मोजमाप</value>
-  </data>
-  <data name="Size" xml:space="preserve">
-    <value>आकार</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>किंमत (₹)</value>
-  </data>
-  <data name="Quantity" xml:space="preserve">
-    <value>मात्रा</value>
-  </data>
-  <data name="DeleteRequest" xml:space="preserve">
-    <value>काढून टाकण्याची विनंती</value>
-  </data>
-  <data name="AcceptRequest" xml:space="preserve">
-    <value>विनंती स्वीकारा</value>
-  </data>
-  <data name="FirstName" xml:space="preserve">
-    <value>पहिले नाव</value>
-  </data>
-  <data name="EmpID" xml:space="preserve">
-    <value>कर्मचारी आयडी</value>
-  </data>
   <data name="MobileNumber" xml:space="preserve">
     <value>भ्रमणध्वनी क्रमांक</value>
-  </data>
-  <data name="Category" xml:space="preserve">
-    <value>श्रेणी</value>
-  </data>
-  <data name="PINCode" xml:space="preserve">
-    <value>पिन कोड</value>
   </data>
   <data name="InvoiceID" xml:space="preserve">
     <value>चलन आयडी</value>
   </data>
-  <data name="Date" xml:space="preserve">
-    <value>दिनांक</value>
-  </data>
-  <data name="Time" xml:space="preserve">
-    <value>वेळ</value>
-  </data>
-  <data name="AdminID" xml:space="preserve">
-    <value>प्रशासक आयडी</value>
-  </data>
-  <data name="BillAmount" xml:space="preserve">
-    <value>बिलाची रक्कम</value>
-  </data>
-  <data name="PaidAmount" xml:space="preserve">
-    <value>भरलेली रक्कम</value>
-  </data>
   <data name="ShowBill" xml:space="preserve">
     <value>बिल दाखवा</value>
   </data>
-  <data name="ModifyProduct2" xml:space="preserve">
-    <value>उत्पादनामध्ये बदल करा</value>
-  </data>
-  <data name="DeleteProduct2" xml:space="preserve">
-    <value> उत्पादन हटवा</value>
-  </data>
-  <data name="DeleteCustomer2" xml:space="preserve">
-    <value>ग्राहक हटवा</value>
-  </data>
-  <data name="SelectCustomer" xml:space="preserve">
-    <value>ग्राहक निवडा</value>
-  </data>
-  <data name="AddItem" xml:space="preserve">
-    <value>वस्तू जोडा</value>
-  </data>
-  <data name="RemoveItem" xml:space="preserve">
-    <value>वस्तू हटवा</value>
-  </data>
-  <data name="Village" xml:space="preserve">
-    <value>गाव</value>
-  </data>
-  <data name="District" xml:space="preserve">
-    <value>जिल्हा</value>
-  </data>
   <data name="CustomerID" xml:space="preserve">
     <value>ग्राहक क्रमांक</value>
-  </data>
-  <data name="ProductTable" xml:space="preserve">
-    <value> वस्तू तक्ता</value>
-  </data>
-  <data name="CustomerTable" xml:space="preserve">
-    <value>ग्राहक तक्ता</value>
-  </data>
-  <data name="Discount" xml:space="preserve">
-    <value>सवलत</value>
-  </data>
-  <data name="TotalAmount" xml:space="preserve">
-    <value>एकूण रक्कम</value>
   </data>
   <data name="CustomerInformation" xml:space="preserve">
     <value>ग्राहकाचे तपशील</value>
@@ -396,29 +177,8 @@
   <data name="BillInformation" xml:space="preserve">
     <value>बिलांची माहिती</value>
   </data>
-  <data name="Paid" xml:space="preserve">
-    <value>देयक पूर्ण</value>
-  </data>
-  <data name="Pending" xml:space="preserve">
-    <value>प्रलंबित रक्कम</value>
-  </data>
-  <data name="TaxInvoice" xml:space="preserve">
-    <value>कराची पावती</value>
-  </data>
-  <data name="DateTime" xml:space="preserve">
-    <value>दिनांक आणि वेळ: </value>
-  </data>
-  <data name="ThankYou" xml:space="preserve">
-    <value>आपल्या खरेदीबद्दल धन्यवाद!</value>
-  </data>
-  <data name="PDFCreated" xml:space="preserve">
-    <value>PDF यशस्वीरित्या तयार झाला आहे.</value>
-  </data>
   <data name="Home" xml:space="preserve">
     <value>मुख्यपृष्ठ</value>
-  </data>
-  <data name="AccountApprovalRequests" xml:space="preserve">
-    <value>खाते मंजूरी विनंत्या</value>
   </data>
   <data name="Customers" xml:space="preserve">
     <value>ग्राहक</value>
@@ -435,68 +195,14 @@
   <data name="Inventory" xml:space="preserve">
     <value>कोठार</value>
   </data>
-  <data name="ActivateProduct" xml:space="preserve">
-    <value>उत्पादन सक्रिय करा</value>
-  </data>
-  <data name="Activation" xml:space="preserve">
-    <value>सक्रिय करा</value>
-  </data>
-  <data name="ActivationKey" xml:space="preserve">
-    <value>सक्रियण किल्ली:</value>
-  </data>
-  <data name="MACAddress" xml:space="preserve">
-    <value>मॅक पत्ता:</value>
-  </data>
   <data name="RequestDate" xml:space="preserve">
     <value>विनंतीची तारीख:</value>
-  </data>
-  <data name="UserID" xml:space="preserve">
-    <value>वापरकर्ता आयडी:</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>जतन करा</value>
   </data>
-  <data name="EmpIDExists" xml:space="preserve">
-    <value>हा कर्मचारी आयडी आधीच डेटाबेसमध्ये अस्तित्वात आहे.</value>
-  </data>
-  <data name="AddCategory" xml:space="preserve">
-    <value>श्रेणी जोडा</value>
-  </data>
   <data name="AddNewCustomer" xml:space="preserve">
     <value>नवीन ग्राहक जोडा</value>
-  </data>
-  <data name="AddNewProduct" xml:space="preserve">
-    <value>उत्पादन जतन करा</value>
-  </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>उत्पादनाचे नांव:</value>
-  </data>
-  <data name="s" xml:space="preserve">
-    <value>प्रशासक मंजुरी</value>
-  </data>
-  <data name="SaveBill" xml:space="preserve">
-    <value>बिल जतन करा</value>
-  </data>
-  <data name="BillInformation1" xml:space="preserve">
-    <value>बिलाची माहिती</value>
-  </data>
-  <data name="AddPayment" xml:space="preserve">
-    <value>देयक जोडा</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>नाव</value>
-  </data>
-  <data name="ShopID" xml:space="preserve">
-    <value>दुकान क्रमांक:</value>
-  </data>
-  <data name="PaymentStatus" xml:space="preserve">
-    <value>देयक स्थिती:</value>
-  </data>
-  <data name="SearchByName" xml:space="preserve">
-    <value>नावानुसार शोधा</value>
-  </data>
-  <data name="AddProduct" xml:space="preserve">
-    <value>उत्पादन जोडा</value>
   </data>
   <data name="AdminLogin" xml:space="preserve">
     <value>प्रशासक लॉगिन</value>
@@ -513,53 +219,14 @@
   <data name="RegisterHere" xml:space="preserve">
     <value>येथे नोंदणी करा</value>
   </data>
-  <data name="ModifyCustomerDetails" xml:space="preserve">
-    <value>ग्राहकाची माहिती सुधारित करा</value>
-  </data>
   <data name="ModifyCustomer" xml:space="preserve">
     <value>संपादित करा</value>
-  </data>
-  <data name="ModifyProduct3" xml:space="preserve">
-    <value>बदल करा</value>
-  </data>
-  <data name="AddAmount" xml:space="preserve">
-    <value>रक्कम जोडा</value>
-  </data>
-  <data name="RegisterAdmin" xml:space="preserve">
-    <value>प्रशासकाची नोंदणी करा</value>
-  </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>गुप्त शब्द पुष्टी करा</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>नोंदणी करा</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>शोधा</value>
   </data>
-  <data name="ShippingDetails" xml:space="preserve">
-    <value>वाहतूक तपशील</value>
-  </data>
-  <data name="PaymentReceived" xml:space="preserve">
-    <value>रक्कम प्राप्त झाली</value>
-  </data>
-  <data name="BillDiscount" xml:space="preserve">
-    <value>बिलवरील सवलत</value>
-  </data>
-  <data name="PurchaseTable" xml:space="preserve">
-    <value>खरेदी सारणी</value>
-  </data>
   <data name="FinishPurchase" xml:space="preserve">
     <value>खरेदी समाप्त करा</value>
-  </data>
-  <data name="CancelPurchase" xml:space="preserve">
-    <value>खरेदी रद्द करा</value>
-  </data>
-  <data name="Surname" xml:space="preserve">
-    <value>आडनाव</value>
-  </data>
-  <data name="AdminApprovalRequests" xml:space="preserve">
-    <value>प्रशासक मंजुरी विनंत्या</value>
   </data>
   <data name="ShowBills" xml:space="preserve">
     <value>बिले दाखवा</value>
@@ -606,17 +273,8 @@
   <data name="Channel" xml:space="preserve">
     <value>चॅनेल</value>
   </data>
-  <data name="20FeetPipe" xml:space="preserve">
-    <value>१० फूट पाईप</value>
-  </data>
-  <data name="10FeetPipe" xml:space="preserve">
-    <value>२० फूट पाईप</value>
-  </data>
   <data name="Bar" xml:space="preserve">
     <value>बार</value>
-  </data>
-  <data name="Shipping" xml:space="preserve">
-    <value>वाहतूक</value>
   </data>
   <data name="BillDate" xml:space="preserve">
     <value>बिलाची तारीख</value>
@@ -626,9 +284,6 @@
   </data>
   <data name="WorkLocation" xml:space="preserve">
     <value>कामाचे ठिकाण</value>
-  </data>
-  <data name="NoPurchaseDone" xml:space="preserve">
-    <value>खरेदी झालेली नाही</value>
   </data>
   <data name="QuantityReturned" xml:space="preserve">
     <value>परत केलेले प्रमाण</value>
@@ -641,5 +296,8 @@
   </data>
   <data name="RentalDays" xml:space="preserve">
     <value>भाड्याचे दिवस</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>मात्रा</value>
   </data>
 </root>

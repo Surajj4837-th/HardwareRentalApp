@@ -117,44 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ActivationDate" xml:space="preserve">
-    <value>The software activated till this date:</value>
-  </data>
-  <data name="ActivationKeyAlreadyUsed" xml:space="preserve">
-    <value>This activation key is already used.</value>
-  </data>
-  <data name="ActivationKeyDoesNotBelongToComputer" xml:space="preserve">
-    <value>The activation key does not belong to this computer.</value>
-  </data>
-  <data name="ActivationKeyDoesNotBelongToUser" xml:space="preserve">
-    <value>The activation key does not belong to this user.</value>
-  </data>
-  <data name="ActivationKeyNeeded" xml:space="preserve">
-    <value>The activation key is not provided.</value>
-  </data>
   <data name="ActivationNeeded" xml:space="preserve">
     <value>Last few days of your software activation is remaining.</value>
   </data>
-  <data name="ActivationPeriodOver" xml:space="preserve">
-    <value>The product activation period is over.</value>
-  </data>
-  <data name="CategoryAdded" xml:space="preserve">
-    <value>Category added to the list.</value>
-  </data>
-  <data name="EnterCategoryName" xml:space="preserve">
-    <value>Please enter the name of the new category.</value>
-  </data>
   <data name="EnterPassword" xml:space="preserve">
     <value>Please enter your password.</value>
-  </data>
-  <data name="EnterProductName" xml:space="preserve">
-    <value>Please enter the product name.</value>
-  </data>
-  <data name="EnterProductPrice" xml:space="preserve">
-    <value>Please enter the product price.</value>
-  </data>
-  <data name="EnterProductSize" xml:space="preserve">
-    <value>Please enter the size of the product.</value>
   </data>
   <data name="EnterUsername" xml:space="preserve">
     <value>Please enter your username.</value>
@@ -165,61 +132,7 @@
   <data name="InvalidCredentials" xml:space="preserve">
     <value>Invalid credentials, provide correct data.</value>
   </data>
-  <data name="InvalidKey" xml:space="preserve">
-    <value>This key is invalid.</value>
-  </data>
-  <data name="MasterAdminApproval" xml:space="preserve">
-    <value>Your account will be created after approval from the master admin.</value>
-  </data>
-  <data name="EnterMobileNumber" xml:space="preserve">
-    <value>Please enter your mobile number.</value>
-  </data>
-  <data name="NumberExists" xml:space="preserve">
-    <value>This mobile number already exists in the database.</value>
-  </data>
-  <data name="ReenterPassword" xml:space="preserve">
-    <value>Please reenter your password for confirmation.</value>
-  </data>
-  <data name="PasswordNotMatching" xml:space="preserve">
-    <value>The entered passwords do not match.</value>
-  </data>
-  <data name="ProductAdded" xml:space="preserve">
-    <value>Product added to the list.</value>
-  </data>
-  <data name="ProductModified" xml:space="preserve">
-    <value>Product modified in the list.</value>
-  </data>
-  <data name="ProductNotActivated" xml:space="preserve">
-    <value>This product has not been activated yet.</value>
-  </data>
-  <data name="ProductNotLinkedToComputer" xml:space="preserve">
-    <value>This product is not linked to your computer.</value>
-  </data>
-  <data name="EnterSurname" xml:space="preserve">
-    <value>Please enter your surname.</value>
-  </data>
-  <data name="UserIDNotProvided" xml:space="preserve">
-    <value>User ID is not provided.</value>
-  </data>
-  <data name="ApprovalPending" xml:space="preserve">
-    <value>Your account approval is pending with the master admin.</value>
-  </data>
-  <data name="SelectAdminCategory" xml:space="preserve">
-    <value>Please select the admin category.</value>
-  </data>
-  <data name="EnterEmployeeID" xml:space="preserve">
-    <value>Please enter your employee ID.</value>
-  </data>
-  <data name="EnterFirstName" xml:space="preserve">
-    <value>Please enter your first name.</value>
-  </data>
-  <data name="CategoryExisting" xml:space="preserve">
-    <value>This category already exists.</value>
-  </data>
-  <data name="EnterFirstNameSurname" xml:space="preserve">
-    <value>Please enter first name or surname.</value>
-  </data>
-  <data name="EnterMobileNumber1" xml:space="preserve">
+  <data name="EnterCustomerMobileNumber" xml:space="preserve">
     <value>Please enter customer's mobile number.</value>
   </data>
   <data name="NewCustomerAdded" xml:space="preserve">
@@ -231,59 +144,14 @@
   <data name="EnterValidMobileNumber" xml:space="preserve">
     <value>Please enter a valid 10-digit mobile number.</value>
   </data>
-  <data name="EnterValidPincode" xml:space="preserve">
-    <value>Please enter a valid 6-digit pin code.</value>
-  </data>
-  <data name="DeleteProduct" xml:space="preserve">
-    <value>Are you sure you want to delete this product?</value>
-  </data>
-  <data name="ModifyProduct" xml:space="preserve">
-    <value>Are you sure you want to modify this product?</value>
-  </data>
   <data name="ConfirmDelete" xml:space="preserve">
     <value>Confirm Delete</value>
-  </data>
-  <data name="ConfirmModify" xml:space="preserve">
-    <value>Confirm Modify</value>
-  </data>
-  <data name="LastActivationDays" xml:space="preserve">
-    <value>The last few days of software activation remain.</value>
   </data>
   <data name="DeleteCustomer" xml:space="preserve">
     <value>Are you sure you want to delete the customer?</value>
   </data>
-  <data name="EnterVillage" xml:space="preserve">
-    <value>Enter the village name.</value>
-  </data>
-  <data name="EnterDistrict" xml:space="preserve">
-    <value>Enter the district name.</value>
-  </data>
-  <data name="CustomerModified" xml:space="preserve">
-    <value>The customer data is modified.</value>
-  </data>
-  <data name="NoItemsPurchased" xml:space="preserve">
-    <value>No items were purchased.</value>
-  </data>
-  <data name="NoOutstandingBalance" xml:space="preserve">
-    <value>There is no outstanding balance.</value>
-  </data>
-  <data name="PendingBalance" xml:space="preserve">
-    <value>Pending balance for current bill is ₹</value>
-  </data>
   <data name="NoSalesByCustomer" xml:space="preserve">
     <value>No sales have ever been made for this customer.</value>
-  </data>
-  <data name="EnterAdvanceAmount" xml:space="preserve">
-    <value>Please enter the advance amount.</value>
-  </data>
-  <data name="BalancePayment1" xml:space="preserve">
-    <value>Balance of ₹</value>
-  </data>
-  <data name="BalancePayment2" xml:space="preserve">
-    <value>/- received.</value>
-  </data>
-  <data name="SrNo" xml:space="preserve">
-    <value>Sr. No.</value>
   </data>
   <data name="ItemID" xml:space="preserve">
     <value>Item ID</value>
@@ -291,104 +159,17 @@
   <data name="ItemName" xml:space="preserve">
     <value>Item Name</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount (₹)</value>
-  </data>
-  <data name="Brand" xml:space="preserve">
-    <value>Brand</value>
-  </data>
-  <data name="Measurement" xml:space="preserve">
-    <value>Measurement</value>
-  </data>
-  <data name="Size" xml:space="preserve">
-    <value>Size</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price (₹)</value>
-  </data>
-  <data name="Quantity" xml:space="preserve">
-    <value>Quantity</value>
-  </data>
-  <data name="DeleteRequest" xml:space="preserve">
-    <value>Delete Request</value>
-  </data>
-  <data name="AcceptRequest" xml:space="preserve">
-    <value>Accept Request</value>
-  </data>
-  <data name="FirstName" xml:space="preserve">
-    <value>First Name</value>
-  </data>
-  <data name="EmpID" xml:space="preserve">
-    <value>Employee ID</value>
-  </data>
   <data name="MobileNumber" xml:space="preserve">
     <value>Mobile Number</value>
-  </data>
-  <data name="Category" xml:space="preserve">
-    <value>Category</value>
-  </data>
-  <data name="PINCode" xml:space="preserve">
-    <value>PIN Code</value>
   </data>
   <data name="InvoiceID" xml:space="preserve">
     <value>Invoice ID</value>
   </data>
-  <data name="Date" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="Time" xml:space="preserve">
-    <value>Time</value>
-  </data>
-  <data name="AdminID" xml:space="preserve">
-    <value>Admin ID</value>
-  </data>
-  <data name="BillAmount" xml:space="preserve">
-    <value>Bill Amount</value>
-  </data>
-  <data name="PaidAmount" xml:space="preserve">
-    <value>Paid Amount</value>
-  </data>
   <data name="ShowBill" xml:space="preserve">
     <value>Show Bill</value>
   </data>
-  <data name="ModifyProduct2" xml:space="preserve">
-    <value>Modify Product</value>
-  </data>
-  <data name="DeleteProduct2" xml:space="preserve">
-    <value>Delete Product</value>
-  </data>
-  <data name="DeleteCustomer2" xml:space="preserve">
-    <value>Delete Customer</value>
-  </data>
-  <data name="SelectCustomer" xml:space="preserve">
-    <value>Select Customer</value>
-  </data>
-  <data name="AddItem" xml:space="preserve">
-    <value>Add Item</value>
-  </data>
-  <data name="RemoveItem" xml:space="preserve">
-    <value>Remove Item</value>
-  </data>
-  <data name="Village" xml:space="preserve">
-    <value>Village</value>
-  </data>
-  <data name="District" xml:space="preserve">
-    <value>District</value>
-  </data>
   <data name="CustomerID" xml:space="preserve">
     <value>Customer ID</value>
-  </data>
-  <data name="ProductTable" xml:space="preserve">
-    <value>Product Table</value>
-  </data>
-  <data name="CustomerTable" xml:space="preserve">
-    <value>Customer Table</value>
-  </data>
-  <data name="Discount" xml:space="preserve">
-    <value>Discount</value>
-  </data>
-  <data name="TotalAmount" xml:space="preserve">
-    <value>Total Amount</value>
   </data>
   <data name="CustomerInformation" xml:space="preserve">
     <value>Customer Information</value>
@@ -396,29 +177,8 @@
   <data name="BillInformation" xml:space="preserve">
     <value>Bill Information</value>
   </data>
-  <data name="Paid" xml:space="preserve">
-    <value>Paid</value>
-  </data>
-  <data name="Pending" xml:space="preserve">
-    <value>Pending</value>
-  </data>
-  <data name="TaxInvoice" xml:space="preserve">
-    <value>Tax Invoice</value>
-  </data>
-  <data name="DateTime" xml:space="preserve">
-    <value>Date &amp; Time: </value>
-  </data>
-  <data name="ThankYou" xml:space="preserve">
-    <value>Thank you for your business!</value>
-  </data>
-  <data name="PDFCreated" xml:space="preserve">
-    <value>PDF created successfully.</value>
-  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
-  </data>
-  <data name="AccountApprovalRequests" xml:space="preserve">
-    <value>Account Approval Requests</value>
   </data>
   <data name="Customers" xml:space="preserve">
     <value>Customers</value>
@@ -435,68 +195,14 @@
   <data name="Inventory" xml:space="preserve">
     <value>Inventory</value>
   </data>
-  <data name="ActivateProduct" xml:space="preserve">
-    <value>Activate Product</value>
-  </data>
-  <data name="Activation" xml:space="preserve">
-    <value>Activation</value>
-  </data>
-  <data name="ActivationKey" xml:space="preserve">
-    <value>Activation Key:</value>
-  </data>
-  <data name="MACAddress" xml:space="preserve">
-    <value>MAC Address:</value>
-  </data>
   <data name="RequestDate" xml:space="preserve">
     <value>Request Date:</value>
-  </data>
-  <data name="UserID" xml:space="preserve">
-    <value>User ID:</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="EmpIDExists" xml:space="preserve">
-    <value>This employee ID already exists in database.</value>
-  </data>
-  <data name="AddCategory" xml:space="preserve">
-    <value>Add Category</value>
-  </data>
   <data name="AddNewCustomer" xml:space="preserve">
     <value>Add New Customer</value>
-  </data>
-  <data name="AddNewProduct" xml:space="preserve">
-    <value>Add New Product</value>
-  </data>
-  <data name="ProductName" xml:space="preserve">
-    <value>Product Name</value>
-  </data>
-  <data name="s" xml:space="preserve">
-    <value>Admin Approval</value>
-  </data>
-  <data name="SaveBill" xml:space="preserve">
-    <value>Save Bill</value>
-  </data>
-  <data name="BillInformation1" xml:space="preserve">
-    <value>Bill Information</value>
-  </data>
-  <data name="AddPayment" xml:space="preserve">
-    <value>Add Payment</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ShopID" xml:space="preserve">
-    <value>Shop ID:</value>
-  </data>
-  <data name="PaymentStatus" xml:space="preserve">
-    <value>Payment Status:</value>
-  </data>
-  <data name="SearchByName" xml:space="preserve">
-    <value>Search By Name</value>
-  </data>
-  <data name="AddProduct" xml:space="preserve">
-    <value>Add Product</value>
   </data>
   <data name="AdminLogin" xml:space="preserve">
     <value>Admin Login</value>
@@ -513,53 +219,14 @@
   <data name="RegisterHere" xml:space="preserve">
     <value>Register Here</value>
   </data>
-  <data name="ModifyCustomerDetails" xml:space="preserve">
-    <value>Modify Customer Details</value>
-  </data>
   <data name="ModifyCustomer" xml:space="preserve">
     <value>Modify Customer</value>
-  </data>
-  <data name="ModifyProduct3" xml:space="preserve">
-    <value>Modify Product</value>
-  </data>
-  <data name="AddAmount" xml:space="preserve">
-    <value>Add Amount</value>
-  </data>
-  <data name="RegisterAdmin" xml:space="preserve">
-    <value>Register Admin</value>
-  </data>
-  <data name="ConfirmPassword" xml:space="preserve">
-    <value>Confirm Password</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="ShippingDetails" xml:space="preserve">
-    <value>Shipping Details</value>
-  </data>
-  <data name="PaymentReceived" xml:space="preserve">
-    <value>Payment Received</value>
-  </data>
-  <data name="BillDiscount" xml:space="preserve">
-    <value>Bill Discount</value>
-  </data>
-  <data name="PurchaseTable" xml:space="preserve">
-    <value> Purchase Table</value>
-  </data>
   <data name="FinishPurchase" xml:space="preserve">
     <value>Finish Purchase</value>
-  </data>
-  <data name="CancelPurchase" xml:space="preserve">
-    <value>Cancel Purchase</value>
-  </data>
-  <data name="Surname" xml:space="preserve">
-    <value>Surname</value>
-  </data>
-  <data name="AdminApprovalRequests" xml:space="preserve">
-    <value>Admin Approval Requests</value>
   </data>
   <data name="ShowBills" xml:space="preserve">
     <value>Show Bills</value>
@@ -606,17 +273,8 @@
   <data name="Channel" xml:space="preserve">
     <value>Channel</value>
   </data>
-  <data name="20FeetPipe" xml:space="preserve">
-    <value>10 Feet Pipe</value>
-  </data>
-  <data name="10FeetPipe" xml:space="preserve">
-    <value>20 Feet Pipe</value>
-  </data>
   <data name="Bar" xml:space="preserve">
     <value>Bar</value>
-  </data>
-  <data name="Shipping" xml:space="preserve">
-    <value>Shipping</value>
   </data>
   <data name="BillDate" xml:space="preserve">
     <value>Bill Date</value>
@@ -626,9 +284,6 @@
   </data>
   <data name="WorkLocation" xml:space="preserve">
     <value>Work Location</value>
-  </data>
-  <data name="NoPurchaseDone" xml:space="preserve">
-    <value>No Purchase Done</value>
   </data>
   <data name="QuantityReturned" xml:space="preserve">
     <value>Quantity Returned</value>
@@ -641,5 +296,8 @@
   </data>
   <data name="RentalDays" xml:space="preserve">
     <value>Rental Days</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
   </data>
 </root>
