@@ -71,14 +71,17 @@ namespace HardwareRentalApp.UserControls
             dgv_InventoryTable.DataSource = bindingSourceCustomers;
         }
 
-        private void UpdateRent(int itemID, decimal newRent)
+        private void UpdateItemDetails(int itemID, decimal newRent, int MinRentDays)
         {
-            string UpdateQuery = "UPDATE Items SET Rent = @Rent WHERE ItemID = @ItemID";
+            string UpdateQuery = "UPDATE Items SET Rent = @Rent, MinRentDays = @MinRentDays WHERE ItemID = @ItemID";
+
             var parameters = new Dictionary<string, object>
             {
                 { "@Rent", newRent },
+                { "@MinRentDays", MinRentDays },
                 { "@ItemID", itemID }
             };
+
             object value = obj_DBAccess.ExecuteNonQuery(UpdateQuery, parameters);
         }
 
