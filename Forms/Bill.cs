@@ -31,7 +31,10 @@ namespace HardwareRentalApp.Forms
             InitializeComponent();
 
             BillID = invoiceID;
+        }
 
+        private void Bill_Load(object sender, EventArgs e)
+        {
             GetLocalizedItems();
             
             LoadData();

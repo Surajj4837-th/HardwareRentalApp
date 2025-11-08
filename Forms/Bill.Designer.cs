@@ -269,6 +269,7 @@
             Name = "Bill";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bill";
+            Load += Bill_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Bill).EndInit();
             ResumeLayout(false);
             PerformLayout();
