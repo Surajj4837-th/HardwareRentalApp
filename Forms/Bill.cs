@@ -36,7 +36,7 @@ namespace HardwareRentalApp.Forms
         private void Bill_Load(object sender, EventArgs e)
         {
             GetLocalizedItems();
-            
+
             LoadData();
 
             FillFormDetails();
@@ -62,7 +62,7 @@ namespace HardwareRentalApp.Forms
                 btn_FinishPurchase.Visible = true;
 
                 dgv_Bill.Columns["QuantityReturned"].Visible = true;
-                
+
                 ComputeBill();
 
                 lbl_main.Text = "Pending Bill";
@@ -154,6 +154,14 @@ namespace HardwareRentalApp.Forms
             });
             dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "RentalDays",
+                DataPropertyName = "RentalDays",
+                HeaderText = LangManager.GetString("RentalDays", Thread.CurrentThread.CurrentUICulture),
+                Width = 80,
+                ReadOnly = false
+            });
+            dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
+            {
                 Name = "QuantityReturned",
                 DataPropertyName = "QuantityReturned",
                 HeaderText = LangManager.GetString("QuantityReturned", Thread.CurrentThread.CurrentUICulture),
@@ -166,12 +174,24 @@ namespace HardwareRentalApp.Forms
             dt_items.Columns.Add("LocalizedName", typeof(string));
             dt_items.Columns.Add("Rent", typeof(decimal));
             dt_items.Columns.Add("QuantityRented", typeof(int));
+            dt_items.Columns.Add("RentalDays", typeof(int));
             dt_items.Columns.Add("QuantityReturned", typeof(int));  // <<== important
+
+            //Get the date difference for rental days
+            int rentalDays = (dtp_EndRentDate.Value.Date - Convert.ToDateTime(BillInformation[0].BillDate.ToString()).Date).Days + 1; //Added +1 to count same day rent
 
             for (int i = 0; i < l_items.Count; i++)
             {
                 var item = l_items[i];
-                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0, 0); // start with 0 qty
+
+                int ItemRentalDays = rentalDays;
+
+                if (item.MinRentDays > rentalDays)
+                {
+                    ItemRentalDays = item.MinRentDays; //Ensure minimum rent days is considered
+                }
+
+                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0, ItemRentalDays, 0); // start with 0 qty
             }
 
             AdjustGridHeight();
@@ -186,7 +206,6 @@ namespace HardwareRentalApp.Forms
                     ItemId = r.GetInt32(r.GetOrdinal("ItemId")),
                     Quantity = r.GetInt32(r.GetOrdinal("Quantity")),
                     Price = r.GetDecimal(r.GetOrdinal("Price"))
-                    //ItemName = string.Empty // will fill below
                 },
                 billIdParam
             );
@@ -213,7 +232,7 @@ namespace HardwareRentalApp.Forms
             // Bind to DataGridView
             dgv_Bill.DataSource = dt_items;
 
-            //make all cols except QuantityReturned read-only
+            //Make all cols except QuantityReturned read-only
             foreach (DataGridViewColumn col in dgv_Bill.Columns)
             {
                 col.ReadOnly = col.Name != "QuantityReturned";  // all except this
@@ -453,7 +472,7 @@ namespace HardwareRentalApp.Forms
                 }
 
                 this.Close();
-            }                
+            }
         }
 
         private void UpdateBill(decimal totalAmount, int ItemID, int Quantity)
