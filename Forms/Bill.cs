@@ -49,6 +49,7 @@ namespace HardwareRentalApp.Forms
             tb_Reference.Text = BillInformation[0].Reference;
             tb_WorkLocation.Text = BillInformation[0].WorkLocation;
             tb_StartRentDate.Text = BillInformation[0].BillDate.ToString();
+            dtp_EndRentDate.MinDate = Convert.ToDateTime(BillInformation[0].BillDate.ToString()).Date;
 
             //Change form details if bill is already paid or not
             if (BillInformation[0].PaymentDate == DateTime.MinValue)
