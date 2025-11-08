@@ -63,6 +63,14 @@ namespace HardwareRentalApp.Forms
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
+                Name = "MinRentDays",
+                DataPropertyName = "MinRentDays",
+                HeaderText = LangManager.GetString("MinRentDays"),
+                ReadOnly = true,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
+            });
+            dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
+            {
                 Name = "Quantity",
                 DataPropertyName = "Quantity",
                 HeaderText = LangManager.GetString("Quantity"),
@@ -74,12 +82,13 @@ namespace HardwareRentalApp.Forms
             dt_items.Columns.Add("ItemId", typeof(int));
             dt_items.Columns.Add("LocalizedName", typeof(string));
             dt_items.Columns.Add("Rent", typeof(decimal));
+            dt_items.Columns.Add("MinRentDays", typeof(Int32));
             dt_items.Columns.Add("Quantity", typeof(int));
 
             for (int i = 0; i < l_items.Count; i++)
             {
                 var item = l_items[i];
-                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, 0); // start with 0 qty
+                dt_items.Rows.Add(item.ItemId, item.LocalizedName, item.Rent, item.MinRentDays, 0); // start with 0 qty
             }
 
             // Bind to DataGridView
@@ -106,13 +115,14 @@ namespace HardwareRentalApp.Forms
 
         public void GetLocalizedItems()
         {
-            string query = "SELECT ItemId, ItemName, Rent FROM Items";
+            string query = "SELECT ItemId, ItemName, Rent, MinRentDays FROM Items";
 
             l_items = obj_DBAccess.ExecuteQuery(query, reader => new Items
             {
                 ItemId = reader.GetInt32(0),
                 ItemName = reader.GetString(1),
-                Rent = reader.GetDecimal(2)
+                Rent = reader.GetDecimal(2),
+                MinRentDays = reader.GetInt32(3)
             });
 
             LocalizeItems();
