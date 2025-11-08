@@ -10,11 +10,6 @@ namespace HardwareRentalApp.Classes
     public struct Items
     {
         public int ItemId { get; set; }
-
-        //public Items(int itemId) : this()
-        //{
-        //    ItemId = itemId;
-        //}
         public string ItemName { get; set; }
         public string LocalizedName { get; set; }
         public decimal Rent { get; set; }
