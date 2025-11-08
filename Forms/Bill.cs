@@ -240,13 +240,14 @@ namespace HardwareRentalApp.Forms
 
         public void GetLocalizedItems()
         {
-            string query = "SELECT ItemId, ItemName, Rent FROM Items";
+            string query = "SELECT ItemId, ItemName, Rent, MinRentDays FROM Items";
 
             l_items = obj_DBAccess.ExecuteQuery(query, reader => new Items
             {
                 ItemId = reader.GetInt32(0),
                 ItemName = reader.GetString(1),
-                Rent = reader.GetDecimal(2)
+                Rent = reader.GetDecimal(2),
+                MinRentDays = reader.GetInt32(3)
             },
             null);
 
