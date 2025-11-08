@@ -338,21 +338,19 @@ namespace HardwareRentalApp.Forms
         private decimal ComputeBill()
         {
             decimal totalAmount = 0m;
-            int NoOfDays = (dtp_EndRentDate.Value.Date - Convert.ToDateTime(tb_StartRentDate.Text).Date).Days + 1; //Added +1 to count same day rent
 
             foreach (DataGridViewRow row in dgv_Bill.Rows)
             {
                 if (row.IsNewRow) continue; // skip new row
 
+                var NoOfDaysvalue = row.Cells["RentalDays"].Value;
                 var rentValue = row.Cells["Rent"].Value;
                 var QuantityRentedValue = row.Cells["QuantityRented"].Value;
 
-                decimal rent = 0m;
-                int QuantityRented = 0;
-
                 //Assign values safely
-                decimal.TryParse(rentValue?.ToString() ?? "0", out rent);
-                int.TryParse(QuantityRentedValue?.ToString() ?? "0", out QuantityRented);
+                decimal.TryParse(rentValue?.ToString() ?? "0", out decimal rent);
+                int.TryParse(QuantityRentedValue?.ToString() ?? "0", out int QuantityRented);
+                int.TryParse(NoOfDaysvalue?.ToString() ?? "1", out int NoOfDays);
 
                 totalAmount += rent * QuantityRented * NoOfDays;
             }
