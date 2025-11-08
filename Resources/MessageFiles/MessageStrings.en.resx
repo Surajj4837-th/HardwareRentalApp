@@ -291,13 +291,16 @@
   <data name="QuantityRented" xml:space="preserve">
     <value>Quantity Rented</value>
   </data>
-  <data name="UpdateRent" xml:space="preserve">
-    <value>Update Rent</value>
+  <data name="UpdateItem" xml:space="preserve">
+    <value>Update Item</value>
   </data>
   <data name="RentalDays" xml:space="preserve">
     <value>Rental Days</value>
   </data>
   <data name="Quantity" xml:space="preserve">
     <value>Quantity</value>
+  </data>
+  <data name="MinRentDays" xml:space="preserve">
+    <value>Min. Rent Days</value>
   </data>
 </root>
