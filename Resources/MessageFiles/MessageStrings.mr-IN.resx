@@ -639,4 +639,7 @@
   <data name="UpdateRent" xml:space="preserve">
     <value>भाडे अद्ययावत करा</value>
   </data>
+  <data name="RentalDays" xml:space="preserve">
+    <value>भाड्याचे दिवस</value>
+  </data>
 </root>
