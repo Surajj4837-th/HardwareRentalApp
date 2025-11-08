@@ -96,7 +96,7 @@ namespace HardwareRentalApp.UserControls
                 ItemName = dgv_InventoryTable.Rows[row_index].Cells["ItemName"].Value.ToString();
                 RentPerDay = Convert.ToDecimal(dgv_InventoryTable.Rows[row_index].Cells["Rent"].Value);
 
-                using (var UR_form = new UpdateRent(ItemID, ItemName, RentPerDay))
+                using (var UR_form = new UpdateItem(ItemID, ItemName, RentPerDay))
                 {
                     if (UR_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
