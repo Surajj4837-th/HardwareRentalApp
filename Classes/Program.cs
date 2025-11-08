@@ -11,14 +11,14 @@ namespace HardwareRentalApp.Classes
     {
         public int ItemId { get; set; }
 
-        public Items(int itemId) : this()
-        {
-            ItemId = itemId;
-        }
-
+        //public Items(int itemId) : this()
+        //{
+        //    ItemId = itemId;
+        //}
         public string ItemName { get; set; }
         public string LocalizedName { get; set; }
         public decimal Rent { get; set; }
+        public Int32 MinRentDays { get; set; }
     }
     public class BillItemSummary
     {
