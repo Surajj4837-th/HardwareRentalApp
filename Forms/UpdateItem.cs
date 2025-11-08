@@ -14,15 +14,17 @@ namespace HardwareRentalApp.Forms
     {
         private int ItemID;
         private string ItemName;
-        //private decimal RentPerDay;
-        public decimal RentPerDay { get; private set; }
+        private decimal RentPerDay;
+        public int MinRentDays;
+        public Items updatedItemDetails;
 
-        public UpdateItem(int ItemID, string ItemName, decimal RentPerDay)
+        public UpdateItem(DataGridViewRow selectedRow)
         {
             InitializeComponent();
-            this.ItemID = ItemID;
-            this.ItemName = ItemName;
-            this.RentPerDay = RentPerDay;
+            this.ItemID = Convert.ToInt32(selectedRow.Cells["ItemID"].Value);
+            this.ItemName = Convert.ToString(selectedRow.Cells["ItemName"].Value);
+            this.RentPerDay = Convert.ToDecimal(selectedRow.Cells["Rent"].Value);
+            this.MinRentDays = Convert.ToInt32(selectedRow.Cells["MinRentDays"].Value);
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
