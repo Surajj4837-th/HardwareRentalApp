@@ -87,5 +87,27 @@ namespace HardwareRentalApp.Forms
                 }
             }
         }
+
+        private void tb_MinRentalDays_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            // Allow control keys like Backspace
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && tb.Text.Contains("."))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Allow digits and dot only
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
