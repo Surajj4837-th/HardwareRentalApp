@@ -37,6 +37,7 @@ namespace HardwareRentalApp.Forms
             tb_ItemID.Text = ItemID.ToString();
             tb_ItemName.Text = ItemName;
             tb_RentPerDay.Text = RentPerDay.ToString("F2");
+            tb_MinRentalDays.Text = MinRentDays.ToString();
         }
 
         private void tb_RentPerDay_KeyPress(object sender, KeyPressEventArgs e)
