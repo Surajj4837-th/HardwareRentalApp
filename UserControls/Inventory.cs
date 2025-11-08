@@ -92,18 +92,13 @@ namespace HardwareRentalApp.UserControls
             {
                 int row_index = e.RowIndex;
 
-                ItemID = Convert.ToInt32(dgv_InventoryTable.Rows[row_index].Cells["ItemID"].Value);
-                ItemName = dgv_InventoryTable.Rows[row_index].Cells["ItemName"].Value.ToString();
-                RentPerDay = Convert.ToDecimal(dgv_InventoryTable.Rows[row_index].Cells["Rent"].Value);
+                DataGridViewRow selectedRow = dgv_InventoryTable.Rows[row_index];
 
-                using (var UR_form = new UpdateItem(ItemID, ItemName, RentPerDay))
+                using (var UR_form = new UpdateItem(selectedRow))
                 {
                     if (UR_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        // ✅ Get the new rent value
-                        decimal updatedRent = UR_form.RentPerDay;
-
-                        UpdateRent(ItemID, updatedRent);
+                        UpdateItemDetails(UR_form.updatedItemDetails.ItemId, UR_form.updatedItemDetails.Rent, UR_form.updatedItemDetails.MinRentDays);
 
                         loadData();
                     }
