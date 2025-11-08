@@ -41,19 +41,19 @@ namespace HardwareRentalApp.UserControls
             DataGridViewButtonColumn Select_bill_col = new DataGridViewButtonColumn();
 
             Select_bill_col.Name = "Select_item_column";
-            Select_bill_col.Text = "Update Rent";
 
             if (dgv_InventoryTable.Columns["Select_item_column"] == null)
             {
                 Select_bill_col.UseColumnTextForButtonValue = true;
                 int insertIndex = dgv_InventoryTable.Columns.Count;
                 dgv_InventoryTable.Columns.Insert(insertIndex, Select_bill_col);
-
-                dgv_InventoryTable.Columns[insertIndex].HeaderText = LangManager.GetString("UpdateRent");
             }
 
             dgv_InventoryTable.Columns["ItemID"].HeaderText = LangManager.GetString("ItemID");
             dgv_InventoryTable.Columns["ItemName"].HeaderText = LangManager.GetString("ItemName");
+            dgv_InventoryTable.Columns["Rent"].HeaderText = LangManager.GetString("Rent");
+            dgv_InventoryTable.Columns["MinRentDays"].HeaderText = LangManager.GetString("MinRentDays");
+            dgv_InventoryTable.Columns["Select_item_column"].HeaderText = LangManager.GetString("UpdateItem");
         }
 
         private void loadData()
