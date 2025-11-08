@@ -69,7 +69,7 @@ namespace HardwareRentalApp.Forms
             }
             else if (MobileNo.Equals(""))
             {
-                MessageBox.Show(LangManager.GetString("EnterMobileNumber1"));
+                MessageBox.Show(LangManager.GetString("EnterCustomerMobileNumber"));
                 tb_MobileNum.Focus();
             }
             else if (tb_MobileNum.Text.Length != 10)
