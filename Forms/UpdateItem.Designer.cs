@@ -1,6 +1,6 @@
 ﻿namespace HardwareRentalApp.Forms
 {
-    partial class UpdateRent
+    partial class UpdateItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateRent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateItem));
             tableLayoutPanel1 = new TableLayoutPanel();
             tb_ItemID = new TextBox();
             tb_RentPerDay = new TextBox();
@@ -175,10 +175,10 @@
             lbl_main.Name = "lbl_main";
             lbl_main.Size = new Size(530, 44);
             lbl_main.TabIndex = 4;
-            lbl_main.Text = "Update Rent";
+            lbl_main.Text = "Update Item";
             lbl_main.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // UpdateRent
+            // UpdateItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             Controls.Add(lbl_main);
             Font = new Font("Nirmala UI", 9F);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "UpdateRent";
+            Name = "UpdateItem";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UpdateRent";
             Load += UpdateRent_Load;

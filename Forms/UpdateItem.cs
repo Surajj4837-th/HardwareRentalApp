@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace HardwareRentalApp.Forms
 {
-    public partial class UpdateRent : Form
+    public partial class UpdateItem : Form
     {
         private int ItemID;
         private string ItemName;
         //private decimal RentPerDay;
         public decimal RentPerDay { get; private set; }
 
-        public UpdateRent(int ItemID, string ItemName, decimal RentPerDay)
+        public UpdateItem(int ItemID, string ItemName, decimal RentPerDay)
         {
             InitializeComponent();
             this.ItemID = ItemID;
