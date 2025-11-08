@@ -25,28 +25,27 @@ CREATE TABLE Bills (
 CREATE TABLE Items (
     ItemId INT IDENTITY(1,1) PRIMARY KEY,
     ItemName NVARCHAR(100) NOT NULL,
-    Rent DECIMAL(10,2) NOT NULL
+    Rent DECIMAL(10,2) NOT NULL,
+    MinRentDays INT NOT NULL DEFAULT 1
 );
 
 
-INSERT INTO Items (ItemName, Rent)
+INSERT INTO Items (ItemName, Rent, MinRentDays)
 VALUES
-('Plate 2x3', 1.00),
-('Plate 18x36', 2.00),
-('Plate 15x36', 3.00),
-('Plate 12x36', 4.00),
-('Plate 9x36', 5.00),
-('Mixer', 6.00),
-('Column Pattern', 7.00),
-('Jock', 8.00),
-('Kaichya', 9.00),
-('Jali', 10.00),
-('Channel', 11.00),
-('20 feet Pipe', 12.00),
-('10 feet Pipe', 13.00),
-('Bar', 14.00)--,
---('Shipping', 15.00)
-;
+('Plate 2x3', 1.00, 15),
+('Plate 18x36', 2.00, 15),
+('Plate 15x36', 3.00, 15),
+('Plate 12x36', 4.00, 15),
+('Plate 9x36', 5.00, 15),
+('Mixer', 6.00, 1),
+('Column Pattern', 7.00, 1),
+('Jock', 8.00, 30),
+('Kaichya', 9.00, 1),
+('Jali', 10.00, 1),
+('Channel', 11.00, 1),
+('20 feet Pipe', 12.00, 1),
+('10 feet Pipe', 13.00, 1),
+('Bar', 14.00, 1);
 
 CREATE TABLE BillItems (
     BillItemId INT IDENTITY(1,1) PRIMARY KEY,
