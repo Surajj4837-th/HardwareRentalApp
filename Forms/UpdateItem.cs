@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HardwareRentalApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -70,6 +71,12 @@ namespace HardwareRentalApp.Forms
                 tb_RentPerDay.Focus();
                 return; // Stop execution here
             }
+            else if (string.IsNullOrWhiteSpace(tb_MinRentalDays.Text))
+            {
+                MessageBox.Show("Please enter a min rental days before saving.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tb_RentPerDay.Focus();
+                return; // Stop execution here
+            }
             else
             {
                 DialogResult result = MessageBox.Show(
@@ -81,7 +88,11 @@ namespace HardwareRentalApp.Forms
 
                 if (result == DialogResult.Yes)
                 {
-                    this.RentPerDay = Convert.ToDecimal(tb_RentPerDay.Text);
+                    updatedItemDetails.Rent = Convert.ToDecimal(tb_RentPerDay.Text);
+                    updatedItemDetails.MinRentDays = Convert.ToInt32(tb_MinRentalDays.Text);
+                    updatedItemDetails.ItemId = this.ItemID;
+                    updatedItemDetails.ItemName = this.ItemName;
+
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
