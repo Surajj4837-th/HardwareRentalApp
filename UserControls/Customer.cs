@@ -40,7 +40,10 @@ namespace HardwareRentalApp.UserControls
         public Customers()
         {
             InitializeComponent();
+        }
 
+        private void Customer_Load(object sender, EventArgs e)
+        {
             currentTable = tableName.Customer;
 
             DisableButtons();
@@ -54,6 +57,13 @@ namespace HardwareRentalApp.UserControls
             createTable();
 
             ApplyLanguage();
+
+            foreach (DataGridViewColumn col in dgv_MultipurposeTable.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            dgv_MultipurposeTable.ClearSelection();
         }
 
         public void ApplyLanguage()
@@ -284,16 +294,6 @@ namespace HardwareRentalApp.UserControls
         {
             if (currentTable == tableName.Customer)
                 bindingSourceCustomers.Filter = "LesseeName like '%" + tb_search.Text + "%'";
-        }
-
-        private void Customer_Load(object sender, EventArgs e)
-        {
-            dgv_MultipurposeTable.ClearSelection();
-
-            foreach (DataGridViewColumn col in dgv_MultipurposeTable.Columns)
-            {
-                col.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
         }
 
         private void Customer_Click(object sender, EventArgs e)
