@@ -185,6 +185,7 @@
             dtp_EndRentDate.Name = "dtp_EndRentDate";
             dtp_EndRentDate.Size = new Size(236, 33);
             dtp_EndRentDate.TabIndex = 21;
+            dtp_EndRentDate.ValueChanged += dtp_EndRentDate_ValueChanged;
             // 
             // tb_StartRentDate
             // 

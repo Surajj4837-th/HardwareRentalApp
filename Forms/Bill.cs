@@ -354,6 +354,7 @@ namespace HardwareRentalApp.Forms
 
                 totalAmount += rent * QuantityRented * NoOfDays;
             }
+
             tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
 
             return totalAmount;
@@ -567,6 +568,30 @@ namespace HardwareRentalApp.Forms
 
                 obj_DBAccess.ExecuteQuery(itemCmd);
             }
+        }
+
+        private void dtp_EndRentDate_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime.TryParse(tb_StartRentDate.Text, out DateTime startDate);
+
+            int rentalDays = (dtp_EndRentDate.Value.Date - startDate).Days + 1; //Added +1 to count same day rent
+
+            foreach (DataRow row in dt_items.Rows)
+            {
+                int itemId = Convert.ToInt32(row["ItemId"]);
+
+                // Find corresponding item in l_items by ItemId
+                var matchingItem = l_items.FirstOrDefault(x => x.ItemId == itemId);
+
+                //if (matchingItem != null)
+                {
+                    // Apply minimum rent days logic
+                    int updatedRentalDays = Math.Max(rentalDays, matchingItem.MinRentDays);
+                    row["RentalDays"] = updatedRentalDays;
+                }
+            }
+
+            ComputeBill();
         }
     }
 }
