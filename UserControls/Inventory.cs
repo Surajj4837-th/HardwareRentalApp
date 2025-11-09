@@ -33,6 +33,10 @@ namespace HardwareRentalApp.UserControls
             loadData();
 
             ArrangeDGVButtons();
+
+            lbl_search.Text = LangManager.GetString("Search");
+            lbl_mainPanel.Text = LangManager.GetString("InventoryInformation");
+            btn_AddItem.Text = LangManager.GetString("AddNewItem");
         }
 
         private void ArrangeDGVButtons()

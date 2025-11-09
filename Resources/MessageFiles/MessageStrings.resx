@@ -315,4 +315,10 @@
   <data name="RentDate" xml:space="preserve">
     <value>Rent Date</value>
   </data>
+  <data name="InventoryInformation" xml:space="preserve">
+    <value>Inventory Information</value>
+  </data>
+  <data name="AddNewItem" xml:space="preserve">
+    <value>Add New Item</value>
+  </data>
 </root>

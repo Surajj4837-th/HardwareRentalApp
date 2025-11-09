@@ -315,4 +315,10 @@
   <data name="RentDate" xml:space="preserve">
     <value>भाड्याची तारीख</value>
   </data>
+  <data name="InventoryInformation" xml:space="preserve">
+    <value>मालसाठ्याची माहिती</value>
+  </data>
+  <data name="AddNewItem" xml:space="preserve">
+    <value>नवीन वस्तू जोडा</value>
+  </data>
 </root>
