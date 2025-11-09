@@ -37,7 +37,7 @@
             lbl_ItemName = new Label();
             lbl_Rent = new Label();
             btn_Close = new Button();
-            btn_Update = new Button();
+            btn_Add = new Button();
             lbl_main = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -149,18 +149,20 @@
             btn_Close.Size = new Size(33, 33);
             btn_Close.TabIndex = 10;
             btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
             // 
-            // btn_Update
+            // btn_Add
             // 
-            btn_Update.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold);
-            btn_Update.ImeMode = ImeMode.NoControl;
-            btn_Update.Location = new Point(175, 324);
-            btn_Update.Margin = new Padding(4, 3, 4, 3);
-            btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(182, 48);
-            btn_Update.TabIndex = 9;
-            btn_Update.Text = "Add";
-            btn_Update.UseVisualStyleBackColor = true;
+            btn_Add.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold);
+            btn_Add.ImeMode = ImeMode.NoControl;
+            btn_Add.Location = new Point(175, 324);
+            btn_Add.Margin = new Padding(4, 3, 4, 3);
+            btn_Add.Name = "btn_Add";
+            btn_Add.Size = new Size(182, 48);
+            btn_Add.TabIndex = 9;
+            btn_Add.Text = "Add";
+            btn_Add.UseVisualStyleBackColor = true;
+            btn_Add.Click += btn_Add_Click;
             // 
             // lbl_main
             // 
@@ -181,7 +183,7 @@
             ClientSize = new Size(530, 417);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(btn_Close);
-            Controls.Add(btn_Update);
+            Controls.Add(btn_Add);
             Controls.Add(lbl_main);
             Font = new Font("Nirmala UI", 9F);
             FormBorderStyle = FormBorderStyle.None;
@@ -203,7 +205,7 @@
         private Label lbl_ItemName;
         private Label lbl_Rent;
         private Button btn_Close;
-        private Button btn_Update;
+        private Button btn_Add;
         private Label lbl_main;
     }
 }

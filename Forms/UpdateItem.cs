@@ -74,7 +74,7 @@ namespace HardwareRentalApp.Forms
             else if (string.IsNullOrWhiteSpace(tb_MinRentalDays.Text))
             {
                 MessageBox.Show("Please enter a min rental days before saving.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tb_RentPerDay.Focus();
+                tb_MinRentalDays.Focus();
                 return; // Stop execution here
             }
             else
