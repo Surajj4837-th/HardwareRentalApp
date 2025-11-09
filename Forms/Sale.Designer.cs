@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btn_Close = new Button();
             tb_LesseeName = new TextBox();
-            lbl_Customre = new Label();
+            lbl_LesseeName = new Label();
             tb_OwnerName = new TextBox();
             lbl_OwnerName = new Label();
             tb_Reference = new TextBox();
@@ -41,7 +41,7 @@
             tb_WorkLocation = new TextBox();
             lbl_WorkLocation = new Label();
             dgv_Sale = new DataGridView();
-            btn_Save = new Button();
+            btn_FinishPurchase = new Button();
             lbl_RentDate = new Label();
             dtp_StartRentDate = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).BeginInit();
@@ -55,7 +55,7 @@
             btn_Close.Font = new Font("Nirmala UI", 8.25F);
             btn_Close.Image = (Image)resources.GetObject("btn_Close.Image");
             btn_Close.ImeMode = ImeMode.NoControl;
-            btn_Close.Location = new Point(987, 2);
+            btn_Close.Location = new Point(988, 1);
             btn_Close.Margin = new Padding(1);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(33, 33);
@@ -66,21 +66,21 @@
             // tb_LesseeName
             // 
             tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeName.Location = new Point(190, 49);
+            tb_LesseeName.Location = new Point(202, 49);
             tb_LesseeName.Name = "tb_LesseeName";
             tb_LesseeName.ReadOnly = true;
             tb_LesseeName.Size = new Size(236, 33);
             tb_LesseeName.TabIndex = 4;
             // 
-            // lbl_Customre
+            // lbl_LesseeName
             // 
-            lbl_Customre.AutoSize = true;
-            lbl_Customre.Font = new Font("Nirmala UI", 14.25F);
-            lbl_Customre.Location = new Point(57, 52);
-            lbl_Customre.Name = "lbl_Customre";
-            lbl_Customre.Size = new Size(62, 25);
-            lbl_Customre.TabIndex = 5;
-            lbl_Customre.Text = "Name";
+            lbl_LesseeName.AutoSize = true;
+            lbl_LesseeName.Font = new Font("Nirmala UI", 14.25F);
+            lbl_LesseeName.Location = new Point(57, 52);
+            lbl_LesseeName.Name = "lbl_LesseeName";
+            lbl_LesseeName.Size = new Size(62, 25);
+            lbl_LesseeName.TabIndex = 5;
+            lbl_LesseeName.Text = "Name";
             // 
             // tb_OwnerName
             // 
@@ -103,7 +103,7 @@
             // tb_Reference
             // 
             tb_Reference.Font = new Font("Nirmala UI", 14.25F);
-            tb_Reference.Location = new Point(190, 99);
+            tb_Reference.Location = new Point(202, 99);
             tb_Reference.Name = "tb_Reference";
             tb_Reference.Size = new Size(236, 33);
             tb_Reference.TabIndex = 4;
@@ -141,23 +141,23 @@
             dgv_Sale.AllowUserToAddRows = false;
             dgv_Sale.AllowUserToResizeRows = false;
             dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle4;
             dgv_Sale.Location = new Point(57, 202);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
@@ -167,24 +167,24 @@
             dgv_Sale.CellValidating += dgv_Sale_CellValidating;
             dgv_Sale.EditingControlShowing += dgv_Sale_EditingControlShowing;
             // 
-            // btn_Save
+            // btn_FinishPurchase
             // 
-            btn_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_Save.BackColor = Color.PaleGreen;
-            btn_Save.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Save.Location = new Point(619, 759);
-            btn_Save.Name = "btn_Save";
-            btn_Save.Size = new Size(180, 36);
-            btn_Save.TabIndex = 7;
-            btn_Save.Text = "Finish Purchase";
-            btn_Save.UseVisualStyleBackColor = false;
-            btn_Save.Click += btn_Save_Click;
+            btn_FinishPurchase.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_FinishPurchase.BackColor = Color.PaleGreen;
+            btn_FinishPurchase.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_FinishPurchase.Location = new Point(619, 759);
+            btn_FinishPurchase.Name = "btn_FinishPurchase";
+            btn_FinishPurchase.Size = new Size(180, 36);
+            btn_FinishPurchase.TabIndex = 7;
+            btn_FinishPurchase.Text = "Finish Purchase";
+            btn_FinishPurchase.UseVisualStyleBackColor = false;
+            btn_FinishPurchase.Click += btn_Save_Click;
             // 
             // lbl_RentDate
             // 
             lbl_RentDate.AutoSize = true;
             lbl_RentDate.Font = new Font("Nirmala UI", 14.25F);
-            lbl_RentDate.Location = new Point(57, 156);
+            lbl_RentDate.Location = new Point(57, 152);
             lbl_RentDate.Name = "lbl_RentDate";
             lbl_RentDate.Size = new Size(93, 25);
             lbl_RentDate.TabIndex = 5;
@@ -194,7 +194,7 @@
             // 
             dtp_StartRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_StartRentDate.Location = new Point(190, 148);
+            dtp_StartRentDate.Location = new Point(202, 148);
             dtp_StartRentDate.Name = "dtp_StartRentDate";
             dtp_StartRentDate.Size = new Size(236, 33);
             dtp_StartRentDate.TabIndex = 8;
@@ -206,7 +206,7 @@
             ClientSize = new Size(1024, 818);
             ControlBox = false;
             Controls.Add(dtp_StartRentDate);
-            Controls.Add(btn_Save);
+            Controls.Add(btn_FinishPurchase);
             Controls.Add(dgv_Sale);
             Controls.Add(lbl_WorkLocation);
             Controls.Add(lbl_RentDate);
@@ -214,7 +214,7 @@
             Controls.Add(lbl_OwnerName);
             Controls.Add(tb_WorkLocation);
             Controls.Add(tb_Reference);
-            Controls.Add(lbl_Customre);
+            Controls.Add(lbl_LesseeName);
             Controls.Add(tb_OwnerName);
             Controls.Add(tb_LesseeName);
             Controls.Add(btn_Close);
@@ -223,6 +223,7 @@
             Name = "Sale";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sale";
+            Load += Sale_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Sale).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -232,7 +233,7 @@
 
         private Button btn_Close;
         private TextBox tb_LesseeName;
-        private Label lbl_Customre;
+        private Label lbl_LesseeName;
         private TextBox tb_OwnerName;
         private Label lbl_OwnerName;
         private TextBox tb_Reference;
@@ -240,7 +241,7 @@
         private TextBox tb_WorkLocation;
         private Label lbl_WorkLocation;
         private DataGridView dgv_Sale;
-        private Button btn_Save;
+        private Button btn_FinishPurchase;
         private Label lbl_RentDate;
         private DateTimePicker dtp_StartRentDate;
     }

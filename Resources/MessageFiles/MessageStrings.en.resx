@@ -306,4 +306,13 @@
   <data name="AccountApprovalRequest" xml:space="preserve">
     <value>Account Approval Request</value>
   </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>Owner Name</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="RentDate" xml:space="preserve">
+    <value>Rent Date</value>
+  </data>
 </root>

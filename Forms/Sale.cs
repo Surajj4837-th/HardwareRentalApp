@@ -28,7 +28,18 @@ namespace HardwareRentalApp.Forms
             tb_LesseeName.Text = customer.LesseeName;
 
             GetLocalizedItems();
+
             LoadData();
+        }
+
+        private void Sale_Load(object sender, EventArgs e)
+        {
+            lbl_LesseeName.Text = LangManager.GetString("LesseeName");
+            lbl_OwnerName.Text = LangManager.GetString("OwnerName");
+            lbl_Reference.Text = LangManager.GetString("Reference");
+            lbl_WorkLocation.Text = LangManager.GetString("WorkLocation");
+            lbl_RentDate.Text = LangManager.GetString("RentDate");
+            btn_FinishPurchase.Text = LangManager.GetString("FinishPurchase");
         }
 
         private void LoadData()
@@ -161,7 +172,7 @@ namespace HardwareRentalApp.Forms
                     sum += q;
             }
 
-            if(sum == 0)
+            if (sum == 0)
             {
                 MessageBox.Show(LangManager.GetString("NoPurchaseDone"));
                 return;

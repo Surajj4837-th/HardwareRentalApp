@@ -306,4 +306,13 @@
   <data name="AccountApprovalRequest" xml:space="preserve">
     <value>खाते मंजुरी विनंती</value>
   </data>
+  <data name="OwnerName" xml:space="preserve">
+    <value>मालकाचे नाव</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>संदर्भ</value>
+  </data>
+  <data name="RentDate" xml:space="preserve">
+    <value>भाड्याची तारीख</value>
+  </data>
 </root>
