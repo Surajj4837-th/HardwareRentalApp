@@ -175,7 +175,7 @@ namespace HardwareRentalApp.Forms
             string reference = tb_Reference.Text.Trim();
             string workLocation = tb_WorkLocation.Text.Trim();
             DateTime? paymentDate = null;
-            decimal totalAmount = 0;
+            decimal totalAmount = 0;        //No need to update total amount as of now
 
             CreateBill(
                 CustomerId,
@@ -233,13 +233,13 @@ namespace HardwareRentalApp.Forms
             foreach (DataRow row in dt_items.Rows)
             {
                 var itemCmd = new SqlCommand(@"
-                INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
-                VALUES (@BillId, @ItemId, @Quantity, @Price)");
+                INSERT INTO BillItems (BillId, ItemId, Quantity, Rent)
+                VALUES (@BillId, @ItemId, @Quantity, @Rent)");
 
                 itemCmd.Parameters.AddWithValue("@BillId", billId);
                 itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
                 itemCmd.Parameters.AddWithValue("@Quantity", row["Quantity"]);
-                itemCmd.Parameters.AddWithValue("@Price", row["Rent"]);
+                itemCmd.Parameters.AddWithValue("@Rent", row["Rent"]);
 
                 obj_DBAccess.ExecuteQuery(itemCmd);
             }
@@ -256,6 +256,32 @@ namespace HardwareRentalApp.Forms
             {
                 tb.KeyPress -= QuantityColumn_KeyPress; // prevent double subscription
                 tb.KeyPress += QuantityColumn_KeyPress;
+            }
+
+            if (dgv_Sale.CurrentCell.OwningColumn.Name == "Rent" && e.Control is TextBox tbRent)
+            {
+                tbRent.KeyPress -= RentColumn_KeyPress;
+                tbRent.KeyPress += RentColumn_KeyPress;
+            }
+        }
+
+        private void RentColumn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            if (char.IsControl(e.KeyChar)) return;
+
+            // Allow digits and one decimal point
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Only allow one decimal point
+            if (e.KeyChar == '.' && tb.Text.Contains("."))
+            {
+                e.Handled = true;
             }
         }
 
@@ -300,6 +326,21 @@ namespace HardwareRentalApp.Forms
                 if (!int.TryParse(input, out int value) || value < 0)
                 {
                     MessageBox.Show("Please enter a positive number.");
+                    e.Cancel = true;
+                }
+            }
+
+            if (dgv_Sale.Columns[e.ColumnIndex].Name == "Rent")
+            {
+                string input = Convert.ToString(e.FormattedValue);
+                if (string.IsNullOrWhiteSpace(input)) return;
+
+                // Remove currency symbol and any whitespace
+                input = input.Replace("₹", "").Trim();
+
+                if (!decimal.TryParse(input, out decimal value) || value < 0)
+                {
+                    MessageBox.Show("Please enter a valid non-negative rent.");
                     e.Cancel = true;
                 }
             }
