@@ -145,7 +145,7 @@
             btn_Close.Font = new Font("Nirmala UI", 8.25F);
             btn_Close.Image = (Image)resources.GetObject("btn_Close.Image");
             btn_Close.ImeMode = ImeMode.NoControl;
-            btn_Close.Location = new Point(496, 0);
+            btn_Close.Location = new Point(495, 1);
             btn_Close.Margin = new Padding(1);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(33, 33);
@@ -192,6 +192,7 @@
             Name = "AddItem";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddItem";
+            Load += AddItem_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

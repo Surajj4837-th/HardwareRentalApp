@@ -21,6 +21,15 @@ namespace HardwareRentalApp.Forms
             InitializeComponent();
         }
 
+        private void AddItem_Load(object sender, EventArgs e)
+        {
+            lbl_main.Text = LangManager.GetString("AddNewItem");
+            lbl_ItemName.Text = LangManager.GetString("ItemName");
+            lbl_Rent.Text = LangManager.GetString("Rent");
+            lbl_MinRentalDays.Text = LangManager.GetString("MinRentalDays");
+            btn_Add.Text = LangManager.GetString("Add");
+        }
+
         private void btn_Close_Click(object sender, EventArgs e)
         {
             Close();

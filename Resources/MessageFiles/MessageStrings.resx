@@ -238,7 +238,7 @@
     <value>Lessee Address</value>
   </data>
   <data name="Rent" xml:space="preserve">
-    <value>Rent</value>
+    <value>Rent (₹)</value>
   </data>
   <data name="Plate2x3" xml:space="preserve">
     <value>Plate 2x3</value>
@@ -320,5 +320,11 @@
   </data>
   <data name="AddNewItem" xml:space="preserve">
     <value>Add New Item</value>
+  </data>
+  <data name="MinRentalDays" xml:space="preserve">
+    <value>Min. Rental Days</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
   </data>
 </root>

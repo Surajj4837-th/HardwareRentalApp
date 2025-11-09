@@ -238,7 +238,7 @@
     <value>भाडेकरू पत्ता</value>
   </data>
   <data name="Rent" xml:space="preserve">
-    <value>भाडे</value>
+    <value>भाडे (₹)</value>
   </data>
   <data name="Plate2x3" xml:space="preserve">
     <value>प्लेट २x३</value>
@@ -320,5 +320,11 @@
   </data>
   <data name="AddNewItem" xml:space="preserve">
     <value>नवीन वस्तू जोडा</value>
+  </data>
+  <data name="MinRentalDays" xml:space="preserve">
+    <value>किमान भाडे दिवस</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>जोडा</value>
   </data>
 </root>
