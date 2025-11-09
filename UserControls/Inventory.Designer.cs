@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             pnl_customerTable = new Panel();
             dgv_InventoryTable = new DataGridView();
             tb_search = new TextBox();
             lbl_search = new Label();
             lbl_mainPanel = new Label();
+            btn_AddItem = new Button();
             pnl_customerTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_InventoryTable).BeginInit();
             SuspendLayout();
@@ -59,36 +60,36 @@
             dgv_InventoryTable.AllowUserToDeleteRows = false;
             dgv_InventoryTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_InventoryTable.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_InventoryTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Nirmala UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgv_InventoryTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgv_InventoryTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgv_InventoryTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgv_InventoryTable.DefaultCellStyle = dataGridViewCellStyle5;
             dgv_InventoryTable.Dock = DockStyle.Bottom;
             dgv_InventoryTable.Location = new Point(0, 147);
             dgv_InventoryTable.MultiSelect = false;
             dgv_InventoryTable.Name = "dgv_InventoryTable";
             dgv_InventoryTable.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 7.8F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgv_InventoryTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Nirmala UI", 7.8F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgv_InventoryTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgv_InventoryTable.RowHeadersVisible = false;
             dgv_InventoryTable.RowHeadersWidth = 51;
             dgv_InventoryTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -128,11 +129,25 @@
             lbl_mainPanel.Text = "Inventory Information";
             lbl_mainPanel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btn_AddItem
+            // 
+            btn_AddItem.BackColor = SystemColors.ControlLightLight;
+            btn_AddItem.Font = new Font("Nirmala UI", 13.8F, FontStyle.Bold);
+            btn_AddItem.ImeMode = ImeMode.NoControl;
+            btn_AddItem.Location = new Point(138, 756);
+            btn_AddItem.Name = "btn_AddItem";
+            btn_AddItem.Size = new Size(270, 45);
+            btn_AddItem.TabIndex = 2;
+            btn_AddItem.Text = "Add New Item";
+            btn_AddItem.UseVisualStyleBackColor = false;
+            btn_AddItem.Click += btn_AddItem_Click;
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            Controls.Add(btn_AddItem);
             Controls.Add(pnl_customerTable);
             Font = new Font("Nirmala UI", 13.8F);
             Margin = new Padding(4, 5, 4, 5);
@@ -152,5 +167,6 @@
         private TextBox tb_search;
         private Label lbl_search;
         private Label lbl_mainPanel;
+        private Button btn_AddItem;
     }
 }

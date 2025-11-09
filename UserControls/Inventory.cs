@@ -113,5 +113,16 @@ namespace HardwareRentalApp.UserControls
         {
             bindingSourceCustomers.Filter = "ItemName like '%" + tb_search.Text + "%'";
         }
+
+        private void btn_AddItem_Click(object sender, EventArgs e)
+        {
+            using (var AI_form = new AddItem())
+            {
+                if (AI_form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    loadData();
+                }
+            }
+        }
     }
 }
