@@ -446,7 +446,7 @@ namespace HardwareRentalApp.Forms
                         if (RentedQty == ReturnedQty)
                         {
                             //All quantity returned
-                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), ReturnedQty);
+                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty);
                         }
                         else
                         {
