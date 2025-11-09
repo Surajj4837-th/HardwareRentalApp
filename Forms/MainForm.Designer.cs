@@ -69,6 +69,7 @@
             btn_Logout.TabIndex = 5;
             btn_Logout.Text = "Logout";
             btn_Logout.UseVisualStyleBackColor = false;
+            btn_Logout.Click += btn_Logout_Click;
             // 
             // flowLayoutPanel1
             // 

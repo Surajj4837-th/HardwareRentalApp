@@ -192,5 +192,10 @@ namespace HardwareRentalApp
             this.btn_Settings.ForeColor = Color.Gainsboro;
             this.btn_Settings.Font = new System.Drawing.Font("Nirmala UI", 14, System.Drawing.FontStyle.Regular);
         }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
