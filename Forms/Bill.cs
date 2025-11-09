@@ -561,13 +561,13 @@ namespace HardwareRentalApp.Forms
             foreach (DataRow row in dt_NewBillItems.Rows)
             {
                 var itemCmd = new SqlCommand(@"
-                INSERT INTO BillItems (BillId, ItemId, Quantity, Price)
-                VALUES (@BillId, @ItemId, @Quantity, @Price)");
+                INSERT INTO BillItems (BillId, ItemId, Quantity, Rent)
+                VALUES (@BillId, @ItemId, @Quantity, @Rent)");
 
                 itemCmd.Parameters.AddWithValue("@BillId", billId);
                 itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
                 itemCmd.Parameters.AddWithValue("@Quantity", row["Quantity"]);
-                itemCmd.Parameters.AddWithValue("@Price", row["Rent"]);
+                itemCmd.Parameters.AddWithValue("@Rent", row["Rent"]);
 
                 obj_DBAccess.ExecuteQuery(itemCmd);
             }
