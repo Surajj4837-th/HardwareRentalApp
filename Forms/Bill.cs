@@ -233,6 +233,12 @@ namespace HardwareRentalApp.Forms
                 }
             }
 
+            //Remove rows from data table which are not rented
+            foreach (DataRow row in dt_items.Select("QuantityRented = 0"))
+            {
+                dt_items.Rows.Remove(row);
+            }
+
             // Bind to DataGridView
             dgv_Bill.DataSource = dt_items;
 
