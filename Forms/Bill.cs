@@ -458,7 +458,7 @@ namespace HardwareRentalApp.Forms
                             // Add the new row to the DataTable
                             dt_NewBillItems.Rows.Add(newRow);
 
-                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty - ReturnedQty);
+                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty);
                         }
                     }
                 }
