@@ -72,6 +72,7 @@
             tb_MinRentalDays.Name = "tb_MinRentalDays";
             tb_MinRentalDays.Size = new Size(253, 33);
             tb_MinRentalDays.TabIndex = 6;
+            tb_MinRentalDays.KeyPress += tb_MinRentalDays_KeyPress;
             // 
             // lbl_MinRentalDays
             // 
@@ -96,6 +97,7 @@
             tb_RentPerDay.Name = "tb_RentPerDay";
             tb_RentPerDay.Size = new Size(253, 33);
             tb_RentPerDay.TabIndex = 4;
+            tb_RentPerDay.KeyPress += tb_RentPerDay_KeyPress;
             // 
             // tb_ItemName
             // 
