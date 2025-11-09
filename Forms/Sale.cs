@@ -232,16 +232,19 @@ namespace HardwareRentalApp.Forms
             // 2. Insert Bill Items
             foreach (DataRow row in dt_items.Rows)
             {
-                var itemCmd = new SqlCommand(@"
-                INSERT INTO BillItems (BillId, ItemId, Quantity, Rent)
-                VALUES (@BillId, @ItemId, @Quantity, @Rent)");
+                if (Convert.ToInt32(row["Rent"]) > 0)
+                {
+                    var itemCmd = new SqlCommand(@"
+                    INSERT INTO BillItems (BillId, ItemId, Quantity, Rent)
+                    VALUES (@BillId, @ItemId, @Quantity, @Rent)");
 
-                itemCmd.Parameters.AddWithValue("@BillId", billId);
-                itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
-                itemCmd.Parameters.AddWithValue("@Quantity", row["Quantity"]);
-                itemCmd.Parameters.AddWithValue("@Rent", row["Rent"]);
+                    itemCmd.Parameters.AddWithValue("@BillId", billId);
+                    itemCmd.Parameters.AddWithValue("@ItemId", row["ItemId"]);
+                    itemCmd.Parameters.AddWithValue("@Quantity", row["Quantity"]);
+                    itemCmd.Parameters.AddWithValue("@Rent", row["Rent"]);
 
-                obj_DBAccess.ExecuteQuery(itemCmd);
+                    obj_DBAccess.ExecuteQuery(itemCmd);
+                }
             }
         }
 
