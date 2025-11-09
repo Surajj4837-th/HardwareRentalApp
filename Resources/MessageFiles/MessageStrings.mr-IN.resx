@@ -303,4 +303,7 @@
   <data name="MinRentDays" xml:space="preserve">
     <value>किमान भाडे दिवस</value>
   </data>
+  <data name="AccountApprovalRequest" xml:space="preserve">
+    <value>खाते मंजुरी विनंती</value>
+  </data>
 </root>

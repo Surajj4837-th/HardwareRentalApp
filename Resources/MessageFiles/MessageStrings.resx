@@ -303,4 +303,7 @@
   <data name="MinRentDays" xml:space="preserve">
     <value>Min. Rent Days</value>
   </data>
+  <data name="AccountApprovalRequest" xml:space="preserve">
+    <value>Account Approval Request</value>
+  </data>
 </root>

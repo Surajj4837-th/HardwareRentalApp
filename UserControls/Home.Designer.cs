@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btn_AccountApprovalRequest = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btn_AccountApprovalRequest
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(131, 765);
-            button1.Name = "button1";
-            button1.Size = new Size(309, 42);
-            button1.TabIndex = 0;
-            button1.Text = "Account Approval Requests";
-            button1.UseVisualStyleBackColor = true;
+            btn_AccountApprovalRequest.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_AccountApprovalRequest.Font = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_AccountApprovalRequest.Location = new Point(131, 765);
+            btn_AccountApprovalRequest.Name = "btn_AccountApprovalRequest";
+            btn_AccountApprovalRequest.Size = new Size(309, 42);
+            btn_AccountApprovalRequest.TabIndex = 0;
+            btn_AccountApprovalRequest.Text = "Account Approval Requests";
+            btn_AccountApprovalRequest.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
+            Controls.Add(btn_AccountApprovalRequest);
             Font = new Font("Nirmala UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "Home";
             Size = new Size(1600, 900);
+            Load += Home_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
+        private Button btn_AccountApprovalRequest;
     }
 }
