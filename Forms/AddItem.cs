@@ -61,7 +61,7 @@ namespace HardwareRentalApp.Forms
 
                     var parameters = new Dictionary<string, object>
                     {
-                        { "@ItemName", tb_ItemName.Text.ToString(0) },
+                        { "@ItemName", tb_ItemName.Text },
                         { "@Rent", Convert.ToDecimal(tb_RentPerDay.Text) },
                         { "@MinRentDays", Convert.ToInt32(tb_MinRentalDays.Text) }
                     };

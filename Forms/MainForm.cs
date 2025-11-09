@@ -104,7 +104,6 @@ namespace HardwareRentalApp
         private void btn_Sale_Click(object sender, EventArgs e)
         {
             this.pnl_Title.BackColor = Color.FromArgb(253, 124, 217);
-            //OpenChildControl(new Sale(this));
         }
 
         private void btn_Customers_Click(object sender, EventArgs e)
@@ -122,7 +121,6 @@ namespace HardwareRentalApp
         private void btn_Settings_Click(object sender, EventArgs e)
         {
             this.pnl_Title.BackColor = Color.FromArgb(129, 152, 223);
-            //OpenChildControl(new Settings());
         }
 
         private void btn_Home_MouseEnter(object sender, EventArgs e)
