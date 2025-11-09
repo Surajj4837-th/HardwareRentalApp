@@ -58,7 +58,7 @@ namespace HardwareRentalApp.Forms
                 Name = "Rent",
                 DataPropertyName = "Rent",
                 HeaderText = LangManager.GetString("Rent"),
-                ReadOnly = true,
+                ReadOnly = false,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
