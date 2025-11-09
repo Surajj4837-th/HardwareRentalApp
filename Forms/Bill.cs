@@ -203,12 +203,12 @@ namespace HardwareRentalApp.Forms
             billIdParam = new SqlParameter("@BillId", SqlDbType.BigInt) { Value = BillID };
 
             List<BillItemSummary> billItems = obj_DBAccess.ExecuteQuery(
-                @"SELECT ItemId, Quantity, Price FROM BillItems WHERE BillId = @BillId",
+                @"SELECT ItemId, Quantity, Rent FROM BillItems WHERE BillId = @BillId",
                 r => new BillItemSummary
                 {
                     ItemId = r.GetInt32(r.GetOrdinal("ItemId")),
                     Quantity = r.GetInt32(r.GetOrdinal("Quantity")),
-                    Price = r.GetDecimal(r.GetOrdinal("Price"))
+                    Rent = r.GetDecimal(r.GetOrdinal("Rent"))
                 },
                 billIdParam
             );
@@ -224,6 +224,7 @@ namespace HardwareRentalApp.Forms
                 {
                     // If found, update quantity and amount
                     itemRow["QuantityRented"] = match.Quantity;
+                    itemRow["Rent"] = match.Rent;
                 }
                 else
                 {
