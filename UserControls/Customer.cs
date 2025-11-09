@@ -64,6 +64,8 @@ namespace HardwareRentalApp.UserControls
             }
 
             dgv_MultipurposeTable.ClearSelection();
+
+            btn_Sale.Text = LangManager.GetString("Sale");
         }
 
         public void ApplyLanguage()
