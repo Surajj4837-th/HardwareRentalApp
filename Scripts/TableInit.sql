@@ -52,8 +52,7 @@ CREATE TABLE BillItems (
     BillId BIGINT NOT NULL,
     ItemId INT NOT NULL,
     Quantity INT NOT NULL,
-    Price DECIMAL(10,2) NOT NULL,
-    --Total AS (Quantity * Price) PERSISTED,
+    Rent DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (BillId) REFERENCES Bills(BillId),
     FOREIGN KEY (ItemId) REFERENCES Items(ItemId)
 );
