@@ -339,4 +339,16 @@
   <data name="PaidBill" xml:space="preserve">
     <value>Paid Bill</value>
   </data>
+  <data name="MissingItemName" xml:space="preserve">
+    <value>Please enter an item name before saving.</value>
+  </data>
+  <data name="MisingRent" xml:space="preserve">
+    <value>Please enter a rent amount before saving.</value>
+  </data>
+  <data name="MissingMinRentalDays" xml:space="preserve">
+    <value>Please enter a minimum rental days before saving.</value>
+  </data>
+  <data name="SaveData" xml:space="preserve">
+    <value>Do you want to save the data?</value>
+  </data>
 </root>
