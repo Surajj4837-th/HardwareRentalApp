@@ -1,5 +1,6 @@
 ﻿using HardwareRentalApp.Classes;
 using HardwareRentalApp.UserControls;
+using QuestPDF.Fluent;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace HardwareRentalApp.Forms
         DataTable dt_items = new DataTable();       //List of items to be fetched from bill db to DGV input
         DataTable dt_NewBillItems = new DataTable();       //List of items to be written to bill db from DGV input after bill finalization
         private int BillID;
+        private bool BillPaid = false;
 
         public Bill(int invoiceID)
         {
@@ -425,6 +427,8 @@ namespace HardwareRentalApp.Forms
 
         private void btn_MultipurposeButton_Click(object sender, EventArgs e)
         {
+            if (!BillPaid)
+            {
             int total = 0;
 
             //Logic to find if there are any returned items, if no then close the bill form
@@ -493,6 +497,10 @@ namespace HardwareRentalApp.Forms
                 }
 
                 this.Close();
+            }
+        }
+            else if (BillPaid)
+            {
             }
         }
 
