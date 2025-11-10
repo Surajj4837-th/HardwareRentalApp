@@ -24,7 +24,13 @@ namespace HardwareRentalApp.Classes
         public decimal Total { get; set; }
     }
 
-
+    public struct CompanyInfo
+    {
+        public string CompanyName { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string GSTNumber { get; set; }
+    }
     public struct BillSummary
     {
         public int CustomerId { get; set; }
