@@ -351,4 +351,22 @@
   <data name="SaveData" xml:space="preserve">
     <value>तुम्हाला माहिती जतन करायची आहे का?</value>
   </data>
+  <data name="NoItemsReturned" xml:space="preserve">
+    <value>कोणतीही वस्तू परत आलेली नाही.</value>
+  </data>
+  <data name="NewBillCreated" xml:space="preserve">
+    <value>नवीन बिल तयार केले गेले आहे.</value>
+  </data>
+  <data name="AllItemsReturned" xml:space="preserve">
+    <value>सर्व वस्तू परत करण्यात आल्या आहेत.</value>
+  </data>
+  <data name="NoBill" xml:space="preserve">
+    <value>बिल नाही.</value>
+  </data>
+  <data name="PartialBill" xml:space="preserve">
+    <value>आंशिक बिल.</value>
+  </data>
+  <data name="BillFinished" xml:space="preserve">
+    <value>बिल पूर्ण झाले.</value>
+  </data>
 </root>

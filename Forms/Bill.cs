@@ -436,7 +436,7 @@ namespace HardwareRentalApp.Forms
 
             if (total == 0)
             {
-                MessageBox.Show("No items returned.", "No Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(LangManager.GetString("NoItemsReturned"), LangManager.GetString("NoBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
                 return;
             }
@@ -481,12 +481,12 @@ namespace HardwareRentalApp.Forms
 
                 if (dt_NewBillItems.Rows.Count > 0)
                 {
-                    MessageBox.Show("New bill created.", "Partial Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(LangManager.GetString("NewBillCreated"), LangManager.GetString("PartialBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     CreateNewBill();
                 }
                 else
                 {
-                    MessageBox.Show("All items returned.", "Bill Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(LangManager.GetString("AllItemsReturned."), LangManager.GetString("BillFinished"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.Close();

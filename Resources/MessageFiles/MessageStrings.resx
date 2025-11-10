@@ -351,4 +351,22 @@
   <data name="SaveData" xml:space="preserve">
     <value>Do you want to save the data?</value>
   </data>
+  <data name="NoItemsReturned" xml:space="preserve">
+    <value>No items returned.</value>
+  </data>
+  <data name="NewBillCreated" xml:space="preserve">
+    <value>New bill created.</value>
+  </data>
+  <data name="AllItemsReturned" xml:space="preserve">
+    <value>All items returned.</value>
+  </data>
+  <data name="NoBill" xml:space="preserve">
+    <value>No Bill</value>
+  </data>
+  <data name="PartialBill" xml:space="preserve">
+    <value>Partial Bill</value>
+  </data>
+  <data name="BillFinished" xml:space="preserve">
+    <value>Bill Finished</value>
+  </data>
 </root>
