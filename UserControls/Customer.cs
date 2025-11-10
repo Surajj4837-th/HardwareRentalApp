@@ -174,7 +174,6 @@ namespace HardwareRentalApp.UserControls
                 DataGridViewButtonColumn Select_bill_col = new DataGridViewButtonColumn();
 
                 Select_bill_col.Name = "Select_bill_column";
-                Select_bill_col.Text = "Show Bill";
 
                 if (dgv_MultipurposeTable.Columns["Select_bill_column"] == null)
                 {
