@@ -1,13 +1,21 @@
-using System.Resources;
 using HardwareRentalApp.UserControls;
+using System.Globalization;
+using System.Resources;
 
 namespace HardwareRentalApp
 {
     public partial class MainForm : Form
     {
         private ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(MainForm).Assembly);
+        // Set the culture
+
         public MainForm()
         {
+            string languageCode = Properties.Settings.Default.Language;
+            CultureInfo culture = new CultureInfo(languageCode);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
             InitializeComponent();
         }
 
@@ -49,6 +57,7 @@ namespace HardwareRentalApp
 
                     // Load the default Home screen
                     pnl_navigation.Visible = true;
+                    ApplyLanguage();
                     OpenChildControl(new Home());
                 };
             }
