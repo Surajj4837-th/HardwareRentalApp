@@ -217,7 +217,7 @@ namespace HardwareRentalApp.Forms
             //Query the bill items from DB
             billIdParam = new SqlParameter("@BillId", SqlDbType.BigInt) { Value = BillID };
 
-            List<BillItemSummary> billItems = obj_DBAccess.ExecuteQuery(
+            billItems = obj_DBAccess.ExecuteQuery(
                 @"SELECT ItemId, Quantity, Rent FROM BillItems WHERE BillId = @BillId",
                 r => new BillItemSummary
                 {
