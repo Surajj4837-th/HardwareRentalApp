@@ -64,17 +64,17 @@ namespace HardwareRentalApp.Forms
 
             if (LesseeName.Equals(""))
             {
-                MessageBox.Show(LangManager.GetString("EnterName"));
+                MessageBox.Show(LangManager.GetString("EnterName"), LangManager.GetString("ErrorOcurred"));
                 tb_LesseeName.Focus();
             }
             else if (MobileNo.Equals(""))
             {
-                MessageBox.Show(LangManager.GetString("EnterCustomerMobileNumber"));
+                MessageBox.Show(LangManager.GetString("EnterCustomerMobileNumber"), LangManager.GetString("ErrorOcurred"));
                 tb_MobileNum.Focus();
             }
             else if (tb_MobileNum.Text.Length != 10)
             {
-                MessageBox.Show(LangManager.GetString("EnterValidMobileNumber"));
+                MessageBox.Show(LangManager.GetString("EnterValidMobileNumber"), LangManager.GetString("ErrorOcurred"));
                 tb_MobileNum.Focus();
             }
             else
@@ -95,12 +95,12 @@ namespace HardwareRentalApp.Forms
                     }
                     else
                     {
-                        MessageBox.Show(LangManager.GetString("ErrorOcurred"));
+                        MessageBox.Show(LangManager.GetString("ErrorOcurred"), LangManager.GetString("ErrorOcurred"));
                     }
                 }
                 else
                 {
-                    MessageBox.Show(LangManager.GetString("CustomerExists"));
+                    MessageBox.Show(LangManager.GetString("CustomerExists"), LangManager.GetString("ErrorOcurred"));
                 }
             }
         }

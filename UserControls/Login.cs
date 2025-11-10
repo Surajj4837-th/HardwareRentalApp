@@ -82,12 +82,12 @@ namespace HardwareRentalApp.UserControls
 
                 if (mobile_num.Equals(""))
                 {
-                    MessageBox.Show(LangManager.GetString("EnterUsername"));
+                    MessageBox.Show(LangManager.GetString("EnterUsername"), LangManager.GetString("ErrorOcurred"));
                 }
                 else if (password.Equals(""))
 
                 {
-                    MessageBox.Show(LangManager.GetString("EnterPassword"));
+                    MessageBox.Show(LangManager.GetString("EnterPassword"), LangManager.GetString("ErrorOcurred"));
                 }
                 else
                 {
@@ -128,7 +128,7 @@ namespace HardwareRentalApp.UserControls
                         }
                         else
                         {
-                            MessageBox.Show(LangManager.GetString("InvalidCredentials"));
+                            MessageBox.Show(LangManager.GetString("InvalidCredentials"), LangManager.GetString("ErrorOcurred"));
                         }
                     }
                     catch (Exception ex)

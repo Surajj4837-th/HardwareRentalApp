@@ -339,7 +339,7 @@ namespace HardwareRentalApp.Forms
                 // Only check for negative or non-integer values (keypress already blocks non-digits)
                 if (!int.TryParse(input, out int value) || value < 0)
                 {
-                    MessageBox.Show("Please enter a positive number.");
+                    MessageBox.Show("Please enter a positive number.", LangManager.GetString("ErrorOcurred"));
                     e.Cancel = true;
                 }
             }
@@ -354,7 +354,7 @@ namespace HardwareRentalApp.Forms
 
                 if (!decimal.TryParse(input, out decimal value) || value < 0)
                 {
-                    MessageBox.Show("Please enter a valid non-negative rent.");
+                    MessageBox.Show("Please enter a valid non-negative rent.", LangManager.GetString("ErrorOcurred"));
                     e.Cancel = true;
                 }
             }
