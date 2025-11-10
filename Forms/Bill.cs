@@ -120,6 +120,7 @@ namespace HardwareRentalApp.Forms
                   WHERE B.BillId = @BillId",
                 r => new BillSummary
                 {
+                    BillId = BillID,
                     CustomerId = r.IsDBNull(r.GetOrdinal("CustomerId")) ? 0 : r.GetInt32(r.GetOrdinal("CustomerId")),
                     CustomerName = r.IsDBNull(r.GetOrdinal("LesseeName")) ? string.Empty : r.GetString(r.GetOrdinal("LesseeName")),
                     BillDate = r.IsDBNull(r.GetOrdinal("BillDate")) ? DateTime.MinValue : r.GetDateTime(r.GetOrdinal("BillDate")),
