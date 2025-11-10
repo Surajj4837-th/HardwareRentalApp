@@ -342,7 +342,7 @@
   <data name="MissingItemName" xml:space="preserve">
     <value>जतन करण्यापूर्वी कृपया वस्तूचे नाव प्रविष्ट करा.</value>
   </data>
-  <data name="MisingRent" xml:space="preserve">
+  <data name="MissingRent" xml:space="preserve">
     <value>जतन करण्यापूर्वी कृपया भाड्याची रक्कम प्रविष्ट करा.</value>
   </data>
   <data name="MissingMinRentalDays" xml:space="preserve">
@@ -368,5 +368,11 @@
   </data>
   <data name="BillFinished" xml:space="preserve">
     <value>बिल पूर्ण झाले.</value>
+  </data>
+  <data name="MissingInput" xml:space="preserve">
+    <value>आवश्यक माहिती दिलेली नाही</value>
+  </data>
+  <data name="ConfirmSave" xml:space="preserve">
+    <value>जतन करण्याची पुष्टी करा.</value>
   </data>
 </root>

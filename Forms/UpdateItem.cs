@@ -76,21 +76,21 @@ namespace HardwareRentalApp.Forms
         {
             if (string.IsNullOrWhiteSpace(tb_RentPerDay.Text))
             {
-                MessageBox.Show("Please enter a rent amount before saving.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(LangManager.GetString("MissingRent"), LangManager.GetString("MissingInput"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tb_RentPerDay.Focus();
                 return; // Stop execution here
             }
             else if (string.IsNullOrWhiteSpace(tb_MinRentalDays.Text))
             {
-                MessageBox.Show("Please enter a min rental days before saving.", "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(LangManager.GetString("MissingMinRentalDays"), LangManager.GetString("MissingInput"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tb_MinRentalDays.Focus();
                 return; // Stop execution here
             }
             else
             {
                 DialogResult result = MessageBox.Show(
-                    "Do you want to save the data?",
-                    "Confirm Save",
+                    LangManager.GetString("SaveData"),
+                    LangManager.GetString("ConfirmSave"),
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                 );

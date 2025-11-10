@@ -342,7 +342,7 @@
   <data name="MissingItemName" xml:space="preserve">
     <value>Please enter an item name before saving.</value>
   </data>
-  <data name="MisingRent" xml:space="preserve">
+  <data name="MissingRent" xml:space="preserve">
     <value>Please enter a rent amount before saving.</value>
   </data>
   <data name="MissingMinRentalDays" xml:space="preserve">
@@ -368,5 +368,11 @@
   </data>
   <data name="BillFinished" xml:space="preserve">
     <value>Bill Finished</value>
+  </data>
+  <data name="MissingInput" xml:space="preserve">
+    <value>Missing Input</value>
+  </data>
+  <data name="ConfirmSave" xml:space="preserve">
+    <value>Confirm Save</value>
   </data>
 </root>

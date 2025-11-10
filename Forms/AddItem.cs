@@ -39,19 +39,19 @@ namespace HardwareRentalApp.Forms
         {
             if (string.IsNullOrWhiteSpace(tb_ItemName.Text))
             {
-                MessageBox.Show(LangManager.GetString("MissingItemName"), "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(LangManager.GetString("MissingItemName"), LangManager.GetString("MissingInput"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tb_ItemName.Focus();
                 return; // Stop execution here
             }
             else if (string.IsNullOrWhiteSpace(tb_RentPerDay.Text))
             {
-                MessageBox.Show(LangManager.GetString("MisingRent"), "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(LangManager.GetString("MissingRent"), LangManager.GetString("MissingInput"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tb_RentPerDay.Focus();
                 return; // Stop execution here
             }
             else if (string.IsNullOrWhiteSpace(tb_MinRentalDays.Text))
             {
-                MessageBox.Show(LangManager.GetString("MissingMinRentalDays"), "Missing Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(LangManager.GetString("MissingMinRentalDays"), LangManager.GetString("MissingInput"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tb_MinRentalDays.Focus();
                 return; // Stop execution here
             }
@@ -59,7 +59,7 @@ namespace HardwareRentalApp.Forms
             {
                 DialogResult result = MessageBox.Show(
                     LangManager.GetString("SaveData"),
-                    "Confirm Save",
+                    LangManager.GetString("ConfirmSave"),
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                 );
