@@ -375,4 +375,19 @@
   <data name="ConfirmSave" xml:space="preserve">
     <value>Confirm Save</value>
   </data>
+  <data name="GenerateBill" xml:space="preserve">
+    <value>Generate Bill</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Thank You</value>
+  </data>
+  <data name="SrNo" xml:space="preserve">
+    <value>Sr. No.</value>
+  </data>
 </root>

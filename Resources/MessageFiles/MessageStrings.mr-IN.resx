@@ -375,4 +375,19 @@
   <data name="ConfirmSave" xml:space="preserve">
     <value>जतन करण्याची पुष्टी करा.</value>
   </data>
+  <data name="GenerateBill" xml:space="preserve">
+    <value>बिल तयार करा</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>रक्कम</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>एकूण रक्कम</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>धन्यवाद</value>
+  </data>
+  <data name="SrNo" xml:space="preserve">
+    <value>अनुक्रमांक</value>
+  </data>
 </root>
