@@ -327,4 +327,16 @@
   <data name="Add" xml:space="preserve">
     <value>जोडा</value>
   </data>
+  <data name="Update" xml:space="preserve">
+    <value>अद्ययावत करा</value>
+  </data>
+  <data name="EndRentDate" xml:space="preserve">
+    <value>भाडे संपण्याची तारीख</value>
+  </data>
+  <data name="PendingBill" xml:space="preserve">
+    <value>प्रलंबित बिल</value>
+  </data>
+  <data name="PaidBill" xml:space="preserve">
+    <value>भरलेले बिल</value>
+  </data>
 </root>

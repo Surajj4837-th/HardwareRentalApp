@@ -36,7 +36,7 @@
             lbl_OwnerName = new Label();
             tb_WorkLocation = new TextBox();
             tb_Reference = new TextBox();
-            lbl_Customre = new Label();
+            lbl_LesseeName = new Label();
             tb_OwnerName = new TextBox();
             tb_LesseeName = new TextBox();
             btn_Close = new Button();
@@ -58,7 +58,7 @@
             dgv_Bill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_Bill.Location = new Point(60, 249);
             dgv_Bill.Name = "dgv_Bill";
-            dgv_Bill.Size = new Size(855, 530);
+            dgv_Bill.Size = new Size(892, 530);
             dgv_Bill.TabIndex = 19;
             dgv_Bill.CellBeginEdit += dgv_Bill_CellBeginEdit;
             dgv_Bill.CellValidating += dgv_Bill_CellValidating;
@@ -108,7 +108,7 @@
             // tb_WorkLocation
             // 
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            tb_WorkLocation.Location = new Point(679, 151);
+            tb_WorkLocation.Location = new Point(712, 151);
             tb_WorkLocation.Name = "tb_WorkLocation";
             tb_WorkLocation.ReadOnly = true;
             tb_WorkLocation.Size = new Size(236, 33);
@@ -123,20 +123,20 @@
             tb_Reference.Size = new Size(236, 33);
             tb_Reference.TabIndex = 11;
             // 
-            // lbl_Customre
+            // lbl_LesseeName
             // 
-            lbl_Customre.AutoSize = true;
-            lbl_Customre.Font = new Font("Nirmala UI", 14.25F);
-            lbl_Customre.Location = new Point(60, 99);
-            lbl_Customre.Name = "lbl_Customre";
-            lbl_Customre.Size = new Size(62, 25);
-            lbl_Customre.TabIndex = 18;
-            lbl_Customre.Text = "Name";
+            lbl_LesseeName.AutoSize = true;
+            lbl_LesseeName.Font = new Font("Nirmala UI", 14.25F);
+            lbl_LesseeName.Location = new Point(60, 99);
+            lbl_LesseeName.Name = "lbl_LesseeName";
+            lbl_LesseeName.Size = new Size(62, 25);
+            lbl_LesseeName.TabIndex = 18;
+            lbl_LesseeName.Text = "Name";
             // 
             // tb_OwnerName
             // 
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            tb_OwnerName.Location = new Point(679, 96);
+            tb_OwnerName.Location = new Point(712, 96);
             tb_OwnerName.Name = "tb_OwnerName";
             tb_OwnerName.ReadOnly = true;
             tb_OwnerName.Size = new Size(236, 33);
@@ -181,7 +181,7 @@
             // 
             dtp_EndRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtp_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_EndRentDate.Location = new Point(679, 197);
+            dtp_EndRentDate.Location = new Point(712, 197);
             dtp_EndRentDate.Name = "dtp_EndRentDate";
             dtp_EndRentDate.Size = new Size(236, 33);
             dtp_EndRentDate.TabIndex = 21;
@@ -200,7 +200,7 @@
             // 
             tb_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tb_BillAmount.Font = new Font("Nirmala UI", 14.25F);
-            tb_BillAmount.Location = new Point(679, 809);
+            tb_BillAmount.Location = new Point(715, 809);
             tb_BillAmount.Name = "tb_BillAmount";
             tb_BillAmount.ReadOnly = true;
             tb_BillAmount.Size = new Size(236, 33);
@@ -261,7 +261,7 @@
             Controls.Add(tb_WorkLocation);
             Controls.Add(tb_StartRentDate);
             Controls.Add(tb_Reference);
-            Controls.Add(lbl_Customre);
+            Controls.Add(lbl_LesseeName);
             Controls.Add(tb_OwnerName);
             Controls.Add(tb_LesseeName);
             Controls.Add(btn_Close);
@@ -284,7 +284,7 @@
         private Label lbl_OwnerName;
         private TextBox tb_WorkLocation;
         private TextBox tb_Reference;
-        private Label lbl_Customre;
+        private Label lbl_LesseeName;
         private TextBox tb_OwnerName;
         private TextBox tb_LesseeName;
         private Button btn_Close;

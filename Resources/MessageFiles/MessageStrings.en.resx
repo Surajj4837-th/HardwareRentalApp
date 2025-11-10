@@ -327,4 +327,16 @@
   <data name="Add" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="EndRentDate" xml:space="preserve">
+    <value>End Rent Date</value>
+  </data>
+  <data name="PendingBill" xml:space="preserve">
+    <value>Pending Bill</value>
+  </data>
+  <data name="PaidBill" xml:space="preserve">
+    <value>Paid Bill</value>
+  </data>
 </root>

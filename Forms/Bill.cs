@@ -40,6 +40,15 @@ namespace HardwareRentalApp.Forms
             LoadData();
 
             FillFormDetails();
+
+            lbl_LesseeName.Text = LangManager.GetString("LesseeName");
+            lbl_OwnerName.Text = LangManager.GetString("OwnerName");
+            lbl_Reference.Text = LangManager.GetString("Reference");
+            lbl_WorkLocation.Text = LangManager.GetString("WorkLocation");
+            lbl_RentDate.Text = LangManager.GetString("RentDate");
+            lbl_EndRentDate.Text = LangManager.GetString("EndRentDate");
+            lbl_BillAmount.Text = LangManager.GetString("BillAmount");
+            btn_FinishPurchase.Text = LangManager.GetString("FinishPurchase");
         }
 
         private void FillFormDetails()
@@ -68,7 +77,7 @@ namespace HardwareRentalApp.Forms
 
                 ComputeBill();
 
-                lbl_main.Text = "Pending Bill";
+                lbl_main.Text = LangManager.GetString("PendingBill");
             }
             else
             {
@@ -82,7 +91,7 @@ namespace HardwareRentalApp.Forms
 
                 dgv_Bill.Columns["QuantityReturned"].Visible = false;
 
-                lbl_main.Text = "Paid Bill";
+                lbl_main.Text = LangManager.GetString("PaidBill");
             }
         }
 
