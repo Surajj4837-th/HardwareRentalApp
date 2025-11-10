@@ -430,76 +430,76 @@ namespace HardwareRentalApp.Forms
         {
             if (!BillPaid)
             {
-            int total = 0;
+                int total = 0;
 
-            //Logic to find if there are any returned items, if no then close the bill form
-            foreach (DataGridViewRow row in dgv_Bill.Rows)
-            {
-                // Skip the new row placeholder
-                if (row.IsNewRow) continue;
-
-                // Assuming the column you want to sum is named "Amount"
-                total += Convert.ToInt32(row.Cells["QuantityReturned"].Value);
-            }
-
-            if (total == 0)
-            {
-                MessageBox.Show(LangManager.GetString("NoItemsReturned"), LangManager.GetString("NoBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
-                return;
-            }
-            else
-            {
-                //Some or all items returned
-                dt_NewBillItems.Columns.Add("ItemId", typeof(int));
-                dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
-                dt_NewBillItems.Columns.Add("Quantity", typeof(int));
-
-                //Get total amount for returned items
-                decimal totalAmount = ComputeBill();
-
+                //Logic to find if there are any returned items, if no then close the bill form
                 foreach (DataGridViewRow row in dgv_Bill.Rows)
                 {
-                    // Get cell values safely
-                    int RentedQty = Convert.ToInt16(row.Cells["QuantityRented"].Value);
+                    // Skip the new row placeholder
+                    if (row.IsNewRow) continue;
 
-                    if (RentedQty > 0)
-                    {
-                        int ReturnedQty = Convert.ToInt16(row.Cells["QuantityReturned"].Value);
-
-                        if (RentedQty == ReturnedQty)
-                        {
-                            //All quantity returned
-                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty);
-                        }
-                        else
-                        {
-                            DataRow newRow = dt_NewBillItems.NewRow();
-                            newRow["ItemId"] = row.Cells["ItemId"].Value;
-                            newRow["Rent"] = row.Cells["Rent"].Value;
-                            newRow["Quantity"] = RentedQty - ReturnedQty;
-
-                            // Add the new row to the DataTable
-                            dt_NewBillItems.Rows.Add(newRow);
-
-                            UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty);
-                        }
-                    }
+                    // Assuming the column you want to sum is named "Amount"
+                    total += Convert.ToInt32(row.Cells["QuantityReturned"].Value);
                 }
 
-                if (dt_NewBillItems.Rows.Count > 0)
+                if (total == 0)
                 {
-                    MessageBox.Show(LangManager.GetString("NewBillCreated"), LangManager.GetString("PartialBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    CreateNewBill();
+                    MessageBox.Show(LangManager.GetString("NoItemsReturned"), LangManager.GetString("NoBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show(LangManager.GetString("AllItemsReturned."), LangManager.GetString("BillFinished"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    //Some or all items returned
+                    dt_NewBillItems.Columns.Add("ItemId", typeof(int));
+                    dt_NewBillItems.Columns.Add("Rent", typeof(decimal));
+                    dt_NewBillItems.Columns.Add("Quantity", typeof(int));
 
-                this.Close();
+                    //Get total amount for returned items
+                    decimal totalAmount = ComputeBill();
+
+                    foreach (DataGridViewRow row in dgv_Bill.Rows)
+                    {
+                        // Get cell values safely
+                        int RentedQty = Convert.ToInt16(row.Cells["QuantityRented"].Value);
+
+                        if (RentedQty > 0)
+                        {
+                            int ReturnedQty = Convert.ToInt16(row.Cells["QuantityReturned"].Value);
+
+                            if (RentedQty == ReturnedQty)
+                            {
+                                //All quantity returned
+                                UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty);
+                            }
+                            else
+                            {
+                                DataRow newRow = dt_NewBillItems.NewRow();
+                                newRow["ItemId"] = row.Cells["ItemId"].Value;
+                                newRow["Rent"] = row.Cells["Rent"].Value;
+                                newRow["Quantity"] = RentedQty - ReturnedQty;
+
+                                // Add the new row to the DataTable
+                                dt_NewBillItems.Rows.Add(newRow);
+
+                                UpdateBill(totalAmount, Convert.ToInt32(row.Cells["ItemId"].Value), RentedQty);
+                            }
+                        }
+                    }
+
+                    if (dt_NewBillItems.Rows.Count > 0)
+                    {
+                        MessageBox.Show(LangManager.GetString("NewBillCreated"), LangManager.GetString("PartialBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        CreateNewBill();
+                    }
+                    else
+                    {
+                        MessageBox.Show(LangManager.GetString("AllItemsReturned."), LangManager.GetString("BillFinished"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    this.Close();
+                }
             }
-        }
             else if (BillPaid)
             {
                 //Remove unbought items from list

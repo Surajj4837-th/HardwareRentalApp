@@ -3,7 +3,11 @@
 
 TODO:
 
-1. Update all IDs like Customer ID, BillID to some uniques string so that they do not have limitation of datatypes.
-1. Create new bills after partial payment.
-1. Modify items.
-1. Print bills.
+1. Remove redundant icons.
+1. Modify customer.
+1. delete customer.
+1. Delete item.
+1. Delete bill.
+1. Use appropriate font size.
+1. Move ctor code to load().
+1. Remove sale and settings button.
