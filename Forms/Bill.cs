@@ -502,6 +502,35 @@ namespace HardwareRentalApp.Forms
         }
             else if (BillPaid)
             {
+                //Remove unbought items from list
+                billItems.RemoveAll(bi => bi.Quantity == 0);
+
+                //Compute rental days and total
+                foreach (DataRow itemRow in dt_items.Rows.Cast<DataRow>())
+                {
+                    int itemId = Convert.ToInt32(itemRow["ItemId"]);
+
+                    // Find this item in billItems list
+                    var match = billItems.FirstOrDefault(bi => bi.ItemId == itemId);
+
+                    if (match != null)
+                    {
+                        // If found, update quantity and amount
+                        match.ItemName = itemRow["LocalizedName"].ToString();
+                        match.RentalDays = Convert.ToInt32(itemRow["RentalDays"]);
+                        match.Total = match.Rent * match.Quantity * match.RentalDays;
+                    }
+                    else
+                    {
+                        // If item not part of this bill, reset to zero
+                        match.RentalDays = 0;
+                        match.Total = match.Rent * match.Quantity * match.RentalDays;
+                    }
+                }
+
+                //Create bill pdf
+                BillSaver BillDocument = new BillSaver(BillInformation[0], billItems);
+                BillDocument.GeneratePdfAndShow();
             }
         }
 
