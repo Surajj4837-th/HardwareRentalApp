@@ -45,7 +45,7 @@
             tb_StartRentDate = new TextBox();
             tb_BillAmount = new TextBox();
             lbl_BillAmount = new Label();
-            btn_FinishPurchase = new Button();
+            btn_MultipurposeButton = new Button();
             lbl_main = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_Bill).BeginInit();
             SuspendLayout();
@@ -108,7 +108,7 @@
             // tb_WorkLocation
             // 
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            tb_WorkLocation.Location = new Point(712, 151);
+            tb_WorkLocation.Location = new Point(716, 146);
             tb_WorkLocation.Name = "tb_WorkLocation";
             tb_WorkLocation.ReadOnly = true;
             tb_WorkLocation.Size = new Size(236, 33);
@@ -136,7 +136,7 @@
             // tb_OwnerName
             // 
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            tb_OwnerName.Location = new Point(712, 96);
+            tb_OwnerName.Location = new Point(716, 91);
             tb_OwnerName.Name = "tb_OwnerName";
             tb_OwnerName.ReadOnly = true;
             tb_OwnerName.Size = new Size(236, 33);
@@ -181,7 +181,7 @@
             // 
             dtp_EndRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtp_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_EndRentDate.Location = new Point(712, 197);
+            dtp_EndRentDate.Location = new Point(716, 197);
             dtp_EndRentDate.Name = "dtp_EndRentDate";
             dtp_EndRentDate.Size = new Size(236, 33);
             dtp_EndRentDate.TabIndex = 21;
@@ -200,7 +200,7 @@
             // 
             tb_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tb_BillAmount.Font = new Font("Nirmala UI", 14.25F);
-            tb_BillAmount.Location = new Point(715, 809);
+            tb_BillAmount.Location = new Point(712, 809);
             tb_BillAmount.Name = "tb_BillAmount";
             tb_BillAmount.ReadOnly = true;
             tb_BillAmount.Size = new Size(236, 33);
@@ -217,19 +217,19 @@
             lbl_BillAmount.TabIndex = 14;
             lbl_BillAmount.Text = "Bill Amount";
             // 
-            // btn_FinishPurchase
+            // btn_MultipurposeButton
             // 
-            btn_FinishPurchase.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_FinishPurchase.BackColor = Color.PaleGreen;
-            btn_FinishPurchase.Enabled = false;
-            btn_FinishPurchase.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_FinishPurchase.Location = new Point(735, 864);
-            btn_FinishPurchase.Name = "btn_FinishPurchase";
-            btn_FinishPurchase.Size = new Size(180, 36);
-            btn_FinishPurchase.TabIndex = 20;
-            btn_FinishPurchase.Text = "Finish Purchase";
-            btn_FinishPurchase.UseVisualStyleBackColor = false;
-            btn_FinishPurchase.Click += btn_FinishPurchase_Click;
+            btn_MultipurposeButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_MultipurposeButton.BackColor = Color.PaleGreen;
+            btn_MultipurposeButton.Enabled = false;
+            btn_MultipurposeButton.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_MultipurposeButton.Location = new Point(768, 864);
+            btn_MultipurposeButton.Name = "btn_MultipurposeButton";
+            btn_MultipurposeButton.Size = new Size(180, 36);
+            btn_MultipurposeButton.TabIndex = 20;
+            btn_MultipurposeButton.Text = "Finish Purchase";
+            btn_MultipurposeButton.UseVisualStyleBackColor = false;
+            btn_MultipurposeButton.Click += btn_MultipurposeButton_Click;
             // 
             // lbl_main
             // 
@@ -249,7 +249,7 @@
             ControlBox = false;
             Controls.Add(lbl_main);
             Controls.Add(dtp_EndRentDate);
-            Controls.Add(btn_FinishPurchase);
+            Controls.Add(btn_MultipurposeButton);
             Controls.Add(dgv_Bill);
             Controls.Add(lbl_EndRentDate);
             Controls.Add(lbl_BillAmount);
@@ -293,7 +293,7 @@
         private TextBox tb_StartRentDate;
         private TextBox tb_BillAmount;
         private Label lbl_BillAmount;
-        private Button btn_FinishPurchase;
+        private Button btn_MultipurposeButton;
         private Label lbl_main;
     }
 }

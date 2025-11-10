@@ -48,7 +48,6 @@ namespace HardwareRentalApp.Forms
             lbl_RentDate.Text = LangManager.GetString("RentDate");
             lbl_EndRentDate.Text = LangManager.GetString("EndRentDate");
             lbl_BillAmount.Text = LangManager.GetString("BillAmount");
-            btn_FinishPurchase.Text = LangManager.GetString("FinishPurchase");
         }
 
         private void FillFormDetails()
@@ -69,15 +68,15 @@ namespace HardwareRentalApp.Forms
 
                 tb_BillAmount.Text = "0.0";
 
-                btn_FinishPurchase.Visible = true;
-
-                btn_FinishPurchase.Text = LangManager.GetString("FinishPurchase");
-
                 dgv_Bill.Columns["QuantityReturned"].Visible = true;
 
                 ComputeBill();
 
                 lbl_main.Text = LangManager.GetString("PendingBill");
+
+                BillPaid = false;
+
+                btn_MultipurposeButton.Text = LangManager.GetString("FinishPurchase");
             }
             else
             {
@@ -87,11 +86,15 @@ namespace HardwareRentalApp.Forms
 
                 tb_BillAmount.Text = BillInformation[0].TotalAmount.ToString("C2");
 
-                btn_FinishPurchase.Visible = false;
-
                 dgv_Bill.Columns["QuantityReturned"].Visible = false;
 
                 lbl_main.Text = LangManager.GetString("PaidBill");
+
+                BillPaid = true;
+
+                btn_MultipurposeButton.Enabled = true;
+
+                btn_MultipurposeButton.Text = LangManager.GetString("GenerateBill");
             }
         }
 
@@ -404,13 +407,13 @@ namespace HardwareRentalApp.Forms
                     e.Cancel = true;
                     //dgv_Sale.Rows[e.RowIndex].ErrorText = "Returned quantity cannot exceed rented quantity.";
                     dgv_Bill.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
-                    btn_FinishPurchase.Enabled = false;
+                    btn_MultipurposeButton.Enabled = false;
                 }
                 else
                 {
                     //dgv_Sale.Rows[e.RowIndex].ErrorText = string.Empty; // clear error
                     dgv_Bill.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
-                    btn_FinishPurchase.Enabled = true;
+                    btn_MultipurposeButton.Enabled = true;
                 }
             }
         }
@@ -420,7 +423,7 @@ namespace HardwareRentalApp.Forms
             dgv_Bill.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
 
-        private void btn_FinishPurchase_Click(object sender, EventArgs e)
+        private void btn_MultipurposeButton_Click(object sender, EventArgs e)
         {
             int total = 0;
 
