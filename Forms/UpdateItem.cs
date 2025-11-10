@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace HardwareRentalApp.Forms
 {
     public partial class UpdateItem : Form
     {
+        ResourceManager LangManager = new ResourceManager("HardwareRentalApp.Resources.MessageFiles.MessageStrings", typeof(UpdateItem).Assembly);
         private int ItemID;
         private string ItemName;
         private decimal RentPerDay;
@@ -35,6 +37,13 @@ namespace HardwareRentalApp.Forms
 
         private void UpdateRent_Load(object sender, EventArgs e)
         {
+            lbl_main.Text = LangManager.GetString("UpdateItem");
+            lbl_ItemID.Text = LangManager.GetString("ItemID");
+            lbl_ItemName.Text = LangManager.GetString("ItemName");
+            lbl_Rent.Text = LangManager.GetString("Rent");
+            lbl_MinRentalDays.Text = LangManager.GetString("MinRentalDays");
+            btn_Update.Text = LangManager.GetString("Update");
+
             tb_ItemID.Text = ItemID.ToString();
             tb_ItemName.Text = ItemName;
             tb_RentPerDay.Text = RentPerDay.ToString("F2");
