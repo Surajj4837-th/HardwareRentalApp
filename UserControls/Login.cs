@@ -135,10 +135,10 @@ namespace HardwareRentalApp.UserControls
                     {
                         // Show exception details in a MessageBox
                         MessageBox.Show(
-                            ex.Message,           // The exception message
-                            "Error",              // Title of the message box
-                            MessageBoxButtons.OK, // MessageBox buttons (OK)
-                            MessageBoxIcon.Error);// MessageBox icon (Error)
+                            ex.Message,                                 // The exception message
+                            LangManager.GetString("ErrorOcurred"),      // Title of the message box
+                            MessageBoxButtons.OK,                       // MessageBox buttons (OK)
+                            MessageBoxIcon.Error);                      // MessageBox icon (Error)
                     }
                 }
             }
