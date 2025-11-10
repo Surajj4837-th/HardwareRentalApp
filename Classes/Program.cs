@@ -21,6 +21,7 @@ namespace HardwareRentalApp.Classes
         public string ItemName { get; set; }
         public int Quantity { get; set; }
         public decimal Rent { get; set; }
+        public int RentalDays { get; set; }
         public decimal Total { get; set; }
     }
 
@@ -33,6 +34,7 @@ namespace HardwareRentalApp.Classes
     }
     public struct BillSummary
     {
+        public int BillId { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public DateTime BillDate { get; set; }
