@@ -25,11 +25,6 @@ namespace HardwareRentalApp.Forms
             InitializeComponent();
 
             customer = cust;
-            tb_LesseeName.Text = customer.LesseeName;
-
-            GetLocalizedItems();
-
-            LoadData();
         }
 
         private void Sale_Load(object sender, EventArgs e)
@@ -40,6 +35,12 @@ namespace HardwareRentalApp.Forms
             lbl_WorkLocation.Text = LangManager.GetString("WorkLocation");
             lbl_RentDate.Text = LangManager.GetString("RentDate");
             btn_FinishPurchase.Text = LangManager.GetString("FinishPurchase");
+
+            tb_LesseeName.Text = customer.LesseeName;
+
+            GetLocalizedItems();
+
+            LoadData();
         }
 
         private void LoadData()
