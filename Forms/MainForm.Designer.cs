@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             pnl_navigation = new Panel();
             btn_Logout = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btn_Home = new Button();
-            btn_Sale = new Button();
             btn_Customers = new Button();
             btn_Inventory = new Button();
-            btn_Settings = new Button();
             pnl_OverlayUC = new Panel();
             pnl_Title = new Panel();
             lbl_Title = new Label();
@@ -49,6 +48,8 @@
             // pnl_navigation
             // 
             pnl_navigation.BackColor = SystemColors.GradientActiveCaption;
+            pnl_navigation.BackgroundImage = (Image)resources.GetObject("pnl_navigation.BackgroundImage");
+            pnl_navigation.BackgroundImageLayout = ImageLayout.Zoom;
             pnl_navigation.Controls.Add(btn_Logout);
             pnl_navigation.Controls.Add(flowLayoutPanel1);
             pnl_navigation.Dock = DockStyle.Left;
@@ -74,15 +75,13 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(btn_Home);
-            flowLayoutPanel1.Controls.Add(btn_Sale);
             flowLayoutPanel1.Controls.Add(btn_Customers);
             flowLayoutPanel1.Controls.Add(btn_Inventory);
-            flowLayoutPanel1.Controls.Add(btn_Settings);
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(206, 250);
+            flowLayoutPanel1.Size = new Size(206, 153);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // btn_Home
@@ -90,6 +89,8 @@
             btn_Home.BackColor = Color.FromArgb(51, 51, 76);
             btn_Home.Font = new Font("Nirmala UI", 14.25F);
             btn_Home.ForeColor = SystemColors.ButtonFace;
+            btn_Home.Image = (Image)resources.GetObject("btn_Home.Image");
+            btn_Home.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Home.Location = new Point(3, 3);
             btn_Home.Name = "btn_Home";
             btn_Home.Size = new Size(200, 44);
@@ -100,27 +101,14 @@
             btn_Home.MouseEnter += btn_Home_MouseEnter;
             btn_Home.MouseLeave += btn_Home_MouseLeave;
             // 
-            // btn_Sale
-            // 
-            btn_Sale.BackColor = Color.FromArgb(51, 51, 76);
-            btn_Sale.Font = new Font("Nirmala UI", 14.25F);
-            btn_Sale.ForeColor = SystemColors.ButtonFace;
-            btn_Sale.Location = new Point(3, 53);
-            btn_Sale.Name = "btn_Sale";
-            btn_Sale.Size = new Size(200, 44);
-            btn_Sale.TabIndex = 1;
-            btn_Sale.Text = "Sale";
-            btn_Sale.UseVisualStyleBackColor = false;
-            btn_Sale.Click += btn_Sale_Click;
-            btn_Sale.MouseEnter += btn_Sale_MouseEnter;
-            btn_Sale.MouseLeave += btn_Sale_MouseLeave;
-            // 
             // btn_Customers
             // 
             btn_Customers.BackColor = Color.FromArgb(51, 51, 76);
             btn_Customers.Font = new Font("Nirmala UI", 14.25F);
             btn_Customers.ForeColor = SystemColors.ButtonFace;
-            btn_Customers.Location = new Point(3, 103);
+            btn_Customers.Image = (Image)resources.GetObject("btn_Customers.Image");
+            btn_Customers.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Customers.Location = new Point(3, 53);
             btn_Customers.Name = "btn_Customers";
             btn_Customers.Size = new Size(200, 44);
             btn_Customers.TabIndex = 2;
@@ -135,7 +123,9 @@
             btn_Inventory.BackColor = Color.FromArgb(51, 51, 76);
             btn_Inventory.Font = new Font("Nirmala UI", 14.25F);
             btn_Inventory.ForeColor = SystemColors.ButtonFace;
-            btn_Inventory.Location = new Point(3, 153);
+            btn_Inventory.Image = (Image)resources.GetObject("btn_Inventory.Image");
+            btn_Inventory.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Inventory.Location = new Point(3, 103);
             btn_Inventory.Name = "btn_Inventory";
             btn_Inventory.Size = new Size(200, 44);
             btn_Inventory.TabIndex = 3;
@@ -144,21 +134,6 @@
             btn_Inventory.Click += btn_Inventory_Click;
             btn_Inventory.MouseEnter += btn_Inventory_MouseEnter;
             btn_Inventory.MouseLeave += btn_Inventory_MouseLeave;
-            // 
-            // btn_Settings
-            // 
-            btn_Settings.BackColor = Color.FromArgb(51, 51, 76);
-            btn_Settings.Font = new Font("Nirmala UI", 14.25F);
-            btn_Settings.ForeColor = SystemColors.ButtonFace;
-            btn_Settings.Location = new Point(3, 203);
-            btn_Settings.Name = "btn_Settings";
-            btn_Settings.Size = new Size(200, 44);
-            btn_Settings.TabIndex = 4;
-            btn_Settings.Text = "Settings";
-            btn_Settings.UseVisualStyleBackColor = false;
-            btn_Settings.Click += btn_Settings_Click;
-            btn_Settings.MouseEnter += btn_Settings_MouseEnter;
-            btn_Settings.MouseLeave += btn_Settings_MouseLeave;
             // 
             // pnl_OverlayUC
             // 
@@ -219,9 +194,7 @@
         private ToolTip toolTip1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btn_Home;
-        private Button btn_Sale;
         private Button btn_Customers;
         private Button btn_Inventory;
-        private Button btn_Settings;
     }
 }

@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
             btn_ShowBills = new Button();
             btn_AddCustomer = new Button();
             tb_search = new TextBox();
@@ -49,7 +50,7 @@
             btn_ShowBills.Enabled = false;
             btn_ShowBills.Font = new Font("Nirmala UI", 13.8F, FontStyle.Bold);
             btn_ShowBills.ImeMode = ImeMode.NoControl;
-            btn_ShowBills.Location = new Point(153, 819);
+            btn_ShowBills.Location = new Point(1063, 728);
             btn_ShowBills.Name = "btn_ShowBills";
             btn_ShowBills.Size = new Size(270, 45);
             btn_ShowBills.TabIndex = 3;
@@ -167,8 +168,10 @@
             // 
             btn_Sale.BackColor = SystemColors.ControlLightLight;
             btn_Sale.Font = new Font("Nirmala UI", 13.8F, FontStyle.Bold);
+            btn_Sale.Image = (Image)resources.GetObject("btn_Sale.Image");
+            btn_Sale.ImageAlign = ContentAlignment.MiddleLeft;
             btn_Sale.ImeMode = ImeMode.NoControl;
-            btn_Sale.Location = new Point(496, 728);
+            btn_Sale.Location = new Point(620, 728);
             btn_Sale.Name = "btn_Sale";
             btn_Sale.Size = new Size(216, 45);
             btn_Sale.TabIndex = 1;
