@@ -135,6 +135,7 @@
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
             Name = "Login";
+            Load += Login_Load;
             tableLayoutPanel1.ResumeLayout(false);
             pnl_login.ResumeLayout(false);
             pnl_login.PerformLayout();

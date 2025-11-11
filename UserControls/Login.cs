@@ -25,10 +25,10 @@ namespace HardwareRentalApp.UserControls
         public static string m_st_Role;
         //private ActivateProduct Obj_ProductActivation = new ActivateProduct();
         string culture = Properties.Settings.Default.Language;
-        public static int AdminId 
-        { 
-            get; 
-            internal set; 
+        public static int AdminId
+        {
+            get;
+            internal set;
         }
 
         public event EventHandler LoginSuccessful;
@@ -36,7 +36,10 @@ namespace HardwareRentalApp.UserControls
         public Login()
         {
             InitializeComponent();
+        }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
             SetLanguage();
 
             ApplyLanguage();

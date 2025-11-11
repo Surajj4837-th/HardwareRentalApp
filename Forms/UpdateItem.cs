@@ -24,6 +24,11 @@ namespace HardwareRentalApp.Forms
         public UpdateItem(DataGridViewRow selectedRow)
         {
             InitializeComponent();
+
+            this.ItemID = Convert.ToInt32(selectedRow.Cells["ItemID"].Value);
+            this.ItemName = Convert.ToString(selectedRow.Cells["ItemName"].Value);
+            this.RentPerDay = Convert.ToDecimal(selectedRow.Cells["Rent"].Value);
+            this.MinRentDays = Convert.ToInt32(selectedRow.Cells["MinRentDays"].Value);
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -44,11 +49,6 @@ namespace HardwareRentalApp.Forms
             tb_ItemName.Text = ItemName;
             tb_RentPerDay.Text = RentPerDay.ToString("F2");
             tb_MinRentalDays.Text = MinRentDays.ToString();
-
-            this.ItemID = Convert.ToInt32(selectedRow.Cells["ItemID"].Value);
-            this.ItemName = Convert.ToString(selectedRow.Cells["ItemName"].Value);
-            this.RentPerDay = Convert.ToDecimal(selectedRow.Cells["Rent"].Value);
-            this.MinRentDays = Convert.ToInt32(selectedRow.Cells["MinRentDays"].Value);
         }
 
         private void tb_RentPerDay_KeyPress(object sender, KeyPressEventArgs e)
