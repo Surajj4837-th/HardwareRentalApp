@@ -192,9 +192,6 @@
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
-  <data name="Inventory" xml:space="preserve">
-    <value>Inventory</value>
-  </data>
   <data name="RequestDate" xml:space="preserve">
     <value>Request Date:</value>
   </data>
@@ -389,5 +386,8 @@
   </data>
   <data name="SrNo" xml:space="preserve">
     <value>Sr. No.</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventory</value>
   </data>
 </root>
