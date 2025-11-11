@@ -11,12 +11,18 @@ namespace HardwareRentalApp
 
         public MainForm()
         {
+            InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
             string languageCode = Properties.Settings.Default.Language;
             CultureInfo culture = new CultureInfo(languageCode);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            InitializeComponent();
+            ApplyLanguage();
+            OpenChildControl(new Login());
         }
 
         /// <summary>
@@ -96,12 +102,6 @@ namespace HardwareRentalApp
             this.btn_Sale.Visible = true;
             this.btn_Logout.Visible = true;
             this.btn_Inventory.Visible = true;
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            ApplyLanguage();
-            OpenChildControl(new Login());
         }
 
         private void btn_Home_Click(object sender, EventArgs e)
