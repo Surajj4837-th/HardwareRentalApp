@@ -189,6 +189,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddCustomer";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += AddCustomer_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

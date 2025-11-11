@@ -22,7 +22,10 @@ namespace HardwareRentalApp.Forms
         public AddCustomer()
         {
             InitializeComponent();
+        }
 
+        private void AddCustomer_Load(object sender, EventArgs e)
+        {
             ApplyLanguage();
         }
 
