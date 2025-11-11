@@ -8,3 +8,5 @@ TODO:
 1. Delete bill.
 1. Use appropriate font size.
 1. Add admin ID for creating bill and another for payment.
+1. Activation.
+1. Registration.
