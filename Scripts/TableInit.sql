@@ -67,3 +67,16 @@ CREATE TABLE Credentials (
 
 INSERT INTO Credentials (FullName, MobileNumber, PasswordHash, UserRole)
 VALUES ('MohiniBharmal', '9822236529', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'Owner');
+
+CREATE TABLE ProductActivations (
+    ActivationID INT IDENTITY(1,1) PRIMARY KEY,
+    ActivationKey NVARCHAR(100) NOT NULL,
+    UserID INT NOT NULL,
+    MACAddress NVARCHAR(50) NOT NULL,
+    ProductType NVARCHAR(50) NOT NULL,
+    LicenseType NVARCHAR(50) NOT NULL,
+    ActivationDays INT NOT NULL,
+    RequestDate DATETIME NOT NULL,
+    ActivationDate DATETIME NOT NULL,
+    ExpiryDate DATETIME NOT NULL
+);
