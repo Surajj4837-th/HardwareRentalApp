@@ -390,4 +390,49 @@
   <data name="Inventory" xml:space="preserve">
     <value>Inventory</value>
   </data>
+  <data name="Activation" xml:space="preserve">
+    <value>Activation</value>
+  </data>
+  <data name="ActivateProduct" xml:space="preserve">
+    <value>Activate Product</value>
+  </data>
+  <data name="ActivationKey" xml:space="preserve">
+    <value>Activation Key:</value>
+  </data>
+  <data name="ActivationKeyAlreadyUsed" xml:space="preserve">
+    <value>This activation key is already used.</value>
+  </data>
+  <data name="ActivationKeyDoesNotBelongToComputer" xml:space="preserve">
+    <value>The activation key does not belong to this computer.</value>
+  </data>
+  <data name="ActivationKeyDoesNotBelongToUser" xml:space="preserve">
+    <value>The activation key does not belong to this user.</value>
+  </data>
+  <data name="ActivationKeyNeeded" xml:space="preserve">
+    <value>The activation key is not provided.</value>
+  </data>
+  <data name="MACAddress" xml:space="preserve">
+    <value>MAC Address:</value>
+  </data>
+  <data name="RequestDate1" xml:space="preserve">
+    <value>Request Date:</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>User ID:</value>
+  </data>
+  <data name="UserIDNotProvided" xml:space="preserve">
+    <value>User ID is not provided.</value>
+  </data>
+  <data name="InvalidKey" xml:space="preserve">
+    <value>This key is invalid.</value>
+  </data>
+  <data name="ProductNotActivated" xml:space="preserve">
+    <value>This product has not been activated yet.</value>
+  </data>
+  <data name="ActivationPeriodOver" xml:space="preserve">
+    <value>The product activation period is over.</value>
+  </data>
+  <data name="ProductNotLinkedToComputer" xml:space="preserve">
+    <value>This product is not linked to your computer.</value>
+  </data>
 </root>
