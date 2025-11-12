@@ -1,6 +1,5 @@
 # HardwareRentalApp
 
-
 TODO:
 1. Modify customer.
 1. Delete customer.
@@ -11,4 +10,5 @@ TODO:
 1. Activation.
 1. Admin registration.
 1. Admin activation.
-1. Add path to save pdf.
+1. Add or modify the SQL table variables after deployment to add other features.
+1. Add new SQL tables after deployment for future features.
