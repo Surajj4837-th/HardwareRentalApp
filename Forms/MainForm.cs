@@ -63,6 +63,7 @@ namespace HardwareRentalApp
                     // Load the default Home screen
                     pnl_navigation.Visible = true;
                     ApplyLanguage(LangManager.GetString(childControl.Name));
+                    this.pnl_Title.BackColor = Color.FromArgb(202, 244, 144);   //Assign label with home button color upon login
                     OpenChildControl(new Home());
                 };
             }
@@ -98,8 +99,6 @@ namespace HardwareRentalApp
             this.btn_Home.Visible = true;
             this.btn_Logout.Visible = true;
             this.btn_Inventory.Visible = true;
-
-            this.pnl_Title.BackColor = Color.FromArgb(202, 244, 144);   //Assign label with home button color upon login
         }
 
         private void btn_Home_Click(object sender, EventArgs e)
