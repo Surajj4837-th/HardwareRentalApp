@@ -435,7 +435,6 @@ namespace HardwareRentalApp.Forms
                 if (total == 0)
                 {
                     MessageBox.Show(LangManager.GetString("NoItemsReturned"), LangManager.GetString("NoBill"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Close();
                     return;
                 }
                 else
@@ -486,8 +485,6 @@ namespace HardwareRentalApp.Forms
                     {
                         MessageBox.Show(LangManager.GetString("AllItemsReturned."), LangManager.GetString("BillFinished"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    this.Close();
                 }
             }
             else if (BillPaid)
@@ -520,8 +517,12 @@ namespace HardwareRentalApp.Forms
 
                 //Create bill pdf
                 BillSaver BillDocument = new BillSaver(BillInformation[0], billItems);
-                BillDocument.GeneratePdfAndShow();
+
+                string fileName = Properties.Settings.Default.SaveDirectory + "\\" + BillID.ToString() + ".pdf";
+                BillDocument.GeneratePdf(fileName);
             }
+
+            this.Close();
         }
 
         private void UpdateBill(decimal totalAmount, int ItemID, int Quantity)
