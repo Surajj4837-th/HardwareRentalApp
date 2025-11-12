@@ -48,7 +48,6 @@ namespace HardwareRentalApp.UserControls
             this.lbl_Password.Text = LangManager.GetString("Password");
             this.lbl_Language.Text = LangManager.GetString("Language");
             this.btn_login.Text = LangManager.GetString("Login");
-            this.ll_register.Text = LangManager.GetString("RegisterHere");
         }
 
         private void SetLanguage()
@@ -149,12 +148,6 @@ namespace HardwareRentalApp.UserControls
             //    {
             //    }
             //}
-        }
-
-        private void ll_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //var RegisterAdminForm = new RegisterAdmin();
-            //RegisterAdminForm.ShowDialog();
         }
 
         private void Language_SelectedIndexChanged(object sender, EventArgs e)

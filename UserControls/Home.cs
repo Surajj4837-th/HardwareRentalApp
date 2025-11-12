@@ -12,7 +12,7 @@ namespace HardwareRentalApp.UserControls
 
         private void Home_Load(object sender, EventArgs e)
         {
-            btn_AccountApprovalRequest.Text = LangManager.GetString("AccountApprovalRequest");
+
         }
     }
 }

@@ -33,7 +33,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             lbl_Language = new Label();
             lbl_admin = new Label();
-            ll_register = new LinkLabel();
             pnl_login = new Panel();
             btn_login = new Button();
             tb_Password = new TextBox();
@@ -72,13 +71,6 @@
             resources.ApplyResources(lbl_admin, "lbl_admin");
             lbl_admin.BackColor = Color.LightGreen;
             lbl_admin.Name = "lbl_admin";
-            // 
-            // ll_register
-            // 
-            resources.ApplyResources(ll_register, "ll_register");
-            ll_register.Name = "ll_register";
-            ll_register.TabStop = true;
-            ll_register.LinkClicked += ll_register_LinkClicked;
             // 
             // pnl_login
             // 
@@ -123,7 +115,6 @@
             // 
             resources.ApplyResources(panel1, "panel1");
             panel1.Controls.Add(pnl_login);
-            panel1.Controls.Add(ll_register);
             panel1.Controls.Add(lbl_admin);
             panel1.Name = "panel1";
             // 
@@ -150,7 +141,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lbl_Language;
         private Label lbl_admin;
-        private LinkLabel ll_register;
         private Panel pnl_login;
         private Button btn_login;
         private TextBox tb_Password;

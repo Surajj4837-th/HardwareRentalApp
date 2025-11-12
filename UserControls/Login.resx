@@ -260,42 +260,6 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbl_admin.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ll_register.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="ll_register.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ll_register.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 13.8pt, style=Italic</value>
-  </data>
-  <data name="ll_register.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ll_register.Location" type="System.Drawing.Point, System.Drawing">
-    <value>678, 445</value>
-  </data>
-  <data name="ll_register.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 24</value>
-  </data>
-  <data name="ll_register.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ll_register.Text" xml:space="preserve">
-    <value>Register here.</value>
-  </data>
-  <data name="&gt;&gt;ll_register.Name" xml:space="preserve">
-    <value>ll_register</value>
-  </data>
-  <data name="&gt;&gt;ll_register.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ll_register.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;ll_register.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="pnl_login.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
