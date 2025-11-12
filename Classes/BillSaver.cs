@@ -2,7 +2,6 @@
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System.Resources;
-using System.Runtime.CompilerServices;
 
 namespace HardwareRentalApp.Classes
 {

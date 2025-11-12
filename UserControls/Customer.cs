@@ -1,9 +1,7 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-using System.Resources;
-using HardwareRentalApp.Classes;
+﻿using HardwareRentalApp.Classes;
 using HardwareRentalApp.Forms;
-using static HardwareRentalApp.Classes.Program;
+using System.Data;
+using System.Resources;
 
 namespace HardwareRentalApp.UserControls
 {
