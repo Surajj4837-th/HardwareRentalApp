@@ -21,8 +21,7 @@ namespace HardwareRentalApp
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            ApplyLanguage();
-            OpenChildControl(new Login());
+            OpenChildControl(new Login(this));
         }
 
         /// <summary>
@@ -63,7 +62,7 @@ namespace HardwareRentalApp
 
                     // Load the default Home screen
                     pnl_navigation.Visible = true;
-                    ApplyLanguage();
+                    ApplyLanguage(LangManager.GetString(childControl.Name));
                     OpenChildControl(new Home());
                 };
             }
@@ -74,12 +73,15 @@ namespace HardwareRentalApp
             }
         }
 
-        public void ApplyLanguage()
+        public void ApplyLanguage(string ChildControlName = null)
         {
             this.btn_Customers.Text = LangManager.GetString("Customers");
             this.btn_Inventory.Text = LangManager.GetString("Inventory");
             this.btn_Home.Text = LangManager.GetString("Home");
             this.btn_Logout.Text = LangManager.GetString("Logout");
+
+            if (ChildControlName != null)
+                lbl_Title.Text = ChildControlName;
         }
 
         public void HideButtons()

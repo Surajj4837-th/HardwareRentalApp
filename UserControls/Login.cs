@@ -15,6 +15,7 @@ namespace HardwareRentalApp.UserControls
         public static string m_st_Role;
         //private ActivateProduct Obj_ProductActivation = new ActivateProduct();
         string culture = Properties.Settings.Default.Language;
+        private MainForm _mainForm;
         public static int AdminId
         {
             get;
@@ -23,9 +24,10 @@ namespace HardwareRentalApp.UserControls
 
         public event EventHandler LoginSuccessful;
 
-        public Login()
+        public Login(MainForm mainform)
         {
             InitializeComponent();
+            _mainForm = mainform;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -48,6 +50,8 @@ namespace HardwareRentalApp.UserControls
             this.lbl_Password.Text = LangManager.GetString("Password");
             this.lbl_Language.Text = LangManager.GetString("Language");
             this.btn_login.Text = LangManager.GetString("Login");
+
+            _mainForm.ApplyLanguage(LangManager.GetString("Login"));
         }
 
         private void SetLanguage()
