@@ -435,4 +435,7 @@
   <data name="ProductNotLinkedToComputer" xml:space="preserve">
     <value>हे उत्पादन आपल्या संगणकासोबत जोडलेले नाही.</value>
   </data>
+  <data name="FileSavingPath" xml:space="preserve">
+    <value>बिल जतन करण्याचा मार्ग</value>
+  </data>
 </root>

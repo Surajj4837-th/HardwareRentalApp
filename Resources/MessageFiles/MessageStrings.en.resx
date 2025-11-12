@@ -435,4 +435,7 @@
   <data name="ProductNotLinkedToComputer" xml:space="preserve">
     <value>This product is not linked to your computer.</value>
   </data>
+  <data name="FileSavingPath" xml:space="preserve">
+    <value>Path to Save Bill</value>
+  </data>
 </root>
