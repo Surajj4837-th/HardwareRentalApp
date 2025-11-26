@@ -37,11 +37,12 @@ namespace HardwareRentalApp.UserControls
             ApplyLanguage();
 
             //***********************For development purpose only***********************
-            if (System.Diagnostics.Debugger.IsAttached)
+#if DEBUG
             {
                 tb_MobileNo.Text = "9822236529";
                 tb_Password.Text = "1234";
             }
+#endif
         }
         public void ApplyLanguage()
         {
