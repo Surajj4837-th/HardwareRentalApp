@@ -15,23 +15,30 @@ namespace HardwareRentalApp.Classes
         private string GetConnectionString()
         {
             string raw = ConfigurationManager.ConnectionStrings["HardwareRentalAppConnection"].ConnectionString;
+            string databaseFile = string.Empty;
 
-            // Detect if running under Visual Studio debugger, even in Release
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                string solutionDir = Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.FullName;
-                string DatabasePath = Path.Combine(solutionDir, ConfigurationManager.AppSettings["DevelopmentPath"]);
-                //string DatabasePath = Path.Combine(AppContext.BaseDirectory, ConfigurationManager.AppSettings["DevelopmentPath"]);
-                return raw.Replace("|DataDirectory|", DatabasePath);
+                // Development PC
+                string projectDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\"));
+                string devPath = Path.Combine(projectDir, ConfigurationManager.AppSettings["DevelopmentPath"]);
+                databaseFile = Path.Combine(devPath, "HardwareRentalApp(Dev).mdf");
             }
             else
             {
-                string DatabasePath = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                // Test / Installed PC
+                string installPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                     ConfigurationManager.AppSettings["InstalledPath"]
                 );
-                return raw.Replace("|DataDirectory|", DatabasePath);
+                databaseFile = Path.Combine(installPath, "HardwareRentalApp(Release).mdf");
             }
+
+            // Ensure directory exists (especially on first run)
+            Directory.CreateDirectory(Path.GetDirectoryName(databaseFile));
+
+            // Replace the placeholder in connection string
+            return raw.Replace("|DataDirectory|", Path.GetDirectoryName(databaseFile))
+                      .Replace("HardwareRentalApp.mdf", Path.GetFileName(databaseFile));
         }
 
 
