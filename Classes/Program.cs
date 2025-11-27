@@ -64,6 +64,12 @@ namespace HardwareRentalApp.Classes
         [STAThread]
         static void Main()
         {
+            // Ensure the DB is copied to AppData (and writable) only in case the application is deployed and not during development.
+            if (!DatabaseBootstrapper.IsDevelopmentMode())
+            {
+                DatabaseBootstrapper.EnsureDatabaseInAppData();
+            }
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
