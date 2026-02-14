@@ -59,7 +59,7 @@
             dgv_Bill.Location = new Point(60, 249);
             dgv_Bill.Name = "dgv_Bill";
             dgv_Bill.RowHeadersWidth = 51;
-            dgv_Bill.Size = new Size(892, 530);
+            dgv_Bill.Size = new Size(946, 616);
             dgv_Bill.TabIndex = 19;
             dgv_Bill.CellBeginEdit += dgv_Bill_CellBeginEdit;
             dgv_Bill.CellValidating += dgv_Bill_CellValidating;
@@ -70,7 +70,7 @@
             // 
             lbl_WorkLocation.AutoSize = true;
             lbl_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            lbl_WorkLocation.Location = new Point(518, 154);
+            lbl_WorkLocation.Location = new Point(553, 154);
             lbl_WorkLocation.Name = "lbl_WorkLocation";
             lbl_WorkLocation.Size = new Size(166, 32);
             lbl_WorkLocation.TabIndex = 14;
@@ -100,7 +100,7 @@
             // 
             lbl_OwnerName.AutoSize = true;
             lbl_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            lbl_OwnerName.Location = new Point(518, 99);
+            lbl_OwnerName.Location = new Point(553, 99);
             lbl_OwnerName.Name = "lbl_OwnerName";
             lbl_OwnerName.Size = new Size(155, 32);
             lbl_OwnerName.TabIndex = 17;
@@ -109,7 +109,7 @@
             // tb_WorkLocation
             // 
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            tb_WorkLocation.Location = new Point(716, 146);
+            tb_WorkLocation.Location = new Point(768, 146);
             tb_WorkLocation.Name = "tb_WorkLocation";
             tb_WorkLocation.ReadOnly = true;
             tb_WorkLocation.Size = new Size(236, 39);
@@ -118,7 +118,7 @@
             // tb_Reference
             // 
             tb_Reference.Font = new Font("Nirmala UI", 14.25F);
-            tb_Reference.Location = new Point(193, 146);
+            tb_Reference.Location = new Point(223, 146);
             tb_Reference.Name = "tb_Reference";
             tb_Reference.ReadOnly = true;
             tb_Reference.Size = new Size(236, 39);
@@ -137,7 +137,7 @@
             // tb_OwnerName
             // 
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            tb_OwnerName.Location = new Point(716, 91);
+            tb_OwnerName.Location = new Point(768, 91);
             tb_OwnerName.Name = "tb_OwnerName";
             tb_OwnerName.ReadOnly = true;
             tb_OwnerName.Size = new Size(236, 39);
@@ -146,7 +146,7 @@
             // tb_LesseeName
             // 
             tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeName.Location = new Point(193, 96);
+            tb_LesseeName.Location = new Point(223, 96);
             tb_LesseeName.Name = "tb_LesseeName";
             tb_LesseeName.ReadOnly = true;
             tb_LesseeName.Size = new Size(236, 39);
@@ -160,7 +160,7 @@
             btn_Close.Font = new Font("Nirmala UI", 8.25F);
             btn_Close.Image = (Image)resources.GetObject("btn_Close.Image");
             btn_Close.ImeMode = ImeMode.NoControl;
-            btn_Close.Location = new Point(990, 1);
+            btn_Close.Location = new Point(1048, 1);
             btn_Close.Margin = new Padding(1);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(33, 33);
@@ -172,7 +172,7 @@
             // 
             lbl_EndRentDate.AutoSize = true;
             lbl_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
-            lbl_EndRentDate.Location = new Point(518, 203);
+            lbl_EndRentDate.Location = new Point(553, 203);
             lbl_EndRentDate.Name = "lbl_EndRentDate";
             lbl_EndRentDate.Size = new Size(141, 32);
             lbl_EndRentDate.TabIndex = 15;
@@ -182,7 +182,7 @@
             // 
             dtp_EndRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtp_EndRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_EndRentDate.Location = new Point(716, 197);
+            dtp_EndRentDate.Location = new Point(768, 197);
             dtp_EndRentDate.Name = "dtp_EndRentDate";
             dtp_EndRentDate.Size = new Size(236, 39);
             dtp_EndRentDate.TabIndex = 21;
@@ -191,7 +191,7 @@
             // tb_StartRentDate
             // 
             tb_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
-            tb_StartRentDate.Location = new Point(193, 197);
+            tb_StartRentDate.Location = new Point(223, 197);
             tb_StartRentDate.Name = "tb_StartRentDate";
             tb_StartRentDate.ReadOnly = true;
             tb_StartRentDate.Size = new Size(236, 39);
@@ -201,7 +201,7 @@
             // 
             tb_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tb_BillAmount.Font = new Font("Nirmala UI", 14.25F);
-            tb_BillAmount.Location = new Point(712, 809);
+            tb_BillAmount.Location = new Point(770, 904);
             tb_BillAmount.Name = "tb_BillAmount";
             tb_BillAmount.ReadOnly = true;
             tb_BillAmount.Size = new Size(236, 39);
@@ -212,7 +212,7 @@
             lbl_BillAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lbl_BillAmount.AutoSize = true;
             lbl_BillAmount.Font = new Font("Nirmala UI", 14.25F);
-            lbl_BillAmount.Location = new Point(549, 812);
+            lbl_BillAmount.Location = new Point(607, 907);
             lbl_BillAmount.Name = "lbl_BillAmount";
             lbl_BillAmount.Size = new Size(139, 32);
             lbl_BillAmount.TabIndex = 14;
@@ -224,7 +224,7 @@
             btn_MultipurposeButton.BackColor = Color.PaleGreen;
             btn_MultipurposeButton.Enabled = false;
             btn_MultipurposeButton.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_MultipurposeButton.Location = new Point(768, 864);
+            btn_MultipurposeButton.Location = new Point(826, 959);
             btn_MultipurposeButton.Name = "btn_MultipurposeButton";
             btn_MultipurposeButton.Size = new Size(180, 40);
             btn_MultipurposeButton.TabIndex = 20;
@@ -235,9 +235,9 @@
             // lbl_main
             // 
             lbl_main.Font = new Font("Nirmala UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_main.Location = new Point(0, 37);
+            lbl_main.Location = new Point(0, 27);
             lbl_main.Name = "lbl_main";
-            lbl_main.Size = new Size(1023, 51);
+            lbl_main.Size = new Size(1081, 51);
             lbl_main.TabIndex = 22;
             lbl_main.Text = "Pending Bill";
             lbl_main.TextAlign = ContentAlignment.MiddleCenter;
@@ -246,8 +246,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 924);
+            BackColor = Color.Bisque;
+            ClientSize = new Size(1082, 1019);
             ControlBox = false;
+            Controls.Add(btn_Close);
             Controls.Add(lbl_main);
             Controls.Add(dtp_EndRentDate);
             Controls.Add(btn_MultipurposeButton);
@@ -265,7 +267,6 @@
             Controls.Add(lbl_LesseeName);
             Controls.Add(tb_OwnerName);
             Controls.Add(tb_LesseeName);
-            Controls.Add(btn_Close);
             Font = new Font("Nirmala UI", 9F);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Bill";
