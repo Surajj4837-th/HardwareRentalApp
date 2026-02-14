@@ -100,7 +100,7 @@
             tb_RequestDate.Margin = new Padding(2);
             tb_RequestDate.Name = "tb_RequestDate";
             tb_RequestDate.ReadOnly = true;
-            tb_RequestDate.Size = new Size(182, 33);
+            tb_RequestDate.Size = new Size(182, 39);
             tb_RequestDate.TabIndex = 1;
             // 
             // lbl_MACAddress
@@ -123,7 +123,7 @@
             tb_MACAddress.Margin = new Padding(2);
             tb_MACAddress.Name = "tb_MACAddress";
             tb_MACAddress.ReadOnly = true;
-            tb_MACAddress.Size = new Size(182, 33);
+            tb_MACAddress.Size = new Size(182, 39);
             tb_MACAddress.TabIndex = 2;
             // 
             // lbl_UserID
@@ -145,7 +145,7 @@
             tb_UserID.Location = new Point(187, 74);
             tb_UserID.Margin = new Padding(2);
             tb_UserID.Name = "tb_UserID";
-            tb_UserID.Size = new Size(182, 33);
+            tb_UserID.Size = new Size(182, 39);
             tb_UserID.TabIndex = 3;
             tb_UserID.KeyPress += tb_UserID_KeyPress;
             // 
@@ -168,7 +168,7 @@
             tb_ActivationKey.Location = new Point(187, 110);
             tb_ActivationKey.Margin = new Padding(2);
             tb_ActivationKey.Name = "tb_ActivationKey";
-            tb_ActivationKey.Size = new Size(182, 33);
+            tb_ActivationKey.Size = new Size(182, 39);
             tb_ActivationKey.TabIndex = 4;
             // 
             // btn_Close
@@ -227,8 +227,9 @@
             // 
             // ActivateProduct
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             ClientSize = new Size(441, 379);
             ControlBox = false;
             Controls.Add(button1);

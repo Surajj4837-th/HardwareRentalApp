@@ -67,19 +67,19 @@
             // 
             tb_LesseeName.Anchor = AnchorStyles.None;
             tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeName.Location = new Point(176, 12);
+            tb_LesseeName.Location = new Point(176, 9);
             tb_LesseeName.Name = "tb_LesseeName";
-            tb_LesseeName.Size = new Size(255, 33);
+            tb_LesseeName.Size = new Size(255, 39);
             tb_LesseeName.TabIndex = 2;
             // 
             // tb_LesseeAddress
             // 
             tb_LesseeAddress.Anchor = AnchorStyles.None;
             tb_LesseeAddress.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeAddress.Location = new Point(177, 129);
+            tb_LesseeAddress.Location = new Point(177, 126);
             tb_LesseeAddress.Margin = new Padding(4, 3, 4, 3);
             tb_LesseeAddress.Name = "tb_LesseeAddress";
-            tb_LesseeAddress.Size = new Size(253, 33);
+            tb_LesseeAddress.Size = new Size(253, 39);
             tb_LesseeAddress.TabIndex = 4;
             // 
             // lbl_LesseeName
@@ -100,10 +100,10 @@
             // 
             tb_MobileNum.Anchor = AnchorStyles.None;
             tb_MobileNum.Font = new Font("Nirmala UI", 14.25F);
-            tb_MobileNum.Location = new Point(177, 70);
+            tb_MobileNum.Location = new Point(177, 67);
             tb_MobileNum.Margin = new Padding(4, 3, 4, 3);
             tb_MobileNum.Name = "tb_MobileNum";
-            tb_MobileNum.Size = new Size(253, 33);
+            tb_MobileNum.Size = new Size(253, 39);
             tb_MobileNum.TabIndex = 3;
             tb_MobileNum.KeyPress += tb_MobileNum_KeyPress;
             // 
@@ -178,8 +178,9 @@
             // 
             // AddCustomer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             ClientSize = new Size(530, 417);
             Controls.Add(btn_Close);
             Controls.Add(tableLayoutPanel1);

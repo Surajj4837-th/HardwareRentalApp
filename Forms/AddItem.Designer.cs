@@ -67,10 +67,10 @@
             // 
             tb_MinRentalDays.Anchor = AnchorStyles.None;
             tb_MinRentalDays.Font = new Font("Nirmala UI", 14.25F);
-            tb_MinRentalDays.Location = new Point(177, 148);
+            tb_MinRentalDays.Location = new Point(177, 145);
             tb_MinRentalDays.Margin = new Padding(4, 3, 4, 3);
             tb_MinRentalDays.Name = "tb_MinRentalDays";
-            tb_MinRentalDays.Size = new Size(253, 33);
+            tb_MinRentalDays.Size = new Size(253, 39);
             tb_MinRentalDays.TabIndex = 6;
             tb_MinRentalDays.KeyPress += tb_MinRentalDays_KeyPress;
             // 
@@ -92,10 +92,10 @@
             // 
             tb_RentPerDay.Anchor = AnchorStyles.None;
             tb_RentPerDay.Font = new Font("Nirmala UI", 14.25F);
-            tb_RentPerDay.Location = new Point(177, 81);
+            tb_RentPerDay.Location = new Point(177, 78);
             tb_RentPerDay.Margin = new Padding(4, 3, 4, 3);
             tb_RentPerDay.Name = "tb_RentPerDay";
-            tb_RentPerDay.Size = new Size(253, 33);
+            tb_RentPerDay.Size = new Size(253, 39);
             tb_RentPerDay.TabIndex = 4;
             tb_RentPerDay.KeyPress += tb_RentPerDay_KeyPress;
             // 
@@ -103,10 +103,10 @@
             // 
             tb_ItemName.Anchor = AnchorStyles.None;
             tb_ItemName.Font = new Font("Nirmala UI", 14.25F);
-            tb_ItemName.Location = new Point(177, 16);
+            tb_ItemName.Location = new Point(177, 13);
             tb_ItemName.Margin = new Padding(4, 3, 4, 3);
             tb_ItemName.Name = "tb_ItemName";
-            tb_ItemName.Size = new Size(253, 33);
+            tb_ItemName.Size = new Size(253, 39);
             tb_ItemName.TabIndex = 3;
             // 
             // lbl_ItemName
@@ -180,8 +180,9 @@
             // 
             // AddItem
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Bisque;
             ClientSize = new Size(530, 417);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(btn_Close);
