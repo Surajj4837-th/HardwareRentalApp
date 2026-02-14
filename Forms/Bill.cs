@@ -384,6 +384,9 @@ namespace HardwareRentalApp.Forms
             {
                 string input = e.FormattedValue?.ToString().Trim() ?? "";
 
+                // Convert Marathi ➜ English BEFORE validation
+                input = NumberFormatter.ConvertToEnglishDigits(input);
+
                 // Check if it's a valid integer
                 if (!int.TryParse(input, out int value) || value < 0)
                 {
