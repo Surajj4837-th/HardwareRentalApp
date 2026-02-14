@@ -330,6 +330,16 @@ namespace HardwareRentalApp.Forms
             {
                 string input = Convert.ToString(e.FormattedValue);
 
+                /*
+                 *  | Use            | Property         |
+                    | -------------- | ---------------- |
+                    | Business logic | `Value`          |
+                    | UI display     | `FormattedValue` |
+                    | Validation     | `FormattedValue` |
+                    | Calculations   | `Value`          |
+
+                 */
+
                 if (string.IsNullOrWhiteSpace(input))
                     return; // CellEndEdit will handle empties
 

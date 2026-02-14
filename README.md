@@ -12,6 +12,7 @@
 1. Update login password.
 1. Add or modify the SQL table variables after deployment to add other features.
 1. Add new SQL tables after deployment for future features.
+1. While saving bill in db, all items are saved even if they are not rented.
 
 
 ## Release Process

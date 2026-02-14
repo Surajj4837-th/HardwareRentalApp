@@ -383,6 +383,15 @@ namespace HardwareRentalApp.Forms
             if (dgv_Bill.Columns[e.ColumnIndex].Name == "QuantityReturned")
             {
                 string input = e.FormattedValue?.ToString().Trim() ?? "";
+                /*
+                 *  | Use            | Property         |
+                    | -------------- | ---------------- |
+                    | Business logic | `Value`          |
+                    | UI display     | `FormattedValue` |
+                    | Validation     | `FormattedValue` |
+                    | Calculations   | `Value`          |
+
+                 */
 
                 // Convert Marathi ➜ English BEFORE validation
                 input = NumberFormatter.ConvertToEnglishDigits(input);
@@ -434,7 +443,7 @@ namespace HardwareRentalApp.Forms
                     // Skip the new row placeholder
                     if (row.IsNewRow) continue;
 
-                    // Assuming the column you want to sum is named "Amount"
+                    // Assuming the column you want to sum is named "QuantityReturned"
                     total += Convert.ToInt32(row.Cells["QuantityReturned"].Value);
                 }
 
