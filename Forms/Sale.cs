@@ -333,6 +333,9 @@ namespace HardwareRentalApp.Forms
                 if (string.IsNullOrWhiteSpace(input))
                     return; // CellEndEdit will handle empties
 
+                // Convert Marathi ➜ English BEFORE validation
+                input = NumberFormatter.ConvertToEnglishDigits(input);
+
                 // Only check for negative or non-integer values (keypress already blocks non-digits)
                 if (!int.TryParse(input, out int value) || value < 0)
                 {
@@ -344,7 +347,12 @@ namespace HardwareRentalApp.Forms
             if (dgv_Sale.Columns[e.ColumnIndex].Name == "Rent")
             {
                 string input = Convert.ToString(e.FormattedValue);
-                if (string.IsNullOrWhiteSpace(input)) return;
+
+                if (string.IsNullOrWhiteSpace(input)) 
+                    return;
+
+                // Convert Marathi ➜ English BEFORE validation
+                input = NumberFormatter.ConvertToEnglishDigits(input);
 
                 // Remove currency symbol and any whitespace
                 //input = input.Replace("₹", "").Trim();
