@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btn_Close = new Button();
             tb_LesseeName = new TextBox();
             lbl_LesseeName = new Label();
@@ -55,7 +55,7 @@
             btn_Close.Font = new Font("Nirmala UI", 8.25F);
             btn_Close.Image = (Image)resources.GetObject("btn_Close.Image");
             btn_Close.ImeMode = ImeMode.NoControl;
-            btn_Close.Location = new Point(988, 1);
+            btn_Close.Location = new Point(1046, 1);
             btn_Close.Margin = new Padding(1);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(33, 33);
@@ -66,10 +66,10 @@
             // tb_LesseeName
             // 
             tb_LesseeName.Font = new Font("Nirmala UI", 14.25F);
-            tb_LesseeName.Location = new Point(202, 49);
+            tb_LesseeName.Location = new Point(221, 49);
             tb_LesseeName.Name = "tb_LesseeName";
             tb_LesseeName.ReadOnly = true;
-            tb_LesseeName.Size = new Size(236, 33);
+            tb_LesseeName.Size = new Size(279, 39);
             tb_LesseeName.TabIndex = 4;
             // 
             // lbl_LesseeName
@@ -78,34 +78,34 @@
             lbl_LesseeName.Font = new Font("Nirmala UI", 14.25F);
             lbl_LesseeName.Location = new Point(57, 52);
             lbl_LesseeName.Name = "lbl_LesseeName";
-            lbl_LesseeName.Size = new Size(62, 25);
+            lbl_LesseeName.Size = new Size(155, 32);
             lbl_LesseeName.TabIndex = 5;
-            lbl_LesseeName.Text = "Name";
+            lbl_LesseeName.Text = "Lessee Name";
             // 
             // tb_OwnerName
             // 
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            tb_OwnerName.Location = new Point(676, 49);
+            tb_OwnerName.Location = new Point(738, 49);
             tb_OwnerName.Name = "tb_OwnerName";
-            tb_OwnerName.Size = new Size(236, 33);
+            tb_OwnerName.Size = new Size(260, 39);
             tb_OwnerName.TabIndex = 4;
             // 
             // lbl_OwnerName
             // 
             lbl_OwnerName.AutoSize = true;
             lbl_OwnerName.Font = new Font("Nirmala UI", 14.25F);
-            lbl_OwnerName.Location = new Point(515, 52);
+            lbl_OwnerName.Location = new Point(556, 52);
             lbl_OwnerName.Name = "lbl_OwnerName";
-            lbl_OwnerName.Size = new Size(123, 25);
+            lbl_OwnerName.Size = new Size(155, 32);
             lbl_OwnerName.TabIndex = 5;
             lbl_OwnerName.Text = "Owner Name";
             // 
             // tb_Reference
             // 
             tb_Reference.Font = new Font("Nirmala UI", 14.25F);
-            tb_Reference.Location = new Point(202, 99);
+            tb_Reference.Location = new Point(221, 99);
             tb_Reference.Name = "tb_Reference";
-            tb_Reference.Size = new Size(236, 33);
+            tb_Reference.Size = new Size(279, 39);
             tb_Reference.TabIndex = 4;
             // 
             // lbl_Reference
@@ -114,25 +114,25 @@
             lbl_Reference.Font = new Font("Nirmala UI", 14.25F);
             lbl_Reference.Location = new Point(57, 102);
             lbl_Reference.Name = "lbl_Reference";
-            lbl_Reference.Size = new Size(95, 25);
+            lbl_Reference.Size = new Size(120, 32);
             lbl_Reference.TabIndex = 5;
             lbl_Reference.Text = "Reference";
             // 
             // tb_WorkLocation
             // 
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            tb_WorkLocation.Location = new Point(676, 104);
+            tb_WorkLocation.Location = new Point(738, 104);
             tb_WorkLocation.Name = "tb_WorkLocation";
-            tb_WorkLocation.Size = new Size(236, 33);
+            tb_WorkLocation.Size = new Size(260, 39);
             tb_WorkLocation.TabIndex = 4;
             // 
             // lbl_WorkLocation
             // 
             lbl_WorkLocation.AutoSize = true;
             lbl_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
-            lbl_WorkLocation.Location = new Point(515, 107);
+            lbl_WorkLocation.Location = new Point(556, 107);
             lbl_WorkLocation.Name = "lbl_WorkLocation";
-            lbl_WorkLocation.Size = new Size(134, 25);
+            lbl_WorkLocation.Size = new Size(166, 32);
             lbl_WorkLocation.TabIndex = 5;
             lbl_WorkLocation.Text = "Work Location";
             // 
@@ -141,27 +141,28 @@
             dgv_Sale.AllowUserToAddRows = false;
             dgv_Sale.AllowUserToResizeRows = false;
             dgv_Sale.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgv_Sale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_Sale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgv_Sale.DefaultCellStyle = dataGridViewCellStyle2;
             dgv_Sale.Location = new Point(57, 202);
             dgv_Sale.Name = "dgv_Sale";
             dgv_Sale.RowHeadersVisible = false;
-            dgv_Sale.Size = new Size(855, 530);
+            dgv_Sale.RowHeadersWidth = 51;
+            dgv_Sale.Size = new Size(940, 703);
             dgv_Sale.TabIndex = 6;
             dgv_Sale.CellEndEdit += dgv_Sale_CellEndEdit;
             dgv_Sale.CellValidating += dgv_Sale_CellValidating;
@@ -172,9 +173,9 @@
             btn_FinishPurchase.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_FinishPurchase.BackColor = Color.PaleGreen;
             btn_FinishPurchase.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_FinishPurchase.Location = new Point(619, 759);
+            btn_FinishPurchase.Location = new Point(677, 960);
             btn_FinishPurchase.Name = "btn_FinishPurchase";
-            btn_FinishPurchase.Size = new Size(180, 36);
+            btn_FinishPurchase.Size = new Size(186, 47);
             btn_FinishPurchase.TabIndex = 7;
             btn_FinishPurchase.Text = "Finish Purchase";
             btn_FinishPurchase.UseVisualStyleBackColor = false;
@@ -186,7 +187,7 @@
             lbl_RentDate.Font = new Font("Nirmala UI", 14.25F);
             lbl_RentDate.Location = new Point(57, 152);
             lbl_RentDate.Name = "lbl_RentDate";
-            lbl_RentDate.Size = new Size(93, 25);
+            lbl_RentDate.Size = new Size(119, 32);
             lbl_RentDate.TabIndex = 5;
             lbl_RentDate.Text = "Rent Date";
             // 
@@ -194,16 +195,16 @@
             // 
             dtp_StartRentDate.CalendarFont = new Font("Nirmala UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
-            dtp_StartRentDate.Location = new Point(202, 148);
+            dtp_StartRentDate.Location = new Point(221, 148);
             dtp_StartRentDate.Name = "dtp_StartRentDate";
-            dtp_StartRentDate.Size = new Size(236, 33);
+            dtp_StartRentDate.Size = new Size(279, 39);
             dtp_StartRentDate.TabIndex = 8;
             // 
             // Sale
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 818);
+            ClientSize = new Size(1082, 1019);
             ControlBox = false;
             Controls.Add(dtp_StartRentDate);
             Controls.Add(btn_FinishPurchase);

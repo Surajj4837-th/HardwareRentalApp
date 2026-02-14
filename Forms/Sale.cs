@@ -63,7 +63,7 @@ namespace HardwareRentalApp.Forms
                 DataPropertyName = "Rent",
                 HeaderText = LangManager.GetString("Rent"),
                 ReadOnly = false,
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
+                //DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -71,7 +71,7 @@ namespace HardwareRentalApp.Forms
                 DataPropertyName = "MinRentDays",
                 HeaderText = LangManager.GetString("MinRentDays"),
                 ReadOnly = true,
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
+                //DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
             dgv_Sale.Columns.Add(new DataGridViewTextBoxColumn
             {
