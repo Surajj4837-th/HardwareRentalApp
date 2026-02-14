@@ -229,7 +229,7 @@
     <value>Show Bills</value>
   </data>
   <data name="LesseeName" xml:space="preserve">
-    <value> Lessee Name</value>
+    <value>Lessee Name</value>
   </data>
   <data name="LesseeAddress" xml:space="preserve">
     <value>Lessee Address</value>
