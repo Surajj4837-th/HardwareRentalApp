@@ -168,6 +168,7 @@ namespace HardwareRentalApp.UserControls
             }
 
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(culture);
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(culture);
 
             ApplyResourceToControl(this,
             new ComponentResourceManager(typeof(Login)),
