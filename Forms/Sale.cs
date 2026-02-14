@@ -343,7 +343,7 @@ namespace HardwareRentalApp.Forms
                 if (string.IsNullOrWhiteSpace(input)) return;
 
                 // Remove currency symbol and any whitespace
-                input = input.Replace("₹", "").Trim();
+                //input = input.Replace("₹", "").Trim();
 
                 if (!decimal.TryParse(input, out decimal value) || value < 0)
                 {
