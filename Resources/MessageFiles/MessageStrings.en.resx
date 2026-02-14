@@ -459,4 +459,7 @@
   <data name="10 feet pipe" xml:space="preserve">
     <value>10 feet pipe</value>
   </data>
+  <data name="NoPurchaseMade" xml:space="preserve">
+    <value>No purchase was made</value>
+  </data>
 </root>
