@@ -60,6 +60,12 @@ namespace HardwareRentalApp.UserControls
 
             obj_DBAccess.ReadDataThroughAdapter(SelectQuery, dt_Items, null);
 
+            foreach (DataRow row in dt_Items.Rows)
+            {
+                string key = row["ItemName"].ToString();
+                row["ItemName"] = LangManager.GetString(key);
+            }
+
             // Bind DataTable to BindingSource
             bindingSourceCustomers.DataSource = dt_Items;
 
