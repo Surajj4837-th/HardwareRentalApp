@@ -462,4 +462,10 @@
   <data name="NoPurchaseMade" xml:space="preserve">
     <value>कोणतीही खरेदी केली नाही</value>
   </data>
+  <data name="TaxInvoice" xml:space="preserve">
+    <value>कर बीजक</value>
+  </data>
+  <data name="BillTo" xml:space="preserve">
+    <value>बिल कोणास</value>
+  </data>
 </root>

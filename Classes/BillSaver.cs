@@ -51,7 +51,7 @@ namespace HardwareRentalApp.Classes
 
                         row.RelativeItem().Column(col =>
                         {
-                            col.Item().Text("Bill To:").SemiBold();
+                            col.Item().Text(LangManager.GetString("BillTo") + ":").SemiBold();
                             col.Item().Text(_BillInformation.CustomerName);
                             col.Item().Text("Maharashtra, India");
                         });

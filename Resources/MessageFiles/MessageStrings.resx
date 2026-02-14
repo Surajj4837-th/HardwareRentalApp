@@ -462,4 +462,10 @@
   <data name="NoPurchaseMade" xml:space="preserve">
     <value>No purchase was made</value>
   </data>
+  <data name="TaxInvoice" xml:space="preserve">
+    <value>Tax Invoice</value>
+  </data>
+  <data name="BillTo" xml:space="preserve">
+    <value>Bill To</value>
+  </data>
 </root>
