@@ -1,4 +1,5 @@
-﻿using System.Resources;
+﻿using Microsoft.Win32;
+using System.Resources;
 
 namespace HardwareRentalApp.UserControls
 {
@@ -23,7 +24,22 @@ namespace HardwareRentalApp.UserControls
             }
             else
             {
-                lbl_FilePath.Text = "---------------------";
+                //Properties.Settings.Default.SaveDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                //Properties.Settings.Default.Save();
+
+                //lbl_FilePath.Text = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                string downloadsPath = Registry.GetValue(
+                    @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders",
+                    "{374DE290-123F-4565-9164-39C4925E467B}",
+                    ""
+                )?.ToString();
+
+                downloadsPath = Environment.ExpandEnvironmentVariables(downloadsPath);
+
+                Properties.Settings.Default.SaveDirectory = downloadsPath;
+                Properties.Settings.Default.Save();
+
+                lbl_FilePath.Text = downloadsPath;
             }
 
             tt_SavePath.SetToolTip(lbl_FilePath, lbl_FilePath.Text);
