@@ -255,9 +255,6 @@
   <data name="Mixer" xml:space="preserve">
     <value>मिक्सर</value>
   </data>
-  <data name="ColumnPattern" xml:space="preserve">
-    <value>कॉलम पॅटर्न</value>
-  </data>
   <data name="Jock" xml:space="preserve">
     <value>जॉक</value>
   </data>
@@ -437,5 +434,29 @@
   </data>
   <data name="FileSavingPath" xml:space="preserve">
     <value>बिल जतन करण्याचा मार्ग</value>
+  </data>
+  <data name="Plate 2x3" xml:space="preserve">
+    <value>प्लेट २x३</value>
+  </data>
+  <data name="Plate 18x36" xml:space="preserve">
+    <value>प्लेट १८x३६</value>
+  </data>
+  <data name="Plate 15x36" xml:space="preserve">
+    <value>प्लेट १५x३६</value>
+  </data>
+  <data name="Plate 12x36" xml:space="preserve">
+    <value>प्लेट १२x३६</value>
+  </data>
+  <data name="Plate 9x36" xml:space="preserve">
+    <value>प्लेट ९x३६</value>
+  </data>
+  <data name="Column pattern" xml:space="preserve">
+    <value>स्तंभ नमुना</value>
+  </data>
+  <data name="20 feet pipe" xml:space="preserve">
+    <value>२० फूट पाईप</value>
+  </data>
+  <data name="10 feet pipe" xml:space="preserve">
+    <value>१० फूट पाईप</value>
   </data>
 </root>

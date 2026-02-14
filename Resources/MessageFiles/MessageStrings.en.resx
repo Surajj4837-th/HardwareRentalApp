@@ -255,9 +255,6 @@
   <data name="Mixer" xml:space="preserve">
     <value>Mixer</value>
   </data>
-  <data name="ColumnPattern" xml:space="preserve">
-    <value>Column Pattern</value>
-  </data>
   <data name="Jock" xml:space="preserve">
     <value>Jock</value>
   </data>
@@ -437,5 +434,29 @@
   </data>
   <data name="FileSavingPath" xml:space="preserve">
     <value>Path to Save Bill</value>
+  </data>
+  <data name="Plate 2x3" xml:space="preserve">
+    <value>Plate 2x3</value>
+  </data>
+  <data name="Plate 18x36" xml:space="preserve">
+    <value>Plate 18x36</value>
+  </data>
+  <data name="Plate 15x36" xml:space="preserve">
+    <value>Plate 15x36</value>
+  </data>
+  <data name="Plate 12x36" xml:space="preserve">
+    <value>Plate 12x36</value>
+  </data>
+  <data name="Plate 9x36" xml:space="preserve">
+    <value>Plate 9x36</value>
+  </data>
+  <data name="Column pattern" xml:space="preserve">
+    <value>Column pattern</value>
+  </data>
+  <data name="20 feet pipe" xml:space="preserve">
+    <value>20 feet pipe</value>
+  </data>
+  <data name="10 feet pipe" xml:space="preserve">
+    <value>10 feet pipe</value>
   </data>
 </root>
