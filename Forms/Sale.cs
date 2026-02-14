@@ -171,7 +171,7 @@ namespace HardwareRentalApp.Forms
 
             if (sum == 0)
             {
-                MessageBox.Show(LangManager.GetString("NoPurchaseDone"));
+                MessageBox.Show(LangManager.GetString("NoPurchaseMade"));
                 return;
             }
 
