@@ -21,6 +21,7 @@ namespace HardwareRentalApp.Forms
 
         private void Sale_Load(object sender, EventArgs e)
         {
+            lbl_main.Text = LangManager.GetString("Sale");
             lbl_LesseeName.Text = LangManager.GetString("LesseeName");
             lbl_OwnerName.Text = LangManager.GetString("OwnerName");
             lbl_Reference.Text = LangManager.GetString("Reference");
