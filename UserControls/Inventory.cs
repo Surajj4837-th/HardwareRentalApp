@@ -24,6 +24,8 @@ namespace HardwareRentalApp.UserControls
         {
             loadData();
 
+            NumberFormatter.ApplyToDataGridView(dgv_InventoryTable);
+
             ArrangeDGVButtons();
 
             lbl_search.Text = LangManager.GetString("Search");
