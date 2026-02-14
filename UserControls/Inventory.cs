@@ -24,8 +24,6 @@ namespace HardwareRentalApp.UserControls
         {
             loadData();
 
-            NumberFormatter.ApplyToDataGridView(dgv_InventoryTable);
-
             ArrangeDGVButtons();
 
             lbl_search.Text = LangManager.GetString("Search");
@@ -73,6 +71,10 @@ namespace HardwareRentalApp.UserControls
 
             // Bind BindingSource to DataGridView
             dgv_InventoryTable.DataSource = bindingSourceCustomers;
+
+
+            //Format number as per culture settings
+            NumberFormatter.ApplyToDataGridView(dgv_InventoryTable);
         }
 
         private void UpdateItemDetails(int itemID, decimal newRent, int MinRentDays)

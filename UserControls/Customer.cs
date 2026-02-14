@@ -161,6 +161,9 @@ namespace HardwareRentalApp.UserControls
                 // Bind to DataGridView
                 dgv_MultipurposeTable.DataSource = dt;
             }
+
+            //Format number as per culture settings
+            NumberFormatter.ApplyToDataGridView(dgv_MultipurposeTable);
         }
 
         private void ArrangeDGVButtons()
