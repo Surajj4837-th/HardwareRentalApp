@@ -100,6 +100,9 @@ namespace HardwareRentalApp.Forms
             dgv_Sale.DataSource = dt_items;
 
             AdjustGridHeight();
+
+            //Format number as per culture settings
+            NumberFormatter.ApplyToDataGridView(dgv_Sale);
         }
 
         private void AdjustGridHeight()

@@ -254,6 +254,9 @@ namespace HardwareRentalApp.Forms
             }
 
             dgv_Bill.Refresh();
+
+            //Format number as per culture settings
+            NumberFormatter.ApplyToDataGridView(dgv_Bill);
         }
 
         private void AdjustGridHeight()
