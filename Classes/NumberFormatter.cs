@@ -9,53 +9,117 @@ namespace HardwareRentalApp.Classes
 {
     internal class NumberFormatter
     {
+        // ========================================
+        // Digit Maps (Clear + Maintainable)
+        // ========================================
         private static readonly char[] englishDigits =
             { '0','1','2','3','4','5','6','7','8','9' };
 
         private static readonly char[] marathiDigits =
             { '०','१','२','३','४','५','६','७','८','९' };
 
-        // 🔹 Format any value with optional numeric format
-        public static string Format(object value, string format = null)
-        {
-            if (value == null)
-                return "";
-
-            string result;
-
-            if (value is IFormattable formattable && format != null)
-                result = formattable.ToString(format, CultureInfo.CurrentCulture);
-            else
-                result = value.ToString();
-
-            return ConvertDigitsIfNeeded(result);
-        }
-
-        // 🔹 Convert digits only if Marathi culture is active
-        private static string ConvertDigitsIfNeeded(string input)
-        {
-            if (CultureInfo.CurrentCulture.Name != "mr-IN")
-                return input;
-
-            for (int i = 0; i < englishDigits.Length; i++)
-            {
-                input = input.Replace(englishDigits[i], marathiDigits[i]);
-            }
-
-            return input;
-        }
-
-        // 🔹 Apply automatic Marathi formatting to a DataGridView
+        // ========================================
+        // Attach Formatter To DataGridView
+        // ========================================
         public static void ApplyToDataGridView(DataGridView dgv)
         {
-            dgv.CellFormatting += (s, e) =>
+            dgv.CellFormatting -= Dgv_CellFormatting;
+            dgv.CellFormatting += Dgv_CellFormatting;
+
+            dgv.CellParsing -= Dgv_CellParsing;
+            dgv.CellParsing += Dgv_CellParsing;
+        }
+
+        // ========================================
+        // DISPLAY: English ➜ Marathi
+        // ========================================
+        private static void Dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value == null)
+                return;
+
+            // Only apply if current culture is Marathi
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name != "mr-IN")
+                return;
+
+            if (IsNumericType(e.Value))
             {
-                if (e.Value != null)
+                string english = e.Value.ToString();
+                e.Value = ConvertDigits(english, englishDigits, marathiDigits);
+                e.FormattingApplied = true;
+            }
+        }
+
+        // ========================================
+        // PROCESSING: Marathi ➜ English
+        // ========================================
+        private static void Dgv_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
+        {
+            if (e.Value == null)
+                return;
+
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name != "mr-IN")
+                return;
+
+            string input = e.Value.ToString();
+
+            string english = ConvertDigits(input, marathiDigits, englishDigits);
+
+            if (int.TryParse(english, out int intValue))
+            {
+                e.Value = intValue;
+                e.ParsingApplied = true;
+            }
+            else if (decimal.TryParse(english, out decimal decimalValue))
+            {
+                e.Value = decimalValue;
+                e.ParsingApplied = true;
+            }
+            else if (double.TryParse(english, out double doubleValue))
+            {
+                e.Value = doubleValue;
+                e.ParsingApplied = true;
+            }
+        }
+
+        public static string ConvertToEnglishDigits(string input)
+        {
+            return ConvertDigits(input, marathiDigits, englishDigits);
+        }
+
+        // ========================================
+        // Generic Digit Converter
+        // ========================================
+        private static string ConvertDigits(string input, char[] source, char[] target)
+        {
+            char[] result = input.ToCharArray();
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = 0; j < source.Length; j++)
                 {
-                    e.Value = ConvertDigitsIfNeeded(e.Value.ToString());
-                    e.FormattingApplied = true;
+                    if (result[i] == source[j])
+                    {
+                        result[i] = target[j];
+                        break;
+                    }
                 }
-            };
+            }
+
+            return new string(result);
+        }
+
+        // ========================================
+        // Numeric Type Checker
+        // ========================================
+        private static bool IsNumericType(object value)
+        {
+            return value is int ||
+                   value is long ||
+                   value is short ||
+                   value is decimal ||
+                   value is double ||
+                   value is float;
         }
     }
 }
