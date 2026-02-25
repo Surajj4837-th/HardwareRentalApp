@@ -181,8 +181,8 @@
             // 
             // Customers
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
             Controls.Add(btn_ShowBills);
             Controls.Add(btn_Sale);

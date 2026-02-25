@@ -121,7 +121,7 @@
             // Login
             // 
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);

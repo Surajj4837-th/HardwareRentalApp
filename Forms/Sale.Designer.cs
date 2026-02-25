@@ -70,7 +70,7 @@
             tb_LesseeName.Location = new Point(221, 95);
             tb_LesseeName.Name = "tb_LesseeName";
             tb_LesseeName.ReadOnly = true;
-            tb_LesseeName.Size = new Size(279, 39);
+            tb_LesseeName.Size = new Size(279, 33);
             tb_LesseeName.TabIndex = 4;
             // 
             // lbl_LesseeName
@@ -79,7 +79,7 @@
             lbl_LesseeName.Font = new Font("Nirmala UI", 14.25F);
             lbl_LesseeName.Location = new Point(57, 98);
             lbl_LesseeName.Name = "lbl_LesseeName";
-            lbl_LesseeName.Size = new Size(155, 32);
+            lbl_LesseeName.Size = new Size(122, 25);
             lbl_LesseeName.TabIndex = 5;
             lbl_LesseeName.Text = "Lessee Name";
             // 
@@ -88,7 +88,7 @@
             tb_OwnerName.Font = new Font("Nirmala UI", 14.25F);
             tb_OwnerName.Location = new Point(751, 95);
             tb_OwnerName.Name = "tb_OwnerName";
-            tb_OwnerName.Size = new Size(260, 39);
+            tb_OwnerName.Size = new Size(260, 33);
             tb_OwnerName.TabIndex = 4;
             // 
             // lbl_OwnerName
@@ -97,7 +97,7 @@
             lbl_OwnerName.Font = new Font("Nirmala UI", 14.25F);
             lbl_OwnerName.Location = new Point(569, 98);
             lbl_OwnerName.Name = "lbl_OwnerName";
-            lbl_OwnerName.Size = new Size(155, 32);
+            lbl_OwnerName.Size = new Size(123, 25);
             lbl_OwnerName.TabIndex = 5;
             lbl_OwnerName.Text = "Owner Name";
             // 
@@ -106,7 +106,7 @@
             tb_Reference.Font = new Font("Nirmala UI", 14.25F);
             tb_Reference.Location = new Point(221, 145);
             tb_Reference.Name = "tb_Reference";
-            tb_Reference.Size = new Size(279, 39);
+            tb_Reference.Size = new Size(279, 33);
             tb_Reference.TabIndex = 4;
             // 
             // lbl_Reference
@@ -115,7 +115,7 @@
             lbl_Reference.Font = new Font("Nirmala UI", 14.25F);
             lbl_Reference.Location = new Point(57, 148);
             lbl_Reference.Name = "lbl_Reference";
-            lbl_Reference.Size = new Size(120, 32);
+            lbl_Reference.Size = new Size(95, 25);
             lbl_Reference.TabIndex = 5;
             lbl_Reference.Text = "Reference";
             // 
@@ -124,7 +124,7 @@
             tb_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
             tb_WorkLocation.Location = new Point(751, 150);
             tb_WorkLocation.Name = "tb_WorkLocation";
-            tb_WorkLocation.Size = new Size(260, 39);
+            tb_WorkLocation.Size = new Size(260, 33);
             tb_WorkLocation.TabIndex = 4;
             // 
             // lbl_WorkLocation
@@ -133,7 +133,7 @@
             lbl_WorkLocation.Font = new Font("Nirmala UI", 14.25F);
             lbl_WorkLocation.Location = new Point(569, 153);
             lbl_WorkLocation.Name = "lbl_WorkLocation";
-            lbl_WorkLocation.Size = new Size(166, 32);
+            lbl_WorkLocation.Size = new Size(134, 25);
             lbl_WorkLocation.TabIndex = 5;
             lbl_WorkLocation.Text = "Work Location";
             // 
@@ -188,7 +188,7 @@
             lbl_RentDate.Font = new Font("Nirmala UI", 14.25F);
             lbl_RentDate.Location = new Point(57, 198);
             lbl_RentDate.Name = "lbl_RentDate";
-            lbl_RentDate.Size = new Size(119, 32);
+            lbl_RentDate.Size = new Size(93, 25);
             lbl_RentDate.TabIndex = 5;
             lbl_RentDate.Text = "Rent Date";
             // 
@@ -198,7 +198,7 @@
             dtp_StartRentDate.Font = new Font("Nirmala UI", 14.25F);
             dtp_StartRentDate.Location = new Point(221, 194);
             dtp_StartRentDate.Name = "dtp_StartRentDate";
-            dtp_StartRentDate.Size = new Size(279, 39);
+            dtp_StartRentDate.Size = new Size(279, 33);
             dtp_StartRentDate.TabIndex = 8;
             // 
             // lbl_main
@@ -213,8 +213,8 @@
             // 
             // Sale
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Bisque;
             ClientSize = new Size(1082, 1019);
             ControlBox = false;
