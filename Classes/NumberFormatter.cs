@@ -121,5 +121,29 @@ namespace HardwareRentalApp.Classes
                    value is double ||
                    value is float;
         }
+
+        public static string Format(object value, string format = null)
+        {
+            if (value == null)
+                return string.Empty;
+
+            string text = format == null
+                ? Convert.ToString(value, CultureInfo.CurrentCulture)
+                : string.Format(CultureInfo.CurrentCulture, "{0:" + format + "}", value);
+
+            // Apply Marathi digit conversion only when needed
+            if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "mr")
+                return ConvertToMarathiDigits(text);
+
+            return text;
+        }
+
+        public static string ConvertToMarathiDigits(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            return ConvertDigits(input, englishDigits, marathiDigits);
+        }
     }
 }
