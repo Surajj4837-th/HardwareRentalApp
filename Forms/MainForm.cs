@@ -12,7 +12,6 @@ namespace HardwareRentalApp
         public MainForm()
         {
             InitializeComponent();
-            this.AutoScaleMode = AutoScaleMode.Dpi;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
