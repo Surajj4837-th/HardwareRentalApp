@@ -39,7 +39,7 @@ namespace HardwareRentalApp.Forms
             lbl_WorkLocation.Text = LangManager.GetString("WorkLocation");
             lbl_RentDate.Text = LangManager.GetString("RentDate");
             lbl_EndRentDate.Text = LangManager.GetString("EndRentDate");
-            lbl_BillAmount.Text = LangManager.GetString("BillAmount");
+            lbl_BillAmount.Text = LangManager.GetString("Amount");
         }
 
         private void FillFormDetails()
@@ -58,7 +58,7 @@ namespace HardwareRentalApp.Forms
                 dtp_EndRentDate.Text = DateTime.Now.ToString();
                 dtp_EndRentDate.Enabled = true;
 
-                tb_BillAmount.Text = "0.0";
+                tb_BillAmount.Text = "₹" + "0.0";
 
                 dgv_Bill.Columns["QuantityReturned"].Visible = true;
 
@@ -76,7 +76,8 @@ namespace HardwareRentalApp.Forms
                 dtp_EndRentDate.Text = BillInformation[0].PaymentDate.ToString();
                 dtp_EndRentDate.Enabled = false;
 
-                tb_BillAmount.Text = BillInformation[0].TotalAmount.ToString("C2");
+                //tb_BillAmount.Text = BillInformation[0].TotalAmount.ToString("C2");
+                tb_BillAmount.Text = "₹" + NumberFormatter.Format(BillInformation[0].TotalAmount, "0.00");
 
                 dgv_Bill.Columns["QuantityReturned"].Visible = false;
 
@@ -150,7 +151,7 @@ namespace HardwareRentalApp.Forms
                 DataPropertyName = "Rent",
                 HeaderText = LangManager.GetString("Rent"),
                 ReadOnly = true,
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
+                //DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" }  // Currency format
             });
             dgv_Bill.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -373,7 +374,8 @@ namespace HardwareRentalApp.Forms
                 totalAmount += rent * QuantityRented * NoOfDays;
             }
 
-            tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
+            //tb_BillAmount.Text = totalAmount.ToString("C2"); // Currency format
+            tb_BillAmount.Text = "₹" + NumberFormatter.Format(totalAmount, "0.00");
 
             return totalAmount;
         }
