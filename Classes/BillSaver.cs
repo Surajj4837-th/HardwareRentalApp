@@ -102,14 +102,27 @@ namespace HardwareRentalApp.Classes
                         });
 
                         int sr = 1;
+                        //foreach (var item in _BillItems)
+                        //{
+                        //    table.Cell().Element(CellBody).Text(sr++.ToString());
+                        //    table.Cell().Element(CellBody).Text(item.ItemName);
+                        //    table.Cell().Element(CellBody).Text(item.Quantity.ToString());
+                        //    table.Cell().Element(CellBody).Text(item.Rent.ToString("0.00"));
+                        //    table.Cell().Element(CellBody).Text(item.RentalDays.ToString("0.00"));
+                        //    table.Cell().Element(CellBody).Text(item.Total.ToString("0.00"));
+
+                        //    static IContainer CellBody(IContainer container) =>
+                        //        container.BorderBottom(1).Padding(2);
+                        //}
+
                         foreach (var item in _BillItems)
                         {
-                            table.Cell().Element(CellBody).Text(sr++.ToString());
+                            table.Cell().Element(CellBody).Text(NumberFormatter.Format(sr++));
                             table.Cell().Element(CellBody).Text(item.ItemName);
-                            table.Cell().Element(CellBody).Text(item.Quantity.ToString());
-                            table.Cell().Element(CellBody).Text(item.Rent.ToString("0.00"));
-                            table.Cell().Element(CellBody).Text(item.RentalDays.ToString("0.00"));
-                            table.Cell().Element(CellBody).Text(item.Total.ToString("0.00"));
+                            table.Cell().Element(CellBody).Text(NumberFormatter.Format(item.Quantity));
+                            table.Cell().Element(CellBody).Text(NumberFormatter.Format(item.Rent, "0.00"));
+                            table.Cell().Element(CellBody).Text(NumberFormatter.Format(item.RentalDays, "0.00"));
+                            table.Cell().Element(CellBody).Text(NumberFormatter.Format(item.Total, "0.00"));
 
                             static IContainer CellBody(IContainer container) =>
                                 container.BorderBottom(1).Padding(2);
@@ -125,7 +138,8 @@ namespace HardwareRentalApp.Classes
                         });
 
                         table.Cell().Text(LangManager.GetString("TotalAmount") + ": ").Bold();
-                        table.Cell().AlignRight().Text(_BillInformation.TotalAmount.ToString("0.00")).Bold();
+                        //table.Cell().AlignRight().Text(_BillInformation.TotalAmount.ToString("0.00")).Bold();
+                        table.Cell().AlignRight().Text("₹" + NumberFormatter.Format(_BillInformation.TotalAmount.ToString("0.00"))).Bold();
                     });
                 });
 
