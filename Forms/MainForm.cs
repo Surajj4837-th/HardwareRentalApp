@@ -12,10 +12,21 @@ namespace HardwareRentalApp
         public MainForm()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.Dpi;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //To avoid DPI change
+            var screen = Screen.FromControl(this).WorkingArea;
+
+            this.MaximumSize = screen.Size;
+
+            if (this.Height > screen.Height)
+            {
+                this.Height = screen.Height;
+            }
+
             string languageCode = Properties.Settings.Default.Language;
             CultureInfo culture = new CultureInfo(languageCode);
             Thread.CurrentThread.CurrentCulture = culture;
