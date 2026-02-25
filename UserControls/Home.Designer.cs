@@ -83,8 +83,9 @@
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Nirmala UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "Home";
