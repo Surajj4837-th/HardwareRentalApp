@@ -240,7 +240,7 @@ namespace HardwareRentalApp.Forms
             // 2. Insert Bill Items
             foreach (DataRow row in dt_items.Rows)
             {
-                if (Convert.ToInt32(row["Rent"]) > 0)
+                if (Convert.ToInt32(row["Rent"]) > 0 && Convert.ToInt32(row["Quantity"]) > 0)
                 {
                     var itemCmd = new SqlCommand(@"
                     INSERT INTO BillItems (BillId, ItemId, Quantity, Rent)
